@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import co.median.android.a2025_theangels_new.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

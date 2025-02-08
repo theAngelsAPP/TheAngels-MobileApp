@@ -31,14 +31,14 @@ public class BaseActivity extends AppCompatActivity {
 
         if (btnSettings != null) {
             btnSettings.setOnClickListener(v -> {
-                Intent intent = new Intent(this, SettingsActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             });
         }
 
         if (btnProfile != null) {
             btnProfile.setOnClickListener(v -> {
-                Intent intent = new Intent(this, ProfileActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             });
         }

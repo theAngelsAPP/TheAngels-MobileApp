@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme._2025_theangels_new" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme._2025_theangels_new" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- תוכל להוסיף התאמות אישיות כאן -->
+    </style>
 </resources>
