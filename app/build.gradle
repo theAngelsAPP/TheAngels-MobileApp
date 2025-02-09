@@ -33,10 +33,36 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core:1.10.1' // core בלבד, בלי KTX
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.core:core:1.10.1' // תמיכה בליבת אנדרואיד
+    implementation 'androidx.appcompat:appcompat:1.6.1' // תמיכה בתאימות אחורה
+    implementation 'com.google.android.material:material:1.9.0' // עיצוב מתקדם עם Material Design
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // עיצוב מתקדם עם ConstraintLayout
+
+    // ✅ ניווט קל בין מסכים עם Navigation Component
+    implementation 'androidx.navigation:navigation-fragment:2.7.0'
+    implementation 'androidx.navigation:navigation-ui:2.7.0'
+
+    // ✅ תמיכה באנימציות עם MotionLayout
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // ✅ טעינת תמונות בצורה מהירה עם Glide
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // ✅ אלטרנטיבה לטעינת תמונות: Picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    // ✅ תמיכה באנימציות מתקדמות עם Lottie (קבצי JSON של אנימציות)
+    implementation 'com.airbnb.android:lottie:6.0.0'
+
+    // ✅ תפריטים תחתונים ודינאמיים עם ViewPager2 (לניווט עם טאבים)
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    // ✅ אפקטים של טעינה נוצצת (Shimmer Effect כמו בפייסבוק)
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    // ✅ דיאלוגים מעוצבים עם Material Dialogs
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
