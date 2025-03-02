@@ -1,0 +1,93 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- START: Login Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        android:padding="16dp">
+
+        <!-- שדה שם משתמש -->
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="שם משתמש"
+            android:inputType="text"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintMarginStart="32dp"
+            app:layout_constraintMarginEnd="32dp"/>
+
+        <!-- שדה סיסמה -->
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="סיסמה"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_username"
+            app:layout_constraintMarginTop="16dp"
+            app:layout_constraintMarginStart="32dp"
+            app:layout_constraintMarginEnd="32dp"/>
+
+        <!-- כפתור התחברות -->
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="התחברות"
+            app:layout_constraintTop_toBottomOf="@id/et_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintMarginTop="24dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- END: Login Section -->
+
+    <!-- START: Register Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signup_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/login_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp">
+
+        <!-- טקסט להרשמה -->
+        <TextView
+            android:id="@+id/string_noAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="אין לך חשבון? הירשם עכשיו!"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- כפתור הרשמה -->
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="הרשמה"
+            app:layout_constraintTop_toBottomOf="@id/string_noAccount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintMarginTop="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- END: Register Section -->
+</androidx.constraintlayout.widget.ConstraintLayout>
