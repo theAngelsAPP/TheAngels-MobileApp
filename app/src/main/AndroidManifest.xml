@@ -12,11 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme._2025_theangels_new"
         tools:targetApi="31">
-        <activity
-            android:name=".activities.TestActivity"
-            android:exported="false"
-            android:label="@string/title_activity_test"
-            android:theme="@style/Theme._2025_theangels_new" />
+
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"
@@ -24,10 +20,34 @@
             android:theme="@style/Theme._2025_theangels_new">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activities.OnboardingActivity"
+            android:exported="false"
+            android:label="Onboarding"
+            android:theme="@style/Theme._2025_theangels_new" />
+
+        <activity
+            android:name=".activities.RegistrationActivity"
+            android:exported="false"
+            android:label="Registration"
+            android:theme="@style/Theme._2025_theangels_new" />
+
+        <activity
+            android:name=".activities.RegistrationActivity2"
+            android:exported="false"
+            android:label="Registration"
+            android:theme="@style/Theme._2025_theangels_new" />
+        <activity
+            android:name=".activities.HomepageActivity"
+            android:exported="false"
+            android:label="Home"
+            android:theme="@style/Theme._2025_theangels_new" />
+
+
     </application>
 
 </manifest>
