@@ -1,4 +1,4 @@
-<h1 align="center">
+
   <a href="https://github.com/theAngelsAPP/TheAngels-MobileApp">
     <picture>
       <img height="280" alt="The Angels App" src="https://i.imagesup.co/images2/6174487873902d7c583a9a71f78c3c7a99e5b6be.png">
@@ -28,4 +28,3 @@
   <a href="https://github.com/theAngelsAPP/TheAngels-MobileApp/issues?q=is%3Aissue+is%3Aclosed">
     <img src="https://img.shields.io/github/issues-closed/theAngelsAPP/TheAngels-MobileApp?color=1E90FF&style=flat-square">
   </a>
-</h1>
