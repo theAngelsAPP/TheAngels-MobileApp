@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">2025_theangels_new</string>
+    <string name="app_name">המלאכים</string>
     <string name="title_activity_test">testActivity</string>
     <string name="greeting">בוקר טוב, שם!</string>
     <string name="subtitle">משפט השראה מתחת לשם</string>
+    <string name="google_maps_key">AIzaSyDLJkYa9mPBpdhJx8dIsLSPs3O9JxU5Y9A</string>
 </resources>

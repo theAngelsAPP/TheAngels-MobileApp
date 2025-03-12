@@ -54,7 +54,7 @@ public class RegistrationActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // אפשר להוסיף כאן לוגיקה לרישום משתמש חדש
-                Intent intent = new Intent(RegistrationActivity2.this, HomepageActivity.class);
+                Intent intent = new Intent(RegistrationActivity2.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

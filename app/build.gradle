@@ -22,9 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     buildFeatures {
@@ -33,50 +34,17 @@ android {
 }
 
 dependencies {
-    // ✅ ליבת אנדרואיד
-    implementation 'androidx.core:core-ktx:1.9.0'
-
-    // ✅ תאימות אחורה ותמיכה בעיצוב
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-
-    // ✅ עיצוב מתקדם עם ConstraintLayout (נמחקה כפילות)
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
 
-    // ✅ אינדיקטור לעמודים ב-ViewPager
-    implementation 'me.relex:circleindicator:2.1.6'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
 
-    // ✅ ניווט בין מסכים עם Navigation Component (גרסה שמתאימה ל-compileSdk 33)
-    implementation 'androidx.navigation:navigation-fragment:2.6.0'
-    implementation 'androidx.navigation:navigation-ui:2.6.0'
-
-    // ✅ טעינת תמונות מהירה (בחרתי Glide והסרתי את Picasso כדי למנוע כפילות)
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
-
-    // ✅ אנימציות מתקדמות עם Lottie (לשיקולך אם באמת דרוש)
-    implementation 'com.airbnb.android:lottie:6.0.0'
-
-    // ✅ ViewPager2 לניווט עם טאבים
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
-
-    // ✅ אפקטי טעינה נוצצים (Shimmer Effect)
-    implementation 'com.facebook.shimmer:shimmer:0.5.0'
-
-    // ✅ דיאלוגים מעוצבים (Material Dialogs)
-    implementation 'com.afollestad.material-dialogs:core:3.3.0'
-
-    // ✅ בדיקות
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-}
-
-
-configurations.all {
-    resolutionStrategy {
-        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
-        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10'
-        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10'
-    }
 }
