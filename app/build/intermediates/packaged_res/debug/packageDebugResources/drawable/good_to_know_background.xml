@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFE4E1"/> <!-- צבע אדום-עדין שמזכיר משהו רפואי -->
+    <corners android:radius="12dp"/> <!-- קצוות מעוגלים -->
+    <stroke android:width="2dp" android:color="#FF4C4C"/> <!-- מסגרת אדומה עדינה -->
+</shape>
