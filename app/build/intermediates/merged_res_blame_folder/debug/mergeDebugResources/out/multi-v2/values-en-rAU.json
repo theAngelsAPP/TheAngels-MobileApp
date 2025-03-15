@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-36:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-2:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\73ed0d1feec495d6d6f16f4829d0dbe5\\transformed\\appcompat-1.7.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\73ed0d1feec495d6d6f16f4829d0dbe5\\transformed\\appcompat-1.7.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\33a26a149b09619d1d5477abb9ba30f2\\transformed\\core-1.13.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\33a26a149b09619d1d5477abb9ba30f2\\transformed\\core-1.13.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

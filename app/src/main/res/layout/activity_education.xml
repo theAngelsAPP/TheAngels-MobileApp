@@ -1,134 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- כותרת עליונה -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tab_selected"
+        android:padding="16dp"
+        android:text="עמוד ההדרכות של המלאכים"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:layoutDirection="rtl"
+            android:gravity="center">
 
-            <!-- כותרת העמוד -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="מסך הדרכות"
-                android:textSize="22sp"
-                android:textColor="@android:color/black"
-                android:layout_gravity="center_horizontal"
-                android:paddingBottom="16dp"/>
-
-            <!-- טבלת ההדרכות -->
-            <TableLayout
+            <!-- הדרכה 1 -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:stretchColumns="1">
+                android:layout_height="121dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/event_item_background"
+                android:elevation="5dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:gravity="center_vertical">
 
-                <!-- שורה 1 -->
-                <TableRow android:paddingVertical="8dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="איך נשתמש בדפיברילטור?"
-                        android:textSize="18sp"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="16dp"/>
+                <!-- תמונה -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/rounded_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/training1"
+                    android:layout_marginEnd="8dp" />
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/training1"/>
-                </TableRow>
+                <!-- כותרת -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/event_label_bg"
+                    android:padding="6dp"
+                    android:text="איך להשתמש בדפיברילטור?"
+                    android:textColor="@color/tab_selected"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <!-- שורה 2 -->
-                <TableRow android:paddingVertical="8dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="איך נזריק אפיפן בעת התקף אלרגיה?"
-                        android:textSize="18sp"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="16dp"/>
+            </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/training2"/>
-                </TableRow>
+            <!-- הדרכה 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/event_item_background"
+                android:elevation="5dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:gravity="center_vertical">
 
-                <!-- שורה 3 -->
-                <TableRow android:paddingVertical="8dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="איך נשים חוסם עורקים?"
-                        android:textSize="18sp"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="16dp"/>
+                <!-- תמונה -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/rounded_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/training2"
+                    android:layout_marginEnd="8dp" />
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/training3"/>
-                </TableRow>
+                <!-- כותרת -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/event_label_bg"
+                    android:padding="6dp"
+                    android:text="איך להשתמש באפיפן?"
+                    android:textColor="@color/tab_selected"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <!-- שורה 4 -->
-                <TableRow android:paddingVertical="8dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="מה לעשות בעת חנק?"
-                        android:textSize="18sp"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="16dp"/>
+            </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/training4"/>
-                </TableRow>
+            <!-- הדרכה 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/event_item_background"
+                android:elevation="5dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:gravity="center_vertical">
 
-                <!-- שורה 5 -->
-                <TableRow android:paddingVertical="8dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="איך לבצע החייאה?"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="16dp"/>
+                <!-- תמונה -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/rounded_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/training3"
+                    android:layout_marginEnd="8dp" />
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/training5" />
-                </TableRow>
+                <!-- כותרת -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/event_label_bg"
+                    android:padding="6dp"
+                    android:text="איך לשים חוסם עורקים?"
+                    android:textColor="@color/tab_selected"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            </TableLayout>
+            </LinearLayout>
+
+            <!-- הדרכה 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/event_item_background"
+                android:elevation="5dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:gravity="center_vertical">
+
+                <!-- תמונה -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/rounded_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/training4"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- כותרת -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/event_label_bg"
+                    android:padding="6dp"
+                    android:text="מה עושים במקרה של חנק?"
+                    android:textColor="@color/tab_selected"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- הדרכה 5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/event_item_background"
+                android:elevation="5dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:gravity="center_vertical">
+
+                <!-- תמונה -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/rounded_bg"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/training5"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- כותרת -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/event_label_bg"
+                    android:padding="6dp"
+                    android:text="איך נבצע החייאה?"
+                    android:textColor="@color/tab_selected"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
