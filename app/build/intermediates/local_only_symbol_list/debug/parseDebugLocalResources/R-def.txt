@@ -209,6 +209,7 @@ id etFreeText
 id etManualAddress
 id et_birth_date
 id et_id_number
+id event_details_container
 id fab_add
 id fab_emergency
 id faq_list
@@ -240,6 +241,7 @@ id medical_asthma
 id medical_diabetes
 id medical_epilepsy
 id medical_event
+id medical_event_card
 id medical_heart
 id medical_pressure
 id nav_education
@@ -261,6 +263,7 @@ id profile_frame
 id profile_header
 id question_arrow
 id question_text
+id ratingBarVolunteer
 id rbBleedingNo
 id rbBleedingYes
 id rbBreathingNo
@@ -289,9 +292,16 @@ id text_size_icon
 id text_size_status
 id title
 id top_bar
+id tvEventDuration
+id tvEventLocation
+id tvEventOutcome
+id tvEventTime
+id tvEventType
 id tvStepDescription
 id tvStepTitle
 id tvTitle
+id tvVolunteerName
+id tvVolunteerRole
 id tv_greeting
 id tv_location_message
 id tv_user_role
@@ -307,6 +317,7 @@ id widget_title
 layout activity_base
 layout activity_display_settings
 layout activity_education
+layout activity_event_details
 layout activity_event_feedback
 layout activity_event_user
 layout activity_event_vol
@@ -332,6 +343,7 @@ layout fragment_location
 layout fragment_map
 layout fragment_onboarding
 layout fragment_questionnaire
+layout fragment_static_map
 layout fragment_summary
 layout fragment_vol_claim
 layout fragment_vol_close

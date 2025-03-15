@@ -3601,6 +3601,7 @@ id etFreeText
 id etManualAddress
 id et_birth_date
 id et_id_number
+id event_details_container
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3724,6 +3725,7 @@ id medical_asthma
 id medical_diabetes
 id medical_epilepsy
 id medical_event
+id medical_event_card
 id medical_heart
 id medical_pressure
 id message
@@ -3835,6 +3837,7 @@ id progress_horizontal
 id question_arrow
 id question_text
 id radio
+id ratingBarVolunteer
 id ratio
 id rbBleedingNo
 id rbBleedingYes
@@ -3983,9 +3986,16 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvEventDuration
+id tvEventLocation
+id tvEventOutcome
+id tvEventTime
+id tvEventType
 id tvStepDescription
 id tvStepTitle
 id tvTitle
+id tvVolunteerName
+id tvVolunteerRole
 id tv_greeting
 id tv_location_message
 id tv_user_role
@@ -4141,6 +4151,7 @@ layout abc_tooltip
 layout activity_base
 layout activity_display_settings
 layout activity_education
+layout activity_event_details
 layout activity_event_feedback
 layout activity_event_user
 layout activity_event_vol
@@ -4182,6 +4193,7 @@ layout fragment_location
 layout fragment_map
 layout fragment_onboarding
 layout fragment_questionnaire
+layout fragment_static_map
 layout fragment_summary
 layout fragment_vol_claim
 layout fragment_vol_close
