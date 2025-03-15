@@ -45,6 +45,7 @@ dependencies {
     implementation libs.androidx.coordinatorlayout
     implementation libs.google.play.services.maps
     implementation libs.google.play.services.location
+    implementation libs.stepview
 
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.lifecycle.viewmodel.ktx

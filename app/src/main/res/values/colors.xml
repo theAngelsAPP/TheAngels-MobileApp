@@ -22,5 +22,8 @@
     <color name="tab_unselected">#D3D3D3</color>
     <color name="event_status_color">#E9F9EC</color>
     <color name="event_status">#1FBE42</color>
+    <color name="colorAccent">#ffba08</color>
+    <color name="circle1">#e01e37</color>
+    <color name="circle2">#ca1b31</color>
 
 </resources>

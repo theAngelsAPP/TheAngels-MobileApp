@@ -5,12 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -20,19 +20,20 @@ public final class FragmentEventTypeBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final TextView btnAnimals;
+  public final MaterialButton btnAnimals;
 
   @NonNull
-  public final TextView btnCar;
+  public final MaterialButton btnCar;
 
   @NonNull
-  public final TextView btnMedical;
+  public final MaterialButton btnMedical;
 
   @NonNull
-  public final TextView btnSecurity;
+  public final MaterialButton btnSecurity;
 
-  private FragmentEventTypeBinding(@NonNull LinearLayout rootView, @NonNull TextView btnAnimals,
-      @NonNull TextView btnCar, @NonNull TextView btnMedical, @NonNull TextView btnSecurity) {
+  private FragmentEventTypeBinding(@NonNull LinearLayout rootView,
+      @NonNull MaterialButton btnAnimals, @NonNull MaterialButton btnCar,
+      @NonNull MaterialButton btnMedical, @NonNull MaterialButton btnSecurity) {
     this.rootView = rootView;
     this.btnAnimals = btnAnimals;
     this.btnCar = btnCar;
@@ -68,25 +69,25 @@ public final class FragmentEventTypeBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnAnimals;
-      TextView btnAnimals = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnAnimals = ViewBindings.findChildViewById(rootView, id);
       if (btnAnimals == null) {
         break missingId;
       }
 
       id = R.id.btnCar;
-      TextView btnCar = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnCar = ViewBindings.findChildViewById(rootView, id);
       if (btnCar == null) {
         break missingId;
       }
 
       id = R.id.btnMedical;
-      TextView btnMedical = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnMedical = ViewBindings.findChildViewById(rootView, id);
       if (btnMedical == null) {
         break missingId;
       }
 
       id = R.id.btnSecurity;
-      TextView btnSecurity = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnSecurity = ViewBindings.findChildViewById(rootView, id);
       if (btnSecurity == null) {
         break missingId;
       }

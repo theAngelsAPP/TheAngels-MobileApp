@@ -4,4 +4,21 @@
     <string name="greeting">בוקר טוב, שם!</string>
     <string name="subtitle">משפט השראה מתחת לשם</string>
     <string name="google_maps_key">AIzaSyDLJkYa9mPBpdhJx8dIsLSPs3O9JxU5Y9A</string>
+
+    <string name="step_title_event_type">סוג האירוע</string>
+    <string name="step_desc_event_type">בחר את סוג האירוע שעליו אתה רוצה לדווח</string>
+
+    <string name="step_title_what_happened">מה קרה?</string>
+    <string name="step_desc_what_happened">תאר בקצרה את המקרה כדי שנוכל לסייע</string>
+
+    <string name="step_title_questionnaire">שאלון</string>
+    <string name="step_desc_questionnaire">מלא כמה שאלות כדי שנבין טוב יותר את המקרה</string>
+
+    <string name="step_title_location">מיקום</string>
+    <string name="step_desc_location">בחר את המיקום של האירוע כדי לשלוח עזרה</string>
+
+    <string name="step_title_summary">סיכום</string>
+    <string name="step_desc_summary">בדוק את הפרטים לפני שליחת הדיווח</string>
 </resources>
+
+

@@ -4,16 +4,17 @@ package co.median.android.a2025_theangels_new.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -23,24 +24,41 @@ public final class ActivityNewEventBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final Button btnNext;
+  public final AppCompatButton btnNext;
 
   @NonNull
   public final FrameLayout fragmentContainer;
 
   @NonNull
+  public final LinearLayout infoContainer;
+
+  @NonNull
   public final ImageView ivClose;
+
+  @NonNull
+  public final StepView stepView;
+
+  @NonNull
+  public final TextView tvStepDescription;
+
+  @NonNull
+  public final TextView tvStepTitle;
 
   @NonNull
   public final TextView tvTitle;
 
-  private ActivityNewEventBinding(@NonNull LinearLayout rootView, @NonNull Button btnNext,
-      @NonNull FrameLayout fragmentContainer, @NonNull ImageView ivClose,
-      @NonNull TextView tvTitle) {
+  private ActivityNewEventBinding(@NonNull LinearLayout rootView, @NonNull AppCompatButton btnNext,
+      @NonNull FrameLayout fragmentContainer, @NonNull LinearLayout infoContainer,
+      @NonNull ImageView ivClose, @NonNull StepView stepView, @NonNull TextView tvStepDescription,
+      @NonNull TextView tvStepTitle, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnNext = btnNext;
     this.fragmentContainer = fragmentContainer;
+    this.infoContainer = infoContainer;
     this.ivClose = ivClose;
+    this.stepView = stepView;
+    this.tvStepDescription = tvStepDescription;
+    this.tvStepTitle = tvStepTitle;
     this.tvTitle = tvTitle;
   }
 
@@ -72,7 +90,7 @@ public final class ActivityNewEventBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnNext;
-      Button btnNext = ViewBindings.findChildViewById(rootView, id);
+      AppCompatButton btnNext = ViewBindings.findChildViewById(rootView, id);
       if (btnNext == null) {
         break missingId;
       }
@@ -83,9 +101,33 @@ public final class ActivityNewEventBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.infoContainer;
+      LinearLayout infoContainer = ViewBindings.findChildViewById(rootView, id);
+      if (infoContainer == null) {
+        break missingId;
+      }
+
       id = R.id.ivClose;
       ImageView ivClose = ViewBindings.findChildViewById(rootView, id);
       if (ivClose == null) {
+        break missingId;
+      }
+
+      id = R.id.step_view;
+      StepView stepView = ViewBindings.findChildViewById(rootView, id);
+      if (stepView == null) {
+        break missingId;
+      }
+
+      id = R.id.tvStepDescription;
+      TextView tvStepDescription = ViewBindings.findChildViewById(rootView, id);
+      if (tvStepDescription == null) {
+        break missingId;
+      }
+
+      id = R.id.tvStepTitle;
+      TextView tvStepTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvStepTitle == null) {
         break missingId;
       }
 
@@ -96,7 +138,7 @@ public final class ActivityNewEventBinding implements ViewBinding {
       }
 
       return new ActivityNewEventBinding((LinearLayout) rootView, btnNext, fragmentContainer,
-          ivClose, tvTitle);
+          infoContainer, ivClose, stepView, tvStepDescription, tvStepTitle, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

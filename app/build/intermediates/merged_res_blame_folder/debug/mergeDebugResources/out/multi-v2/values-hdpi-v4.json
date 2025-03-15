@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-35:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-36:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\90537d297cde8bebe82b070141fbc35c\\transformed\\appcompat-1.7.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\73ed0d1feec495d6d6f16f4829d0dbe5\\transformed\\appcompat-1.7.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

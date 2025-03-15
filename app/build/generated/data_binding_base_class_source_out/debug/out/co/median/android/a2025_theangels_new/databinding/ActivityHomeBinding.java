@@ -25,9 +25,6 @@ public final class ActivityHomeBinding implements ViewBinding {
   public final TextView btnEnableLocation;
 
   @NonNull
-  public final LinearLayout dashboardSection;
-
-  @NonNull
   public final LinearLayout locationPermissionContainer;
 
   @NonNull
@@ -37,11 +34,10 @@ public final class ActivityHomeBinding implements ViewBinding {
   public final TextView tvLocationMessage;
 
   private ActivityHomeBinding(@NonNull ScrollView rootView, @NonNull TextView btnEnableLocation,
-      @NonNull LinearLayout dashboardSection, @NonNull LinearLayout locationPermissionContainer,
-      @NonNull FrameLayout mapContainer, @NonNull TextView tvLocationMessage) {
+      @NonNull LinearLayout locationPermissionContainer, @NonNull FrameLayout mapContainer,
+      @NonNull TextView tvLocationMessage) {
     this.rootView = rootView;
     this.btnEnableLocation = btnEnableLocation;
-    this.dashboardSection = dashboardSection;
     this.locationPermissionContainer = locationPermissionContainer;
     this.mapContainer = mapContainer;
     this.tvLocationMessage = tvLocationMessage;
@@ -80,12 +76,6 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.dashboard_section;
-      LinearLayout dashboardSection = ViewBindings.findChildViewById(rootView, id);
-      if (dashboardSection == null) {
-        break missingId;
-      }
-
       id = R.id.location_permission_container;
       LinearLayout locationPermissionContainer = ViewBindings.findChildViewById(rootView, id);
       if (locationPermissionContainer == null) {
@@ -104,7 +94,7 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityHomeBinding((ScrollView) rootView, btnEnableLocation, dashboardSection,
+      return new ActivityHomeBinding((ScrollView) rootView, btnEnableLocation,
           locationPermissionContainer, mapContainer, tvLocationMessage);
     }
     String missingId = rootView.getResources().getResourceName(id);

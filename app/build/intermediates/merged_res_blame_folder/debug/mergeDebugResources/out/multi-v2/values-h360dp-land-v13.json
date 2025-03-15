@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-35:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-36:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\f1e40a7d19b37eed94dc4749524bb7b5\\transformed\\material-1.12.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\9df479b28f678bc2ff7620c2a511a2eb\\transformed\\material-1.12.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

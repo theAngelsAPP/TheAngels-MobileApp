@@ -22,6 +22,9 @@
     <color name="black">#FF000000</color>
     <color name="blue_gradient_end">#7CBBFE</color>
     <color name="blue_gradient_start">#4A90E2</color>
+    <color name="circle1">#e01e37</color>
+    <color name="circle2">#ca1b31</color>
+    <color name="colorAccent">#ffba08</color>
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryVariant">#3700B3</color>
@@ -72,6 +75,16 @@
     <string name="security_status">האירוע הסתיים</string>
     <string name="security_volunteer">דניאל כהן</string>
     <string name="security_volunteer_image">event_angel</string>
+    <string name="step_desc_event_type">בחר את סוג האירוע שעליו אתה רוצה לדווח</string>
+    <string name="step_desc_location">בחר את המיקום של האירוע כדי לשלוח עזרה</string>
+    <string name="step_desc_questionnaire">מלא כמה שאלות כדי שנבין טוב יותר את המקרה</string>
+    <string name="step_desc_summary">בדוק את הפרטים לפני שליחת הדיווח</string>
+    <string name="step_desc_what_happened">תאר בקצרה את המקרה כדי שנוכל לסייע</string>
+    <string name="step_title_event_type">סוג האירוע</string>
+    <string name="step_title_location">מיקום</string>
+    <string name="step_title_questionnaire">שאלון</string>
+    <string name="step_title_summary">סיכום</string>
+    <string name="step_title_what_happened">מה קרה?</string>
     <string name="subtitle">משפט השראה מתחת לשם</string>
     <string name="title_activity_test">testActivity</string>
     <string name="vehicle_date">09/03/2025</string>

@@ -83,6 +83,7 @@ animator slide_out_right
 array com_google_android_gms_fonts_certs
 array faq_answers
 array faq_questions
+array steps
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -1148,6 +1149,31 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr sv_animationDuration
+attr sv_animationType
+attr sv_background
+attr sv_doneCircleColor
+attr sv_doneCircleRadius
+attr sv_doneStepLineColor
+attr sv_doneStepMarkColor
+attr sv_doneTextColor
+attr sv_nextStepCircleColor
+attr sv_nextStepCircleEnabled
+attr sv_nextStepLineColor
+attr sv_nextTextColor
+attr sv_selectedCircleColor
+attr sv_selectedCircleRadius
+attr sv_selectedStepNumberColor
+attr sv_selectedTextColor
+attr sv_stepLineWidth
+attr sv_stepNumberTextSize
+attr sv_stepPadding
+attr sv_stepViewStyle
+attr sv_steps
+attr sv_stepsNumber
+attr sv_textPadding
+attr sv_textSize
+attr sv_typeface
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -1430,6 +1456,9 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color circle1
+color circle2
+color colorAccent
 color colorOnPrimary
 color colorPrimary
 color colorPrimaryVariant
@@ -2176,6 +2205,15 @@ color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color security_color
+color stepview_circle_done
+color stepview_circle_selected
+color stepview_line_done
+color stepview_line_next
+color stepview_mark
+color stepview_selected_number
+color stepview_text_done
+color stepview_text_next
+color stepview_text_selected
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -3135,6 +3173,10 @@ drawable event_type_button
 drawable event_vehicle
 drawable events
 drawable fab_background
+drawable filter_button_animal
+drawable filter_button_medical
+drawable filter_button_security
+drawable filter_button_vehicle
 drawable good_to_know_background
 drawable goodtoknowbox_icon
 drawable googleg_disabled_color_18
@@ -3146,6 +3188,7 @@ drawable ic_arrow_back_black_24
 drawable ic_arrow_forward
 drawable ic_arrow_left
 drawable ic_back_arrow
+drawable ic_calendar
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -3157,31 +3200,38 @@ drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_dark_mode
 drawable ic_display
+drawable ic_event
 drawable ic_expand
 drawable ic_health_off
 drawable ic_health_on
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_location
 drawable ic_location_off
 drawable ic_location_on
 drawable ic_logout
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_more
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_my_location
+drawable ic_note
 drawable ic_notifications
 drawable ic_notifications_off
 drawable ic_notifications_on
+drawable ic_people
 drawable ic_phone_off
 drawable ic_phone_on
 drawable ic_privacy
+drawable ic_search
 drawable ic_search_black_24
 drawable ic_share
+drawable ic_star
 drawable ic_support
 drawable ic_text_size
 drawable ic_user
@@ -3284,6 +3334,7 @@ drawable registerbackground
 drawable rounded_bg
 drawable rounded_button_background
 drawable rounded_edittext
+drawable search_background
 drawable status_closed
 drawable status_open
 drawable tab_selected
@@ -3300,6 +3351,7 @@ drawable training3
 drawable training4
 drawable training5
 drawable userpic
+drawable widget_background
 font heebo_black
 font heebo_bold
 font heebo_extrabold
@@ -3313,12 +3365,16 @@ font heebo_thin
 font heebo_variablefont_wght
 font ibm_plex_sans_hebrew
 id ALT
+id All
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id Circle
 id FUNCTION
+id Line
 id META
 id NO_DEBUG
+id None
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -3392,6 +3448,7 @@ id aligned
 id all
 id allStates
 id always
+id animal_event
 id animateToEnd
 id animateToStart
 id answer_text
@@ -3495,7 +3552,6 @@ id cut
 id dark
 id dark_mode_icon
 id dark_mode_status
-id dashboard_section
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3604,6 +3660,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id infoContainer
 id invisible
 id inward
 id italic
@@ -3665,6 +3722,7 @@ id medical_allergy
 id medical_asthma
 id medical_diabetes
 id medical_epilepsy
+id medical_event
 id medical_heart
 id medical_pressure
 id message
@@ -3824,6 +3882,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id security_event
 id seekbar_text_size
 id select_dialog_listview
 id selected
@@ -3862,6 +3921,7 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id step_view
 id stop
 id stretch
 id submenuarrow
@@ -3923,6 +3983,8 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvMapPlaceholder
+id tvStepDescription
+id tvStepTitle
 id tvTitle
 id tv_greeting
 id tv_location_message
@@ -3936,6 +3998,7 @@ id uploadImageButton
 id useLogo
 id usernameInput
 id usernameLabel
+id vehicle_event
 id vertical
 id vertical_only
 id viewPager
@@ -3951,6 +4014,7 @@ id website_section
 id west
 id whatsapp_section
 id wide
+id widget_title
 id withText
 id with_icon
 id withinBounds
@@ -4190,6 +4254,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout top_bar_layout
+layout widget_emergency
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -4407,6 +4472,16 @@ string security_volunteer_image
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string step_desc_event_type
+string step_desc_location
+string step_desc_questionnaire
+string step_desc_summary
+string step_desc_what_happened
+string step_title_event_type
+string step_title_location
+string step_title_questionnaire
+string step_title_summary
+string step_title_what_happened
 string subtitle
 string title_activity_test
 string vehicle_date
@@ -4833,6 +4908,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style StepView
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
@@ -5695,6 +5771,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable StepView sv_animationDuration sv_animationType sv_background sv_doneCircleColor sv_doneCircleRadius sv_doneStepLineColor sv_doneStepMarkColor sv_doneTextColor sv_nextStepCircleColor sv_nextStepCircleEnabled sv_nextStepLineColor sv_nextTextColor sv_selectedCircleColor sv_selectedCircleRadius sv_selectedStepNumberColor sv_selectedTextColor sv_stepLineWidth sv_stepNumberTextSize sv_stepPadding sv_stepViewStyle sv_steps sv_stepsNumber sv_textPadding sv_textSize sv_typeface
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text
@@ -5717,4 +5794,5 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml emergency_widget_info
 xml motion_scene_profile

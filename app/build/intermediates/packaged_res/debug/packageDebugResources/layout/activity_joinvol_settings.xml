@@ -45,11 +45,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="מערך המתנדבים מספק עזרה ראשונה, סיוע במצבי חירום, ותמיכה בקהילה. אנו מחפשים מתנדבים מסורים שמעוניינים לקחת חלק בעשייה החשובה."
+            android:text="מערך המתנדבים מספק עזרה ראשונה, סיוע במצבי חירום ותמיכה בקהילה. אנו מחפשים מתנדבים מסורים שמעוניינים לקחת חלק בעשייה החשובה."
             android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:padding="12dp"
+            android:padding="16dp"
             android:gravity="start"
+            android:background="#FFF8E1"
+            android:elevation="2dp"
             android:layout_marginBottom="16dp"/>
 
         <!-- בחירת תחום התנדבות -->
@@ -188,12 +190,11 @@
         <!-- כפתור הצטרפות -->
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="הצטרפות"
             android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:background="#FFB300"
-            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:background="#FF9800"
             android:layout_marginTop="16dp"/>
     </LinearLayout>
 </ScrollView>
