@@ -57,6 +57,7 @@
     <string name="animal_volunteer">נעם ברק</string>
     <string name="animal_volunteer_image">event_angel</string>
     <string name="app_name">המלאכים</string>
+    <string name="call_for_help">קריאה לעזרה</string>
     <string name="google_maps_key">AIzaSyDLJkYa9mPBpdhJx8dIsLSPs3O9JxU5Y9A</string>
     <string name="greeting">בוקר טוב, שם!</string>
     <string name="medical_date">11/03/2025</string>
@@ -67,6 +68,7 @@
     <string name="medical_status">האירוע הסתיים</string>
     <string name="medical_volunteer">אבינועם לוי</string>
     <string name="medical_volunteer_image">event_angel</string>
+    <string name="next_step">המשך</string>
     <string name="security_date">10/03/2025</string>
     <string name="security_description">אירוע חבלני</string>
     <string name="security_id">security</string>

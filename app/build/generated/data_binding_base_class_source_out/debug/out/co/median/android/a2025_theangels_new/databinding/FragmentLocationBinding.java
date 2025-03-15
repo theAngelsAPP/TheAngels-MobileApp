@@ -5,13 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,13 +25,17 @@ public final class FragmentLocationBinding implements ViewBinding {
   public final Button btnManualLocation;
 
   @NonNull
-  public final TextView tvMapPlaceholder;
+  public final TextInputEditText etManualAddress;
+
+  @NonNull
+  public final FrameLayout mapContainer;
 
   private FragmentLocationBinding(@NonNull LinearLayout rootView, @NonNull Button btnManualLocation,
-      @NonNull TextView tvMapPlaceholder) {
+      @NonNull TextInputEditText etManualAddress, @NonNull FrameLayout mapContainer) {
     this.rootView = rootView;
     this.btnManualLocation = btnManualLocation;
-    this.tvMapPlaceholder = tvMapPlaceholder;
+    this.etManualAddress = etManualAddress;
+    this.mapContainer = mapContainer;
   }
 
   @Override
@@ -66,14 +71,20 @@ public final class FragmentLocationBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvMapPlaceholder;
-      TextView tvMapPlaceholder = ViewBindings.findChildViewById(rootView, id);
-      if (tvMapPlaceholder == null) {
+      id = R.id.etManualAddress;
+      TextInputEditText etManualAddress = ViewBindings.findChildViewById(rootView, id);
+      if (etManualAddress == null) {
+        break missingId;
+      }
+
+      id = R.id.map_container;
+      FrameLayout mapContainer = ViewBindings.findChildViewById(rootView, id);
+      if (mapContainer == null) {
         break missingId;
       }
 
       return new FragmentLocationBinding((LinearLayout) rootView, btnManualLocation,
-          tvMapPlaceholder);
+          etManualAddress, mapContainer);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

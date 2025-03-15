@@ -1,5 +1,6 @@
 package co.median.android.a2025_theangels_new.activities;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -20,9 +21,6 @@ import co.median.android.a2025_theangels_new.fragments.SummaryFragment;
 import com.shuhart.stepview.StepView;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.content.Context;
-
 import java.util.Arrays;
 
 public class NewEventActivity extends AppCompatActivity {
@@ -30,6 +28,7 @@ public class NewEventActivity extends AppCompatActivity {
     private int currentStep = 0;
     private StepView stepView;
     private TextView tvStepTitle, tvStepDescription;
+    private Button btnNext;
     private Vibrator vibrator;
 
     private Fragment[] steps = new Fragment[]{
@@ -47,10 +46,10 @@ public class NewEventActivity extends AppCompatActivity {
 
         stepView = findViewById(R.id.step_view);
         ImageView ivClose = findViewById(R.id.ivClose);
-        Button btnNext = findViewById(R.id.btnNext);
+        btnNext = findViewById(R.id.btnNext);
         tvStepTitle = findViewById(R.id.tvStepTitle);
         tvStepDescription = findViewById(R.id.tvStepDescription);
-        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         // הגדרת שמות השלבים
         stepView.setSteps(Arrays.asList(
@@ -75,8 +74,17 @@ public class NewEventActivity extends AppCompatActivity {
                 updateStepInfo();
                 triggerVibration();
                 animateStepCircle();
+
+                // עדכון טקסט הכפתור כאשר מגיעים לשלב האחרון
+                if (currentStep == steps.length - 1) {
+                    btnNext.setText(R.string.call_for_help); // קריאה לעזרה
+                } else {
+                    btnNext.setText(R.string.next_step); // המשך
+                }
             } else {
-                stepView.done(true);
+                // מעבר למסך הפעילות לאחר סיום התהליך
+                startActivity(new Intent(NewEventActivity.this, EventUserActivity.class));
+                finish(); // לסגור את המסך הנוכחי כדי למנוע חזרה אחורה
             }
         });
 
@@ -162,5 +170,4 @@ public class NewEventActivity extends AppCompatActivity {
                 .selectedCircleColor(getResources().getColor(R.color.circle1))
                 .commit(), 3000);
     }
-
 }

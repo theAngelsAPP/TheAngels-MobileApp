@@ -206,6 +206,7 @@ id email
 id email_section
 id end
 id etFreeText
+id etManualAddress
 id et_birth_date
 id et_id_number
 id fab_add
@@ -288,7 +289,6 @@ id text_size_icon
 id text_size_status
 id title
 id top_bar
-id tvMapPlaceholder
 id tvStepDescription
 id tvStepTitle
 id tvTitle
@@ -356,6 +356,7 @@ string animal_status
 string animal_volunteer
 string animal_volunteer_image
 string app_name
+string call_for_help
 string google_maps_key
 string greeting
 string medical_date
@@ -366,6 +367,7 @@ string medical_location
 string medical_status
 string medical_volunteer
 string medical_volunteer_image
+string next_step
 string security_date
 string security_description
 string security_id

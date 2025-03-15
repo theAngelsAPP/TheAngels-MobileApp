@@ -1,66 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:gravity="top">
 
-    <!-- כותרת הנחיה -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="מה בדיוק קרה?"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:gravity="center"
-        android:layout_marginBottom="24dp"/>
-
-    <!-- GridLayout עם 2 שורות ו-2 עמודות -->
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:rowCount="2"
-        android:layout_gravity="center">
+        android:padding="8dp">
 
         <!-- כפתור אדם ללא הכרה -->
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnUnconscious"
-            style="@style/EventTypeButton"
-            android:text="אדם ללא הכרה"/>
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="אדם ללא הכרה"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
 
         <!-- כפתור התקף אלרגיה -->
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAllergy"
-            style="@style/EventTypeButton"
-            android:text="התקף אלרגיה"/>
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="התקף אלרגיה"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
 
         <!-- כפתור חנק -->
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnChoking"
-            style="@style/EventTypeButton"
-            android:text="חנק"/>
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="חנק"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
 
         <!-- כפתור אחר -->
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOther"
-            style="@style/EventTypeButton"
-            android:text="אחר"/>
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="אחר"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
+
     </GridLayout>
 
-    <!-- שדה טקסט חופשי -->
+    <!-- שדה טקסט חופשי (מוסתר בהתחלה) -->
     <EditText
         android:id="@+id/etFreeText"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="24dp"
-        android:hint="טקסט חופשי"
+        android:hint="נא לפרט כאן"
         android:background="#E0E0E0"
         android:padding="12dp"
         android:textSize="16sp"
-        android:gravity="top|start"/>
-
+        android:gravity="top|start"
+        android:visibility="gone"/>
 </LinearLayout>

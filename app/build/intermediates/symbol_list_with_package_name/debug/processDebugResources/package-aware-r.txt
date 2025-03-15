@@ -3598,6 +3598,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id etFreeText
+id etManualAddress
 id et_birth_date
 id et_id_number
 id exitUntilCollapsed
@@ -3982,7 +3983,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvMapPlaceholder
 id tvStepDescription
 id tvStepTitle
 id tvTitle
@@ -4305,6 +4305,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string call_for_help
 string call_notification_answer_action
 string call_notification_answer_video_action
 string call_notification_decline_action
@@ -4452,6 +4453,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string next_step
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
