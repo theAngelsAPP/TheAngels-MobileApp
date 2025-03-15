@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
@@ -9,91 +10,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="top">
 
-        <!-- כותרת הנחיה -->
+        <!-- שאלה 1 (עברה למקום הראשון) -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="בדוק את הדברים הבאים"
+            android:text="האם הבן אדם נמצא במקום בטוח?"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:gravity="center"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- שאלה 1 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="האם יש דופק?"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp"/>
-
-        <RadioGroup
-            android:id="@+id/rgPulse"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rbPulseYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="כן"/>
-
-            <RadioButton
-                android:id="@+id/rbPulseNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="לא"/>
-        </RadioGroup>
-
-        <!-- שאלה 2 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="האם קצב הנשימה תקין?"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"/>
-
-        <RadioGroup
-            android:id="@+id/rgBreathing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rbBreathingYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="כן"/>
-
-            <RadioButton
-                android:id="@+id/rbBreathingNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="לא"/>
-        </RadioGroup>
-
-        <!-- שאלה 3 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="האם הבן אדם נמצא במקום בטוח?"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"/>
 
         <RadioGroup
             android:id="@+id/rgSafety"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <RadioButton
                 android:id="@+id/rbSafetyYes"
@@ -108,21 +43,106 @@
                 android:text="לא"/>
         </RadioGroup>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- שאלה 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="האם יש דופק?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgPulse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/rbPulseYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="כן"/>
+
+            <RadioButton
+                android:id="@+id/rbPulseNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="לא"/>
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- שאלה 3 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="האם קצב הנשימה תקין?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgBreathing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/rbBreathingYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="כן"/>
+
+            <RadioButton
+                android:id="@+id/rbBreathingNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="לא"/>
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
         <!-- שאלה 4 -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="האם קיים דימום?"
-            android:textSize="16sp"
+            android:textSize="18sp"
+            android:textStyle="bold"
             android:textColor="@android:color/black"
-            android:layout_marginTop="16dp"
+            android:gravity="center"
             android:layout_marginBottom="8dp"/>
 
         <RadioGroup
             android:id="@+id/rgBleeding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <RadioButton
                 android:id="@+id/rbBleedingYes"
@@ -136,6 +156,5 @@
                 android:layout_height="wrap_content"
                 android:text="לא"/>
         </RadioGroup>
-
     </LinearLayout>
 </ScrollView>

@@ -19,6 +19,9 @@
 
     <string name="step_title_summary">סיכום</string>
     <string name="step_desc_summary">בדוק את הפרטים לפני שליחת הדיווח</string>
+
+    <string name="call_for_help">קריאה לעזרה</string>
+    <string name="next_step">המשך</string>
 </resources>
 
 

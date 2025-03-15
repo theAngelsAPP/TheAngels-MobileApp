@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:gravity="center"
+    android:gravity="top"
     android:background="@android:color/white">
 
-    <!-- כותרת הנחיה -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="היכן האירוע מתרחש?"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:gravity="center"
-        android:layout_marginBottom="24dp"/>
-
-    <!-- מקום למפה -->
-    <TextView
-        android:id="@+id/tvMapPlaceholder"
+    <!-- תצוגת מפה -->
+    <FrameLayout
+        android:id="@+id/map_container"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#FFFBEF"
-        android:text="מפה"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:gravity="center"
-        android:layout_marginBottom="24dp"/>
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
     <!-- כפתור לעדכון ידני -->
     <Button
         android:id="@+id/btnManualLocation"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="המיקום שגוי? לעדכון ידני"
         android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:background="#B2EBF2"
+        android:textColor="@android:color/white"
+        android:background="#e01e37"
         android:padding="12dp"
+        android:elevation="4dp"
         android:layout_marginTop="8dp"/>
+
+    <!-- שדה טקסט חופשי עם השלמה אוטומטית -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etManualAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="הזן כתובת ידנית"
+            android:textSize="16sp"
+            android:background="@android:color/white"
+            android:padding="12dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

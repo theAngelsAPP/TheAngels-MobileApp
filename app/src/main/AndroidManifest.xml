@@ -131,6 +131,12 @@
             android:label="Join Vol"
             android:theme="@style/Theme._2025_theangels_new"/>
 
+        <activity
+            android:name=".activities.EventUserActivity"
+            android:exported="false"
+            android:label="Event USER"
+            android:theme="@style/Theme._2025_theangels_new"/>
+
     </application>
 
 

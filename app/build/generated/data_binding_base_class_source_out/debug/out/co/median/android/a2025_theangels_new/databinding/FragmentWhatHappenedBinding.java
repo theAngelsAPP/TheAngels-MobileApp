@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,22 +21,23 @@ public final class FragmentWhatHappenedBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final TextView btnAllergy;
+  public final MaterialButton btnAllergy;
 
   @NonNull
-  public final TextView btnChoking;
+  public final MaterialButton btnChoking;
 
   @NonNull
-  public final TextView btnOther;
+  public final MaterialButton btnOther;
 
   @NonNull
-  public final TextView btnUnconscious;
+  public final MaterialButton btnUnconscious;
 
   @NonNull
   public final EditText etFreeText;
 
-  private FragmentWhatHappenedBinding(@NonNull LinearLayout rootView, @NonNull TextView btnAllergy,
-      @NonNull TextView btnChoking, @NonNull TextView btnOther, @NonNull TextView btnUnconscious,
+  private FragmentWhatHappenedBinding(@NonNull LinearLayout rootView,
+      @NonNull MaterialButton btnAllergy, @NonNull MaterialButton btnChoking,
+      @NonNull MaterialButton btnOther, @NonNull MaterialButton btnUnconscious,
       @NonNull EditText etFreeText) {
     this.rootView = rootView;
     this.btnAllergy = btnAllergy;
@@ -74,25 +75,25 @@ public final class FragmentWhatHappenedBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnAllergy;
-      TextView btnAllergy = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnAllergy = ViewBindings.findChildViewById(rootView, id);
       if (btnAllergy == null) {
         break missingId;
       }
 
       id = R.id.btnChoking;
-      TextView btnChoking = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnChoking = ViewBindings.findChildViewById(rootView, id);
       if (btnChoking == null) {
         break missingId;
       }
 
       id = R.id.btnOther;
-      TextView btnOther = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnOther = ViewBindings.findChildViewById(rootView, id);
       if (btnOther == null) {
         break missingId;
       }
 
       id = R.id.btnUnconscious;
-      TextView btnUnconscious = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnUnconscious = ViewBindings.findChildViewById(rootView, id);
       if (btnUnconscious == null) {
         break missingId;
       }

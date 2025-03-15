@@ -5,25 +5,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:gravity="top">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="1"
-        android:rowCount="2"
+        android:columnCount="2"
         android:padding="8dp">
 
         <!-- כפתור רפואי -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMedical"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
             android:layout_margin="8dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:text="רפואי"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#000000"
             android:backgroundTint="#DCDCDC"
@@ -35,13 +35,13 @@
         <!-- כפתור ביטחוני -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSecurity"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
             android:layout_margin="8dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:text="ביטחוני"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#000000"
             android:backgroundTint="#DCDCDC"
@@ -53,13 +53,13 @@
         <!-- כפתור רכב -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCar"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
             android:layout_margin="8dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:text="רכב"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#000000"
             android:backgroundTint="#DCDCDC"
@@ -71,13 +71,13 @@
         <!-- כפתור בעלי חיים -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAnimals"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
             android:layout_margin="8dp"
-            android:layout_rowSpan="1"
-            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:text="בעלי חיים"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#000000"
             android:backgroundTint="#DCDCDC"

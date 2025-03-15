@@ -3597,6 +3597,7 @@ int id enterAlways 0x7f0a00e6
 int id enterAlwaysCollapsed 0x7f0a00e7
 int id escape 0x7f0a00e8
 int id etFreeText 0x7f0a00e9
+int id etManualAddress 0x7f0a0293
 int id et_birth_date 0x7f0a00ea
 int id et_id_number 0x7f0a00eb
 int id exitUntilCollapsed 0x7f0a00ec
@@ -3981,7 +3982,6 @@ int id transition_position 0x7f0a0266
 int id transition_scene_layoutid_cache 0x7f0a0267
 int id transition_transform 0x7f0a0268
 int id triangle 0x7f0a0269
-int id tvMapPlaceholder 0x7f0a026a
 int id tvStepDescription 0x7f0a026b
 int id tvStepTitle 0x7f0a026c
 int id tvTitle 0x7f0a026d
@@ -4304,6 +4304,7 @@ int string bottomsheet_action_expand 0x7f130028
 int string bottomsheet_action_expand_halfway 0x7f130029
 int string bottomsheet_drag_handle_clicked 0x7f13002a
 int string bottomsheet_drag_handle_content_description 0x7f13002b
+int string call_for_help 0x7f1300e7
 int string call_notification_answer_action 0x7f13002c
 int string call_notification_answer_video_action 0x7f13002d
 int string call_notification_decline_action 0x7f13002e
@@ -4451,6 +4452,7 @@ int string mtrl_switch_track_decoration_path 0x7f1300bb
 int string mtrl_switch_track_path 0x7f1300bc
 int string mtrl_timepicker_cancel 0x7f1300bd
 int string mtrl_timepicker_confirm 0x7f1300be
+int string next_step 0x7f1300e8
 int string password_toggle_content_description 0x7f1300bf
 int string path_password_eye 0x7f1300c0
 int string path_password_eye_mask_strike_through 0x7f1300c1
