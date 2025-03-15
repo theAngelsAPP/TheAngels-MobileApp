@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <!-- כותרת הנחיה -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מה בדיוק קרה?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- GridLayout עם 2 שורות ו-2 עמודות -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:layout_gravity="center">
+
+        <!-- כפתור אדם ללא הכרה -->
+        <TextView
+            android:id="@+id/btnUnconscious"
+            style="@style/EventTypeButton"
+            android:text="אדם ללא הכרה"/>
+
+        <!-- כפתור התקף אלרגיה -->
+        <TextView
+            android:id="@+id/btnAllergy"
+            style="@style/EventTypeButton"
+            android:text="התקף אלרגיה"/>
+
+        <!-- כפתור חנק -->
+        <TextView
+            android:id="@+id/btnChoking"
+            style="@style/EventTypeButton"
+            android:text="חנק"/>
+
+        <!-- כפתור אחר -->
+        <TextView
+            android:id="@+id/btnOther"
+            style="@style/EventTypeButton"
+            android:text="אחר"/>
+    </GridLayout>
+
+    <!-- שדה טקסט חופשי -->
+    <EditText
+        android:id="@+id/etFreeText"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:hint="טקסט חופשי"
+        android:background="#E0E0E0"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:gravity="top|start"/>
+
+</LinearLayout>

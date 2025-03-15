@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <Button
+        android:id="@+id/btnClaimEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="אני רוצה לקחת את האירוע"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="#66BB6A"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnNotInterested"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="לא מעוניין"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="#FFCDD2"
+        android:padding="12dp"/>
+</LinearLayout>
