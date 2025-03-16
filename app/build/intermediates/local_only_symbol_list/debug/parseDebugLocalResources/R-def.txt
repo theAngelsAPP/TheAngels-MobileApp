@@ -203,6 +203,7 @@ id content_container
 id continueButton
 id dark_mode_icon
 id dark_mode_status
+id education_card
 id email
 id email_section
 id end
@@ -217,6 +218,7 @@ id firstName
 id fragmentContainer
 id gunLicenseCheckbox
 id header_container
+id header_image
 id health_permission_section
 id idNumber
 id img_clouds
@@ -291,6 +293,8 @@ id text_size_icon
 id text_size_status
 id title
 id top_bar
+id training_content_card
+id training_title_card
 id tvStepDescription
 id tvStepTitle
 id tvTitle
@@ -309,6 +313,7 @@ id widget_title
 layout activity_base
 layout activity_display_settings
 layout activity_education
+layout activity_education_details
 layout activity_event_details
 layout activity_event_feedback
 layout activity_event_user

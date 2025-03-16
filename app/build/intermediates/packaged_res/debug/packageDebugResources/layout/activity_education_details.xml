@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="0dp">
+
+    <!-- כותרת עליונה -->
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/blue_gradient_start"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="חזרה"
+            android:padding="4dp"
+            android:layout_marginEnd="3dp"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="הדרכת עזרה ראשונה"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- תמונת כותרת -->
+    <ImageView
+        android:id="@+id/header_image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/newuserpic"
+        android:layout_below="@id/header_container"/>
+
+    <!-- כרטיס לכותרת ההדרכה -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/training_title_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        android:padding="6dp"
+        android:layout_margin="9dp"
+        android:layout_below="@id/header_image">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="המדריך יסביר כיצד להשתמש בדפיברילטור בצורה נכונה בעת מקרה חירום. ביצוע החייאה מהיר עשוי להציל חיים."
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- כרטיס טקסט ההדרכה -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/training_content_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="8dp"
+        android:padding="16dp"
+        android:layout_margin="4dp"
+        android:layout_below="@id/training_title_card">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="שלב 1: בדיקת המטופל"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="יש לוודא כי המטופל אינו מגיב ואין לו דופק. במידה והמצב מצריך זאת, יש להפעיל את הדפיברילטור ולפעול לפי ההוראות הקוליות."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="שלב 2: הצמדת המדבקות"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="מדביקים את האלקטרודות על חזה המטופל כפי שמופיע בהוראות, ומוודאים שאף אחד לא נוגע בגוף המטופל לפני מתן השוק החשמלי."
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

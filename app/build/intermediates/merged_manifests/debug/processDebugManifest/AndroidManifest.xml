@@ -154,6 +154,11 @@
             android:exported="false"
             android:label="Event USER"
             android:theme="@style/Theme._2025_theangels_new" />
+        <activity
+            android:name="co.median.android.a2025_theangels_new.activities.EducationDetailsActivity"
+            android:exported="false"
+            android:label="Edu "
+            android:theme="@style/Theme._2025_theangels_new" />
 
         <!-- Needs to be explicitly declared on P+ -->
         <uses-library

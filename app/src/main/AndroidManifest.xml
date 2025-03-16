@@ -143,6 +143,12 @@
             android:label="Event USER"
             android:theme="@style/Theme._2025_theangels_new"/>
 
+        <activity
+            android:name=".activities.EducationDetailsActivity"
+            android:exported="false"
+            android:label="Edu "
+            android:theme="@style/Theme._2025_theangels_new"/>
+
     </application>
 
 

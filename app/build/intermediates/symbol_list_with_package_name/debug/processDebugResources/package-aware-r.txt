@@ -3615,6 +3615,7 @@ id east
 id edge
 id edit_query
 id edit_text_id
+id education_card
 id elastic
 id email
 id email_section
@@ -3666,6 +3667,7 @@ id groups
 id gunLicenseCheckbox
 id hardware
 id header_container
+id header_image
 id header_title
 id health_permission_section
 id hide_ime_id
@@ -4006,6 +4008,8 @@ id top
 id topPanel
 id top_bar
 id touch_outside
+id training_content_card
+id training_title_card
 id transitionToEnd
 id transitionToStart
 id transition_clip
@@ -4175,6 +4179,7 @@ layout abc_tooltip
 layout activity_base
 layout activity_display_settings
 layout activity_education
+layout activity_education_details
 layout activity_event_details
 layout activity_event_feedback
 layout activity_event_user

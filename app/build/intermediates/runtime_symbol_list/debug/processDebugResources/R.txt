@@ -3614,6 +3614,7 @@ int id east 0x7f0a00de
 int id edge 0x7f0a00df
 int id edit_query 0x7f0a00e0
 int id edit_text_id 0x7f0a00e1
+int id education_card 0x7f0a029c
 int id elastic 0x7f0a00e2
 int id email 0x7f0a00e3
 int id email_section 0x7f0a00e4
@@ -3665,6 +3666,7 @@ int id groups 0x7f0a0111
 int id gunLicenseCheckbox 0x7f0a0112
 int id hardware 0x7f0a0113
 int id header_container 0x7f0a0114
+int id header_image 0x7f0a029d
 int id header_title 0x7f0a0115
 int id health_permission_section 0x7f0a0116
 int id hide_ime_id 0x7f0a0117
@@ -4005,6 +4007,8 @@ int id top 0x7f0a0265
 int id topPanel 0x7f0a0266
 int id top_bar 0x7f0a0267
 int id touch_outside 0x7f0a0268
+int id training_content_card 0x7f0a029e
+int id training_title_card 0x7f0a029f
 int id transitionToEnd 0x7f0a0269
 int id transitionToStart 0x7f0a026a
 int id transition_clip 0x7f0a026b
@@ -4174,6 +4178,7 @@ int layout abc_tooltip 0x7f0d001b
 int layout activity_base 0x7f0d001c
 int layout activity_display_settings 0x7f0d001d
 int layout activity_education 0x7f0d001e
+int layout activity_education_details 0x7f0d0094
 int layout activity_event_details 0x7f0d001f
 int layout activity_event_feedback 0x7f0d0020
 int layout activity_event_user 0x7f0d0021
