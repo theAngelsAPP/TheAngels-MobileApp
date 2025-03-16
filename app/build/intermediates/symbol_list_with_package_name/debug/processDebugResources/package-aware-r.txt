@@ -831,6 +831,30 @@ attr logo
 attr logoAdjustViewBounds
 attr logoDescription
 attr logoScaleType
+attr lottieAnimationViewStyle
+attr lottie_applyOpacityToLayers
+attr lottie_applyShadowToLayers
+attr lottie_asyncUpdates
+attr lottie_autoPlay
+attr lottie_cacheComposition
+attr lottie_clipTextToBoundingBox
+attr lottie_clipToCompositionBounds
+attr lottie_colorFilter
+attr lottie_defaultFontFileExtension
+attr lottie_enableMergePathsForKitKatAndAbove
+attr lottie_fallbackRes
+attr lottie_fileName
+attr lottie_ignoreDisabledSystemAnimations
+attr lottie_imageAssetsFolder
+attr lottie_loop
+attr lottie_progress
+attr lottie_rawRes
+attr lottie_renderMode
+attr lottie_repeatCount
+attr lottie_repeatMode
+attr lottie_speed
+attr lottie_url
+attr lottie_useCompositionFrameRate
 attr mapColorScheme
 attr mapId
 attr mapType
@@ -3152,6 +3176,7 @@ drawable contact_github
 drawable contact_mail
 drawable contact_whatsapp
 drawable custom_marker
+drawable custom_rating_bar
 drawable dashboard_background
 drawable dashboard_box
 drawable design_fab_background
@@ -3461,6 +3486,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id automatic
 id axisRelative
 id barrier
 id baseline
@@ -3571,6 +3597,7 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id disabled
 id disjoint
 id dragAnticlockwise
 id dragClockwise
@@ -3592,6 +3619,7 @@ id elastic
 id email
 id email_section
 id embed
+id enabled
 id end
 id endToStart
 id enterAlways
@@ -3601,7 +3629,6 @@ id etFreeText
 id etManualAddress
 id et_birth_date
 id et_id_number
-id event_details_container
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3637,6 +3664,7 @@ id group_divider
 id grouping
 id groups
 id gunLicenseCheckbox
+id hardware
 id header_container
 id header_title
 id health_permission_section
@@ -3688,6 +3716,7 @@ id loginBackground
 id loginButton
 id loginButtonText
 id loginText
+id lottie_layer_name
 id m3_side_sheet
 id main_content
 id map
@@ -3837,7 +3866,6 @@ id progress_horizontal
 id question_arrow
 id question_text
 id radio
-id ratingBarVolunteer
 id ratio
 id rbBleedingNo
 id rbBleedingYes
@@ -3853,6 +3881,8 @@ id registerButton
 id registerButtonText
 id registerContent
 id report_drawn
+id restart
+id reverse
 id reverseSawtooth
 id rgBleeding
 id rgBreathing
@@ -3905,6 +3935,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id software
 id south
 id spacer
 id special_effects_controller_view_tag
@@ -3986,16 +4017,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvEventDuration
-id tvEventLocation
-id tvEventOutcome
-id tvEventTime
-id tvEventType
 id tvStepDescription
 id tvStepTitle
 id tvTitle
-id tvVolunteerName
-id tvVolunteerRole
 id tv_greeting
 id tv_location_message
 id tv_user_role
@@ -4267,11 +4291,13 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout top_bar_layout
 layout widget_emergency
+layout wings_loading
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap icon
 plurals mtrl_badge_content_description
+raw loading_animation
 raw map_style
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -5726,6 +5752,7 @@ styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width 
 styleable LinearProgressIndicator indeterminateAnimationType indicatorDirectionLinear trackStopIndicatorSize
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable LottieAnimationView lottie_applyOpacityToLayers lottie_applyShadowToLayers lottie_asyncUpdates lottie_autoPlay lottie_cacheComposition lottie_clipTextToBoundingBox lottie_clipToCompositionBounds lottie_colorFilter lottie_defaultFontFileExtension lottie_enableMergePathsForKitKatAndAbove lottie_fallbackRes lottie_fileName lottie_ignoreDisabledSystemAnimations lottie_imageAssetsFolder lottie_loop lottie_progress lottie_rawRes lottie_renderMode lottie_repeatCount lottie_repeatMode lottie_speed lottie_url lottie_useCompositionFrameRate
 styleable MapAttrs ambientEnabled backgroundColor cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapColorScheme mapId mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop backgroundTint
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogButtonSpacerVisibility materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle

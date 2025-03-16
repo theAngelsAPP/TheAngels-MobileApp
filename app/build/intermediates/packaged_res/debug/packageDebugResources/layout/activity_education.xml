@@ -53,10 +53,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/event_label_bg"
                     android:padding="6dp"
                     android:text="איך להשתמש בדפיברילטור?"
-                    android:textColor="@color/tab_selected"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -86,7 +84,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/event_label_bg"
+
                     android:padding="6dp"
                     android:text="איך להשתמש באפיפן?"
                     android:textColor="@color/tab_selected"
@@ -119,7 +117,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/event_label_bg"
+
                     android:padding="6dp"
                     android:text="איך לשים חוסם עורקים?"
                     android:textColor="@color/tab_selected"
@@ -152,7 +150,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/event_label_bg"
+
                     android:padding="6dp"
                     android:text="מה עושים במקרה של חנק?"
                     android:textColor="@color/tab_selected"
@@ -185,7 +183,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/event_label_bg"
+
                     android:padding="6dp"
                     android:text="איך נבצע החייאה?"
                     android:textColor="@color/tab_selected"

@@ -8,12 +8,10 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
@@ -32,64 +30,23 @@ public final class ActivityEventDetailsBinding implements ViewBinding {
   public final Button btnNavigate;
 
   @NonNull
-  public final CardView eventDetailsContainer;
-
-  @NonNull
   public final LinearLayout headerContainer;
 
   @NonNull
   public final FrameLayout mapContainer;
 
   @NonNull
-  public final RatingBar ratingBarVolunteer;
-
-  @NonNull
   public final TextView title;
 
-  @NonNull
-  public final TextView tvEventDuration;
-
-  @NonNull
-  public final TextView tvEventLocation;
-
-  @NonNull
-  public final TextView tvEventOutcome;
-
-  @NonNull
-  public final TextView tvEventTime;
-
-  @NonNull
-  public final TextView tvEventType;
-
-  @NonNull
-  public final TextView tvVolunteerName;
-
-  @NonNull
-  public final TextView tvVolunteerRole;
-
   private ActivityEventDetailsBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btnBack,
-      @NonNull Button btnNavigate, @NonNull CardView eventDetailsContainer,
-      @NonNull LinearLayout headerContainer, @NonNull FrameLayout mapContainer,
-      @NonNull RatingBar ratingBarVolunteer, @NonNull TextView title,
-      @NonNull TextView tvEventDuration, @NonNull TextView tvEventLocation,
-      @NonNull TextView tvEventOutcome, @NonNull TextView tvEventTime,
-      @NonNull TextView tvEventType, @NonNull TextView tvVolunteerName,
-      @NonNull TextView tvVolunteerRole) {
+      @NonNull Button btnNavigate, @NonNull LinearLayout headerContainer,
+      @NonNull FrameLayout mapContainer, @NonNull TextView title) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnNavigate = btnNavigate;
-    this.eventDetailsContainer = eventDetailsContainer;
     this.headerContainer = headerContainer;
     this.mapContainer = mapContainer;
-    this.ratingBarVolunteer = ratingBarVolunteer;
     this.title = title;
-    this.tvEventDuration = tvEventDuration;
-    this.tvEventLocation = tvEventLocation;
-    this.tvEventOutcome = tvEventOutcome;
-    this.tvEventTime = tvEventTime;
-    this.tvEventType = tvEventType;
-    this.tvVolunteerName = tvVolunteerName;
-    this.tvVolunteerRole = tvVolunteerRole;
   }
 
   @Override
@@ -131,12 +88,6 @@ public final class ActivityEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.event_details_container;
-      CardView eventDetailsContainer = ViewBindings.findChildViewById(rootView, id);
-      if (eventDetailsContainer == null) {
-        break missingId;
-      }
-
       id = R.id.header_container;
       LinearLayout headerContainer = ViewBindings.findChildViewById(rootView, id);
       if (headerContainer == null) {
@@ -149,64 +100,14 @@ public final class ActivityEventDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ratingBarVolunteer;
-      RatingBar ratingBarVolunteer = ViewBindings.findChildViewById(rootView, id);
-      if (ratingBarVolunteer == null) {
-        break missingId;
-      }
-
       id = R.id.title;
       TextView title = ViewBindings.findChildViewById(rootView, id);
       if (title == null) {
         break missingId;
       }
 
-      id = R.id.tvEventDuration;
-      TextView tvEventDuration = ViewBindings.findChildViewById(rootView, id);
-      if (tvEventDuration == null) {
-        break missingId;
-      }
-
-      id = R.id.tvEventLocation;
-      TextView tvEventLocation = ViewBindings.findChildViewById(rootView, id);
-      if (tvEventLocation == null) {
-        break missingId;
-      }
-
-      id = R.id.tvEventOutcome;
-      TextView tvEventOutcome = ViewBindings.findChildViewById(rootView, id);
-      if (tvEventOutcome == null) {
-        break missingId;
-      }
-
-      id = R.id.tvEventTime;
-      TextView tvEventTime = ViewBindings.findChildViewById(rootView, id);
-      if (tvEventTime == null) {
-        break missingId;
-      }
-
-      id = R.id.tvEventType;
-      TextView tvEventType = ViewBindings.findChildViewById(rootView, id);
-      if (tvEventType == null) {
-        break missingId;
-      }
-
-      id = R.id.tvVolunteerName;
-      TextView tvVolunteerName = ViewBindings.findChildViewById(rootView, id);
-      if (tvVolunteerName == null) {
-        break missingId;
-      }
-
-      id = R.id.tvVolunteerRole;
-      TextView tvVolunteerRole = ViewBindings.findChildViewById(rootView, id);
-      if (tvVolunteerRole == null) {
-        break missingId;
-      }
-
       return new ActivityEventDetailsBinding((RelativeLayout) rootView, btnBack, btnNavigate,
-          eventDetailsContainer, headerContainer, mapContainer, ratingBarVolunteer, title,
-          tvEventDuration, tvEventLocation, tvEventOutcome, tvEventTime, tvEventType,
-          tvVolunteerName, tvVolunteerRole);
+          headerContainer, mapContainer, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

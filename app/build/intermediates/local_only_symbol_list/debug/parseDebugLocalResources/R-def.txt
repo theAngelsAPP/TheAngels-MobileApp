@@ -50,6 +50,7 @@ drawable contact_github
 drawable contact_mail
 drawable contact_whatsapp
 drawable custom_marker
+drawable custom_rating_bar
 drawable dashboard_background
 drawable dashboard_box
 drawable education
@@ -209,7 +210,6 @@ id etFreeText
 id etManualAddress
 id et_birth_date
 id et_id_number
-id event_details_container
 id fab_add
 id fab_emergency
 id faq_list
@@ -263,7 +263,6 @@ id profile_frame
 id profile_header
 id question_arrow
 id question_text
-id ratingBarVolunteer
 id rbBleedingNo
 id rbBleedingYes
 id rbBreathingNo
@@ -292,16 +291,9 @@ id text_size_icon
 id text_size_status
 id title
 id top_bar
-id tvEventDuration
-id tvEventLocation
-id tvEventOutcome
-id tvEventTime
-id tvEventType
 id tvStepDescription
 id tvStepTitle
 id tvTitle
-id tvVolunteerName
-id tvVolunteerRole
 id tv_greeting
 id tv_location_message
 id tv_user_role
@@ -354,10 +346,12 @@ layout item_faq_question
 layout permission_section
 layout top_bar_layout
 layout widget_emergency
+layout wings_loading
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap icon
+raw loading_animation
 raw map_style
 string animal_date
 string animal_description

@@ -17,6 +17,7 @@ playServicesMaps = "19.1.0"
 playServicesLocation = "21.3.0"
 stepview = "1.5.1"
 cardview = "1.0.0"
+lottie = "6.6.3"
 
 
 [libraries]
@@ -43,6 +44,7 @@ google-play-services-maps = { group = "com.google.android.gms", name = "play-ser
 google-play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
 stepview = { module = "com.github.shuhart:stepview", version.ref = "stepview" }
 cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 
 
 [plugins]

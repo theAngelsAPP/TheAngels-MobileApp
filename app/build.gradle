@@ -47,6 +47,7 @@ dependencies {
     implementation libs.google.play.services.location
     implementation libs.stepview
     implementation(libs.cardview)
+    implementation(libs.lottie)
 
 
     implementation libs.androidx.lifecycle.runtime.ktx
