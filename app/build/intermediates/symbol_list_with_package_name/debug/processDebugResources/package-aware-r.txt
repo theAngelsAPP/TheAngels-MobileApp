@@ -4000,6 +4000,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerTextView
 id title
 id titleDividerNoCustom
 id title_template
@@ -4302,8 +4303,11 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap icon
 plurals mtrl_badge_content_description
+raw animation_attention
+raw animation_searchvol
 raw loading_animation
 raw map_style
+raw video_police
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

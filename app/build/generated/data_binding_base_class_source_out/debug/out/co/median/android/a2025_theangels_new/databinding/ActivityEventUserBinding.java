@@ -5,19 +5,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityEventUserBinding implements ViewBinding {
   @NonNull
   private final ScrollView rootView;
 
-  private ActivityEventUserBinding(@NonNull ScrollView rootView) {
+  @NonNull
+  public final StepView stepView;
+
+  @NonNull
+  public final TextView timerTextView;
+
+  private ActivityEventUserBinding(@NonNull ScrollView rootView, @NonNull StepView stepView,
+      @NonNull TextView timerTextView) {
     this.rootView = rootView;
+    this.stepView = stepView;
+    this.timerTextView = timerTextView;
   }
 
   @Override
@@ -43,10 +56,25 @@ public final class ActivityEventUserBinding implements ViewBinding {
 
   @NonNull
   public static ActivityEventUserBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.step_view;
+      StepView stepView = ViewBindings.findChildViewById(rootView, id);
+      if (stepView == null) {
+        break missingId;
+      }
 
-    return new ActivityEventUserBinding((ScrollView) rootView);
+      id = R.id.timerTextView;
+      TextView timerTextView = ViewBindings.findChildViewById(rootView, id);
+      if (timerTextView == null) {
+        break missingId;
+      }
+
+      return new ActivityEventUserBinding((ScrollView) rootView, stepView, timerTextView);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

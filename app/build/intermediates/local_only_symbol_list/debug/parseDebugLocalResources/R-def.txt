@@ -291,6 +291,7 @@ id switch_dark_mode
 id tabs_container
 id text_size_icon
 id text_size_status
+id timerTextView
 id title
 id top_bar
 id training_content_card
@@ -356,8 +357,11 @@ menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap icon
+raw animation_attention
+raw animation_searchvol
 raw loading_animation
 raw map_style
+raw video_police
 string animal_date
 string animal_description
 string animal_id
