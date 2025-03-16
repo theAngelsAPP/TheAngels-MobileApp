@@ -53,6 +53,7 @@ drawable custom_marker
 drawable custom_rating_bar
 drawable dashboard_background
 drawable dashboard_box
+drawable defibrillator
 drawable education
 drawable emergency
 drawable event_angel
