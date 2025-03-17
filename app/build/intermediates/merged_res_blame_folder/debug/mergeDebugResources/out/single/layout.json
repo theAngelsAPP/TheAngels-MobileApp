@@ -13,20 +13,30 @@
         "source": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-6:\\layout\\activity_home.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-3:\\layout\\fragment_vol_close.xml",
         "source": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-6:\\layout\\fragment_vol_close.xml"
+=======
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-38:\\layout\\activity_event_details.xml",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\activity_event_details.xml"
+>>>>>>> 389d9f3c59f15b532ba2a4f6d4b30d67405c6268
     },
     {
         "merged": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-3:\\layout\\activity_event_details.xml",
         "source": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-6:\\layout\\activity_event_details.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-3:\\layout\\activity_new_event.xml",
         "source": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-6:\\layout\\activity_new_event.xml"
     },
     {
         "merged": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-3:\\layout\\activity_privacy_settings.xml",
         "source": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-6:\\layout\\activity_privacy_settings.xml"
+=======
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-38:\\layout\\fragment_map.xml",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\fragment_map.xml"
+>>>>>>> 389d9f3c59f15b532ba2a4f6d4b30d67405c6268
     },
     {
         "merged": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-3:\\layout\\activity_display_settings.xml",
@@ -41,8 +51,17 @@
         "source": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-6:\\layout\\fragment_questionnaire.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-3:\\layout\\activity_onboarding.xml",
         "source": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-6:\\layout\\activity_onboarding.xml"
+=======
+        "merged": "co.median.android.a2025_theangels_new.app-mergeDebugResources-38:/layout/activity_education_details.xml",
+        "source": "co.median.android.a2025_theangels_new.app-main-41:/layout/activity_education_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-38:\\layout\\activity_registration2.xml",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\activity_registration2.xml"
+>>>>>>> 389d9f3c59f15b532ba2a4f6d4b30d67405c6268
     },
     {
         "merged": "C:\\Users\\batel\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-mergeDebugResources-3:\\layout\\activity_homepage.xml",
