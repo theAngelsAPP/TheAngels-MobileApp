@@ -4,6 +4,11 @@ package co.median.android.a2025_theangels_new.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,15 +26,74 @@ public final class ActivityEventUserBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final Button emergencyCallButton;
+
+  @NonNull
+  public final TextView eventAddressText;
+
+  @NonNull
+  public final TextView eventAddressTitle;
+
+  @NonNull
+  public final EditText freeTextFeedback;
+
+  @NonNull
+  public final FrameLayout mapContainer;
+
+  @NonNull
+  public final Button nextStepButton;
+
+  @NonNull
+  public final RatingBar ratingBar;
+
+  @NonNull
+  public final LinearLayout ratingLayout;
+
+  @NonNull
+  public final TextView redSeparator;
+
+  @NonNull
+  public final LinearLayout safetyMessageLayout;
+
+  @NonNull
+  public final TextView statusTextView;
+
+  @NonNull
   public final StepView stepView;
+
+  @NonNull
+  public final Button submitFeedbackButton;
+
+  @NonNull
+  public final TextView timeTitle;
 
   @NonNull
   public final TextView timerTextView;
 
-  private ActivityEventUserBinding(@NonNull ScrollView rootView, @NonNull StepView stepView,
+  private ActivityEventUserBinding(@NonNull ScrollView rootView,
+      @NonNull Button emergencyCallButton, @NonNull TextView eventAddressText,
+      @NonNull TextView eventAddressTitle, @NonNull EditText freeTextFeedback,
+      @NonNull FrameLayout mapContainer, @NonNull Button nextStepButton,
+      @NonNull RatingBar ratingBar, @NonNull LinearLayout ratingLayout,
+      @NonNull TextView redSeparator, @NonNull LinearLayout safetyMessageLayout,
+      @NonNull TextView statusTextView, @NonNull StepView stepView,
+      @NonNull Button submitFeedbackButton, @NonNull TextView timeTitle,
       @NonNull TextView timerTextView) {
     this.rootView = rootView;
+    this.emergencyCallButton = emergencyCallButton;
+    this.eventAddressText = eventAddressText;
+    this.eventAddressTitle = eventAddressTitle;
+    this.freeTextFeedback = freeTextFeedback;
+    this.mapContainer = mapContainer;
+    this.nextStepButton = nextStepButton;
+    this.ratingBar = ratingBar;
+    this.ratingLayout = ratingLayout;
+    this.redSeparator = redSeparator;
+    this.safetyMessageLayout = safetyMessageLayout;
+    this.statusTextView = statusTextView;
     this.stepView = stepView;
+    this.submitFeedbackButton = submitFeedbackButton;
+    this.timeTitle = timeTitle;
     this.timerTextView = timerTextView;
   }
 
@@ -60,9 +124,87 @@ public final class ActivityEventUserBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.emergencyCallButton;
+      Button emergencyCallButton = ViewBindings.findChildViewById(rootView, id);
+      if (emergencyCallButton == null) {
+        break missingId;
+      }
+
+      id = R.id.eventAddressText;
+      TextView eventAddressText = ViewBindings.findChildViewById(rootView, id);
+      if (eventAddressText == null) {
+        break missingId;
+      }
+
+      id = R.id.eventAddressTitle;
+      TextView eventAddressTitle = ViewBindings.findChildViewById(rootView, id);
+      if (eventAddressTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.freeTextFeedback;
+      EditText freeTextFeedback = ViewBindings.findChildViewById(rootView, id);
+      if (freeTextFeedback == null) {
+        break missingId;
+      }
+
+      id = R.id.map_container;
+      FrameLayout mapContainer = ViewBindings.findChildViewById(rootView, id);
+      if (mapContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.nextStepButton;
+      Button nextStepButton = ViewBindings.findChildViewById(rootView, id);
+      if (nextStepButton == null) {
+        break missingId;
+      }
+
+      id = R.id.ratingBar;
+      RatingBar ratingBar = ViewBindings.findChildViewById(rootView, id);
+      if (ratingBar == null) {
+        break missingId;
+      }
+
+      id = R.id.ratingLayout;
+      LinearLayout ratingLayout = ViewBindings.findChildViewById(rootView, id);
+      if (ratingLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.redSeparator;
+      TextView redSeparator = ViewBindings.findChildViewById(rootView, id);
+      if (redSeparator == null) {
+        break missingId;
+      }
+
+      id = R.id.safetyMessageLayout;
+      LinearLayout safetyMessageLayout = ViewBindings.findChildViewById(rootView, id);
+      if (safetyMessageLayout == null) {
+        break missingId;
+      }
+
+      id = R.id.statusTextView;
+      TextView statusTextView = ViewBindings.findChildViewById(rootView, id);
+      if (statusTextView == null) {
+        break missingId;
+      }
+
       id = R.id.step_view;
       StepView stepView = ViewBindings.findChildViewById(rootView, id);
       if (stepView == null) {
+        break missingId;
+      }
+
+      id = R.id.submitFeedbackButton;
+      Button submitFeedbackButton = ViewBindings.findChildViewById(rootView, id);
+      if (submitFeedbackButton == null) {
+        break missingId;
+      }
+
+      id = R.id.timeTitle;
+      TextView timeTitle = ViewBindings.findChildViewById(rootView, id);
+      if (timeTitle == null) {
         break missingId;
       }
 
@@ -72,7 +214,10 @@ public final class ActivityEventUserBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEventUserBinding((ScrollView) rootView, stepView, timerTextView);
+      return new ActivityEventUserBinding((ScrollView) rootView, emergencyCallButton,
+          eventAddressText, eventAddressTitle, freeTextFeedback, mapContainer, nextStepButton,
+          ratingBar, ratingLayout, redSeparator, safetyMessageLayout, statusTextView, stepView,
+          submitFeedbackButton, timeTitle, timerTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

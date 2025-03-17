@@ -3621,6 +3621,7 @@ id elastic
 id email
 id email_section
 id embed
+id emergencyCallButton
 id enabled
 id end
 id endToStart
@@ -3631,6 +3632,8 @@ id etFreeText
 id etManualAddress
 id et_birth_date
 id et_id_number
+id eventAddressText
+id eventAddressTitle
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3655,6 +3658,7 @@ id follow_system
 id forever
 id fragmentContainer
 id fragment_container_view_tag
+id freeTextFeedback
 id frost
 id fullscreen_header
 id ghost_view
@@ -3808,6 +3812,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nextStepButton
 id noScroll
 id noState
 id none
@@ -3869,6 +3874,8 @@ id progress_horizontal
 id question_arrow
 id question_text
 id radio
+id ratingBar
+id ratingLayout
 id ratio
 id rbBleedingNo
 id rbBleedingYes
@@ -3879,6 +3886,7 @@ id rbPulseYes
 id rbSafetyNo
 id rbSafetyYes
 id rectangles
+id redSeparator
 id registerBackground
 id registerButton
 id registerButtonText
@@ -3898,6 +3906,7 @@ id right_side
 id root_layout
 id rounded
 id row_index_key
+id safetyMessageLayout
 id satellite
 id save_non_transition_alpha
 id save_overlay_view
@@ -3959,10 +3968,12 @@ id startToEnd
 id startVertical
 id staticLayout
 id staticPostLayout
+id statusTextView
 id step_view
 id stop
 id stretch
 id submenuarrow
+id submitFeedbackButton
 id submit_area
 id supportScrollUp
 id switch_dark_mode
@@ -4001,6 +4012,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeTitle
 id timerTextView
 id title
 id titleDividerNoCustom

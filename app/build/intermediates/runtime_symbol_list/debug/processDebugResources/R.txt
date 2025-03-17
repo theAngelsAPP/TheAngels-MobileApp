@@ -3620,6 +3620,7 @@ int id elastic 0x7f0a00e3
 int id email 0x7f0a00e4
 int id email_section 0x7f0a00e5
 int id embed 0x7f0a00e6
+int id emergencyCallButton 0x7f0a02a3
 int id enabled 0x7f0a00e7
 int id end 0x7f0a00e8
 int id endToStart 0x7f0a00e9
@@ -3630,6 +3631,8 @@ int id etFreeText 0x7f0a00ed
 int id etManualAddress 0x7f0a00ee
 int id et_birth_date 0x7f0a00ef
 int id et_id_number 0x7f0a00f0
+int id eventAddressText 0x7f0a02a8
+int id eventAddressTitle 0x7f0a02a9
 int id exitUntilCollapsed 0x7f0a00f1
 int id expand_activities_button 0x7f0a00f2
 int id expanded_menu 0x7f0a00f3
@@ -3654,6 +3657,7 @@ int id follow_system 0x7f0a0105
 int id forever 0x7f0a0106
 int id fragmentContainer 0x7f0a0107
 int id fragment_container_view_tag 0x7f0a0108
+int id freeTextFeedback 0x7f0a02a4
 int id frost 0x7f0a0109
 int id fullscreen_header 0x7f0a010a
 int id ghost_view 0x7f0a010b
@@ -3807,6 +3811,7 @@ int id navigation_header_container 0x7f0a019e
 int id never 0x7f0a019f
 int id neverCompleteToEnd 0x7f0a01a0
 int id neverCompleteToStart 0x7f0a01a1
+int id nextStepButton 0x7f0a02a1
 int id noScroll 0x7f0a01a2
 int id noState 0x7f0a01a3
 int id none 0x7f0a01a4
@@ -3868,6 +3873,8 @@ int id progress_horizontal 0x7f0a01db
 int id question_arrow 0x7f0a01dc
 int id question_text 0x7f0a01dd
 int id radio 0x7f0a01de
+int id ratingBar 0x7f0a02a5
+int id ratingLayout 0x7f0a02a6
 int id ratio 0x7f0a01df
 int id rbBleedingNo 0x7f0a01e0
 int id rbBleedingYes 0x7f0a01e1
@@ -3878,6 +3885,7 @@ int id rbPulseYes 0x7f0a01e5
 int id rbSafetyNo 0x7f0a01e6
 int id rbSafetyYes 0x7f0a01e7
 int id rectangles 0x7f0a01e8
+int id redSeparator 0x7f0a02aa
 int id registerBackground 0x7f0a01e9
 int id registerButton 0x7f0a01ea
 int id registerButtonText 0x7f0a01eb
@@ -3897,6 +3905,7 @@ int id right_side 0x7f0a01f8
 int id root_layout 0x7f0a01f9
 int id rounded 0x7f0a01fa
 int id row_index_key 0x7f0a01fb
+int id safetyMessageLayout 0x7f0a02ab
 int id satellite 0x7f0a01fc
 int id save_non_transition_alpha 0x7f0a01fd
 int id save_overlay_view 0x7f0a01fe
@@ -3958,10 +3967,12 @@ int id startToEnd 0x7f0a0235
 int id startVertical 0x7f0a0236
 int id staticLayout 0x7f0a0237
 int id staticPostLayout 0x7f0a0238
+int id statusTextView 0x7f0a02a2
 int id step_view 0x7f0a0239
 int id stop 0x7f0a023a
 int id stretch 0x7f0a023b
 int id submenuarrow 0x7f0a023c
+int id submitFeedbackButton 0x7f0a02a7
 int id submit_area 0x7f0a023d
 int id supportScrollUp 0x7f0a023e
 int id switch_dark_mode 0x7f0a023f
@@ -4000,6 +4011,7 @@ int id textinput_placeholder 0x7f0a025f
 int id textinput_prefix_text 0x7f0a0260
 int id textinput_suffix_text 0x7f0a0261
 int id time 0x7f0a0262
+int id timeTitle 0x7f0a02ac
 int id timerTextView 0x7f0a0263
 int id title 0x7f0a0264
 int id titleDividerNoCustom 0x7f0a0265
