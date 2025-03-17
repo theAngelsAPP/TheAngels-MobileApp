@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 #Mon Mar 17 00:27:04 IST 2025
+=======
+#Sun Mar 16 23:57:37 IST 2025
+>>>>>>> Stashed changes
 base.0=C\:\\TheAngels-MobileApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\TheAngels-MobileApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\TheAngels-MobileApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex

@@ -4,6 +4,7 @@
             "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-2:/values-my/values-my.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\253bb4a84b9ac419fd37fbce8e1b9ef1\\transformed\\core-1.13.0\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -22,6 +23,26 @@
                 },
                 {
                     "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\c621933a14633a03fb7af90205ad9962\\transformed\\appcompat-1.7.0\\res\\values-my\\values-my.xml",
+=======
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\3deab92f3442029d3bf5fae466f81ac8\\transformed\\play-services-basement-18.4.0\\res\\values-my\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "149",
+                        "endOffsets": "344"
+                    },
+                    "to": {
+                        "startLines": "56",
+                        "startColumns": "4",
+                        "startOffsets": "5637",
+                        "endColumns": "153",
+                        "endOffsets": "5786"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\73ed0d1feec495d6d6f16f4829d0dbe5\\transformed\\appcompat-1.7.0\\res\\values-my\\values-my.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,6 +59,7 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\1510e407aa910dea6e518e2f32112744\\transformed\\play-services-basement-18.4.0\\res\\values-my\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -56,6 +78,9 @@
                 },
                 {
                     "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\0d2d9afbddbc547871dd256ca1e258e9\\transformed\\play-services-base-18.5.0\\res\\values-my\\values.xml",
+=======
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\8fb07e8e452321743a8c449d0f0582b3\\transformed\\play-services-base-18.5.0\\res\\values-my\\values.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -72,7 +97,28 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\e3433733225e552f316a56ba1d546105\\transformed\\material-1.12.0\\res\\values-my\\values-my.xml",
+=======
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\33a26a149b09619d1d5477abb9ba30f2\\transformed\\core-1.13.0\\res\\values-my\\values-my.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,158,262,365,467,572,678,797",
+                        "endColumns": "102,103,102,101,104,105,118,100",
+                        "endOffsets": "153,257,360,462,567,673,792,893"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44,134",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3547,3650,3754,3857,3959,4064,4170,12388",
+                        "endColumns": "102,103,102,101,104,105,118,100",
+                        "endOffsets": "3645,3749,3852,3954,4059,4165,4284,12484"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\9df479b28f678bc2ff7620c2a511a2eb\\transformed\\material-1.12.0\\res\\values-my\\values-my.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
