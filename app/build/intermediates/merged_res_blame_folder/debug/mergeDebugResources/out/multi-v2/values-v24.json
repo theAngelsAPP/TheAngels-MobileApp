@@ -1,14 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-2:/values-v24/values-v24.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-37:/values-v24/values-v24.xml",
             "map": [
                 {
-<<<<<<< Updated upstream
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\c621933a14633a03fb7af90205ad9962\\transformed\\appcompat-1.7.0\\res\\values-v24\\values-v24.xml",
-=======
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\73ed0d1feec495d6d6f16f4829d0dbe5\\transformed\\appcompat-1.7.0\\res\\values-v24\\values-v24.xml",
->>>>>>> Stashed changes
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\c621933a14633a03fb7af90205ad9962\\transformed\\appcompat-1.7.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -18,11 +14,7 @@
                     }
                 },
                 {
-<<<<<<< Updated upstream
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\e3433733225e552f316a56ba1d546105\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
-=======
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\9df479b28f678bc2ff7620c2a511a2eb\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
->>>>>>> Stashed changes
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\e3433733225e552f316a56ba1d546105\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

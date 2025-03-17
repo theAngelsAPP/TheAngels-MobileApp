@@ -105,14 +105,15 @@
 
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="121dp"
-        android:layout_marginBottom="11dp"
-        android:background="@drawable/event_item_background"
-        android:elevation="5dp"
-        android:orientation="horizontal"
-        android:padding="4dp"
-        android:radius="15dp">
+            android:id="@+id/medical_event_card"
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/event_item_background"
+            android:elevation="5dp"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:radius="15dp">
 
         <LinearLayout
             android:layout_width="80dp"
