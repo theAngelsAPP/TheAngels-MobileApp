@@ -3178,6 +3178,7 @@ int drawable custom_marker 0x7f0800ac
 int drawable custom_rating_bar 0x7f0800ad
 int drawable dashboard_background 0x7f0800ae
 int drawable dashboard_box 0x7f0800af
+int drawable defibrillator 0x7f080176
 int drawable design_fab_background 0x7f0800b0
 int drawable design_ic_visibility 0x7f0800b1
 int drawable design_ic_visibility_off 0x7f0800b2
