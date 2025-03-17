@@ -70,6 +70,9 @@ public final class ActivityEventUserBinding implements ViewBinding {
   @NonNull
   public final TextView timerTextView;
 
+  @NonNull
+  public final Button volview;
+
   private ActivityEventUserBinding(@NonNull ScrollView rootView,
       @NonNull Button emergencyCallButton, @NonNull TextView eventAddressText,
       @NonNull TextView eventAddressTitle, @NonNull EditText freeTextFeedback,
@@ -78,7 +81,7 @@ public final class ActivityEventUserBinding implements ViewBinding {
       @NonNull TextView redSeparator, @NonNull LinearLayout safetyMessageLayout,
       @NonNull TextView statusTextView, @NonNull StepView stepView,
       @NonNull Button submitFeedbackButton, @NonNull TextView timeTitle,
-      @NonNull TextView timerTextView) {
+      @NonNull TextView timerTextView, @NonNull Button volview) {
     this.rootView = rootView;
     this.emergencyCallButton = emergencyCallButton;
     this.eventAddressText = eventAddressText;
@@ -95,6 +98,7 @@ public final class ActivityEventUserBinding implements ViewBinding {
     this.submitFeedbackButton = submitFeedbackButton;
     this.timeTitle = timeTitle;
     this.timerTextView = timerTextView;
+    this.volview = volview;
   }
 
   @Override
@@ -214,10 +218,16 @@ public final class ActivityEventUserBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.volview;
+      Button volview = ViewBindings.findChildViewById(rootView, id);
+      if (volview == null) {
+        break missingId;
+      }
+
       return new ActivityEventUserBinding((ScrollView) rootView, emergencyCallButton,
           eventAddressText, eventAddressTitle, freeTextFeedback, mapContainer, nextStepButton,
           ratingBar, ratingLayout, redSeparator, safetyMessageLayout, statusTextView, stepView,
-          submitFeedbackButton, timeTitle, timerTextView);
+          submitFeedbackButton, timeTitle, timerTextView, volview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

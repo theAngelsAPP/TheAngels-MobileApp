@@ -149,6 +149,13 @@
             android:label="Edu "
             android:theme="@style/Theme._2025_theangels_new"/>
 
+        <activity
+            android:name=".activities.EventVolActivity"
+            android:exported="false"
+            android:label="VOL EVENT "
+            android:theme="@style/Theme._2025_theangels_new"/>
+
+
     </application>
 
 

@@ -4,20 +4,66 @@ package co.median.android.a2025_theangels_new.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.shuhart.stepview.StepView;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityEventVolBinding implements ViewBinding {
   @NonNull
   private final ScrollView rootView;
 
-  private ActivityEventVolBinding(@NonNull ScrollView rootView) {
+  @NonNull
+  public final TextView eventAddressText;
+
+  @NonNull
+  public final TextView eventAddressTitle;
+
+  @NonNull
+  public final FrameLayout fragmentContainer;
+
+  @NonNull
+  public final FrameLayout mapContainer;
+
+  @NonNull
+  public final Button nextStepButton;
+
+  @NonNull
+  public final TextView redSeparator;
+
+  @NonNull
+  public final StepView stepView;
+
+  @NonNull
+  public final TextView timeTitle;
+
+  @NonNull
+  public final TextView timerTextView;
+
+  private ActivityEventVolBinding(@NonNull ScrollView rootView, @NonNull TextView eventAddressText,
+      @NonNull TextView eventAddressTitle, @NonNull FrameLayout fragmentContainer,
+      @NonNull FrameLayout mapContainer, @NonNull Button nextStepButton,
+      @NonNull TextView redSeparator, @NonNull StepView stepView, @NonNull TextView timeTitle,
+      @NonNull TextView timerTextView) {
     this.rootView = rootView;
+    this.eventAddressText = eventAddressText;
+    this.eventAddressTitle = eventAddressTitle;
+    this.fragmentContainer = fragmentContainer;
+    this.mapContainer = mapContainer;
+    this.nextStepButton = nextStepButton;
+    this.redSeparator = redSeparator;
+    this.stepView = stepView;
+    this.timeTitle = timeTitle;
+    this.timerTextView = timerTextView;
   }
 
   @Override
@@ -43,10 +89,69 @@ public final class ActivityEventVolBinding implements ViewBinding {
 
   @NonNull
   public static ActivityEventVolBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.eventAddressText;
+      TextView eventAddressText = ViewBindings.findChildViewById(rootView, id);
+      if (eventAddressText == null) {
+        break missingId;
+      }
 
-    return new ActivityEventVolBinding((ScrollView) rootView);
+      id = R.id.eventAddressTitle;
+      TextView eventAddressTitle = ViewBindings.findChildViewById(rootView, id);
+      if (eventAddressTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.fragment_container;
+      FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (fragmentContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.map_container;
+      FrameLayout mapContainer = ViewBindings.findChildViewById(rootView, id);
+      if (mapContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.nextStepButton;
+      Button nextStepButton = ViewBindings.findChildViewById(rootView, id);
+      if (nextStepButton == null) {
+        break missingId;
+      }
+
+      id = R.id.redSeparator;
+      TextView redSeparator = ViewBindings.findChildViewById(rootView, id);
+      if (redSeparator == null) {
+        break missingId;
+      }
+
+      id = R.id.step_view;
+      StepView stepView = ViewBindings.findChildViewById(rootView, id);
+      if (stepView == null) {
+        break missingId;
+      }
+
+      id = R.id.timeTitle;
+      TextView timeTitle = ViewBindings.findChildViewById(rootView, id);
+      if (timeTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.timerTextView;
+      TextView timerTextView = ViewBindings.findChildViewById(rootView, id);
+      if (timerTextView == null) {
+        break missingId;
+      }
+
+      return new ActivityEventVolBinding((ScrollView) rootView, eventAddressText, eventAddressTitle,
+          fragmentContainer, mapContainer, nextStepButton, redSeparator, stepView, timeTitle,
+          timerTextView);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

@@ -270,6 +270,20 @@
                 android:padding="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/volview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="מעבר לתצוגת המתנדב"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:background="#ffb703"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"/>
+
+
         </LinearLayout>
 
 

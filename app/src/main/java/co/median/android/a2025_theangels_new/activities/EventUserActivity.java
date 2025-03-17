@@ -29,6 +29,7 @@ public class EventUserActivity extends BaseActivity {
     private TextView eventAddressText;
     private StepView stepView;
     private Button nextStepButton;
+    private Button volview;
     private Button emergencyCallButton;
     private LinearLayout ratingLayout;
     private LinearLayout safetyMessageLayout;
@@ -63,6 +64,7 @@ public class EventUserActivity extends BaseActivity {
         statusTextView = findViewById(R.id.statusTextView);
         stepView = findViewById(R.id.step_view);
         nextStepButton = findViewById(R.id.nextStepButton);
+        volview = findViewById(R.id.volview);
         emergencyCallButton = findViewById(R.id.emergencyCallButton);
         ratingLayout = findViewById(R.id.ratingLayout);
         safetyMessageLayout = findViewById(R.id.safetyMessageLayout);
@@ -96,6 +98,14 @@ public class EventUserActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 handleFeedbackSubmission();
+            }
+        });
+
+        volview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EventUserActivity.this, EventVolActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -135,6 +145,7 @@ public class EventUserActivity extends BaseActivity {
 
             if (step == 3) {
                 ratingLayout.setVisibility(View.VISIBLE);
+                volview.setVisibility(View.VISIBLE);
                 nextStepButton.setVisibility(View.GONE);
                 timeTitle.setVisibility(View.GONE);
                 timerTextView.setVisibility(View.GONE);
@@ -146,6 +157,7 @@ public class EventUserActivity extends BaseActivity {
                 emergencyCallButton.setVisibility(View.GONE);
             } else {
                 ratingLayout.setVisibility(View.GONE);
+                volview.setVisibility(View.GONE);
                 nextStepButton.setVisibility(View.VISIBLE);
                 timeTitle.setVisibility(View.VISIBLE);
                 timerTextView.setVisibility(View.VISIBLE);
