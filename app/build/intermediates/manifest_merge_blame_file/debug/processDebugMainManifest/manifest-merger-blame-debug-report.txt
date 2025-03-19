@@ -9,397 +9,397 @@
 9        android:targetSdkVersion="35" />
 10
 11    <uses-permission android:name="android.permission.VIBRATE" />
-11-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:5:5-65
-11-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:5:22-63
+11-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:5:5-65
+11-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:5:22-63
 12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-12-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:5-78
-12-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:22-76
+12-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:6:5-78
+12-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-13-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:7:5-80
-13-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:7:22-78
+13-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:7:5-80
+13-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:7:22-78
 14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-14-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:5-78
-14-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:22-76
+14-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:6:5-78
+14-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:6:22-76
 15    <uses-permission android:name="android.permission.BODY_SENSORS" />
-15-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:9:5-70
-15-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:9:22-68
+15-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:9:5-70
+15-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:9:22-68
 16    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-16-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:10:5-76
-16-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:10:22-74
+16-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:10:5-76
+16-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:10:22-74
 17
 18    <!-- Include required permissions for Google Maps API to run. -->
 19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-19-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:20:5-78
-19-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:20:22-76
+19-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:20:5-78
+19-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:20:22-76
 20    <uses-permission android:name="android.permission.INTERNET" />
-20-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:21:5-66
-20-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:21:22-64
+20-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:21:5-66
+20-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:21:22-64
 21
 22    <uses-feature
-22-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:22:5-24:33
+22-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:22:5-24:33
 23        android:glEsVersion="0x00020000"
-23-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:23:8-40
+23-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:23:8-40
 24        android:required="true" />
-24-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:24:8-31
+24-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:24:8-31
 25
 26    <queries>
-26-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:27:5-30:15
+26-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:27:5-30:15
 27
 28        <!-- Needs to be explicitly declared on Android R+ -->
 29        <package android:name="com.google.android.apps.maps" />
-29-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:29:7-61
-29-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:29:16-59
+29-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:29:7-61
+29-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:29:16-59
 30    </queries>
 31
 32    <permission
-32-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+32-->[androidx.core:core:1.13.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
 33        android:name="co.median.android.a2025_theangels_new.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-33-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+33-->[androidx.core:core:1.13.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
 34        android:protectionLevel="signature" />
-34-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+34-->[androidx.core:core:1.13.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 35
 36    <uses-permission android:name="co.median.android.a2025_theangels_new.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-36-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
-36-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+36-->[androidx.core:core:1.13.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+36-->[androidx.core:core:1.13.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 37
 38    <application
-38-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:13:5-159:19
+38-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:13:5-159:19
 39        android:allowBackup="true"
-39-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:14:9-35
+39-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:14:9-35
 40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+40-->[androidx.core:core:1.13.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\253bb4a84b9ac419fd37fbce8e1b9ef1\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 41        android:dataExtractionRules="@xml/data_extraction_rules"
-41-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:15:9-65
+41-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:15:9-65
 42        android:debuggable="true"
 43        android:extractNativeLibs="false"
 44        android:fullBackupContent="@xml/backup_rules"
-44-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:16:9-54
+44-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:16:9-54
 45        android:icon="@mipmap/icon"
-45-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:17:9-36
+45-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:17:9-36
 46        android:label="@string/app_name"
-46-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:18:9-41
+46-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:18:9-41
 47        android:roundIcon="@mipmap/icon"
-47-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:19:9-41
+47-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:19:9-41
 48        android:supportsRtl="true"
-48-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:20:9-35
+48-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:20:9-35
 49        android:testOnly="true"
 50        android:theme="@style/Theme._2025_theangels_new" >
-50-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:21:9-57
+50-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:21:9-57
 51        <meta-data
-51-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:24:9-26:54
+51-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:24:9-26:54
 52            android:name="com.google.android.geo.API_KEY"
-52-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:25:13-58
+52-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:25:13-58
 53            android:value="@string/google_maps_key" />
-53-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:26:13-52
+53-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:26:13-52
 54
 55        <receiver
-55-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:28:9-36:20
+55-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:28:9-36:20
 56            android:name="co.median.android.a2025_theangels_new.widget.EmergencyWidget"
-56-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:28:19-57
+56-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:28:19-57
 57            android:exported="true" >
-57-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:29:13-36
+57-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:29:13-36
 58            <intent-filter>
-58-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:30:13-32:29
+58-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:30:13-32:29
 59                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-59-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:31:17-83
-59-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:31:25-81
+59-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:31:17-83
+59-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:31:25-81
 60            </intent-filter>
 61
 62            <meta-data
-62-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:33:13-35:65
+62-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:33:13-35:65
 63                android:name="android.appwidget.provider"
-63-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:34:17-58
+63-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:34:17-58
 64                android:resource="@xml/emergency_widget_info" />
-64-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:35:17-62
+64-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:35:17-62
 65        </receiver>
 66
 67        <activity
-67-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:39:9-47:20
+67-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:39:9-47:20
 68            android:name="co.median.android.a2025_theangels_new.activities.MainActivity"
-68-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:40:13-52
+68-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:40:13-52
 69            android:exported="true"
-69-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:41:13-36
+69-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:41:13-36
 70            android:theme="@style/Theme._2025_theangels_new" >
-70-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:42:13-61
+70-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:42:13-61
 71            <intent-filter>
-71-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:43:13-46:29
+71-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:43:13-46:29
 72                <action android:name="android.intent.action.MAIN" />
-72-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:44:17-68
-72-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:44:25-66
+72-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:44:17-68
+72-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:44:25-66
 73
 74                <category android:name="android.intent.category.LAUNCHER" />
-74-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:45:17-76
-74-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:45:27-74
+74-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:45:17-76
+74-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:45:27-74
 75            </intent-filter>
 76        </activity>
 77        <activity
-77-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:49:9-53:63
+77-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:49:9-53:63
 78            android:name="co.median.android.a2025_theangels_new.activities.OnboardingActivity"
-78-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:50:13-58
+78-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:50:13-58
 79            android:exported="false"
-79-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:51:13-37
+79-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:51:13-37
 80            android:label="Onboarding"
-80-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:52:13-39
+80-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:52:13-39
 81            android:theme="@style/Theme._2025_theangels_new" />
-81-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:53:13-61
+81-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:53:13-61
 82        <activity
-82-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:55:9-59:63
+82-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:55:9-59:63
 83            android:name="co.median.android.a2025_theangels_new.activities.RegistrationActivity"
-83-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:56:13-60
+83-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:56:13-60
 84            android:exported="false"
-84-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:57:13-37
+84-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:57:13-37
 85            android:label="Registration"
-85-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:58:13-41
+85-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:58:13-41
 86            android:theme="@style/Theme._2025_theangels_new" />
-86-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:59:13-61
+86-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:59:13-61
 87        <activity
-87-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:61:9-65:63
+87-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:61:9-65:63
 88            android:name="co.median.android.a2025_theangels_new.activities.RegistrationActivity2"
-88-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:62:13-61
+88-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:62:13-61
 89            android:exported="false"
-89-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:63:13-37
+89-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:63:13-37
 90            android:label="Registration"
-90-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:64:13-41
+90-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:64:13-41
 91            android:theme="@style/Theme._2025_theangels_new" />
-91-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:65:13-61
+91-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:65:13-61
 92        <activity
-92-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:67:9-71:63
+92-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:67:9-71:63
 93            android:name="co.median.android.a2025_theangels_new.activities.HomepageActivity"
-93-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:68:13-56
+93-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:68:13-56
 94            android:exported="false"
-94-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:69:13-37
+94-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:69:13-37
 95            android:label="Home"
-95-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:70:13-33
+95-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:70:13-33
 96            android:theme="@style/Theme._2025_theangels_new" />
-96-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:71:13-61
+96-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:71:13-61
 97        <activity
-97-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:73:9-77:63
+97-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:73:9-77:63
 98            android:name="co.median.android.a2025_theangels_new.activities.HomeActivity"
-98-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:74:13-52
+98-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:74:13-52
 99            android:exported="false"
-99-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:75:13-37
+99-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:75:13-37
 100            android:label="Home"
-100-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:76:13-33
+100-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:76:13-33
 101            android:theme="@style/Theme._2025_theangels_new" />
-101-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:77:13-61
+101-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:77:13-61
 102        <activity
-102-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:79:9-83:63
+102-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:79:9-83:63
 103            android:name="co.median.android.a2025_theangels_new.activities.EventsActivity"
-103-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:80:13-54
+103-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:80:13-54
 104            android:exported="false"
-104-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:81:13-37
+104-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:81:13-37
 105            android:label="Events"
-105-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:82:13-35
+105-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:82:13-35
 106            android:theme="@style/Theme._2025_theangels_new" />
-106-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:83:13-61
+106-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:83:13-61
 107        <activity
-107-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:85:9-89:63
+107-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:85:9-89:63
 108            android:name="co.median.android.a2025_theangels_new.activities.EducationActivity"
-108-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:86:13-57
+108-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:86:13-57
 109            android:exported="false"
-109-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:87:13-37
+109-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:87:13-37
 110            android:label="Education"
-110-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:88:13-38
+110-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:88:13-38
 111            android:theme="@style/Theme._2025_theangels_new" />
-111-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:89:13-61
+111-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:89:13-61
 112        <activity
-112-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:91:9-95:63
+112-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:91:9-95:63
 113            android:name="co.median.android.a2025_theangels_new.activities.ProfileActivity"
-113-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:92:13-55
+113-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:92:13-55
 114            android:exported="false"
-114-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:93:13-37
+114-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:93:13-37
 115            android:label="Profile"
-115-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:94:13-36
+115-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:94:13-36
 116            android:theme="@style/Theme._2025_theangels_new" />
-116-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:95:13-61
+116-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:95:13-61
 117        <activity
-117-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:97:9-101:63
+117-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:97:9-101:63
 118            android:name="co.median.android.a2025_theangels_new.activities.NewEventActivity"
-118-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:98:13-56
+118-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:98:13-56
 119            android:exported="false"
-119-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:99:13-37
+119-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:99:13-37
 120            android:label="New Event"
-120-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:100:13-38
+120-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:100:13-38
 121            android:theme="@style/Theme._2025_theangels_new" />
-121-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:101:13-61
+121-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:101:13-61
 122        <activity
-122-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:103:9-107:63
+122-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:103:9-107:63
 123            android:name="co.median.android.a2025_theangels_new.activities.MyDetailsActivity"
-123-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:104:13-57
+123-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:104:13-57
 124            android:exported="false"
-124-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:105:13-37
+124-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:105:13-37
 125            android:label="My Details"
-125-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:106:13-39
+125-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:106:13-39
 126            android:theme="@style/Theme._2025_theangels_new" />
-126-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:107:13-61
+126-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:107:13-61
 127        <activity
-127-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:109:9-113:63
+127-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:109:9-113:63
 128            android:name="co.median.android.a2025_theangels_new.activities.PrivacySettingsActivity"
-128-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:110:13-63
+128-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:110:13-63
 129            android:exported="false"
-129-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:111:13-37
+129-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:111:13-37
 130            android:label="My Details"
-130-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:112:13-39
+130-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:112:13-39
 131            android:theme="@style/Theme._2025_theangels_new" />
-131-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:113:13-61
+131-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:113:13-61
 132        <activity
-132-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:115:9-119:63
+132-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:115:9-119:63
 133            android:name="co.median.android.a2025_theangels_new.activities.DisplaySettingsActivity"
-133-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:116:13-63
+133-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:116:13-63
 134            android:exported="false"
-134-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:117:13-37
+134-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:117:13-37
 135            android:label="My Details"
-135-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:118:13-39
+135-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:118:13-39
 136            android:theme="@style/Theme._2025_theangels_new" />
-136-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:119:13-61
+136-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:119:13-61
 137        <activity
-137-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:122:9-126:63
+137-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:122:9-126:63
 138            android:name="co.median.android.a2025_theangels_new.activities.SupportActivity"
-138-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:123:13-55
+138-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:123:13-55
 139            android:exported="false"
-139-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:124:13-37
+139-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:124:13-37
 140            android:label="Support"
-140-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:125:13-36
+140-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:125:13-36
 141            android:theme="@style/Theme._2025_theangels_new" />
-141-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:126:13-61
+141-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:126:13-61
 142        <activity
-142-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:128:9-132:63
+142-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:128:9-132:63
 143            android:name="co.median.android.a2025_theangels_new.activities.JoinVolSettingsActivity"
-143-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:129:13-63
+143-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:129:13-63
 144            android:exported="false"
-144-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:130:13-37
+144-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:130:13-37
 145            android:label="Join Vol"
-145-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:131:13-37
+145-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:131:13-37
 146            android:theme="@style/Theme._2025_theangels_new" />
-146-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:132:13-61
+146-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:132:13-61
 147        <activity
-147-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:134:9-138:63
+147-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:134:9-138:63
 148            android:name="co.median.android.a2025_theangels_new.activities.EventUserActivity"
-148-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:135:13-57
+148-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:135:13-57
 149            android:exported="false"
-149-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:136:13-37
+149-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:136:13-37
 150            android:label="Event USER"
-150-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:137:13-39
+150-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:137:13-39
 151            android:theme="@style/Theme._2025_theangels_new" />
-151-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:138:13-61
+151-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:138:13-61
 152        <activity
-152-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:140:9-144:63
+152-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:140:9-144:63
 153            android:name="co.median.android.a2025_theangels_new.activities.EventDetailsActivity"
-153-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:141:13-60
+153-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:141:13-60
 154            android:exported="false"
-154-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:142:13-37
+154-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:142:13-37
 155            android:label="Event USER"
-155-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:143:13-39
+155-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:143:13-39
 156            android:theme="@style/Theme._2025_theangels_new" />
-156-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:144:13-61
+156-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:144:13-61
 157        <activity
-157-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:146:9-150:63
+157-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:146:9-150:63
 158            android:name="co.median.android.a2025_theangels_new.activities.EducationDetailsActivity"
-158-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:147:13-64
+158-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:147:13-64
 159            android:exported="false"
-159-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:148:13-37
+159-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:148:13-37
 160            android:label="Edu "
-160-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:149:13-33
+160-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:149:13-33
 161            android:theme="@style/Theme._2025_theangels_new" />
-161-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:150:13-61
+161-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:150:13-61
 162        <activity
-162-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:152:9-156:63
+162-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:152:9-156:63
 163            android:name="co.median.android.a2025_theangels_new.activities.EventVolActivity"
-163-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:153:13-56
+163-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:153:13-56
 164            android:exported="false"
-164-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:154:13-37
+164-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:154:13-37
 165            android:label="VOL EVENT "
-165-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:155:13-39
+165-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:155:13-39
 166            android:theme="@style/Theme._2025_theangels_new" />
-166-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:156:13-61
+166-->C:\finalprojectgmar\yvc_theangelsproject\app\src\main\AndroidManifest.xml:156:13-61
 167
 168        <!-- Needs to be explicitly declared on P+ -->
 169        <uses-library
-169-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:7-86
+169-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:7-86
 170            android:name="org.apache.http.legacy"
-170-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:21-58
+170-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:21-58
 171            android:required="false" />
-171-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:59-83
+171-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\e70f924b5b26b9eba694ccca8790f75b\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:59-83
 172
 173        <provider
-173-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+173-->[androidx.emoji2:emoji2:1.3.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
 174            android:name="androidx.startup.InitializationProvider"
-174-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+174-->[androidx.emoji2:emoji2:1.3.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
 175            android:authorities="co.median.android.a2025_theangels_new.debug.androidx-startup"
-175-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+175-->[androidx.emoji2:emoji2:1.3.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
 176            android:exported="false" >
-176-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+176-->[androidx.emoji2:emoji2:1.3.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
 177            <meta-data
-177-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+177-->[androidx.emoji2:emoji2:1.3.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
 178                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-178-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+178-->[androidx.emoji2:emoji2:1.3.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
 179                android:value="androidx.startup" />
-179-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+179-->[androidx.emoji2:emoji2:1.3.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\aa9f72c8c187c90cf82e907c17d6506a\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
 180            <meta-data
-180-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\batel\.gradle\caches\8.11.1\transforms\17c20e49cd4e1a957a829e5ae9b81f7c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+180-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\omerg\.gradle\caches\8.11.1\transforms\17c20e49cd4e1a957a829e5ae9b81f7c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
 181                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-181-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\batel\.gradle\caches\8.11.1\transforms\17c20e49cd4e1a957a829e5ae9b81f7c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+181-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\omerg\.gradle\caches\8.11.1\transforms\17c20e49cd4e1a957a829e5ae9b81f7c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
 182                android:value="androidx.startup" />
-182-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\batel\.gradle\caches\8.11.1\transforms\17c20e49cd4e1a957a829e5ae9b81f7c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+182-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\omerg\.gradle\caches\8.11.1\transforms\17c20e49cd4e1a957a829e5ae9b81f7c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
 183            <meta-data
-183-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+183-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
 184                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-184-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+184-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
 185                android:value="androidx.startup" />
-185-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+185-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
 186        </provider>
 187
 188        <activity
-188-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+188-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
 189            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-189-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+189-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
 190            android:exported="false"
-190-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+190-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
 191            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-191-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+191-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\0d2d9afbddbc547871dd256ca1e258e9\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
 192
 193        <meta-data
-193-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\1510e407aa910dea6e518e2f32112744\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+193-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\1510e407aa910dea6e518e2f32112744\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
 194            android:name="com.google.android.gms.version"
-194-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\1510e407aa910dea6e518e2f32112744\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+194-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\1510e407aa910dea6e518e2f32112744\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
 195            android:value="@integer/google_play_services_version" />
-195-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\1510e407aa910dea6e518e2f32112744\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+195-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\1510e407aa910dea6e518e2f32112744\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
 196
 197        <receiver
-197-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+197-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
 198            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-198-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+198-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
 199            android:directBootAware="false"
-199-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+199-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
 200            android:enabled="true"
-200-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+200-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
 201            android:exported="true"
-201-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+201-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
 202            android:permission="android.permission.DUMP" >
-202-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+202-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
 203            <intent-filter>
-203-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+203-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
 204                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-204-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
-204-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+204-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+204-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
 205            </intent-filter>
 206            <intent-filter>
-206-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+206-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
 207                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-207-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
-207-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+207-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+207-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
 208            </intent-filter>
 209            <intent-filter>
-209-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+209-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
 210                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-210-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
-210-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+210-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+210-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
 211            </intent-filter>
 212            <intent-filter>
-212-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+212-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
 213                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-213-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
-213-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+213-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+213-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\omerg\.gradle\caches\8.11.1\transforms\c8a43c0ea1584ac4a50379d6a11ec019\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
 214            </intent-filter>
 215        </receiver>
 216    </application>

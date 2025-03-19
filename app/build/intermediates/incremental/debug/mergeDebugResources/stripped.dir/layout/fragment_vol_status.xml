@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btnCancelEvent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ביטול אירוע"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="#66BB6A"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="חיוג לפונה"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="#66BB6A"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnNavigate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ניווט לאירוע"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="#66BB6A"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnArrived"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="עדכון הגעתי לאירוע"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="#FFB300"
+        android:padding="12dp"/>
+</LinearLayout>

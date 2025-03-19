@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <Button
+        android:id="@+id/btnClaimEvent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="לקיחת אירוע"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="#66BB6A"
+        android:padding="12dp"
+        android:layout_marginEnd="8dp"/>
+
+    <Button
+        android:id="@+id/btnNotInterested"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="לא מעוניין"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="#FFCDD2"
+        android:padding="12dp"/>
+</LinearLayout>

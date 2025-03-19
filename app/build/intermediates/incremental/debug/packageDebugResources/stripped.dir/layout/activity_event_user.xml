@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:padding="0dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="אירוע פעיל: מעקב בזמן אמת"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="#e01e37"
+            android:layout_marginBottom="0dp"/>
+
+        <com.shuhart.stepview.StepView
+            android:id="@+id/step_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layoutDirection="rtl"
+            app:sv_stepsNumber="4"
+            app:sv_animationType="All"
+            app:sv_selectedCircleColor="#e01e37"
+            app:sv_selectedTextColor="#343a40"
+            app:sv_doneCircleColor="#99d98c"
+            app:sv_doneStepLineColor="#99d98c"
+            app:sv_doneStepMarkColor="#ffffff"
+            app:sv_nextStepCircleEnabled="true"
+            app:sv_nextStepCircleColor="#e5e5e5"
+            app:sv_nextStepLineColor="#e5e5e5"
+            app:sv_stepNumberTextSize="14sp"
+            app:sv_selectedStepNumberColor="#ffffff"
+            app:sv_stepLineWidth="2dp"
+            app:sv_selectedCircleRadius="14dp"
+            app:sv_doneCircleRadius="12dp"
+            app:sv_stepPadding="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="סטטוס"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="#e9ecef"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="מחפשים אחר מתנדב זמין בסביבתך"
+            android:textSize="17sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="#ffffff"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/timeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="זמן"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="#e9ecef"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="00:00"
+            android:textSize="17sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="#ffffff"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/redSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:padding="0dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="#e01e37"
+            android:layout_marginBottom="0dp"/>
+
+        <LinearLayout
+            android:id="@+id/safetyMessageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:background="#FFF3E0"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="0dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                app:lottie_rawRes="@raw/animation_attention"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="לאורך כל האירוע חשוב לוודא שאתם נמצאים במקום בטוח בלי סכנה לכם ולמטופל!"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <!-- תצוגת מפה -->
+        <FrameLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="0dp"/>
+
+        <TextView
+            android:id="@+id/eventAddressTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="כתובת האירוע"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="#3a506b"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/eventAddressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="האחים טרבס 27 רחובות"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="#F8F9FA"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:padding="0dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="#3a506b"
+            android:layout_marginBottom="0dp"/>
+
+        <Button
+            android:id="@+id/emergencyCallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="התקשר לכוחות הצלה"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#c1121f"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center"/>
+
+
+        <Button
+            android:id="@+id/nextStepButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="המשך"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:background="#ffb703"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center"/>
+
+        <!-- קטע של דירוג - יוצג רק כאשר השלב האחרון -->
+        <LinearLayout
+            android:id="@+id/ratingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="יש לדרג את המתנדב"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:background="#81D4FA"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"/>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1"
+                android:rating="0"
+                android:layout_gravity="center"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:isIndicator="false"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="טקסט חופשי:"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:background="#81D4FA"
+                android:padding="8dp"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/freeTextFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="הכנס משוב חופשי"
+                android:textSize="16sp"
+                android:background="#F8F9FA"
+                android:padding="10dp"
+                android:minHeight="80dp"
+                android:gravity="top"/>
+
+            <Button
+                android:id="@+id/submitFeedbackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="שליחה"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:backgroundTint="#64B5F6"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/volview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="מעבר לתצוגת המתנדב"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:background="#ffb703"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

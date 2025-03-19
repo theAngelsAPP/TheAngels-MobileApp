@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    android:gravity="top">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="8dp">
+
+        <!-- כפתור אדם ללא הכרה -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUnconscious"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="אדם ללא הכרה"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
+
+        <!-- כפתור התקף אלרגיה -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAllergy"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="התקף אלרגיה"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
+
+        <!-- כפתור חנק -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChoking"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="חנק"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
+
+        <!-- כפתור אחר -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOther"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="אחר"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#DCDCDC"
+            app:cornerRadius="20dp"
+            android:elevation="4dp"
+            app:rippleColor="#BDBDBD"
+            android:gravity="center"/>
+
+    </GridLayout>
+
+    <!-- שדה טקסט חופשי (מוסתר בהתחלה) -->
+    <EditText
+        android:id="@+id/etFreeText"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:hint="נא לפרט כאן"
+        android:background="#E0E0E0"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:gravity="top|start"
+        android:visibility="gone"/>
+</LinearLayout>
