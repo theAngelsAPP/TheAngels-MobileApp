@@ -4,124 +4,157 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegistrationActivity">
+    android:layout_height="match_parent">
 
-    <!-- רקע המסך -->
+    <!-- רקע עם תמונה מטושטשת -->
     <ImageView
         android:id="@+id/registerBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/registerbackground"
+        android:alpha="0.8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- אזור התוכן הלבן -->
-    <LinearLayout
+    <!-- CardView מעוצב עבור טופס ההרשמה -->
+    <androidx.cardview.widget.CardView
         android:id="@+id/registerContent"
-        android:layout_width="377dp"
-        android:layout_height="485dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="100dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
         android:background="@android:color/white"
-        android:orientation="vertical"
-        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.89">
+        app:layout_constraintVertical_bias="0.5">
 
-        <!-- שם פרטי -->
-        <EditText
-            android:id="@+id/firstName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="שם פרטי"
-            android:padding="10dp" />
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <!-- שם משפחה -->
-        <EditText
-            android:id="@+id/lastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="שם משפחה"
-            android:padding="10dp" />
-
-        <!-- תעודת זהות -->
-        <EditText
-            android:id="@+id/idNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="תעודת זהות"
-            android:inputType="number"
-            android:padding="10dp" />
-
-        <!-- תאריך לידה -->
-        <TextView
-            android:id="@+id/birthDateLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="תאריך לידה"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/birthDateButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="בחר תאריך" />
-
-        <!-- עיר מגורים -->
-        <EditText
-            android:id="@+id/city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="עיר מגורים"
-            android:padding="10dp" />
-
-        <!-- קטע בחירת תמונת פרופיל -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <!-- כפתור לבחירת תמונה -->
-            <Button
-                android:id="@+id/uploadImageButton"
+            <!-- כותרת -->
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="בחר תמונה"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="הרשמה"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:paddingBottom="10dp"/>
 
-            <!-- תמונת הפרופיל מופיעה ליד הכפתור -->
-            <ImageView
-                android:id="@+id/profileImageView"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="10dp"
-                android:background="@android:color/darker_gray"
-                android:scaleType="centerCrop"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@id/uploadImageButton"
-                app:layout_constraintStart_toEndOf="@id/uploadImageButton"
-                app:layout_constraintTop_toTopOf="@id/uploadImageButton" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- שדות קלט עם Material Design -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
 
-        <!-- כפתור מעבר למסך הבא -->
-        <Button
-            android:id="@+id/continueButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="המשך" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="שם פרטי"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="שם משפחה"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="תעודת זהות"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- תאריך לידה -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/birthDateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="בחר תאריך לידה"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="עיר מגורים"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- בחירת תמונת פרופיל -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uploadImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="בחר תמונה"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                <ImageView
+                    android:id="@+id/profileImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:background="@android:color/darker_gray"/>
+            </LinearLayout>
+
+            <!-- כפתור המשך מעוצב -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/continueButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="המשך"
+                android:textSize="18sp"
+                android:backgroundTint="@color/blue_gradient_end"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

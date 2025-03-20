@@ -4,19 +4,20 @@ package co.median.android.a2025_theangels_new.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.checkbox.MaterialCheckBox;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -26,62 +27,62 @@ public final class ActivityRegistration2Binding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final EditText confirmPassword;
+  public final TextInputEditText confirmPassword;
 
   @NonNull
-  public final EditText email;
+  public final TextInputEditText email;
 
   @NonNull
-  public final CheckBox gunLicenseCheckbox;
+  public final MaterialCheckBox gunLicenseCheckbox;
 
   @NonNull
-  public final TextView medicalAllergy;
+  public final Chip medicalAllergy;
 
   @NonNull
-  public final TextView medicalAsthma;
+  public final Chip medicalAsthma;
 
   @NonNull
   public final TextView medicalDetailsLabel;
 
   @NonNull
-  public final TextView medicalDiabetes;
+  public final Chip medicalDiabetes;
 
   @NonNull
-  public final TextView medicalEpilepsy;
+  public final Chip medicalEpilepsy;
 
   @NonNull
-  public final TextView medicalHeart;
+  public final Chip medicalHeart;
 
   @NonNull
-  public final GridLayout medicalOptions;
+  public final ChipGroup medicalOptions;
 
   @NonNull
-  public final TextView medicalPressure;
+  public final Chip medicalPressure;
 
   @NonNull
-  public final EditText password;
+  public final TextInputEditText password;
 
   @NonNull
-  public final EditText phone;
+  public final TextInputEditText phone;
 
   @NonNull
   public final ImageView registerBackground;
 
   @NonNull
-  public final Button registerButton;
+  public final MaterialButton registerButton;
 
   @NonNull
-  public final LinearLayout registerContent;
+  public final CardView registerContent;
 
   private ActivityRegistration2Binding(@NonNull ConstraintLayout rootView,
-      @NonNull EditText confirmPassword, @NonNull EditText email,
-      @NonNull CheckBox gunLicenseCheckbox, @NonNull TextView medicalAllergy,
-      @NonNull TextView medicalAsthma, @NonNull TextView medicalDetailsLabel,
-      @NonNull TextView medicalDiabetes, @NonNull TextView medicalEpilepsy,
-      @NonNull TextView medicalHeart, @NonNull GridLayout medicalOptions,
-      @NonNull TextView medicalPressure, @NonNull EditText password, @NonNull EditText phone,
-      @NonNull ImageView registerBackground, @NonNull Button registerButton,
-      @NonNull LinearLayout registerContent) {
+      @NonNull TextInputEditText confirmPassword, @NonNull TextInputEditText email,
+      @NonNull MaterialCheckBox gunLicenseCheckbox, @NonNull Chip medicalAllergy,
+      @NonNull Chip medicalAsthma, @NonNull TextView medicalDetailsLabel,
+      @NonNull Chip medicalDiabetes, @NonNull Chip medicalEpilepsy, @NonNull Chip medicalHeart,
+      @NonNull ChipGroup medicalOptions, @NonNull Chip medicalPressure,
+      @NonNull TextInputEditText password, @NonNull TextInputEditText phone,
+      @NonNull ImageView registerBackground, @NonNull MaterialButton registerButton,
+      @NonNull CardView registerContent) {
     this.rootView = rootView;
     this.confirmPassword = confirmPassword;
     this.email = email;
@@ -129,31 +130,31 @@ public final class ActivityRegistration2Binding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.confirmPassword;
-      EditText confirmPassword = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText confirmPassword = ViewBindings.findChildViewById(rootView, id);
       if (confirmPassword == null) {
         break missingId;
       }
 
       id = R.id.email;
-      EditText email = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText email = ViewBindings.findChildViewById(rootView, id);
       if (email == null) {
         break missingId;
       }
 
       id = R.id.gunLicenseCheckbox;
-      CheckBox gunLicenseCheckbox = ViewBindings.findChildViewById(rootView, id);
+      MaterialCheckBox gunLicenseCheckbox = ViewBindings.findChildViewById(rootView, id);
       if (gunLicenseCheckbox == null) {
         break missingId;
       }
 
       id = R.id.medical_allergy;
-      TextView medicalAllergy = ViewBindings.findChildViewById(rootView, id);
+      Chip medicalAllergy = ViewBindings.findChildViewById(rootView, id);
       if (medicalAllergy == null) {
         break missingId;
       }
 
       id = R.id.medical_asthma;
-      TextView medicalAsthma = ViewBindings.findChildViewById(rootView, id);
+      Chip medicalAsthma = ViewBindings.findChildViewById(rootView, id);
       if (medicalAsthma == null) {
         break missingId;
       }
@@ -165,43 +166,43 @@ public final class ActivityRegistration2Binding implements ViewBinding {
       }
 
       id = R.id.medical_diabetes;
-      TextView medicalDiabetes = ViewBindings.findChildViewById(rootView, id);
+      Chip medicalDiabetes = ViewBindings.findChildViewById(rootView, id);
       if (medicalDiabetes == null) {
         break missingId;
       }
 
       id = R.id.medical_epilepsy;
-      TextView medicalEpilepsy = ViewBindings.findChildViewById(rootView, id);
+      Chip medicalEpilepsy = ViewBindings.findChildViewById(rootView, id);
       if (medicalEpilepsy == null) {
         break missingId;
       }
 
       id = R.id.medical_heart;
-      TextView medicalHeart = ViewBindings.findChildViewById(rootView, id);
+      Chip medicalHeart = ViewBindings.findChildViewById(rootView, id);
       if (medicalHeart == null) {
         break missingId;
       }
 
       id = R.id.medicalOptions;
-      GridLayout medicalOptions = ViewBindings.findChildViewById(rootView, id);
+      ChipGroup medicalOptions = ViewBindings.findChildViewById(rootView, id);
       if (medicalOptions == null) {
         break missingId;
       }
 
       id = R.id.medical_pressure;
-      TextView medicalPressure = ViewBindings.findChildViewById(rootView, id);
+      Chip medicalPressure = ViewBindings.findChildViewById(rootView, id);
       if (medicalPressure == null) {
         break missingId;
       }
 
       id = R.id.password;
-      EditText password = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText password = ViewBindings.findChildViewById(rootView, id);
       if (password == null) {
         break missingId;
       }
 
       id = R.id.phone;
-      EditText phone = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText phone = ViewBindings.findChildViewById(rootView, id);
       if (phone == null) {
         break missingId;
       }
@@ -213,13 +214,13 @@ public final class ActivityRegistration2Binding implements ViewBinding {
       }
 
       id = R.id.registerButton;
-      Button registerButton = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton registerButton = ViewBindings.findChildViewById(rootView, id);
       if (registerButton == null) {
         break missingId;
       }
 
       id = R.id.registerContent;
-      LinearLayout registerContent = ViewBindings.findChildViewById(rootView, id);
+      CardView registerContent = ViewBindings.findChildViewById(rootView, id);
       if (registerContent == null) {
         break missingId;
       }

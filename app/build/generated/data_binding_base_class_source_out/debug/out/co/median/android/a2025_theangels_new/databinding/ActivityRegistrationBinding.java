@@ -4,17 +4,16 @@ package co.median.android.a2025_theangels_new.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import co.median.android.a2025_theangels_new.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -24,25 +23,22 @@ public final class ActivityRegistrationBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button birthDateButton;
+  public final MaterialButton birthDateButton;
 
   @NonNull
-  public final TextView birthDateLabel;
+  public final TextInputEditText city;
 
   @NonNull
-  public final EditText city;
+  public final MaterialButton continueButton;
 
   @NonNull
-  public final Button continueButton;
+  public final TextInputEditText firstName;
 
   @NonNull
-  public final EditText firstName;
+  public final TextInputEditText idNumber;
 
   @NonNull
-  public final EditText idNumber;
-
-  @NonNull
-  public final EditText lastName;
+  public final TextInputEditText lastName;
 
   @NonNull
   public final ImageView profileImageView;
@@ -51,20 +47,19 @@ public final class ActivityRegistrationBinding implements ViewBinding {
   public final ImageView registerBackground;
 
   @NonNull
-  public final LinearLayout registerContent;
+  public final CardView registerContent;
 
   @NonNull
-  public final Button uploadImageButton;
+  public final MaterialButton uploadImageButton;
 
   private ActivityRegistrationBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button birthDateButton, @NonNull TextView birthDateLabel, @NonNull EditText city,
-      @NonNull Button continueButton, @NonNull EditText firstName, @NonNull EditText idNumber,
-      @NonNull EditText lastName, @NonNull ImageView profileImageView,
-      @NonNull ImageView registerBackground, @NonNull LinearLayout registerContent,
-      @NonNull Button uploadImageButton) {
+      @NonNull MaterialButton birthDateButton, @NonNull TextInputEditText city,
+      @NonNull MaterialButton continueButton, @NonNull TextInputEditText firstName,
+      @NonNull TextInputEditText idNumber, @NonNull TextInputEditText lastName,
+      @NonNull ImageView profileImageView, @NonNull ImageView registerBackground,
+      @NonNull CardView registerContent, @NonNull MaterialButton uploadImageButton) {
     this.rootView = rootView;
     this.birthDateButton = birthDateButton;
-    this.birthDateLabel = birthDateLabel;
     this.city = city;
     this.continueButton = continueButton;
     this.firstName = firstName;
@@ -104,43 +99,37 @@ public final class ActivityRegistrationBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.birthDateButton;
-      Button birthDateButton = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton birthDateButton = ViewBindings.findChildViewById(rootView, id);
       if (birthDateButton == null) {
         break missingId;
       }
 
-      id = R.id.birthDateLabel;
-      TextView birthDateLabel = ViewBindings.findChildViewById(rootView, id);
-      if (birthDateLabel == null) {
-        break missingId;
-      }
-
       id = R.id.city;
-      EditText city = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText city = ViewBindings.findChildViewById(rootView, id);
       if (city == null) {
         break missingId;
       }
 
       id = R.id.continueButton;
-      Button continueButton = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton continueButton = ViewBindings.findChildViewById(rootView, id);
       if (continueButton == null) {
         break missingId;
       }
 
       id = R.id.firstName;
-      EditText firstName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText firstName = ViewBindings.findChildViewById(rootView, id);
       if (firstName == null) {
         break missingId;
       }
 
       id = R.id.idNumber;
-      EditText idNumber = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText idNumber = ViewBindings.findChildViewById(rootView, id);
       if (idNumber == null) {
         break missingId;
       }
 
       id = R.id.lastName;
-      EditText lastName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText lastName = ViewBindings.findChildViewById(rootView, id);
       if (lastName == null) {
         break missingId;
       }
@@ -158,20 +147,20 @@ public final class ActivityRegistrationBinding implements ViewBinding {
       }
 
       id = R.id.registerContent;
-      LinearLayout registerContent = ViewBindings.findChildViewById(rootView, id);
+      CardView registerContent = ViewBindings.findChildViewById(rootView, id);
       if (registerContent == null) {
         break missingId;
       }
 
       id = R.id.uploadImageButton;
-      Button uploadImageButton = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton uploadImageButton = ViewBindings.findChildViewById(rootView, id);
       if (uploadImageButton == null) {
         break missingId;
       }
 
-      return new ActivityRegistrationBinding((ConstraintLayout) rootView, birthDateButton,
-          birthDateLabel, city, continueButton, firstName, idNumber, lastName, profileImageView,
-          registerBackground, registerContent, uploadImageButton);
+      return new ActivityRegistrationBinding((ConstraintLayout) rootView, birthDateButton, city,
+          continueButton, firstName, idNumber, lastName, profileImageView, registerBackground,
+          registerContent, uploadImageButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

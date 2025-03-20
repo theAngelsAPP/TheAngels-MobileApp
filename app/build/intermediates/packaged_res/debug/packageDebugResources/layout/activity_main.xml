@@ -65,7 +65,6 @@
         android:elevation="10dp"
         android:gravity="center"/>
 
-
     <!-- כפתור הרשמה -->
     <Button
         android:id="@+id/registerButton"

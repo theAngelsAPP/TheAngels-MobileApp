@@ -170,7 +170,6 @@ id activity_content
 id animal_event
 id answer_text
 id birthDateButton
-id birthDateLabel
 id bottomAppBar
 id bottomNavigation
 id bottom_bar

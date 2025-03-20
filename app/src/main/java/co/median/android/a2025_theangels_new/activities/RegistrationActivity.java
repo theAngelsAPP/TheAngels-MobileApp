@@ -37,7 +37,6 @@ public class RegistrationActivity extends AppCompatActivity {
         uploadImageButton = findViewById(R.id.uploadImageButton);
         profileImageView = findViewById(R.id.profileImageView);
         continueButton = findViewById(R.id.continueButton);
-        birthDateLabel = findViewById(R.id.birthDateLabel);
 
         // בחירת תאריך לידה
         birthDateButton.setOnClickListener(new View.OnClickListener() {
