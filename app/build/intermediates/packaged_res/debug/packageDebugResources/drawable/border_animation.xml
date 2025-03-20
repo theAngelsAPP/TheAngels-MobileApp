@@ -1,0 +1,23 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
+    <item android:duration="500">
+        <shape android:shape="rectangle">
+            <solid android:color="#a370f0"/>
+            <stroke android:width="5dp" android:color="#FF9800"/>
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+    <item android:duration="500">
+        <shape android:shape="rectangle">
+            <solid android:color="#a370f0"/>
+            <stroke android:width="5dp" android:color="#4CAF50"/>
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+    <item android:duration="500">
+        <shape android:shape="rectangle">
+            <solid android:color="#a370f0"/>
+            <stroke android:width="5dp" android:color="#FFEB3B"/>
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+</animation-list>

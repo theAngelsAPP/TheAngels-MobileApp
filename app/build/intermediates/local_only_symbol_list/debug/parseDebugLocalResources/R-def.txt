@@ -39,6 +39,7 @@ color vehicle_color
 color white
 drawable alerts
 drawable asset_7
+drawable border_animation
 drawable button_glow
 drawable button_gradient
 drawable circle_button
@@ -79,6 +80,7 @@ drawable header_background
 drawable home
 drawable ic_arrow_forward
 drawable ic_arrow_left
+drawable ic_arrow_right
 drawable ic_back_arrow
 drawable ic_calendar
 drawable ic_camera
@@ -136,6 +138,7 @@ drawable registerbackground
 drawable rounded_bg
 drawable rounded_button_background
 drawable rounded_edittext
+drawable rounded_white
 drawable search_background
 drawable status_closed
 drawable status_open

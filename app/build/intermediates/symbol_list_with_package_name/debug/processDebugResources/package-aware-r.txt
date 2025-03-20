@@ -3138,6 +3138,7 @@ drawable alerts
 drawable asset_7
 drawable avd_hide_password
 drawable avd_show_password
+drawable border_animation
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3213,6 +3214,7 @@ drawable home
 drawable ic_arrow_back_black_24
 drawable ic_arrow_forward
 drawable ic_arrow_left
+drawable ic_arrow_right
 drawable ic_back_arrow
 drawable ic_calendar
 drawable ic_call_answer
@@ -3360,6 +3362,7 @@ drawable registerbackground
 drawable rounded_bg
 drawable rounded_button_background
 drawable rounded_edittext
+drawable rounded_white
 drawable search_background
 drawable status_closed
 drawable status_open

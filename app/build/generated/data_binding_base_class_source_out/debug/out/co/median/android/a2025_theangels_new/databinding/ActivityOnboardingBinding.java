@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -18,7 +18,7 @@ import java.lang.String;
 
 public final class ActivityOnboardingBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
   public final Button startButton;
@@ -26,7 +26,7 @@ public final class ActivityOnboardingBinding implements ViewBinding {
   @NonNull
   public final ViewPager2 viewPager;
 
-  private ActivityOnboardingBinding(@NonNull LinearLayout rootView, @NonNull Button startButton,
+  private ActivityOnboardingBinding(@NonNull FrameLayout rootView, @NonNull Button startButton,
       @NonNull ViewPager2 viewPager) {
     this.rootView = rootView;
     this.startButton = startButton;
@@ -35,7 +35,7 @@ public final class ActivityOnboardingBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -72,7 +72,7 @@ public final class ActivityOnboardingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityOnboardingBinding((LinearLayout) rootView, startButton, viewPager);
+      return new ActivityOnboardingBinding((FrameLayout) rootView, startButton, viewPager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
