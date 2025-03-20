@@ -62,7 +62,7 @@
             android:id="@+id/tv_greeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="בוקר טוב, שם!"
+            android:text="בוקר טוב, מאיה!"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:textStyle="bold"
