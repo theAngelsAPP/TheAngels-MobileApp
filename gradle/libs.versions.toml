@@ -18,6 +18,8 @@ playServicesLocation = "21.3.0"
 stepview = "1.5.1"
 cardview = "1.0.0"
 lottie = "6.6.3"
+konfetti = "2.0.5"
+
 
 
 [libraries]
@@ -45,7 +47,7 @@ google-play-services-location = { group = "com.google.android.gms", name = "play
 stepview = { module = "com.github.shuhart:stepview", version.ref = "stepview" }
 cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
-
+konfetti-xml = { module = "nl.dionsegijn:konfetti-xml", version.ref = "konfetti" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -15,10 +15,14 @@ import co.median.android.a2025_theangels_new.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
+import nl.dionsegijn.konfetti.xml.KonfettiView;
 
 public final class FragmentOnboardingBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
+
+  @NonNull
+  public final KonfettiView konfettiView;
 
   @NonNull
   public final ImageView onboardingImage;
@@ -27,8 +31,10 @@ public final class FragmentOnboardingBinding implements ViewBinding {
   public final ImageButton startButton;
 
   private FragmentOnboardingBinding(@NonNull FrameLayout rootView,
-      @NonNull ImageView onboardingImage, @NonNull ImageButton startButton) {
+      @NonNull KonfettiView konfettiView, @NonNull ImageView onboardingImage,
+      @NonNull ImageButton startButton) {
     this.rootView = rootView;
+    this.konfettiView = konfettiView;
     this.onboardingImage = onboardingImage;
     this.startButton = startButton;
   }
@@ -60,6 +66,12 @@ public final class FragmentOnboardingBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.konfettiView;
+      KonfettiView konfettiView = ViewBindings.findChildViewById(rootView, id);
+      if (konfettiView == null) {
+        break missingId;
+      }
+
       id = R.id.onboardingImage;
       ImageView onboardingImage = ViewBindings.findChildViewById(rootView, id);
       if (onboardingImage == null) {
@@ -72,7 +84,8 @@ public final class FragmentOnboardingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentOnboardingBinding((FrameLayout) rootView, onboardingImage, startButton);
+      return new FragmentOnboardingBinding((FrameLayout) rootView, konfettiView, onboardingImage,
+          startButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

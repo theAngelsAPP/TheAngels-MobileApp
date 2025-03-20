@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 import java.util.List;
 import java.util.Arrays;
@@ -60,6 +62,14 @@ public class OnboardingActivity extends AppCompatActivity {
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
+                boolean shouldShowConfetti = (position == 0); // רק אם זה המסך הראשון
+
+                // מקבל את הפרגמנט מתוך ה- Adapter
+                Fragment fragment = getSupportFragmentManager().getFragments().get(position);
+                if (fragment instanceof OnboardingFragment) {
+                    ((OnboardingFragment) fragment).setShowConfetti(shouldShowConfetti);
+                }
+
                 if (position == images.size() - 1) {
                     startButton.setVisibility(View.VISIBLE);
                 } else {
@@ -68,11 +78,13 @@ public class OnboardingActivity extends AppCompatActivity {
             }
         });
 
+
         startButton.setOnClickListener(v -> {
             SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
             prefs.edit().putBoolean("onboarding_complete", true).apply();
 
             startActivity(new Intent(OnboardingActivity.this, MainActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         });
 

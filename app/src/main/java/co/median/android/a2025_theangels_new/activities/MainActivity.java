@@ -6,16 +6,16 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import co.median.android.a2025_theangels_new.R;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText usernameInput, passwordInput;
-    private ImageButton loginButton;
-    private TextView loginButtonText;
+    private TextInputEditText usernameInput, passwordInput;
+    private Button loginButton, registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +25,31 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
         boolean onboardingComplete = prefs.getBoolean("onboarding_complete", false);
 
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                        View.SYSTEM_UI_FLAG_FULLSCREEN |
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        );
+
         if (!onboardingComplete) {
             startActivity(new Intent(this, OnboardingActivity.class));
             finish();
-            return; // יציאה מה-`onCreate` כדי למנוע טעינת מסך ההתחברות
+            return;
         }
 
-        // אם ה-Onboarding הושלם, ממשיכים עם מסך ההתחברות
         setContentView(R.layout.activity_main);
 
         usernameInput = findViewById(R.id.usernameInput);
         passwordInput = findViewById(R.id.passwordInput);
         loginButton = findViewById(R.id.loginButton);
-        loginButtonText = findViewById(R.id.loginButtonText);
+        registerButton = findViewById(R.id.registerButton);
 
-        // מאזין לשינויים בטקסט
+        loginButton.setEnabled(false); // ברירת מחדל - הכפתור מכובה
+
+        // האזנה לשינויים בטקסט כדי להפעיל/לכבות את כפתור ההתחברות
         TextWatcher textWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -53,45 +63,27 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         };
 
-        // מאזינים לשדות שם משתמש וסיסמה
         usernameInput.addTextChangedListener(textWatcher);
         passwordInput.addTextChangedListener(textWatcher);
 
-        // לחיצה על כפתור התחברות
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isInputsFilled()) {
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+        loginButton.setOnClickListener(v -> {
+            if (isInputsFilled()) {
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                finish();
             }
         });
 
-        // לחיצה על כפתור הרשמה
-        findViewById(R.id.registerButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
-                startActivity(intent);
-            }
+        registerButton.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
         });
     }
 
     private void checkInputs() {
-        if (isInputsFilled()) {
-            loginButton.setImageResource(R.drawable.loginbutton_filled);
-            loginButtonText.setTextColor(getResources().getColor(android.R.color.black));
-        } else {
-            loginButton.setImageResource(R.drawable.loginbutton);
-            loginButtonText.setTextColor(getResources().getColor(android.R.color.white));
-        }
+        loginButton.setEnabled(isInputsFilled());
     }
 
     private boolean isInputsFilled() {
-        String username = usernameInput.getText().toString().trim();
-        String password = passwordInput.getText().toString().trim();
-        return !username.isEmpty() && !password.isEmpty();
+        return !usernameInput.getText().toString().trim().isEmpty() &&
+                !passwordInput.getText().toString().trim().isEmpty();
     }
 }

@@ -3709,6 +3709,7 @@ id item_touch_helper_previous_elevation
 id ivClose
 id jumpToEnd
 id jumpToStart
+id konfettiView
 id labeled
 id lastName
 id layout
@@ -3723,10 +3724,9 @@ id listMode
 id list_item
 id location_permission_container
 id location_permission_section
-id loginBackground
 id loginButton
-id loginButtonText
 id loginText
+id lottieAnimation
 id lottie_layer_name
 id m3_side_sheet
 id main_content
@@ -3855,7 +3855,6 @@ id parentRelative
 id parent_matrix
 id password
 id passwordInput
-id passwordLabel
 id password_toggle
 id path
 id pathRelative
@@ -3893,7 +3892,6 @@ id rectangles
 id redSeparator
 id registerBackground
 id registerButton
-id registerButtonText
 id registerContent
 id report_drawn
 id restart
@@ -4053,7 +4051,6 @@ id up
 id uploadImageButton
 id useLogo
 id usernameInput
-id usernameLabel
 id vehicle_event
 id vertical
 id vertical_only
@@ -4321,7 +4318,11 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap icon
 plurals mtrl_badge_content_description
+raw animation_2
+raw animation_3
 raw animation_attention
+raw animation_city
+raw animation_hello
 raw animation_searchvol
 raw loading_animation
 raw map_style

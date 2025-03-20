@@ -48,6 +48,7 @@ dependencies {
     implementation libs.stepview
     implementation(libs.cardview)
     implementation(libs.lottie)
+    implementation(libs.konfetti.xml)
 
 
     implementation libs.androidx.lifecycle.runtime.ktx

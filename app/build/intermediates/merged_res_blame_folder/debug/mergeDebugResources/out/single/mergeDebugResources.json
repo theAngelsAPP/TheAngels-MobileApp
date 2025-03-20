@@ -60,12 +60,12 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\wings_loading.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_goodtoknowbox_icon.png.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\goodtoknowbox_icon.png"
-    },
-    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_toolbar_background.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\toolbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_goodtoknowbox_icon.png.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\goodtoknowbox_icon.png"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_newuserpic.webp.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\fragment_contact.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_events.xml.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\events.xml"
-    },
-    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_ic_dark_mode.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\ic_dark_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_events.xml.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\events.xml"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_dashboard_box.xml.flat",
@@ -140,10 +140,6 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\notification_button.xml"
     },
     {
-        "merged": "co.median.android.a2025_theangels_new.app-debug-39:/layout_activity_onboarding.xml.flat",
-        "source": "co.median.android.a2025_theangels_new.app-main-41:/layout/activity_onboarding.xml"
-    },
-    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_header_background.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\header_background.xml"
     },
@@ -196,16 +192,16 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\loginregisterbutton.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_custom_rating_bar.xml.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\custom_rating_bar.xml"
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\xml\\data_extraction_rules.xml"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\animator_slide_in_left.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\animator\\slide_in_left.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_custom_rating_bar.xml.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\custom_rating_bar.xml"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\layout_bottom_app_bar.xml.flat",
@@ -220,16 +216,16 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\ic_user.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\layout_activity_support.xml.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\activity_support.xml"
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_event_row_background.xml.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\event_row_background.xml"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_button_glow.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\button_glow.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_event_row_background.xml.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\event_row_background.xml"
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\layout_activity_support.xml.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\activity_support.xml"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_ic_privacy.xml.flat",
@@ -248,12 +244,12 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\filter_button_medical.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_gradient_header.xml.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\gradient_header.xml"
-    },
-    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_status_open.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\status_open.xml"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_gradient_header.xml.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\gradient_header.xml"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\mipmap-xhdpi_icon.png.flat",
@@ -300,12 +296,12 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\font_heebo_black.ttf.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\font\\heebo_black.ttf"
-    },
-    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\animator_slide_out_right.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\animator\\slide_out_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\font_heebo_black.ttf.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\font\\heebo_black.ttf"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_event_label_bg.xml.flat",
@@ -328,20 +324,28 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_ic_share.xml.flat",
-        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\ic_share.xml"
-    },
-    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_training4.png.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\training4.png"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_ic_share.xml.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\ic_share.xml"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\layout_fragment_faq.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\fragment_faq.xml"
     },
     {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\raw_animation_city.json.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\raw\\animation_city.json"
+    },
+    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_input_background.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\input_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\raw_animation_2.json.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\raw\\animation_2.json"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\layout_activity_base.xml.flat",
@@ -376,6 +380,10 @@
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\layout\\activity_registration2.xml"
     },
     {
+        "merged": "co.median.android.a2025_theangels_new.app-debug-39:/layout_activity_main.xml.flat",
+        "source": "co.median.android.a2025_theangels_new.app-main-41:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_ic_health_on.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\ic_health_on.xml"
     },
@@ -394,6 +402,10 @@
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\raw_video_police.mp4.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\raw\\video_police.mp4"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\raw_animation_3.json.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\raw\\animation_3.json"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_education.xml.flat",
@@ -454,6 +466,10 @@
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_ic_arrow_left.xml.flat",
         "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\drawable\\ic_arrow_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\raw_animation_hello.json.flat",
+        "source": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-main-41:\\raw\\animation_hello.json"
     },
     {
         "merged": "C:\\Users\\omerg\\.gradle\\daemon\\8.11.1\\co.median.android.a2025_theangels_new.app-debug-39:\\drawable_training2.png.flat",

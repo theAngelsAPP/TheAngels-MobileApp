@@ -234,13 +234,13 @@ id img_clouds
 id img_profile
 id infoContainer
 id ivClose
+id konfettiView
 id lastName
 id location_permission_container
 id location_permission_section
-id loginBackground
 id loginButton
-id loginButtonText
 id loginText
+id lottieAnimation
 id main_content
 id map
 id map_container
@@ -264,7 +264,6 @@ id notification_permission_section
 id onboardingImage
 id password
 id passwordInput
-id passwordLabel
 id permission_description
 id permission_icon
 id permission_status
@@ -288,7 +287,6 @@ id rbSafetyYes
 id redSeparator
 id registerBackground
 id registerButton
-id registerButtonText
 id registerContent
 id rgBleeding
 id rgBreathing
@@ -322,7 +320,6 @@ id tv_user_role
 id tv_username
 id uploadImageButton
 id usernameInput
-id usernameLabel
 id vehicle_event
 id viewPager
 id volview
@@ -375,7 +372,11 @@ menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap icon
+raw animation_2
+raw animation_3
 raw animation_attention
+raw animation_city
+raw animation_hello
 raw animation_searchvol
 raw loading_animation
 raw map_style
