@@ -42,11 +42,11 @@ public class QuestionnaireFragment extends Fragment {
 
             RadioButton selectedButton = view.findViewById(checkedId);
             if (selectedButton.getId() % 2 == 0) {
-                selectedButton.setTextColor(Color.GREEN);
-                selectedButton.setButtonTintList(getContext().getColorStateList(android.R.color.holo_green_dark));
-            } else {
                 selectedButton.setTextColor(Color.RED);
                 selectedButton.setButtonTintList(getContext().getColorStateList(android.R.color.holo_red_dark));
+            } else {
+                selectedButton.setTextColor(Color.GREEN);
+                selectedButton.setButtonTintList(getContext().getColorStateList(android.R.color.holo_green_dark));
             }
 
             if (isSafetyQuestion && selectedButton.getId() == R.id.rbSafetyNo) {
