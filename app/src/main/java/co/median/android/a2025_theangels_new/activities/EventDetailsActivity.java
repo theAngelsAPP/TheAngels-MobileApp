@@ -6,12 +6,14 @@ import androidx.fragment.app.FragmentTransaction;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.fragments.StaticMapFragment;
 
-public class EventDetailsActivity extends AppCompatActivity {
+public class EventDetailsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
+        showTopBar(false);
+        showBottomBar(false);
 
         double eventLat = 31.8912;
         double eventLng = 34.8115;
@@ -23,4 +25,9 @@ public class EventDetailsActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
     }
+
+    protected int getLayoutResourceId() {
+        return R.layout.activity_event_details;
+    }
+
 }

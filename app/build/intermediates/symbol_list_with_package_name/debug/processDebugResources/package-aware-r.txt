@@ -3263,6 +3263,11 @@ drawable ic_star
 drawable ic_support
 drawable ic_text_size
 drawable ic_user
+drawable icon_events
+drawable icon_nomap
+drawable icon_rating
+drawable icon_trophy
+drawable image_def
 drawable indeterminate_static
 drawable input_background
 drawable location_permission_background
@@ -3586,6 +3591,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id defibrillator_image
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3731,7 +3737,7 @@ id m3_side_sheet
 id main_content
 id map
 id map_container
-id map_user_logo
+id map_placeholder
 id marquee
 id masked
 id match_constraint

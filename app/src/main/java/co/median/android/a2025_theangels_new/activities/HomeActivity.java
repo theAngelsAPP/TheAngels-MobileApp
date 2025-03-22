@@ -31,19 +31,27 @@ public class HomeActivity extends BaseActivity {
         locationPermissionContainer = findViewById(R.id.location_permission_container);
         tvLocationMessage = findViewById(R.id.tv_location_message);
         btnEnableLocation = findViewById(R.id.btn_enable_location);
-
         checkLocationPermission();
 
         btnEnableLocation.setOnClickListener(v -> requestLocationPermission());
     }
 
     private void checkLocationPermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            showMap();
+        loadMapFragment();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            hideLocationRequestBanner();
         } else {
             showLocationRequestBanner();
         }
     }
+
+    private void loadMapFragment() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.map_container, new MapFragment());
+        transaction.commit();
+    }
+
 
     private void requestLocationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -51,10 +59,11 @@ public class HomeActivity extends BaseActivity {
         }
     }
 
+
     private void showLocationRequestBanner() {
         locationPermissionContainer.setVisibility(View.VISIBLE);
-        tvLocationMessage.setText("כדי להשתמש באפליקציה, יש לאפשר גישה למיקום.");
-        btnEnableLocation.setText("לחץ כאן לאישור");
+        tvLocationMessage.setText("יש לאפשר גישה למיקומכם");
+        btnEnableLocation.setText("לחץ כאן לאפשר הרשאות");
     }
 
     private void hideLocationRequestBanner() {
@@ -74,9 +83,7 @@ public class HomeActivity extends BaseActivity {
 
     private void showMap() {
         hideLocationRequestBanner();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.map_container, new MapFragment());
-        transaction.commit();
+        loadMapFragment();
     }
 
     @Override

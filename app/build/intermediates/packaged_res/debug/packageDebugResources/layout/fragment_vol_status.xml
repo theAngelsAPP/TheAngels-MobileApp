@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp"
+    android:padding="7dp"
     android:background="@android:color/white">
 
     <LinearLayout
@@ -12,19 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginBottom="8dp">
-
-        <Button
-            android:id="@+id/btnCancelEvent"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="ביטול אירוע"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:background="#66BB6A"
-            android:padding="10dp"
-            android:layout_marginEnd="4dp"/>
+        android:layout_marginBottom="1dp">
 
         <Button
             android:id="@+id/btnCall"
@@ -33,10 +21,10 @@
             android:layout_weight="1"
             android:text="חיוג לפונה"
             android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:background="#66BB6A"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#1e6091"
             android:padding="10dp"
-            android:layout_marginEnd="4dp"/>
+            android:layout_marginEnd="2dp"/>
 
         <Button
             android:id="@+id/btnNavigate"
@@ -45,18 +33,32 @@
             android:layout_weight="1"
             android:text="ניווט לאירוע"
             android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:background="#66BB6A"
-            android:padding="10dp"/>
+            android:textColor="@android:color/white"
+            android:backgroundTint="#1e6091"
+            android:padding="10dp"
+            android:layout_marginEnd="2dp"/>
+
+        <Button
+            android:id="@+id/btnCancelEvent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ביטול אירוע"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#c1121f"
+            android:padding="10dp"
+            android:layout_marginEnd="2dp"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/btnArrived"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="עדכון הגעתי לאירוע"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:background="#FFB300"
-        android:padding="12dp"/>
+        android:layout_weight="1"
+        android:text="עדכון הגעה לאירוע"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#2d6a4f"
+        android:padding="10dp" />
 </LinearLayout>

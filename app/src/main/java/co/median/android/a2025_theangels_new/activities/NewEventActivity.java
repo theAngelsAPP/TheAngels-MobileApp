@@ -23,7 +23,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import java.util.Arrays;
 
-public class NewEventActivity extends AppCompatActivity {
+public class NewEventActivity extends BaseActivity {
 
     private int currentStep = 0;
     private StepView stepView;
@@ -43,6 +43,8 @@ public class NewEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event);
+        showTopBar(false);
+        showBottomBar(false);
 
         stepView = findViewById(R.id.step_view);
         ImageView ivClose = findViewById(R.id.ivClose);
@@ -169,5 +171,10 @@ public class NewEventActivity extends AppCompatActivity {
         stepView.postDelayed(() -> stepView.getState()
                 .selectedCircleColor(getResources().getColor(R.color.circle1))
                 .commit(), 3000);
+    }
+
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_new_event;
     }
 }

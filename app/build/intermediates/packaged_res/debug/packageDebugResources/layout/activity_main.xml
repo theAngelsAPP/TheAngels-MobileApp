@@ -20,35 +20,32 @@
         android:layout_gravity="center"
         android:src="@drawable/logintext"/>
 
-    <!-- שם משתמש -->
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="שם משתמש">
+        android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/usernameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textSize="16sp"/>
+            android:hint="שם משתמש"
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- סיסמה -->
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="סיסמה"
-        app:endIconMode="password_toggle"
-        android:layout_marginTop="12dp">
+        android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:inputType="textPassword"
-            android:textSize="16sp"/>
+            android:hint="סיסמה"
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- כפתור התחברות -->
@@ -82,7 +79,7 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimation"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="130dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/registerButton"

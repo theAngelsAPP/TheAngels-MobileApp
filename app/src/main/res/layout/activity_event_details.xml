@@ -214,10 +214,9 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/newuserpic"
+                    android:src="@drawable/event_angel"
                     android:scaleType="centerCrop"
-                    android:layout_marginEnd="12dp"
-                    android:background="@drawable/newuserpic"/>
+                    android:layout_marginEnd="12dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -17,19 +19,33 @@ import java.lang.String;
 
 public final class ActivityJoinvolSettingsBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final ImageView btnBack;
 
-  private ActivityJoinvolSettingsBinding(@NonNull ScrollView rootView, @NonNull ImageView btnBack) {
+  @NonNull
+  public final LinearLayout headerContainer;
+
+  @NonNull
+  public final RelativeLayout rootLayout;
+
+  @NonNull
+  public final TextView title;
+
+  private ActivityJoinvolSettingsBinding(@NonNull RelativeLayout rootView,
+      @NonNull ImageView btnBack, @NonNull LinearLayout headerContainer,
+      @NonNull RelativeLayout rootLayout, @NonNull TextView title) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.headerContainer = headerContainer;
+    this.rootLayout = rootLayout;
+    this.title = title;
   }
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -60,7 +76,22 @@ public final class ActivityJoinvolSettingsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityJoinvolSettingsBinding((ScrollView) rootView, btnBack);
+      id = R.id.header_container;
+      LinearLayout headerContainer = ViewBindings.findChildViewById(rootView, id);
+      if (headerContainer == null) {
+        break missingId;
+      }
+
+      RelativeLayout rootLayout = (RelativeLayout) rootView;
+
+      id = R.id.title;
+      TextView title = ViewBindings.findChildViewById(rootView, id);
+      if (title == null) {
+        break missingId;
+      }
+
+      return new ActivityJoinvolSettingsBinding((RelativeLayout) rootView, btnBack, headerContainer,
+          rootLayout, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

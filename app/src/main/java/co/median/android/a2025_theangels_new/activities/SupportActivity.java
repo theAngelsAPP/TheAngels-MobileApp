@@ -36,18 +36,8 @@ public class SupportActivity extends AppCompatActivity {
         transaction.replace(R.id.content_container, fragment);
         transaction.commit();
 
-        updateTabColors(fragment);
     }
 
-    private void updateTabColors(Fragment fragment) {
-        if (fragment instanceof FAQFragment) {
-            btnFAQ.setBackgroundResource(R.drawable.tab_selected);
-            btnContact.setBackgroundResource(R.drawable.tab_unselected);
-        } else if (fragment instanceof ContactFragment) {
-            btnContact.setBackgroundResource(R.drawable.tab_selected);
-            btnFAQ.setBackgroundResource(R.drawable.tab_unselected);
-        }
-    }
 
 
     public void sendEmail() {

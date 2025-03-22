@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -72,7 +72,7 @@ public final class ActivityRegistration2Binding implements ViewBinding {
   public final MaterialButton registerButton;
 
   @NonNull
-  public final CardView registerContent;
+  public final LinearLayout registerContent;
 
   private ActivityRegistration2Binding(@NonNull ConstraintLayout rootView,
       @NonNull TextInputEditText confirmPassword, @NonNull TextInputEditText email,
@@ -82,7 +82,7 @@ public final class ActivityRegistration2Binding implements ViewBinding {
       @NonNull ChipGroup medicalOptions, @NonNull Chip medicalPressure,
       @NonNull TextInputEditText password, @NonNull TextInputEditText phone,
       @NonNull ImageView registerBackground, @NonNull MaterialButton registerButton,
-      @NonNull CardView registerContent) {
+      @NonNull LinearLayout registerContent) {
     this.rootView = rootView;
     this.confirmPassword = confirmPassword;
     this.email = email;
@@ -220,7 +220,7 @@ public final class ActivityRegistration2Binding implements ViewBinding {
       }
 
       id = R.id.registerContent;
-      CardView registerContent = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout registerContent = ViewBindings.findChildViewById(rootView, id);
       if (registerContent == null) {
         break missingId;
       }

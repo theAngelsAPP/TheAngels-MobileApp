@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:background="@color/blue_gradient_start"
@@ -119,6 +119,15 @@
                 android:text="מדביקים את האלקטרודות על חזה המטופל כפי שמופיע בהוראות, ומוודאים שאף אחד לא נוגע בגוף המטופל לפני מתן השוק החשמלי."
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
+
+            <ImageView
+                android:id="@+id/defibrillator_image"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_def" />
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

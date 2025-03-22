@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -47,7 +47,7 @@ public final class ActivityRegistrationBinding implements ViewBinding {
   public final ImageView registerBackground;
 
   @NonNull
-  public final CardView registerContent;
+  public final LinearLayout registerContent;
 
   @NonNull
   public final MaterialButton uploadImageButton;
@@ -57,7 +57,7 @@ public final class ActivityRegistrationBinding implements ViewBinding {
       @NonNull MaterialButton continueButton, @NonNull TextInputEditText firstName,
       @NonNull TextInputEditText idNumber, @NonNull TextInputEditText lastName,
       @NonNull ImageView profileImageView, @NonNull ImageView registerBackground,
-      @NonNull CardView registerContent, @NonNull MaterialButton uploadImageButton) {
+      @NonNull LinearLayout registerContent, @NonNull MaterialButton uploadImageButton) {
     this.rootView = rootView;
     this.birthDateButton = birthDateButton;
     this.city = city;
@@ -147,7 +147,7 @@ public final class ActivityRegistrationBinding implements ViewBinding {
       }
 
       id = R.id.registerContent;
-      CardView registerContent = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout registerContent = ViewBindings.findChildViewById(rootView, id);
       if (registerContent == null) {
         break missingId;
       }

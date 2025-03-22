@@ -9,6 +9,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -34,12 +35,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private FusedLocationProviderClient fusedLocationClient;
-    private ImageView mapUserLogo;
+    private LinearLayout mapPlaceholder;
 
     private final ActivityResultLauncher<String> locationPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
                     enableUserLocation();
+                } else {
+                    showPlaceholder();
                 }
             });
 
@@ -52,14 +55,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState);
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
+        mapPlaceholder = view.findViewById(R.id.map_placeholder);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
-
-        mapUserLogo = view.findViewById(R.id.map_user_logo);
     }
 
     @Override
@@ -86,16 +88,26 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 == PackageManager.PERMISSION_GRANTED) {
             enableUserLocation();
         } else {
-            locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION);
+            showPlaceholder();
         }
     }
 
     private void enableUserLocation() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
+            View mapView = requireView().findViewById(R.id.map);
+            mapView.setVisibility(View.VISIBLE);
+            mapPlaceholder.setVisibility(View.GONE);
+
             mMap.setMyLocationEnabled(true);
             getUserLocation();
         }
+    }
+
+    private void showPlaceholder() {
+        View mapView = requireView().findViewById(R.id.map);
+        mapView.setVisibility(View.GONE);
+        mapPlaceholder.setVisibility(View.VISIBLE);
     }
 
     private void getUserLocation() {
@@ -137,7 +149,4 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
-
-
-
 }

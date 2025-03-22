@@ -1,9 +1,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:fillViewport="true">
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp"
+            android:padding="5dp"
             android:background="@drawable/event_row_background"
             android:gravity="center"
             android:layout_marginBottom="16dp">
@@ -41,19 +41,18 @@
                     android:layout_margin="6dp">
 
                     <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_event"
-                        app:tint="@color/blue_gradient_start" />
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/icon_events" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/blue_gradient_start"
-                        android:layout_marginTop="4dp"/>
+                        android:textColor="@color/black"
+                        android:layout_marginTop="2dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -75,24 +74,23 @@
                     android:layout_margin="6dp">
 
                     <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_people"
-                        app:tint="@color/blue_gradient_start" />
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/icon_trophy" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="34"
-                        android:textSize="24sp"
+                        android:text="ותיקה"
+                        android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/blue_gradient_start"
-                        android:layout_marginTop="4dp"/>
+                        android:textColor="@color/black"
+                        android:layout_marginTop="2dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="אנשים"
+                        android:text="דרגה"
                         android:textSize="12sp"
                         android:textColor="@color/black"/>
                 </LinearLayout>
@@ -109,19 +107,18 @@
                     android:layout_margin="6dp">
 
                     <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_star"
-                        app:tint="@color/blue_gradient_start" />
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/icon_rating"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="4.8"
-                        android:textSize="24sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/blue_gradient_start"
-                        android:layout_marginTop="4dp"/>
+                        android:textColor="@color/black"
+                        android:layout_marginTop="2dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -151,7 +148,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/messagebox_icon"
                 android:contentDescription="הודעה"
-                android:layout_marginStart="12dp"/>
+                android:layout_marginEnd="12dp"/>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -162,15 +159,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="עדכון חשוב!"
-                    android:textSize="16sp"
+                    android:text="הודעת מערכת חדשה"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="יש לנו מידע חשוב עבורך, לחץ כאן לפרטים נוספים."
+                    android:text="לאחר שיקלול הנתונים, הדירוג הכולל שלך עלה ל4.8, כל הכבוד! 👏🏻"
                     android:textSize="14sp"
                     android:textColor="@android:color/black"/>
             </LinearLayout>
@@ -202,10 +199,18 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="הפעלת שירותי מיקום"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+                <TextView
                     android:id="@+id/tv_location_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="כדי להשתמש באפליקציה, יש לאפשר גישה למיקום."
+                    android:text="יש לאפשר גישה למיקומכם"
                     android:textSize="14sp"
                     android:textColor="@android:color/black"/>
 
@@ -240,7 +245,7 @@
                 android:layout_height="48dp"
                 android:src="@drawable/goodtoknowbox_icon"
                 android:contentDescription="כדאי לדעת"
-                android:layout_marginStart="12dp"/>
+                android:layout_marginEnd="12dp"/>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -251,15 +256,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="כדאי לדעת"
-                    android:textSize="16sp"
+                    android:text="כדאי לדעת: שימוש בדפיברילטור"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="מידע שחשוב להכיר על הצלת חיים."
+                    android:text="בואו ללמוד כיצד לתפעל דפיברילטור"
                     android:textSize="14sp"
                     android:textColor="@android:color/black"/>
             </LinearLayout>
@@ -393,19 +398,13 @@
                     android:src="@drawable/ic_arrow_left"
                     android:contentDescription="מעבר לאירוע"/>
             </LinearLayout>
-
         </LinearLayout>
 
         <FrameLayout
             android:id="@+id/map_container"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"/>
-
-
+            android:layout_height="250dp"
+            android:layout_marginTop="2dp"/>
     </LinearLayout>
 
 </ScrollView>

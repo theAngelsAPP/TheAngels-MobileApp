@@ -112,6 +112,11 @@ drawable ic_star
 drawable ic_support
 drawable ic_text_size
 drawable ic_user
+drawable icon_events
+drawable icon_nomap
+drawable icon_rating
+drawable icon_trophy
+drawable image_def
 drawable input_background
 drawable location_permission_background
 drawable locationbox_icon
@@ -206,6 +211,7 @@ id content_container
 id continueButton
 id dark_mode_icon
 id dark_mode_status
+id defibrillator_image
 id education_card
 id email
 id email_section
@@ -243,7 +249,7 @@ id lottieAnimation
 id main_content
 id map
 id map_container
-id map_user_logo
+id map_placeholder
 id medicalDetailsLabel
 id medicalOptions
 id medical_allergy

@@ -1,16 +1,18 @@
 <com.google.android.material.bottomappbar.BottomAppBar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottomAppBar"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="56dp"
     android:backgroundTint="@android:color/white"
     app:fabAlignmentMode="center"
     app:fabCradleMargin="12dp"
     app:fabCradleRoundedCornerRadius="32dp"
     app:fabCradleVerticalOffset="16dp"
     app:hideOnScroll="false"
-    android:elevation="8dp">
+    android:elevation="8dp"
+    tools:ignore="BottomAppBar">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

@@ -15,24 +15,25 @@
         android:layout_height="300dp"
         android:layout_margin="0dp"/>
 
-    <!-- כפתור לעדכון ידני -->
+    <!-- כפתור הרשמה -->
     <Button
         android:id="@+id/btnManualLocation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="המיקום שגוי? לעדכון ידני"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"
-        android:background="#e01e37"
-        android:padding="12dp"
-        android:elevation="4dp"
-        android:layout_marginTop="8dp"/>
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:letterSpacing="0"
+        android:textStyle="bold"
+        android:backgroundTint="#fff3b0"
+        android:elevation="10dp"
+        android:gravity="center"/>
 
     <!-- שדה טקסט חופשי עם השלמה אוטומטית -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_marginTop="8dp">
 
         <com.google.android.material.textfield.TextInputEditText

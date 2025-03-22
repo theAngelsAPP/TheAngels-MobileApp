@@ -50,11 +50,15 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="שאלות נפוצות"
+            android:text="תמיכה"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:background="@drawable/tab_selected"
-            android:textColor="@android:color/black"
-            android:layout_marginEnd="8dp"/>
+            android:letterSpacing="0"
+            android:textStyle="bold"
+            android:backgroundTint="#52b788"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+/>
 
         <Button
             android:id="@+id/btn_contact"
@@ -62,9 +66,16 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="דברו איתנו"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
-            android:background="@drawable/tab_unselected"
-            android:textColor="@android:color/black"/>
+            android:letterSpacing="0"
+            android:textStyle="bold"
+            android:backgroundTint="#52b788"
+            android:layout_marginEnd="30dp"
+            />
+
+
+
     </LinearLayout>
 
     <!-- אזור תוכן דינמי -->

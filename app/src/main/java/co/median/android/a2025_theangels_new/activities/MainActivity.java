@@ -13,13 +13,15 @@ import co.median.android.a2025_theangels_new.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private TextInputEditText usernameInput, passwordInput;
     private Button loginButton, registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        showTopBar(true);
+        showBottomBar(true);
 
         // בדיקה אם המשתמש סיים את ה-Onboarding
         SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
@@ -85,5 +87,10 @@ public class MainActivity extends AppCompatActivity {
     private boolean isInputsFilled() {
         return !usernameInput.getText().toString().trim().isEmpty() &&
                 !passwordInput.getText().toString().trim().isEmpty();
+    }
+
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_main;
     }
 }

@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentContainerView;
@@ -24,13 +24,13 @@ public final class FragmentMapBinding implements ViewBinding {
   public final FragmentContainerView map;
 
   @NonNull
-  public final ImageView mapUserLogo;
+  public final LinearLayout mapPlaceholder;
 
   private FragmentMapBinding(@NonNull FrameLayout rootView, @NonNull FragmentContainerView map,
-      @NonNull ImageView mapUserLogo) {
+      @NonNull LinearLayout mapPlaceholder) {
     this.rootView = rootView;
     this.map = map;
-    this.mapUserLogo = mapUserLogo;
+    this.mapPlaceholder = mapPlaceholder;
   }
 
   @Override
@@ -66,13 +66,13 @@ public final class FragmentMapBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.map_user_logo;
-      ImageView mapUserLogo = ViewBindings.findChildViewById(rootView, id);
-      if (mapUserLogo == null) {
+      id = R.id.map_placeholder;
+      LinearLayout mapPlaceholder = ViewBindings.findChildViewById(rootView, id);
+      if (mapPlaceholder == null) {
         break missingId;
       }
 
-      return new FragmentMapBinding((FrameLayout) rootView, map, mapUserLogo);
+      return new FragmentMapBinding((FrameLayout) rootView, map, mapPlaceholder);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

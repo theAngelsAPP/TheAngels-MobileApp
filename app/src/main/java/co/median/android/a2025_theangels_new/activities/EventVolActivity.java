@@ -4,11 +4,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.shuhart.stepview.StepView;
 import java.util.Arrays;
 import java.util.List;
+import android.os.Handler;
+
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.fragments.StaticMapFragment;
@@ -19,7 +23,11 @@ import co.median.android.a2025_theangels_new.fragments.VolCloseFragment;
 public class EventVolActivity extends BaseActivity {
 
     private StepView stepView;
+    private TextView timerTextView;
     private Button nextStepButton;
+    private boolean isRunning = true;
+    private int seconds = 0;
+    private Handler handler = new Handler();
     private FrameLayout mapContainer;
     private int currentStep = 0;
     private List<Fragment> stepFragments = Arrays.asList(
@@ -36,11 +44,13 @@ public class EventVolActivity extends BaseActivity {
 
         stepView = findViewById(R.id.step_view);
         nextStepButton = findViewById(R.id.nextStepButton);
-
+        timerTextView = findViewById(R.id.timerTextView);
+        startTimer();
         setupStepView();
         mapContainer = findViewById(R.id.map_container);
         setupMap();
         loadStepFragment(0);
+
 
         nextStepButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,5 +96,23 @@ public class EventVolActivity extends BaseActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
+    }
+
+    private void startTimer() {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                int minutes = seconds / 60;
+                int secs = seconds % 60;
+                String timeFormatted = String.format("%02d:%02d", minutes, secs);
+                timerTextView.setText(timeFormatted);
+
+                if (isRunning) {
+                    seconds++;
+                }
+
+                handler.postDelayed(this, 1000);
+            }
+        });
     }
 }

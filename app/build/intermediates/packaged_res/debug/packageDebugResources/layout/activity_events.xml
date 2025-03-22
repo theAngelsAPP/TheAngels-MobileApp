@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp"
+            android:padding="8dp"
             android:background="@android:color/white">
 
             <!-- שדה חיפוש -->
@@ -40,7 +40,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="חפש אירוע..."
+                    android:hint="חיפוש אירוע..."
                     android:textSize="14sp"
                     android:textColor="@android:color/black"
                     android:textColorHint="@android:color/darker_gray"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="6dp">
 
                 <Button
                     android:layout_width="0dp"
@@ -76,7 +76,7 @@
                     android:textColor="@android:color/white"
                     android:background="@drawable/filter_button_security"
                     android:gravity="center"
-                    android:layout_marginStart="6dp" />
+                    android:layout_marginStart="1dp" />
 
                 <Button
                     android:layout_width="0dp"
@@ -87,18 +87,18 @@
                     android:textColor="@android:color/white"
                     android:background="@drawable/filter_button_vehicle"
                     android:gravity="center"
-                    android:layout_marginStart="6dp" />
+                    android:layout_marginStart="1dp" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="בעל חיים"
+                    android:text="בע''ח"
                     android:textSize="12sp"
                     android:textColor="@android:color/white"
                     android:background="@drawable/filter_button_animal"
                     android:gravity="center"
-                    android:layout_marginStart="6dp" />
+                    android:layout_marginStart="1dp" />
             </LinearLayout>
         </LinearLayout>
 

@@ -5,7 +5,6 @@
     android:background="@android:color/white"
     android:padding="0dp">
 
-    <!-- כותרת עליונה עם רקע גרדיאנט -->
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
@@ -48,13 +47,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- פרטים אישיים -->
             <TextView style="@style/SectionTitle" android:text="פרטים אישיים"/>
             <TextView style="@style/FieldLabel" android:text="שם פרטי"/>
-            <EditText style="@style/RoundedInput" android:hint="שם פרטי"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="שם פרטי"
+                android:inputType="textPersonName"/>
 
             <TextView style="@style/FieldLabel" android:text="שם משפחה"/>
-            <EditText style="@style/RoundedInput" android:hint="שם משפחה"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="שם משפחה"
+                android:inputType="textPersonName"/>
 
             <TextView style="@style/FieldLabel" android:text="תעודת זהות"/>
             <EditText
@@ -62,7 +66,8 @@
                 style="@style/RoundedInput"
                 android:hint="123456789"
                 android:focusable="false"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:inputType="number"/>
 
             <TextView style="@style/FieldLabel" android:text="תאריך לידה"/>
             <EditText
@@ -73,15 +78,23 @@
                 android:clickable="true"/>
 
             <TextView style="@style/FieldLabel" android:text="עיר מגורים"/>
-            <EditText style="@style/RoundedInput" android:hint="עיר מגורים"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="עיר מגורים"
+                android:inputType="textCapWords"/>
 
-            <!-- פרטי התחברות -->
             <TextView style="@style/SectionTitle" android:text="פרטי התחברות"/>
             <TextView style="@style/FieldLabel" android:text="כתובת מייל"/>
-            <EditText style="@style/RoundedInput" android:hint="כתובת מייל"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="כתובת מייל"
+                android:inputType="textEmailAddress"/>
 
             <TextView style="@style/FieldLabel" android:text="מספר טלפון"/>
-            <EditText style="@style/RoundedInput" android:hint="מספר טלפון"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="מספר טלפון"
+                android:inputType="phone"/>
 
             <TextView style="@style/FieldLabel" android:text="סיסמה"/>
             <EditText
@@ -91,7 +104,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- כפתור שמירת שינויים בתחתית המסך -->
     <Button
         android:id="@+id/btn_save_changes"
         android:layout_width="match_parent"

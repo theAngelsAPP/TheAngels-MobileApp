@@ -40,8 +40,8 @@ public class EventUserActivity extends BaseActivity {
     private View redSeparator;
 
     private int currentStep = 0;
-    private int seconds = 0;
     private boolean isRunning = true;
+    private int seconds = 0;
     private Handler handler = new Handler();
     private List<String> statuses = Arrays.asList(
             "מחפשים אחר מתנדב זמין בסביבתך",

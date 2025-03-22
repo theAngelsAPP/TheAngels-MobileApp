@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -18,7 +17,7 @@ import java.lang.String;
 
 public final class ActivityBaseBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
   public final FrameLayout activityContent;
@@ -32,7 +31,7 @@ public final class ActivityBaseBinding implements ViewBinding {
   @NonNull
   public final TopBarLayoutBinding topBar;
 
-  private ActivityBaseBinding(@NonNull LinearLayout rootView, @NonNull FrameLayout activityContent,
+  private ActivityBaseBinding(@NonNull FrameLayout rootView, @NonNull FrameLayout activityContent,
       @NonNull BottomBarLayoutBinding bottomBar, @NonNull FloatingActionButton fabEmergency,
       @NonNull TopBarLayoutBinding topBar) {
     this.rootView = rootView;
@@ -44,7 +43,7 @@ public final class ActivityBaseBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -95,7 +94,7 @@ public final class ActivityBaseBinding implements ViewBinding {
       }
       TopBarLayoutBinding binding_topBar = TopBarLayoutBinding.bind(topBar);
 
-      return new ActivityBaseBinding((LinearLayout) rootView, activityContent, binding_bottomBar,
+      return new ActivityBaseBinding((FrameLayout) rootView, activityContent, binding_bottomBar,
           fabEmergency, binding_topBar);
     }
     String missingId = rootView.getResources().getResourceName(id);

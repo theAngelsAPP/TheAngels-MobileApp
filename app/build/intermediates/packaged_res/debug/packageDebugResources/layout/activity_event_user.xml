@@ -112,7 +112,7 @@
             android:id="@+id/safetyMessageLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="7dp"
+            android:padding="3dp"
             android:background="#FFF3E0"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -121,7 +121,7 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="2dp"
                 app:lottie_rawRes="@raw/animation_attention"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="לאורך כל האירוע חשוב לוודא שאתם נמצאים במקום בטוח בלי סכנה לכם ולמטופל!"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="@android:color/black"/>
         </LinearLayout>
 
@@ -186,20 +186,18 @@
             android:textColor="@android:color/white"
             android:backgroundTint="#c1121f"
             android:padding="12dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="5dp"
             android:layout_gravity="center"/>
-
 
         <Button
             android:id="@+id/nextStepButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="המשך"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="המשך תצוגה"
             android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:background="#ffb703"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"
+            android:backgroundTint="#dee2e6"
+            android:padding="2dp"
             android:layout_gravity="center"/>
 
         <!-- קטע של דירוג - יוצג רק כאשר השלב האחרון -->
@@ -221,7 +219,7 @@
                 android:textSize="20sp"
                 android:textColor="@android:color/black"
                 android:gravity="center"
-                android:background="#81D4FA"
+                android:background="#fcefb4"
                 android:padding="8dp"
                 android:layout_marginBottom="8dp"/>
 
@@ -244,7 +242,7 @@
                 android:textSize="18sp"
                 android:textColor="@android:color/black"
                 android:gravity="center"
-                android:background="#81D4FA"
+                android:background="#fcefb4"
                 android:padding="8dp"
                 android:layout_marginTop="12dp"/>
 
@@ -263,12 +261,13 @@
                 android:id="@+id/submitFeedbackButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="שליחה"
+                android:text="דירוג מתנדב"
                 android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:backgroundTint="#64B5F6"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#40916c"
+                android:textStyle="bold"
                 android:padding="12dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginBottom="5dp"
                 android:layout_gravity="center"/>
 
             <Button
@@ -278,9 +277,9 @@
                 android:text="מעבר לתצוגת המתנדב"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
-                android:background="#ffb703"
+                android:backgroundTint="#dee2e6"
                 android:padding="12dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="5dp"
                 android:layout_gravity="center"/>
 
 

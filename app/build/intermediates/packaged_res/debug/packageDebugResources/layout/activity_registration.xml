@@ -6,53 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- רקע עם תמונה מטושטשת -->
+    <!-- רקע המסך -->
     <ImageView
         android:id="@+id/registerBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/registerbackground"
-        android:alpha="0.8"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- CardView מעוצב עבור טופס ההרשמה -->
-    <androidx.cardview.widget.CardView
+    <!-- אזור התוכן הלבן -->
+    <LinearLayout
         android:id="@+id/registerContent"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_width="377dp"
+        android:layout_height="520dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="100dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
         android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintVertical_bias="0.89">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <!-- כותרת -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="הרשמה"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:paddingBottom="10dp"/>
 
             <!-- שדות קלט עם Material Design -->
             <com.google.android.material.textfield.TextInputLayout
@@ -155,6 +137,6 @@
                 android:backgroundTint="@color/blue_gradient_end"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

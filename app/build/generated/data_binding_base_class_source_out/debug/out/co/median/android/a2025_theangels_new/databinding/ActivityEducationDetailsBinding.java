@@ -26,6 +26,9 @@ public final class ActivityEducationDetailsBinding implements ViewBinding {
   public final ImageView btnBack;
 
   @NonNull
+  public final ImageView defibrillatorImage;
+
+  @NonNull
   public final LinearLayout headerContainer;
 
   @NonNull
@@ -41,11 +44,13 @@ public final class ActivityEducationDetailsBinding implements ViewBinding {
   public final CardView trainingTitleCard;
 
   private ActivityEducationDetailsBinding(@NonNull RelativeLayout rootView,
-      @NonNull ImageView btnBack, @NonNull LinearLayout headerContainer,
-      @NonNull ImageView headerImage, @NonNull TextView title,
-      @NonNull CardView trainingContentCard, @NonNull CardView trainingTitleCard) {
+      @NonNull ImageView btnBack, @NonNull ImageView defibrillatorImage,
+      @NonNull LinearLayout headerContainer, @NonNull ImageView headerImage,
+      @NonNull TextView title, @NonNull CardView trainingContentCard,
+      @NonNull CardView trainingTitleCard) {
     this.rootView = rootView;
     this.btnBack = btnBack;
+    this.defibrillatorImage = defibrillatorImage;
     this.headerContainer = headerContainer;
     this.headerImage = headerImage;
     this.title = title;
@@ -86,6 +91,12 @@ public final class ActivityEducationDetailsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.defibrillator_image;
+      ImageView defibrillatorImage = ViewBindings.findChildViewById(rootView, id);
+      if (defibrillatorImage == null) {
+        break missingId;
+      }
+
       id = R.id.header_container;
       LinearLayout headerContainer = ViewBindings.findChildViewById(rootView, id);
       if (headerContainer == null) {
@@ -117,7 +128,8 @@ public final class ActivityEducationDetailsBinding implements ViewBinding {
       }
 
       return new ActivityEducationDetailsBinding((RelativeLayout) rootView, btnBack,
-          headerContainer, headerImage, title, trainingContentCard, trainingTitleCard);
+          defibrillatorImage, headerContainer, headerImage, title, trainingContentCard,
+          trainingTitleCard);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
