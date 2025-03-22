@@ -1,5 +1,7 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.activities;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +25,25 @@ import nl.dionsegijn.konfetti.core.models.Size;
 import nl.dionsegijn.konfetti.xml.KonfettiView;
 import nl.dionsegijn.konfetti.xml.image.ImageUtil;
 
+// =======================================
+// OnboardingFragment - Displays a single onboarding image and (optionally) a confetti animation
+// =======================================
 public class OnboardingFragment extends Fragment {
+
+    // =======================================
+    // CONSTANTS
+    // =======================================
     private static final String ARG_IMAGE_RES = "image_res";
+
+    // =======================================
+    // VARIABLES
+    // =======================================
     private KonfettiView konfettiView = null;
     private boolean showConfetti = false;
 
+    // =======================================
+    // newInstance - Factory method to create fragment with image resource
+    // =======================================
     public static OnboardingFragment newInstance(int imageRes) {
         OnboardingFragment fragment = new OnboardingFragment();
         Bundle args = new Bundle();
@@ -36,18 +52,25 @@ public class OnboardingFragment extends Fragment {
         return fragment;
     }
 
+    // =======================================
+    // onCreateView - Inflates layout and sets image and confetti logic
+    // =======================================
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_onboarding, container, false);
         konfettiView = view.findViewById(R.id.konfettiView);
         ImageView imageView = view.findViewById(R.id.onboardingImage);
 
+        // Set image resource
         if (getArguments() != null) {
             int imageRes = getArguments().getInt(ARG_IMAGE_RES);
             imageView.setImageResource(imageRes);
         }
 
+        // Handle confetti
         if (showConfetti) {
             startConfetti();
         } else {
@@ -57,7 +80,9 @@ public class OnboardingFragment extends Fragment {
         return view;
     }
 
-
+    // =======================================
+    // startConfetti - Starts konfetti animation with custom configuration
+    // =======================================
     private void startConfetti() {
         EmitterConfig emitterConfig = new Emitter(1, TimeUnit.SECONDS).perSecond(200);
         Party party = new PartyFactory(emitterConfig)
@@ -72,11 +97,15 @@ public class OnboardingFragment extends Fragment {
         konfettiView.start(party);
     }
 
+    // =======================================
+    // setShowConfetti - Called from Activity to trigger confetti in the fragment
+    // =======================================
     public void setShowConfetti(boolean show) {
         this.showConfetti = show;
-        if (konfettiView == null) return; // ודא שה-View קיים
+        if (konfettiView == null) return;
 
-        konfettiView.post(() -> { // גורם לו לפעול מיידית בתור Thread UI
+        // Ensure it's executed on UI thread
+        konfettiView.post(() -> {
             if (showConfetti) {
                 konfettiView.setVisibility(View.VISIBLE);
                 startConfetti();
@@ -85,6 +114,4 @@ public class OnboardingFragment extends Fragment {
             }
         });
     }
-
-
 }

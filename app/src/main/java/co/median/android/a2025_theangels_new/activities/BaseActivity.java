@@ -1,3 +1,6 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.activities;
 
 import android.animation.ObjectAnimator;
@@ -20,12 +23,26 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import co.median.android.a2025_theangels_new.R;
 
+// =======================================
+// BaseActivity - Abstract base class for all activities
+// Handles layout setup, top/bottom bars, and shared UI logic
+// =======================================
+
 public abstract class BaseActivity extends AppCompatActivity {
+
+    // =======================================
+    // VARIABLES
+    // =======================================
 
     private View topBar;
     private BottomAppBar bottomAppBar;
     private BottomNavigationView bottomNavigationView;
     private FloatingActionButton fabEmergency;
+
+    // =======================================
+    // onCreate - Called when the activity is first created
+    // Sets up layout, UI components, animations, and listeners
+    // =======================================
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         fabEmergency = findViewById(R.id.fab_emergency);
 
+        // Setup FAB click with animation and vibration
         if (fabEmergency != null) {
             fabEmergency.setOnClickListener(v -> {
                 ObjectAnimator scaleX = ObjectAnimator.ofFloat(v, "scaleX", 1.2f, 1.0f);
@@ -69,6 +87,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             });
         }
 
+        // Setup bottom navigation listener
         if (bottomNavigationView != null) {
             bottomNavigationView.setOnItemSelectedListener(item -> {
                 int itemId = item.getItemId();
@@ -90,6 +109,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    // =======================================
+    // hideSystemUI - Hides status/navigation bars for fullscreen experience
+    // =======================================
     private void hideSystemUI() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             getWindow().setDecorFitsSystemWindows(false);
@@ -106,6 +128,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    // =======================================
+    // setTransparentStatusBar - Makes the status bar transparent
+    // =======================================
     private void setTransparentStatusBar() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -115,6 +140,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    // =======================================
+    // startActivityWithAnimation - Starts an activity with fade animation and finishes current
+    // =======================================
     private void startActivityWithAnimation(Class<?> targetActivity) {
         Intent intent = new Intent(this, targetActivity);
         startActivity(intent);
@@ -122,6 +150,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         finish();
     }
 
+    // =======================================
+    // highlightCurrentTab - Highlights the current active navigation tab
+    // =======================================
     private void highlightCurrentTab() {
         if (bottomNavigationView != null) {
             int currentItemId = getCurrentMenuItemId();
@@ -129,6 +160,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    // =======================================
+    // getCurrentMenuItemId - Determines the current navigation item based on the activity
+    // =======================================
     private int getCurrentMenuItemId() {
         if (this instanceof HomeActivity) {
             return R.id.nav_home;
@@ -142,6 +176,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         return R.id.nav_home;
     }
 
+    // =======================================
+    // onResume - Called when the activity is resumed
+    // Ensures UI remains fullscreen and highlights correct tab
+    // =======================================
     @Override
     protected void onResume() {
         super.onResume();
@@ -149,12 +187,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         highlightCurrentTab();
     }
 
+    // =======================================
+    // showTopBar - Shows or hides the top bar
+    // =======================================
     protected void showTopBar(boolean show) {
         if (topBar != null) {
             topBar.setVisibility(show ? View.VISIBLE : View.GONE);
         }
     }
 
+    // =======================================
+    // showBottomBar - Shows or hides the bottom bar and FAB
+    // =======================================
     protected void showBottomBar(boolean show) {
         if (bottomAppBar != null) {
             bottomAppBar.setVisibility(show ? View.VISIBLE : View.GONE);
@@ -167,5 +211,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    // =======================================
+    // getLayoutResourceId - Abstract method to define the layout resource in subclasses
+    // =======================================
     protected abstract int getLayoutResourceId();
 }

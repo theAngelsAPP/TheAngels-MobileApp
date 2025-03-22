@@ -17,12 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="0dp"
-            android:text="אירוע פעיל: מעקב בזמן אמת"
+            android:text="@string/live_event_title"
             android:textStyle="bold"
             android:textSize="23sp"
             android:textColor="@android:color/white"
             android:gravity="center"
-            android:background="#2c7da0"
+            android:background="@color/blue_primary"
             android:layout_marginBottom="0dp"/>
 
         <com.shuhart.stepview.StepView
@@ -33,16 +33,16 @@
             android:layoutDirection="rtl"
             app:sv_stepsNumber="3"
             app:sv_animationType="All"
-            app:sv_selectedCircleColor="#2c7da0"
-            app:sv_selectedTextColor="#343a40"
-            app:sv_doneCircleColor="#99d98c"
-            app:sv_doneStepLineColor="#99d98c"
-            app:sv_doneStepMarkColor="#ffffff"
+            app:sv_selectedCircleColor="@color/blue_primary"
+            app:sv_selectedTextColor="@color/gray_dark"
+            app:sv_doneCircleColor="@color/green_soft"
+            app:sv_doneStepLineColor="@color/green_soft"
+            app:sv_doneStepMarkColor="@android:color/white"
             app:sv_nextStepCircleEnabled="true"
-            app:sv_nextStepCircleColor="#e5e5e5"
-            app:sv_nextStepLineColor="#e5e5e5"
+            app:sv_nextStepCircleColor="@color/gray_light"
+            app:sv_nextStepLineColor="@color/gray_light"
             app:sv_stepNumberTextSize="14sp"
-            app:sv_selectedStepNumberColor="#ffffff"
+            app:sv_selectedStepNumberColor="@android:color/white"
             app:sv_stepLineWidth="2dp"
             app:sv_selectedCircleRadius="14dp"
             app:sv_doneCircleRadius="12dp"
@@ -51,20 +51,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="אירוע רפואי - אדם ללא הכרה"
+            android:text="@string/event_type"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:padding="3dp"
-            android:background="#2c7da0"
+            android:background="@color/blue_primary"
             android:layout_marginBottom="0dp"/>
 
-        <!-- שאלון -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:background="#F8F9FA"
+            android:background="@color/light_gray"
             android:orientation="vertical"
             android:layout_marginBottom="0dp"
             android:layout_marginTop="0dp">
@@ -72,7 +71,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="✔ הבן אדם נמצא במקום בטוח."
+                android:text="@string/finding_safe"
                 android:textSize="16sp"
                 android:textColor="@android:color/holo_green_dark"
                 android:layout_marginBottom="4dp"/>
@@ -80,7 +79,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="✔ יש דופק."
+                android:text="@string/finding_pulse"
                 android:textSize="16sp"
                 android:textColor="@android:color/holo_green_dark"
                 android:layout_marginBottom="4dp"/>
@@ -88,7 +87,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="✖ קצב הנשימה אינו תקין."
+                android:text="@string/finding_breathing"
                 android:textSize="16sp"
                 android:textColor="@android:color/holo_red_dark"
                 android:layout_marginBottom="4dp"/>
@@ -96,7 +95,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="✖ קיים דימום."
+                android:text="@string/finding_bleeding"
                 android:textSize="16sp"
                 android:textColor="@android:color/holo_red_dark"
                 android:layout_marginBottom="4dp"/>
@@ -107,12 +106,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="0dp"
-            android:text="זמן"
+            android:text="@string/time_title"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@android:color/black"
             android:gravity="center"
-            android:background="#e9ecef"
+            android:background="@color/gray_soft"
             android:layout_marginBottom="0dp"/>
 
         <TextView
@@ -124,7 +123,7 @@
             android:textSize="17sp"
             android:textColor="@android:color/black"
             android:gravity="center"
-            android:background="#ffffff"
+            android:background="@android:color/white"
             android:layout_marginBottom="0dp"/>
 
         <TextView
@@ -135,10 +134,9 @@
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:gravity="center"
-            android:background="#3a506b"
+            android:background="@color/dark_blue"
             android:layout_marginBottom="0dp"/>
 
-        <!-- תצוגת מפה -->
         <FrameLayout
             android:id="@+id/map_container"
             android:layout_width="match_parent"
@@ -150,12 +148,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="0dp"
-            android:text="כתובת האירוע"
+            android:text="@string/event_address_title"
             android:textStyle="bold"
             android:textSize="16sp"
             android:textColor="@android:color/white"
             android:gravity="center"
-            android:background="#3a506b"
+            android:background="@color/dark_blue"
             android:layout_marginBottom="0dp"/>
 
         <TextView
@@ -163,11 +161,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="האחים טרבס 27 רחובות"
+            android:text="@string/event_address"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:gravity="center"
-            android:background="#F8F9FA"
+            android:background="@color/light_gray"
             android:layout_marginBottom="0dp"/>
 
         <TextView
@@ -177,10 +175,9 @@
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:gravity="center"
-            android:background="#3a506b"
+            android:background="@color/dark_blue"
             android:layout_marginBottom="0dp"/>
 
-        <!-- אזור להחלפת פרגמנטים -->
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
@@ -191,10 +188,10 @@
             android:id="@+id/nextStepButton"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:text="המשך תצוגה"
+            android:text="@string/continue_display"
             android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:backgroundTint="#dee2e6"
+            android:backgroundTint="@color/gray_light"
             android:padding="2dp"
             android:layout_gravity="center"/>
     </LinearLayout>

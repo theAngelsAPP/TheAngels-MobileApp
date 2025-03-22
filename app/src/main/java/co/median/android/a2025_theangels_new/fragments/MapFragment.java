@@ -1,3 +1,6 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.fragments;
 
 import android.Manifest;
@@ -8,8 +11,8 @@ import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -17,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,14 +33,22 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import co.median.android.a2025_theangels_new.R;
 
+// =======================================
+// MapFragment - Displays Google Map with current user location
+// =======================================
 public class MapFragment extends Fragment implements OnMapReadyCallback {
 
+    // =======================================
+    // VARIABLES
+    // =======================================
     private GoogleMap mMap;
     private FusedLocationProviderClient fusedLocationClient;
     private LinearLayout mapPlaceholder;
 
+    // Request permission result handler
     private final ActivityResultLauncher<String> locationPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
@@ -46,10 +58,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 }
             });
 
+    // =======================================
+    // Constructor with layout binding
+    // =======================================
     public MapFragment() {
         super(R.layout.fragment_map);
     }
 
+    // =======================================
+    // onViewCreated - Initializes map and views
+    // =======================================
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -59,11 +77,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
+
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
     }
 
+    // =======================================
+    // onMapReady - Called when map is ready to use
+    // =======================================
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
@@ -71,6 +93,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         checkLocationPermission();
     }
 
+    // =======================================
+    // applyCustomMapStyle - Applies custom map styling from raw/map_style.json
+    // =======================================
     private void applyCustomMapStyle() {
         try {
             boolean success = mMap.setMapStyle(
@@ -83,6 +108,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
+    // =======================================
+    // checkLocationPermission - Checks and handles location permission
+    // =======================================
     private void checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -92,9 +120,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
+    // =======================================
+    // enableUserLocation - Enables MyLocation and requests user position
+    // =======================================
     private void enableUserLocation() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
+
             View mapView = requireView().findViewById(R.id.map);
             mapView.setVisibility(View.VISIBLE);
             mapPlaceholder.setVisibility(View.GONE);
@@ -104,40 +136,56 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
+    // =======================================
+    // showPlaceholder - Shows fallback UI when location permission is denied
+    // =======================================
     private void showPlaceholder() {
         View mapView = requireView().findViewById(R.id.map);
         mapView.setVisibility(View.GONE);
         mapPlaceholder.setVisibility(View.VISIBLE);
     }
 
+    // =======================================
+    // getUserLocation - Requests the user's current location
+    // =======================================
     private void getUserLocation() {
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
 
-        fusedLocationClient.getLastLocation().addOnSuccessListener(location -> {
-            if (location != null) {
-                updateMapLocation(location);
-            }
-        }).addOnFailureListener(e -> e.printStackTrace());
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(location -> {
+                    if (location != null) {
+                        updateMapLocation(location);
+                    }
+                })
+                .addOnFailureListener(Throwable::printStackTrace);
     }
 
+    // =======================================
+    // updateMapLocation - Centers camera and adds marker at user location
+    // =======================================
     private void updateMapLocation(Location location) {
         LatLng userLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+
         CameraPosition cameraPosition = new CameraPosition.Builder()
                 .target(userLatLng)
                 .zoom(15)
                 .tilt(30)
                 .build();
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
         mMap.clear();
+
         mMap.addMarker(new MarkerOptions()
                 .position(userLatLng)
-                .title("המיקום שלך")
+                .title(getString(R.string.your_location))
                 .icon(resizeMarker(R.drawable.custom_marker, 130, 130)));
     }
 
+    // =======================================
+    // resizeMarker - Resizes custom marker drawable
+    // =======================================
     private BitmapDescriptor resizeMarker(int drawableRes, int width, int height) {
         Drawable drawable = ContextCompat.getDrawable(requireContext(), drawableRes);
         if (drawable == null) return null;

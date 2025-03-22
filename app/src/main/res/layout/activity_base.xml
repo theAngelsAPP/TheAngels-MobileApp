@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:paddingBottom="0dp">
 
-    <include
+        <include
             android:id="@+id/top_bar"
             layout="@layout/top_bar_layout"
             android:visibility="visible" />
@@ -33,7 +33,7 @@
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="39dp"
         android:src="@drawable/emergency"
-        android:contentDescription="Emergency Button"
+        android:contentDescription="@string/emergency_button"
         android:backgroundTint="@color/blue_gradient_start"
         android:tint="@android:color/white"
         android:elevation="12dp" />

@@ -3,4 +3,29 @@
     <array name="com_google_android_gms_fonts_certs">
         <item>@null</item>
     </array>
+
+    <string-array name="close_event_reasons">
+        <item>פינוי לבית חולים</item>
+        <item>מטופל מסרב טיפול</item>
+        <item>אירוע שווא</item>
+        <item>קיבל טיפול עזרה ראשונה</item>
+    </string-array>
+
+        <string-array name="faq_questions">
+            <item>איך אני משנה את הגדרות ההתראות?</item>
+            <item>איך אני פותח קריאה לשירות?</item>
+            <item>איך אני מצטרף לקבוצת מתנדבים?</item>
+            <item>האם המידע שלי בטוח?</item>
+            <item>כיצד ניתן לתרום?</item>
+        </string-array>
+
+        <string-array name="faq_answers">
+            <item>גש להגדרות > התראות והתאם אישית את ההעדפות שלך.</item>
+            <item>באפשרותך לפתוח קריאה לשירות דרך מסך הדיווחים באפליקציה.</item>
+            <item>תוכל להצטרף לקבוצות מתנדבים דרך תפריט מתנדבים.</item>
+            <item>הנתונים שלך מוצפנים ונשמרים בהתאם למדיניות הפרטיות.</item>
+            <item>תוכל לתרום דרך עמוד התרומות שלנו.</item>
+        </string-array>
 </resources>
+
+

@@ -5,7 +5,6 @@
     android:background="@android:color/white"
     android:padding="0dp">
 
-    <!-- כותרת עליונה -->
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
@@ -22,7 +21,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_back_arrow"
-            android:contentDescription="חזרה"
+            android:contentDescription="@string/back"
             android:padding="4dp"
             android:layout_marginEnd="3dp"/>
 
@@ -30,13 +29,12 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="איך נשתמש בדפיברילטור?"
+            android:text="@string/defib_title"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"/>
     </LinearLayout>
 
-    <!-- תמונת כותרת -->
     <ImageView
         android:id="@+id/header_image"
         android:layout_width="match_parent"
@@ -45,7 +43,6 @@
         android:src="@drawable/defibrillator"
         android:layout_below="@id/header_container"/>
 
-    <!-- כרטיס לכותרת ההדרכה -->
     <androidx.cardview.widget.CardView
         android:id="@+id/training_title_card"
         android:layout_width="match_parent"
@@ -64,14 +61,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="המדריך יסביר כיצד להשתמש בדפיברילטור בצורה נכונה בעת מקרה חירום. ביצוע החייאה מהיר עשוי להציל חיים."
+                android:text="@string/defib_intro"
                 android:textSize="13sp"
                 android:textColor="@android:color/black"
                 android:gravity="center"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- כרטיס טקסט ההדרכה -->
     <androidx.cardview.widget.CardView
         android:id="@+id/training_content_card"
         android:layout_width="match_parent"
@@ -90,7 +86,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="שלב 1: בדיקת המטופל"
+                android:text="@string/step1_title"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
@@ -99,7 +95,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="יש לוודא כי המטופל אינו מגיב ואין לו דופק. במידה והמצב מצריך זאת, יש להפעיל את הדפיברילטור ולפעול לפי ההוראות הקוליות."
+                android:text="@string/step1_text"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:layout_marginBottom="8dp"/>
@@ -107,7 +103,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="שלב 2: הצמדת המדבקות"
+                android:text="@string/step2_title"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
@@ -116,7 +112,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="מדביקים את האלקטרודות על חזה המטופל כפי שמופיע בהוראות, ומוודאים שאף אחד לא נוגע בגוף המטופל לפני מתן השוק החשמלי."
+                android:text="@string/step2_text"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
 
@@ -127,11 +123,10 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_def" />
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="שלב 3:  ניתוח קצב הלב"
+                android:text="@string/step3_title"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
@@ -140,13 +135,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="לאחר חיבור האלקטרודות, הדפיברילטור ינתח את קצב הלב של המטופל באופן אוטומטי. יש לוודא שאף אחד אינו נוגע במטופל בזמן שהמכשיר מבצע את הניתוח."
+                android:text="@string/step3_text"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="שלב 4: מתן שוק חשמלי (אם נדרש)"
+                android:text="@string/step4_title"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
@@ -155,7 +151,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="אם הדפיברילטור מזהה שהשוק נחוץ, הוא ינחה ללחוץ על כפתור מתן השוק. יש להתרחק מהמטופל, לוודא שאף אחד לא נוגע בו, וללחוץ על הכפתור. לאחר מכן, יש להמשיך בהחייאה בהתאם להנחיות."
+                android:text="@string/step4_text"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"/>
         </LinearLayout>

@@ -1,3 +1,6 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.fragments;
 
 import android.os.Bundle;
@@ -5,26 +8,43 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.button.MaterialButton;
+
 import co.median.android.a2025_theangels_new.R;
 
+// =======================================
+// WhatHappenedFragment - Handles incident type selection with optional free text
+// =======================================
 public class WhatHappenedFragment extends Fragment {
 
+    // =======================================
+    // VARIABLES
+    // =======================================
     private MaterialButton selectedButton = null;
-    private static final int SELECTED_COLOR = 0xFFE9C46A; // צבע נבחר
-    private static final int DEFAULT_COLOR = 0xFFDCDCDC; // צבע ברירת מחדל
 
+    // =======================================
+    // onCreateView - Inflates layout for the fragment
+    // =======================================
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_what_happened, container, false);
     }
 
+    // =======================================
+    // onViewCreated - Sets up buttons and free text visibility logic
+    // =======================================
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view,
+                              @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         MaterialButton btnUnconscious = view.findViewById(R.id.btnUnconscious);
@@ -33,22 +53,27 @@ public class WhatHappenedFragment extends Fragment {
         MaterialButton btnOther = view.findViewById(R.id.btnOther);
         EditText etFreeText = view.findViewById(R.id.etFreeText);
 
-        // ברירת מחדל - הסתרת שדה הטקסט
+        // Default: hide free text field
         etFreeText.setVisibility(View.GONE);
 
+        // Handle button selection
         View.OnClickListener clickListener = v -> {
             MaterialButton clickedButton = (MaterialButton) v;
 
-            // אם יש כבר כפתור שנבחר → מחזירים אותו לצבע הרגיל
+            // Reset previously selected button
             if (selectedButton != null) {
-                selectedButton.setBackgroundColor(DEFAULT_COLOR);
+                selectedButton.setBackgroundColor(
+                        ContextCompat.getColor(requireContext(), R.color.incident_option_default)
+                );
             }
 
-            // מסמנים את הכפתור הנוכחי שנבחר
-            clickedButton.setBackgroundColor(SELECTED_COLOR);
+            // Highlight the newly selected button
+            clickedButton.setBackgroundColor(
+                    ContextCompat.getColor(requireContext(), R.color.incident_option_selected)
+            );
             selectedButton = clickedButton;
 
-            // הצגת שדה טקסט רק אם "אחר" נבחר
+            // Show free text input only when "Other" is selected
             if (clickedButton.getId() == R.id.btnOther) {
                 etFreeText.setVisibility(View.VISIBLE);
             } else {

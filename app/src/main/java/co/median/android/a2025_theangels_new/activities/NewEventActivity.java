@@ -1,3 +1,6 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.activities;
 
 import android.content.Intent;
@@ -23,8 +26,14 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import java.util.Arrays;
 
+// =======================================
+// NewEventActivity - Multi-step form for creating a new event
+// =======================================
 public class NewEventActivity extends BaseActivity {
 
+    // =======================================
+    // VARIABLES
+    // =======================================
     private int currentStep = 0;
     private StepView stepView;
     private TextView tvStepTitle, tvStepDescription;
@@ -39,6 +48,9 @@ public class NewEventActivity extends BaseActivity {
             new SummaryFragment()
     };
 
+    // =======================================
+    // onCreate - Initializes step flow UI and navigation logic
+    // =======================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +58,7 @@ public class NewEventActivity extends BaseActivity {
         showTopBar(false);
         showBottomBar(false);
 
+        // Bind views
         stepView = findViewById(R.id.step_view);
         ImageView ivClose = findViewById(R.id.ivClose);
         btnNext = findViewById(R.id.btnNext);
@@ -53,7 +66,7 @@ public class NewEventActivity extends BaseActivity {
         tvStepDescription = findViewById(R.id.tvStepDescription);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
-        // הגדרת שמות השלבים
+        // Set step titles
         stepView.setSteps(Arrays.asList(
                 getString(R.string.step_title_event_type),
                 getString(R.string.step_title_what_happened),
@@ -68,6 +81,7 @@ public class NewEventActivity extends BaseActivity {
             updateStepInfo();
         }
 
+        // Handle next step
         btnNext.setOnClickListener(v -> {
             if (currentStep < steps.length - 1) {
                 currentStep++;
@@ -77,35 +91,38 @@ public class NewEventActivity extends BaseActivity {
                 triggerVibration();
                 animateStepCircle();
 
-                // עדכון טקסט הכפתור כאשר מגיעים לשלב האחרון
+                // Update button text on last step
                 if (currentStep == steps.length - 1) {
-                    btnNext.setText(R.string.call_for_help); // קריאה לעזרה
+                    btnNext.setText(R.string.call_for_help);
                 } else {
-                    btnNext.setText(R.string.next_step); // המשך
+                    btnNext.setText(R.string.next_step);
                 }
             } else {
-                // מעבר למסך הפעילות לאחר סיום התהליך
+                // Go to EventUserActivity
                 startActivity(new Intent(NewEventActivity.this, EventUserActivity.class));
-                finish(); // לסגור את המסך הנוכחי כדי למנוע חזרה אחורה
+                finish();
             }
         });
 
+        // Close screen
         ivClose.setOnClickListener(v -> finish());
     }
 
+    // =======================================
+    // replaceFragment - Replaces current fragment with step fragment
+    // =======================================
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-        // אנימציות מעבר חלקות
         transaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
-
         transaction.replace(R.id.fragmentContainer, fragment);
         transaction.commit();
     }
 
+    // =======================================
+    // updateStepInfo - Updates step title and description based on current step
+    // =======================================
     private void updateStepInfo() {
-        // אנימציה לבלוק ההסבר
         Animation fadeIn = new AlphaAnimation(0, 1);
         fadeIn.setDuration(500);
         tvStepTitle.startAnimation(fadeIn);
@@ -135,6 +152,9 @@ public class NewEventActivity extends BaseActivity {
         }
     }
 
+    // =======================================
+    // triggerVibration - Short vibration feedback on step transition
+    // =======================================
     private void triggerVibration() {
         if (vibrator != null && vibrator.hasVibrator()) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -143,36 +163,26 @@ public class NewEventActivity extends BaseActivity {
         }
     }
 
+    // =======================================
+    // animateStepCircle - Custom step indicator animation by alternating colors
+    // =======================================
     private void animateStepCircle() {
-        stepView.getState()
-                .selectedCircleColor(getResources().getColor(R.color.circle1))
-                .commit();
+        int[] delayTimes = {0, 500, 1000, 1500, 2000, 2500, 3000};
+        int color1 = getColor(R.color.circle1);
+        int color2 = getColor(R.color.circle2);
 
-        stepView.postDelayed(() -> stepView.getState()
-                .selectedCircleColor(getResources().getColor(R.color.circle2))
-                .commit(), 500);
-
-        stepView.postDelayed(() -> stepView.getState()
-                .selectedCircleColor(getResources().getColor(R.color.circle1))
-                .commit(), 1000);
-
-        stepView.postDelayed(() -> stepView.getState()
-                .selectedCircleColor(getResources().getColor(R.color.circle2))
-                .commit(), 1500);
-
-        stepView.postDelayed(() -> stepView.getState()
-                .selectedCircleColor(getResources().getColor(R.color.circle1))
-                .commit(), 2000);
-
-        stepView.postDelayed(() -> stepView.getState()
-                .selectedCircleColor(getResources().getColor(R.color.circle2))
-                .commit(), 2500);
-
-        stepView.postDelayed(() -> stepView.getState()
-                .selectedCircleColor(getResources().getColor(R.color.circle1))
-                .commit(), 3000);
+        for (int i = 0; i < delayTimes.length; i++) {
+            int finalColor = (i % 2 == 0) ? color1 : color2;
+            int delay = delayTimes[i];
+            stepView.postDelayed(() -> {
+                stepView.getState().selectedCircleColor(finalColor).commit();
+            }, delay);
+        }
     }
 
+    // =======================================
+    // getLayoutResourceId - Returns layout resource for this screen
+    // =======================================
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_new_event;

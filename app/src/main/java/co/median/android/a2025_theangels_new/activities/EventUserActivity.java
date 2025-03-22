@@ -1,5 +1,7 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.activities;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -19,9 +21,14 @@ import java.util.List;
 import com.shuhart.stepview.StepView;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.fragments.StaticMapFragment;
-
+// =======================================
+// EventUserActivity - Handles the live event screen, step progression, and user feedback
+// =======================================
 public class EventUserActivity extends BaseActivity {
 
+    // =======================================
+    // VARIABLES
+    // =======================================
     private TextView timerTextView;
     private TextView statusTextView;
     private TextView timeTitle;
@@ -43,19 +50,19 @@ public class EventUserActivity extends BaseActivity {
     private boolean isRunning = true;
     private int seconds = 0;
     private Handler handler = new Handler();
-    private List<String> statuses = Arrays.asList(
-            "מחפשים אחר מתנדב זמין בסביבתך",
-            "המתנדב נמצא בדרך אליך",
-            "המתנדב הגיע לאירוע",
-            "האירוע הסתיים"
-    );
 
+    private List<String> statuses;
+
+    // =======================================
+    // onCreate - Initializes UI, step view, timer, map, and button logic
+    // =======================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         showTopBar(false);
         showBottomBar(true);
 
+        // Bind views
         timerTextView = findViewById(R.id.timerTextView);
         timeTitle = findViewById(R.id.timeTitle);
         eventAddressTitle = findViewById(R.id.eventAddressTitle);
@@ -73,48 +80,50 @@ public class EventUserActivity extends BaseActivity {
         submitFeedbackButton = findViewById(R.id.submitFeedbackButton);
         mapContainer = findViewById(R.id.map_container);
 
+        // Step statuses (translated from strings.xml)
+        statuses = Arrays.asList(
+                getString(R.string.status_looking_for_volunteer),
+                getString(R.string.status_volunteer_on_the_way),
+                getString(R.string.status_volunteer_arrived),
+                getString(R.string.status_event_finished)
+        );
+
         setupStepView();
         startTimer();
         setupMap();
 
-        nextStepButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (currentStep < statuses.size() - 1) {
-                    currentStep++;
-                    updateStep(currentStep);
-                }
+        // Step progression button
+        nextStepButton.setOnClickListener(v -> {
+            if (currentStep < statuses.size() - 1) {
+                currentStep++;
+                updateStep(currentStep);
             }
         });
 
-        emergencyCallButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showEmergencyCallDialog();
-            }
-        });
+        // Emergency call dialog
+        emergencyCallButton.setOnClickListener(v -> showEmergencyCallDialog());
 
-        submitFeedbackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleFeedbackSubmission();
-            }
-        });
+        // Submit feedback
+        submitFeedbackButton.setOnClickListener(v -> handleFeedbackSubmission());
 
-        volview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EventUserActivity.this, EventVolActivity.class);
-                startActivity(intent);
-            }
+        // Open volunteer view
+        volview.setOnClickListener(v -> {
+            Intent intent = new Intent(EventUserActivity.this, EventVolActivity.class);
+            startActivity(intent);
         });
     }
 
+    // =======================================
+    // getLayoutResourceId - Returns layout resource
+    // =======================================
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_event_user;
     }
 
+    // =======================================
+    // startTimer - Starts a real-time timer that updates every second
+    // =======================================
     private void startTimer() {
         handler.post(new Runnable() {
             @Override
@@ -133,44 +142,46 @@ public class EventUserActivity extends BaseActivity {
         });
     }
 
+    // =======================================
+    // setupStepView - Initializes step view with stages
+    // =======================================
     private void setupStepView() {
-        stepView.setSteps(Arrays.asList("חיפוש מתנדב", "מתנדב בדרך", "מתנדב באירוע", "אירוע הסתיים"));
+        stepView.setSteps(Arrays.asList(
+                getString(R.string.step_looking),
+                getString(R.string.step_on_the_way),
+                getString(R.string.step_arrived),
+                getString(R.string.step_finished)
+        ));
         stepView.go(0, true);
     }
 
+    // =======================================
+    // updateStep - Updates step UI and visibility logic based on current stage
+    // =======================================
     public void updateStep(int step) {
         if (stepView != null) {
             stepView.go(step, true);
             statusTextView.setText(statuses.get(step));
 
-            if (step == 3) {
-                ratingLayout.setVisibility(View.VISIBLE);
-                volview.setVisibility(View.VISIBLE);
-                nextStepButton.setVisibility(View.GONE);
-                timeTitle.setVisibility(View.GONE);
-                timerTextView.setVisibility(View.GONE);
-                redSeparator.setVisibility(View.GONE);
-                safetyMessageLayout.setVisibility(View.GONE);
-                mapContainer.setVisibility(View.GONE);
-                eventAddressTitle.setVisibility(View.GONE);
-                eventAddressText.setVisibility(View.GONE);
-                emergencyCallButton.setVisibility(View.GONE);
-            } else {
-                ratingLayout.setVisibility(View.GONE);
-                volview.setVisibility(View.GONE);
-                nextStepButton.setVisibility(View.VISIBLE);
-                timeTitle.setVisibility(View.VISIBLE);
-                timerTextView.setVisibility(View.VISIBLE);
-                redSeparator.setVisibility(View.VISIBLE);
-                safetyMessageLayout.setVisibility(View.VISIBLE);
-                mapContainer.setVisibility(View.VISIBLE);
-                eventAddressTitle.setVisibility(View.VISIBLE);
-                eventAddressText.setVisibility(View.VISIBLE);
-                emergencyCallButton.setVisibility(View.VISIBLE);
-            }
+            boolean isFinal = step == 3;
+
+            ratingLayout.setVisibility(isFinal ? View.VISIBLE : View.GONE);
+            volview.setVisibility(isFinal ? View.VISIBLE : View.GONE);
+            nextStepButton.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            timeTitle.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            timerTextView.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            redSeparator.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            safetyMessageLayout.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            mapContainer.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            eventAddressTitle.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            eventAddressText.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            emergencyCallButton.setVisibility(isFinal ? View.GONE : View.VISIBLE);
         }
     }
 
+    // =======================================
+    // setupMap - Loads static map fragment into screen
+    // =======================================
     private void setupMap() {
         double eventLat = 31.8912;
         double eventLng = 34.8115;
@@ -181,40 +192,47 @@ public class EventUserActivity extends BaseActivity {
         transaction.commit();
     }
 
+    // =======================================
+    // showEmergencyCallDialog - Opens dialog with emergency services to call
+    // =======================================
     private void showEmergencyCallDialog() {
-        final String[] emergencyNumbers = {"100 - משטרה", "101 - מגן דוד אדום", "102 - מכבי אש"};
+        final String[] emergencyNumbers = {
+                getString(R.string.police_option),
+                getString(R.string.mda_option),
+                getString(R.string.fire_option)
+        };
         final String[] phoneNumbers = {"tel:100", "tel:101", "tel:102"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("בחר שירות חירום להתקשרות");
-        builder.setItems(emergencyNumbers, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse(phoneNumbers[which]));
-                startActivity(intent);
-            }
+        builder.setTitle(getString(R.string.select_emergency_service));
+        builder.setItems(emergencyNumbers, (dialog, which) -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse(phoneNumbers[which]));
+            startActivity(intent);
         });
         builder.show();
     }
 
+    // =======================================
+    // handleFeedbackSubmission - Handles validation and showing feedback submission summary
+    // =======================================
     private void handleFeedbackSubmission() {
         float rating = ratingBar.getRating();
         String feedbackText = freeTextFeedback.getText().toString().trim();
 
         if (rating == 0) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("שגיאה");
-            builder.setMessage("נא לבחור דירוג לפני השליחה.");
-            builder.setPositiveButton("אישור", null);
+            builder.setTitle(getString(R.string.error_title));
+            builder.setMessage(getString(R.string.select_rating_warning));
+            builder.setPositiveButton(getString(R.string.ok_button), null);
             builder.show();
             return;
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("תודה על הדירוג!");
-        builder.setMessage("הדירוג שלך: " + rating + "\nהמשוב שלך:\n" + feedbackText);
-        builder.setPositiveButton("אישור", null);
+        builder.setTitle(getString(R.string.thank_you_title));
+        builder.setMessage(getString(R.string.feedback_summary, rating, feedbackText));
+        builder.setPositiveButton(getString(R.string.ok_button), null);
         builder.show();
     }
 }

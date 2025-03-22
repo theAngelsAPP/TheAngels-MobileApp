@@ -1,5 +1,7 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.activities;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,9 +21,14 @@ import co.median.android.a2025_theangels_new.fragments.StaticMapFragment;
 import co.median.android.a2025_theangels_new.fragments.VolClaimFragment;
 import co.median.android.a2025_theangels_new.fragments.VolStatusFragment;
 import co.median.android.a2025_theangels_new.fragments.VolCloseFragment;
-
+// =======================================
+// EventVolActivity - Handles the volunteer flow during an active event
+// =======================================
 public class EventVolActivity extends BaseActivity {
 
+    // =======================================
+    // VARIABLES
+    // =======================================
     private StepView stepView;
     private TextView timerTextView;
     private Button nextStepButton;
@@ -30,39 +37,53 @@ public class EventVolActivity extends BaseActivity {
     private Handler handler = new Handler();
     private FrameLayout mapContainer;
     private int currentStep = 0;
+
     private List<Fragment> stepFragments = Arrays.asList(
             new VolClaimFragment(),
             new VolStatusFragment(),
             new VolCloseFragment()
     );
 
+    // =======================================
+    // onCreate - Initializes volunteer event screen and step flow
+    // =======================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         showTopBar(false);
         showBottomBar(true);
 
+        // Bind views
         stepView = findViewById(R.id.step_view);
         nextStepButton = findViewById(R.id.nextStepButton);
         timerTextView = findViewById(R.id.timerTextView);
+        mapContainer = findViewById(R.id.map_container);
+
         startTimer();
         setupStepView();
-        mapContainer = findViewById(R.id.map_container);
         setupMap();
         loadStepFragment(0);
 
-
-        nextStepButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (currentStep < stepFragments.size() - 1) {
-                    currentStep++;
-                    updateStep(currentStep);
-                }
+        // Step progression
+        nextStepButton.setOnClickListener(v -> {
+            if (currentStep < stepFragments.size() - 1) {
+                currentStep++;
+                updateStep(currentStep);
             }
         });
     }
 
+    // =======================================
+    // getLayoutResourceId - Returns layout resource
+    // =======================================
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_event_vol;
+    }
+
+    // =======================================
+    // setupMap - Initializes static map fragment with event location
+    // =======================================
     private void setupMap() {
         double eventLat = 31.8912;
         double eventLng = 34.8115;
@@ -73,17 +94,21 @@ public class EventVolActivity extends BaseActivity {
         transaction.commit();
     }
 
-
-    @Override
-    protected int getLayoutResourceId() {
-        return R.layout.activity_event_vol;
-    }
-
+    // =======================================
+    // setupStepView - Sets up step titles in StepView
+    // =======================================
     private void setupStepView() {
-        stepView.setSteps(Arrays.asList("שיוך אירוע", "עדכון הגעה", "סגירת אירוע"));
+        stepView.setSteps(Arrays.asList(
+                getString(R.string.step_vol_claim),
+                getString(R.string.step_vol_status),
+                getString(R.string.step_vol_close)
+        ));
         stepView.go(0, true);
     }
 
+    // =======================================
+    // updateStep - Updates StepView and replaces fragment according to current step
+    // =======================================
     private void updateStep(int step) {
         if (stepView != null) {
             stepView.go(step, true);
@@ -91,6 +116,9 @@ public class EventVolActivity extends BaseActivity {
         }
     }
 
+    // =======================================
+    // loadStepFragment - Loads fragment that corresponds to the current step
+    // =======================================
     private void loadStepFragment(int step) {
         Fragment fragment = stepFragments.get(step);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -98,6 +126,9 @@ public class EventVolActivity extends BaseActivity {
         transaction.commit();
     }
 
+    // =======================================
+    // startTimer - Starts real-time timer for event duration
+    // =======================================
     private void startTimer() {
         handler.post(new Runnable() {
             @Override

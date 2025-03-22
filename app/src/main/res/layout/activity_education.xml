@@ -12,7 +12,6 @@
         android:padding="8dp"
         android:background="@android:color/white">
 
-        <!-- שדה חיפוש -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -31,7 +30,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="חיפוש הדרכה..."
+                android:hint="@string/search_hint"
                 android:textSize="14sp"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/darker_gray"
@@ -40,7 +39,6 @@
                 android:padding="4dp" />
         </LinearLayout>
 
-        <!-- שורת כפתורי סינון -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="רפואי"
+                android:text="@string/filter_medical"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/filter_button_medical"
@@ -62,7 +60,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="ביטחוני"
+                android:text="@string/filter_security"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/filter_button_security"
@@ -73,7 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="רכב"
+                android:text="@string/filter_vehicle"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/filter_button_vehicle"
@@ -84,7 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="בע''ח"
+                android:text="@string/filter_animal"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/filter_button_animal"
@@ -104,7 +102,6 @@
             android:layoutDirection="rtl"
             android:gravity="center">
 
-            <!-- הדרכה 1 -->
             <LinearLayout
                 android:id="@+id/education_card"
                 android:layout_width="match_parent"
@@ -116,7 +113,6 @@
                 android:padding="8dp"
                 android:gravity="center_vertical">
 
-                <!-- תמונה -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -125,19 +121,16 @@
                     android:src="@drawable/training1"
                     android:layout_marginEnd="8dp" />
 
-                <!-- כותרת -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="6dp"
+                    android:text="@string/training_defib"
                     android:textColor="@color/black"
-                    android:text="איך להשתמש בדפיברילטור?"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
-            <!-- הדרכה 2 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
@@ -148,7 +141,6 @@
                 android:padding="8dp"
                 android:gravity="center_vertical">
 
-                <!-- תמונה -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -157,20 +149,16 @@
                     android:src="@drawable/training2"
                     android:layout_marginEnd="8dp" />
 
-                <!-- כותרת -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:padding="6dp"
-                    android:text="איך להשתמש באפיפן?"
+                    android:text="@string/training_epipen"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
-            <!-- הדרכה 3 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
@@ -181,7 +169,6 @@
                 android:padding="8dp"
                 android:gravity="center_vertical">
 
-                <!-- תמונה -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -190,20 +177,16 @@
                     android:src="@drawable/training3"
                     android:layout_marginEnd="8dp" />
 
-                <!-- כותרת -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:padding="6dp"
-                    android:text="איך לשים חוסם עורקים?"
+                    android:text="@string/training_tourniquet"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
-            <!-- הדרכה 4 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
@@ -214,7 +197,6 @@
                 android:padding="8dp"
                 android:gravity="center_vertical">
 
-                <!-- תמונה -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -223,20 +205,16 @@
                     android:src="@drawable/training4"
                     android:layout_marginEnd="8dp" />
 
-                <!-- כותרת -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:padding="6dp"
-                    android:text="מה עושים במקרה של חנק?"
+                    android:text="@string/training_choking"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
-            <!-- הדרכה 5 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
@@ -247,7 +225,6 @@
                 android:padding="8dp"
                 android:gravity="center_vertical">
 
-                <!-- תמונה -->
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -256,21 +233,15 @@
                     android:src="@drawable/training5"
                     android:layout_marginEnd="8dp" />
 
-                <!-- כותרת -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:padding="6dp"
-                    android:text="איך נבצע החייאה?"
+                    android:text="@string/training_cpr"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />
-
             </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
-
 </LinearLayout>

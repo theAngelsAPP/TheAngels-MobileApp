@@ -5,7 +5,6 @@
     android:background="@android:color/white"
     android:padding="0dp">
 
-    <!-- כותרת עליונה -->
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
@@ -22,7 +21,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_back_arrow"
-            android:contentDescription="חזרה"
+            android:contentDescription="@string/back"
             android:padding="4dp"
             android:layout_marginEnd="3dp"/>
 
@@ -30,13 +29,12 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="פרטי האירוע "
+            android:text="@string/event_details"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"/>
     </LinearLayout>
 
-    <!-- מפת האירוע -->
     <FrameLayout
         android:id="@+id/map_container"
         android:layout_width="match_parent"
@@ -44,21 +42,19 @@
         android:layout_below="@id/header_container"
         android:layout_margin="0dp"/>
 
-    <!-- כפתור ניווט -->
     <Button
         android:id="@+id/btnNavigate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/map_container"
-        android:text="שדרות אליעזר 27, חיפה"
+        android:text="@string/address_text"
         android:textSize="12sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:background="#e01e37"
+        android:background="@color/red_magen_david"
         android:padding="1dp"
         android:layout_margin="0dp"/>
 
-    <!-- פרטי האירוע -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,31 +66,29 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- סוג האירוע + מה קרה -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="אירוע רפואי - אדם ללא הכרה"
+                android:text="@string/event_type"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:padding="12dp"
-                android:background="#e01e37"
+                android:background="@color/red_magen_david"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- שאלון -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
-                android:background="#F8F9FA"
+                android:background="@color/light_gray"
                 android:orientation="vertical"
                 android:layout_marginBottom="8dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ממצאים מקדימים"
+                    android:text="@string/findings_title"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
@@ -103,7 +97,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="✔ הבן אדם נמצא במקום בטוח."
+                    android:text="@string/finding_safe"
                     android:textSize="16sp"
                     android:textColor="@android:color/holo_green_dark"
                     android:layout_marginBottom="4dp"/>
@@ -111,7 +105,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="✔ יש דופק."
+                    android:text="@string/finding_pulse"
                     android:textSize="16sp"
                     android:textColor="@android:color/holo_green_dark"
                     android:layout_marginBottom="4dp"/>
@@ -119,7 +113,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="✖ קצב הנשימה אינו תקין."
+                    android:text="@string/finding_breathing"
                     android:textSize="16sp"
                     android:textColor="@android:color/holo_red_dark"
                     android:layout_marginBottom="4dp"/>
@@ -127,36 +121,34 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="✖ קיים דימום."
+                    android:text="@string/finding_bleeding"
                     android:textSize="16sp"
                     android:textColor="@android:color/holo_red_dark"
                     android:layout_marginBottom="4dp"/>
             </LinearLayout>
 
-            <!-- משך האירוע -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="⏳ האירוע התרחש במשך 27 דקות"
+                android:text="@string/event_duration"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:padding="12dp"
-                android:background="#F8F9FA"
+                android:background="@color/light_gray"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- סיכום האירוע -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
-                android:background="#F8F9FA"
+                android:background="@color/light_gray"
                 android:orientation="vertical"
                 android:layout_marginBottom="8dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="סיכום האירוע"
+                    android:text="@string/event_summary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
@@ -165,49 +157,47 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="09:12 - האירוע נפתח על ידי המשתמש."
+                    android:text="@string/summary_1"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="09:14 - המתנדב יונתן אזולאי שויך לאירוע."
+                    android:text="@string/summary_2"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="09:19 - המתנדב יונתן הגיע למקום האירוע."
+                    android:text="@string/summary_3"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="09:31 - האירוע הסתיים."
+                    android:text="@string/summary_4"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"/>
-
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="פעולות עזרה ראשונה ופינוי של מגן דוד אדום"
+                android:text="@string/summary_footer"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:padding="12dp"
-                android:background="#F8F9FA"
+                android:background="@color/light_gray"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- מתנדב -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
-                android:background="#F8F9FA"
+                android:background="@color/light_gray"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
@@ -227,7 +217,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/black"
-                        android:text="יונתן אזולאי"
+                        android:text="@string/volunteer_name"
                         android:textSize="18sp"
                         android:textStyle="bold"/>
 
@@ -239,7 +229,6 @@
                         android:rating="4"
                         android:isIndicator="true"
                         style="?android:attr/ratingBarStyleSmall"/>
-
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

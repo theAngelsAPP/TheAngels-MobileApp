@@ -1,3 +1,6 @@
+// =======================================
+// IMPORTS
+// =======================================
 package co.median.android.a2025_theangels_new.activities;
 
 import android.Manifest;
@@ -12,19 +15,30 @@ import android.provider.Settings;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
 import co.median.android.a2025_theangels_new.R;
 
+// =======================================
+// PrivacySettingsActivity - Displays and manages privacy-related permissions
+// =======================================
 public class PrivacySettingsActivity extends AppCompatActivity {
 
+    // =======================================
+    // CONSTANTS
+    // =======================================
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
     private static final int CALL_PERMISSION_REQUEST_CODE = 1002;
     private static final int HEALTH_PERMISSION_REQUEST_CODE = 1003;
     private static final int NOTIFICATION_PERMISSION_REQUEST_CODE = 1004;
 
+    // =======================================
+    // onCreate - Initializes UI and each permission section
+    // =======================================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +50,9 @@ public class PrivacySettingsActivity extends AppCompatActivity {
                 R.id.location_permission_section,
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 LOCATION_PERMISSION_REQUEST_CODE,
-                "שיתוף מיקומך בזמן אמת פעיל",
-                "שיתוף מיקום בזמן אמת לא פעיל",
-                "שיתוף מיקומך מאפשר לנו לעזור בעת הצורך",
+                getString(R.string.location_permission_enabled),
+                getString(R.string.location_permission_disabled),
+                getString(R.string.location_permission_description),
                 R.drawable.ic_location_on,
                 R.drawable.ic_location_off
         );
@@ -47,9 +61,9 @@ public class PrivacySettingsActivity extends AppCompatActivity {
                 R.id.call_permission_section,
                 Manifest.permission.CALL_PHONE,
                 CALL_PERMISSION_REQUEST_CODE,
-                "אפשרות לבצע שיחות חירום פעילה",
-                "שיחות חירום אינן זמינות",
-                "אפשר לבצע שיחות לגורמי ביטחון במקרה הצורך",
+                getString(R.string.call_permission_enabled),
+                getString(R.string.call_permission_disabled),
+                getString(R.string.call_permission_description),
                 R.drawable.ic_phone_on,
                 R.drawable.ic_phone_off
         );
@@ -58,9 +72,9 @@ public class PrivacySettingsActivity extends AppCompatActivity {
                 R.id.health_permission_section,
                 Manifest.permission.BODY_SENSORS,
                 HEALTH_PERMISSION_REQUEST_CODE,
-                "גישה למידע רפואי מאופשרת",
-                "גישה למידע רפואי חסומה",
-                "מאפשר לנו לסנכרן עם אפליקציות כושר ובריאות",
+                getString(R.string.health_permission_enabled),
+                getString(R.string.health_permission_disabled),
+                getString(R.string.health_permission_description),
                 R.drawable.ic_health_on,
                 R.drawable.ic_health_off
         );
@@ -69,14 +83,17 @@ public class PrivacySettingsActivity extends AppCompatActivity {
                 R.id.notification_permission_section,
                 Manifest.permission.POST_NOTIFICATIONS,
                 NOTIFICATION_PERMISSION_REQUEST_CODE,
-                "התראות האפליקציה מופעלות",
-                "התראות האפליקציה חסומות",
-                "אם תאפשר הרשאות התראות, תוכל לקבל עדכונים חשובים בזמן אמת",
+                getString(R.string.notifications_enabled),
+                getString(R.string.notifications_disabled),
+                getString(R.string.notifications_description),
                 R.drawable.ic_notifications_on,
                 R.drawable.ic_notifications_off
         );
     }
 
+    // =======================================
+    // setupPermissionSection - Displays UI state and handles click for a permission block
+    // =======================================
     private void setupPermissionSection(int sectionId, String permission, int requestCode,
                                         String enabledText, String disabledText, String descriptionText,
                                         int enabledIcon, int disabledIcon) {
@@ -90,7 +107,7 @@ public class PrivacySettingsActivity extends AppCompatActivity {
         status.setText(isGranted ? enabledText : disabledText);
         icon.setImageResource(isGranted ? enabledIcon : disabledIcon);
         description.setText(descriptionText);
-        button.setText(isGranted ? "נהל הרשאות" : "אפשר הרשאה");
+        button.setText(isGranted ? getString(R.string.manage_permission) : getString(R.string.allow_permission));
 
         button.setOnClickListener(v -> {
             if (!isGranted) {
@@ -101,6 +118,9 @@ public class PrivacySettingsActivity extends AppCompatActivity {
         });
     }
 
+    // =======================================
+    // openAppSettings - Opens the device's app-specific settings page
+    // =======================================
     private void openAppSettings() {
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         Uri uri = Uri.fromParts("package", getPackageName(), null);
@@ -108,6 +128,9 @@ public class PrivacySettingsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // =======================================
+    // onRequestPermissionsResult - Called after permission dialog response; refresh UI
+    // =======================================
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
