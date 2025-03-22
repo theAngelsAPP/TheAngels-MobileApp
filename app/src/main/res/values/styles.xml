@@ -1,57 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- טקסט תחתון בוטום נביגציה -->
+    <!-- Bottom navigation text style -->
     <style name="BottomNavTextStyle">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">#000000</item>
     </style>
 
-
-    <!-- כרטיסיית הגדרות (MaterialCardView) -->
-    <style name="SettingsCard">
-        <item name="android:layout_width">match_parent</item>
+    <!-- General form field styles -->
+    <style name="FieldLabel">
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">16dp</item>
-        <item name="cardCornerRadius">12dp</item>
-        <item name="cardElevation">6dp</item>
-        <item name="android:background">@android:color/white</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:layout_marginBottom">2dp</item>
     </style>
 
-    <!-- אייקון הגדרות -->
-    <style name="SettingsIcon">
-        <item name="android:layout_width">24dp</item>
-        <item name="android:layout_height">24dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-    </style>
-
-    <!-- טקסט הגדרות -->
-    <style name="SettingsText">
-        <item name="android:layout_width">0dp</item>
+    <style name="SectionTitle">
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@font/heebo_font</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">12dp</item>
     </style>
 
-    <!-- חץ הגדרות -->
-    <style name="SettingsArrow">
-        <item name="android:layout_width">20dp</item>
-        <item name="android:layout_height">20dp</item>
-        <item name="android:src">@drawable/ic_arrow_forward</item>
-    </style>
-
-    <!-- קו מפריד -->
-    <style name="DividerLine">
+    <style name="RoundedInput">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:background">@android:color/darker_gray</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:background">@drawable/rounded_edittext</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
     </style>
 
-    <!-- כפתור FancyButtons להירשמות למתנדבים -->
+    <style name="ProfileInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/input_background</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <!-- Volunteer button style -->
     <style name="VolunteerButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -64,54 +55,14 @@
         <item name="android:padding">12dp</item>
     </style>
 
-    <!-- סגנון חסר שהוביל לשגיאה -->
-    <style name="SettingsItem">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
-
-    <style name="ProfileInputStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/input_background</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:layout_marginTop">8dp</item>
-    </style>
-
-    <style name="RoundedInput">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">42dp</item> <!-- קטן יותר -->
-        <item name="android:background">@drawable/rounded_edittext</item>
-        <item name="android:padding">8dp</item> <!-- פחות padding פנימי -->
-        <item name="android:textSize">14sp</item>
-        <item name="android:layout_marginBottom">8dp</item> <!-- המרווח קטן -->
-    </style>
-
-    <style name="FieldLabel">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@android:color/darker_gray</item>
-        <item name="android:layout_marginBottom">2dp</item>
-    </style>
-
-    <style name="SectionTitle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">16sp</item> <!-- הוגדל -->
-        <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">12dp</item> <!-- המרווח קטן -->
-    </style>
-
+    <!-- Event detail text -->
     <style name="EventDetail">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:padding">4dp</item>
     </style>
 
+    <!-- Event type button style -->
     <style name="EventTypeButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">120dp</item>
@@ -125,13 +76,51 @@
         <item name="android:layout_rowWeight">1</item>
     </style>
 
+    <!-- Settings screen styles -->
+    <style name="SettingsCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
 
+    <style name="SettingsItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
 
+    <style name="SettingsIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
 
+    <style name="SettingsText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/heebo_font</item>
+    </style>
 
+    <style name="SettingsArrow">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:src">@drawable/ic_arrow_forward</item>
+    </style>
 
-
-
-
+    <!-- Divider line -->
+    <style name="DividerLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
 
 </resources>

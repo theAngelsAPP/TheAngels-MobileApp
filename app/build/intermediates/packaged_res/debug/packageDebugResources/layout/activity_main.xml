@@ -58,7 +58,6 @@
         android:textSize="18sp"
         android:letterSpacing="0"
         android:textStyle="bold"
-        android:backgroundTint="#2979FF"
         android:elevation="10dp"
         android:gravity="center"/>
 

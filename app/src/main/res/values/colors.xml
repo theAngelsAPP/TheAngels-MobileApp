@@ -1,28 +1,42 @@
 <resources>
+
+    <!-- צבעי ערכת נושא עיקריים (Primary / Secondary) -->
+    <color name="colorPrimary">#5fa8d3</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorSecondaryVariant">#018786</color>
+    <color name="colorAccent">#ffba08</color>
+
+    <!-- צבעים מתוך ערכת נושא חומר (Material Design) -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+    <!-- צבעים כלליים ושימושיים -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="lavender">#4A90E2</color>
     <color name="gray">#8692f7</color>
+    <color name="light_gray">#f5f3f4</color>
+    <color name="background">#F0F0F0</color>
+    <color name="light_blue">#D0E8FF</color>
+
+    <!-- צבעי גרדיאנט וכפתורים -->
+    <color name="lavender">#4A90E2</color>
     <color name="blue_gradient_start">#4A90E2</color>
     <color name="blue_gradient_end">#7CBBFE</color>
-    <color name="light_blue">#D0E8FF</color>
-    <color name="background">#F0F0F0</color>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryVariant">#3700B3</color>
-    <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorSecondary">#03DAC5</color>
-    <color name="colorSecondaryVariant">#018786</color>
-    <color name="light_gray">#f5f3f4</color>
+
+    <!-- צבעי טאבים -->
     <color name="tab_selected">#4A90E2</color>
     <color name="tab_unselected">#D3D3D3</color>
+
+    <!-- צבעי סטטוס אירועים -->
     <color name="event_status_color">#E9F9EC</color>
     <color name="event_status">#1FBE42</color>
-    <color name="colorAccent">#ffba08</color>
+
+    <!-- צבעים גרפיים מיוחדים -->
     <color name="circle1">#e01e37</color>
     <color name="circle2">#ca1b31</color>
 
