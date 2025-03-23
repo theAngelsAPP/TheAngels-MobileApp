@@ -4,7 +4,7 @@
     android:background="@android:color/white"
     android:padding="0dp">
 
-    <!-- כותרת עליונה -->
+    <!-- Top Title -->
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:textColor="@android:color/white"/>
     </LinearLayout>
 
-    <!-- כרטיסיות ניווט בין "שאלות נפוצות" ו-"דברו איתנו" -->
+    <!-- Navigation Tabs between "FAQ" and "Contact Us" -->
     <LinearLayout
         android:id="@+id/tabs_container"
         android:layout_width="match_parent"
@@ -78,7 +78,7 @@
 
     </LinearLayout>
 
-    <!-- אזור תוכן דינמי -->
+    <!-- Dynamic Content Area -->
     <FrameLayout
         android:id="@+id/content_container"
         android:layout_width="match_parent"

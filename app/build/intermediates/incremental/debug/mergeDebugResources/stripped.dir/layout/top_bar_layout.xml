@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@drawable/toolbar_background"
+    android:layoutDirection="rtl">
+
+    <!-- כפתור התראות -->
+    <ImageView
+        android:id="@+id/btn_notifications"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/notification_button"
+        android:padding="6dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_notifications"
+        android:contentDescription="Notifications"
+        app:tint="@android:color/black" />
+
+    <!-- קונטיינר של תמונת הפרופיל + טקסט הברכה -->
+    <LinearLayout
+        android:id="@+id/profile_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- מסגרת פרופיל עם כנפיים -->
+        <FrameLayout
+            android:layout_width="95dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center">
+
+            <!-- מסגרת עם כנפיים -->
+            <ImageView
+                android:id="@+id/profile_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/newuserpic_border"
+                android:scaleType="fitXY" />
+
+            <!-- תמונת פרופיל (מותאמת לגודל המסגרת) -->
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/newuserpic"
+                android:clipToOutline="true"
+                android:background="@drawable/circle_image" />
+        </FrameLayout>
+
+        <!-- טקסט של ברכה -->
+        <TextView
+            android:id="@+id/tv_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="בוקר טוב, מאיה!"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- עננים בתחתית -->
+    <ImageView
+        android:id="@+id/img_clouds"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-31dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/clouds" />
+
+</RelativeLayout>

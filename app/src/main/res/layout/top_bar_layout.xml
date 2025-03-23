@@ -5,7 +5,7 @@
     android:background="@drawable/toolbar_background"
     android:layoutDirection="rtl">
 
-    <!-- כפתור התראות -->
+    <!-- Notifications Button -->
     <ImageView
         android:id="@+id/btn_notifications"
         android:layout_width="36dp"
@@ -20,7 +20,7 @@
         android:contentDescription="Notifications"
         app:tint="@android:color/black" />
 
-    <!-- קונטיינר של תמונת הפרופיל + טקסט הברכה -->
+    <!-- Profile Picture Container + Greeting Text -->
     <LinearLayout
         android:id="@+id/profile_container"
         android:layout_width="wrap_content"

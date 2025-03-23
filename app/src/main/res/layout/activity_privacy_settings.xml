@@ -5,7 +5,7 @@
     android:background="@android:color/white"
     android:padding="0dp">
 
-    <!-- כותרת עליונה עם רקע גרדיאנט -->
+
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
@@ -47,22 +47,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- הרשאות מיקום -->
+            <!-- Location Permissions -->
             <TextView style="@style/SectionTitle" android:text="הרשאות מיקום"/>
             <include layout="@layout/permission_section"
                 android:id="@+id/location_permission_section"/>
 
-            <!-- הרשאות שיחות -->
+            <!-- Call Permissions -->
             <TextView style="@style/SectionTitle" android:text="הרשאות שיחות"/>
             <include layout="@layout/permission_section"
                 android:id="@+id/call_permission_section"/>
 
-            <!-- הרשאות בריאות -->
+            <!-- Health Permissions -->
             <TextView style="@style/SectionTitle" android:text="הרשאות בריאות"/>
             <include layout="@layout/permission_section"
                 android:id="@+id/health_permission_section"/>
 
-            <!-- הרשאות התראות -->
+            <!-- Notification Permissions -->
             <TextView style="@style/SectionTitle" android:text="הרשאות התראות"/>
             <include layout="@layout/permission_section"
                 android:id="@+id/notification_permission_section"/>

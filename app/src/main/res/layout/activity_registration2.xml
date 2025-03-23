@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- רקע המסך -->
+    <!-- Screen Background -->
     <ImageView
         android:id="@+id/registerBackground"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- אזור התוכן הלבן -->
+    <!-- White Content Area -->
     <LinearLayout
         android:id="@+id/registerContent"
         android:layout_width="377dp"
@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- כתובת מייל -->
+        <!-- Email Address -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- מספר טלפון -->
+        <!-- Phone Number -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                 android:inputType="phone"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- סיסמה -->
+        <!-- Password -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- אימות סיסמה -->
+        <!-- Confirm Password -->
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- כותרת לפרטים רפואיים -->
+        <!-- Title for Medical Details -->
         <TextView
             android:id="@+id/medicalDetailsLabel"
             android:layout_width="match_parent"
@@ -157,7 +157,7 @@
         </com.google.android.material.chip.ChipGroup>
 
 
-        <!-- צ'קבוקס לרישיון נשק -->
+        <!-- Checkbox for Gun License -->
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/gunLicenseCheckbox"
             android:layout_width="wrap_content"
@@ -165,7 +165,7 @@
             android:text="יש לי רישיון נשק"
             android:paddingTop="10dp"/>
 
-        <!-- כפתור הרשמה -->
+        <!-- Sign Up Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
