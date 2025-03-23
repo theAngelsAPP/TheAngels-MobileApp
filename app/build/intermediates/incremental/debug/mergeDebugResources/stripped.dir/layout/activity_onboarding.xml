@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- המסך של ה-Onboarding -->
+    <!-- Onboarding Screen -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-    <!-- כפתור "בואו נתחיל" ממוקם מעל הכל -->
+
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"

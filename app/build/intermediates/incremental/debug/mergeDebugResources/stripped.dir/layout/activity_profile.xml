@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
-    <!-- אזור תמונת הפרופיל והפרטים -->
+    <!-- Profile Picture and Details Area -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -15,7 +15,7 @@
         android:background="@drawable/cloudsbg"
         android:padding="20dp">
 
-        <!-- תמונת פרופיל עם מסגרת ואפקט -->
+        <!-- Profile Picture with Frame and Effect -->
         <FrameLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -34,14 +34,14 @@
 
         </FrameLayout>
 
-        <!-- שם המשתמש + תיאור -->
+        <!-- Username + Description -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginStart="16dp">
 
-            <!-- שם המשתמש -->
+            <!-- Username -->
             <TextView
                 android:id="@+id/tv_username"
                 android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
                 android:background="@drawable/text_background"
                 android:layout_marginBottom="4dp"/>
 
-            <!-- תיאור המשתמש (מתנדב) -->
+            <!-- User Description (Volunteer) -->
             <TextView
                 android:id="@+id/tv_user_role"
                 android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- רשימת ההגדרות -->
+    <!-- Settings List -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -80,7 +80,7 @@
             android:padding="16dp"
             android:background="@android:color/white">
 
-            <!-- פרטי חשבון -->
+            <!-- Account Details -->
             <LinearLayout
                 style="@style/SettingsItem"
                 android:onClick="onMyDetailsClicked">
@@ -91,7 +91,7 @@
 
             <View style="@style/DividerLine"/>
 
-            <!-- הגדרות פרטיות -->
+            <!-- Privacy Settings -->
             <LinearLayout
                 style="@style/SettingsItem"
                 android:onClick="onPrivacySettingsClicked">
@@ -102,7 +102,7 @@
 
             <View style="@style/DividerLine"/>
 
-            <!-- תצוגה וממשק -->
+            <!-- Display and Interface -->
             <LinearLayout
                 style="@style/SettingsItem"
                 android:onClick="onDisplaySettingsClicked">
@@ -113,7 +113,7 @@
 
             <View style="@style/DividerLine"/>
 
-            <!-- שירות ותמיכה -->
+            <!-- Service and Support -->
             <LinearLayout
                 style="@style/SettingsItem"
                 android:onClick="onSupportSettingsClicked">
@@ -124,7 +124,7 @@
 
             <View style="@style/DividerLine"/>
 
-            <!-- שיתוף אפליקציה -->
+            <!-- Share App -->
             <LinearLayout
                 style="@style/SettingsItem"
                 android:onClick="onShareAppClicked">
@@ -135,7 +135,7 @@
 
             <View style="@style/DividerLine"/>
 
-            <!-- התנתקות -->
+            <!-- Logout -->
             <LinearLayout
                 style="@style/SettingsItem"
                 android:onClick="onLogoutClicked">
@@ -146,7 +146,7 @@
 
             <View style="@style/DividerLine"/>
 
-            <!-- כפתור להצטרפות למערך המתנדבים -->
+            <!-- Button to Join the Volunteer Network -->
             <Button
                 android:id="@+id/btn_join_volunteers"
                 android:layout_width="match_parent"

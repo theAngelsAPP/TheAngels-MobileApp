@@ -8,14 +8,14 @@
     android:gravity="top"
     android:background="@android:color/white">
 
-    <!-- תצוגת מפה -->
+    <!-- Map View -->
     <FrameLayout
         android:id="@+id/map_container"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_margin="0dp"/>
 
-    <!-- כפתור הרשמה -->
+    <!-- Sign Up Button -->
     <Button
         android:id="@+id/btnManualLocation"
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
         android:elevation="10dp"
         android:gravity="center"/>
 
-    <!-- שדה טקסט חופשי עם השלמה אוטומטית -->
+    <!-- Free Text Field with Autocomplete -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

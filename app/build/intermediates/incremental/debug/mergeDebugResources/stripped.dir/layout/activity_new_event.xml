@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@android:color/white">
 
-    <!-- החלק העליון: כותרת וסימן יציאה -->
+    <!-- Top section: Title and Exit Icon -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
     </LinearLayout>
 
 
-    <!-- אזור החלפת הפרגמנטים -->
+    <!-- Fragment Replacement Area -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"

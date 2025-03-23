@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- רקע המסך -->
+    <!-- Screen background -->
     <ImageView
         android:id="@+id/registerBackground"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- אזור התוכן הלבן -->
+    <!-- White content area -->
     <LinearLayout
         android:id="@+id/registerContent"
         android:layout_width="377dp"
@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.89">
 
 
-            <!-- שדות קלט עם Material Design -->
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                     android:inputType="number"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- תאריך לידה -->
+            <!-- Date of Birth -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/birthDateButton"
                 android:layout_width="match_parent"
@@ -102,7 +102,7 @@
                     android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- בחירת תמונת פרופיל -->
+            <!-- Profile Picture Selection -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                     android:background="@android:color/darker_gray"/>
             </LinearLayout>
 
-            <!-- כפתור המשך מעוצב -->
+        <!-- Styled Continue Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/continueButton"
                 android:layout_width="match_parent"

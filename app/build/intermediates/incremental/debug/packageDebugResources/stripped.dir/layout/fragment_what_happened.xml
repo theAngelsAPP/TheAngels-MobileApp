@@ -14,7 +14,7 @@
         android:columnCount="2"
         android:padding="8dp">
 
-        <!-- כפתור אדם ללא הכרה -->
+        <!-- Unconscious Person Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnUnconscious"
             android:layout_width="0dp"
@@ -32,7 +32,7 @@
             app:rippleColor="#BDBDBD"
             android:gravity="center"/>
 
-        <!-- כפתור התקף אלרגיה -->
+        <!-- Allergy Attack Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAllergy"
             android:layout_width="0dp"
@@ -50,7 +50,7 @@
             app:rippleColor="#BDBDBD"
             android:gravity="center"/>
 
-        <!-- כפתור חנק -->
+        <!-- Choking Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnChoking"
             android:layout_width="0dp"
@@ -68,7 +68,7 @@
             app:rippleColor="#BDBDBD"
             android:gravity="center"/>
 
-        <!-- כפתור אחר -->
+        <!-- Other Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOther"
             android:layout_width="0dp"
@@ -88,7 +88,7 @@
 
     </GridLayout>
 
-    <!-- שדה טקסט חופשי (מוסתר בהתחלה) -->
+    <!-- Free Text Field (Initially Hidden) -->
     <EditText
         android:id="@+id/etFreeText"
         android:layout_width="match_parent"

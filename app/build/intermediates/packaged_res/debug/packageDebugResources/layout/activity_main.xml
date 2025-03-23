@@ -10,7 +10,7 @@
     android:background="@drawable/loginbackground">
 
 
-    <!-- לוגו / כותרת -->
+    <!-- Logo / Title -->
     <ImageView
         android:id="@+id/loginText"
         android:layout_width="180dp"
@@ -48,7 +48,7 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- כפתור התחברות -->
+    <!-- Login Button -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
@@ -61,7 +61,7 @@
         android:elevation="10dp"
         android:gravity="center"/>
 
-    <!-- כפתור הרשמה -->
+    <!-- Sign Up Button -->
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"

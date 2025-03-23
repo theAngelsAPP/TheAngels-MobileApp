@@ -21,7 +21,7 @@
             android:gravity="center"
             android:layout_marginBottom="16dp">
 
-            <!-- שורה ראשונה -->
+            <!-- First line -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                 android:gravity="center"
                 android:weightSum="3">
 
-                <!-- תיבה 1 -->
+                <!-- Box 1 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="110dp"
@@ -62,7 +62,7 @@
                         android:textColor="@color/black"/>
                 </LinearLayout>
 
-                <!-- תיבה 2 -->
+                <!-- Box 2 -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="110dp"
@@ -95,7 +95,8 @@
                         android:textColor="@color/black"/>
                 </LinearLayout>
 
-                <!-- תיבה 3 -->
+                <!-- Box 3 -->
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="110dp"
@@ -132,7 +133,8 @@
 
 
 
-        <!-- הודעות ועדכונים -->
+        <!-- Messages and Updates -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -229,7 +231,7 @@
         </LinearLayout>
 
 
-        <!-- כדאי לדעת -->
+        <!-- Good to Know -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -270,7 +272,8 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- שלושת האירועים האחרונים -->
+
+        <!-- The Last Three Events -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -289,7 +292,7 @@
                 android:textColor="@android:color/black"
                 android:layout_marginBottom="8dp"/>
 
-            <!-- אירוע יחיד -->
+            <!-- Single Event -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -344,7 +347,7 @@
                     android:contentDescription="מעבר לאירוע"/>
             </LinearLayout>
 
-            <!-- אירוע שני -->
+            <!-- Second Event -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
