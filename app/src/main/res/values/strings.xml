@@ -1,60 +1,71 @@
 <resources>
-
-    <!-- App Info -->
     <string name="app_name">המלאכים</string>
     <string name="title_activity_test">testActivity</string>
-
-    <!-- Greetings and Labels -->
     <string name="greeting">בוקר טוב, שם!</string>
     <string name="subtitle">משפט השראה מתחת לשם</string>
-
-    <!-- API Keys -->
     <string name="google_maps_key">AIzaSyDLJkYa9mPBpdhJx8dIsLSPs3O9JxU5Y9A</string>
 
-    <!-- Dark Mode -->
     <string name="dark_mode_on">מצב כהה פעיל</string>
     <string name="dark_mode_off">מצב כהה כבוי</string>
 
-    <!-- Text Size Options -->
     <string name="text_size_very_small">קטן מאוד</string>
     <string name="text_size_normal">רגיל</string>
     <string name="text_size_large">גדול</string>
     <string name="text_size_huge">ענק</string>
+
     <string name="text_size_label">גודל טקסט: %1$s</string>
 
-    <!-- Event Status -->
     <string name="status_looking_for_volunteer">מחפשים אחר מתנדב זמין בסביבתך</string>
     <string name="status_volunteer_on_the_way">המתנדב נמצא בדרך אליך</string>
     <string name="status_volunteer_arrived">המתנדב הגיע לאירוע</string>
     <string name="status_event_finished">האירוע הסתיים</string>
 
-    <!-- Event Steps -->
     <string name="step_looking">חיפוש מתנדב</string>
     <string name="step_on_the_way">מתנדב בדרך</string>
     <string name="step_arrived">מתנדב באירוע</string>
     <string name="step_finished">אירוע הסתיים</string>
-    <string name="step_vol_claim">שיוך אירוע</string>
-    <string name="step_vol_status">עדכון הגעה</string>
-    <string name="step_vol_close">סגירת אירוע</string>
 
-    <!-- Emergency Options -->
     <string name="police_option">100 - משטרה</string>
     <string name="mda_option">101 - מגן דוד אדום</string>
     <string name="fire_option">102 - מכבי אש</string>
     <string name="select_emergency_service">בחר שירות חירום להתקשרות</string>
 
-    <!-- Rating and Feedback -->
     <string name="error_title">שגיאה</string>
     <string name="select_rating_warning">נא לבחור דירוג לפני השליחה.</string>
     <string name="thank_you_title">תודה על הדירוג!</string>
     <string name="feedback_summary">הדירוג שלך: %1$.1f\nהמשוב שלך:\n%2$s</string>
     <string name="ok_button">אישור</string>
 
-    <!-- Permissions -->
+    <string name="step_vol_claim">שיוך אירוע</string>
+    <string name="step_vol_status">עדכון הגעה</string>
+    <string name="step_vol_close">סגירת אירוע</string>
+
     <string name="location_permission_message">יש לאפשר גישה למיקומכם</string>
     <string name="enable_permission_button">לחץ כאן לאפשר הרשאות</string>
     <string name="location_permission_settings_message">ניתן לאפשר את המיקום בהגדרות המכשיר.</string>
     <string name="open_settings_button">פתח הגדרות</string>
+
+    <string name="id_field_locked">שדה זה לא ניתן לעריכה</string>
+
+    <string name="step_title_event_type">סוג האירוע</string>
+    <string name="step_desc_event_type">בחר את סוג האירוע שברצונך לדווח עליו.</string>
+
+    <string name="step_title_what_happened">מה קרה</string>
+    <string name="step_desc_what_happened">ספר בקצרה מה התרחש.</string>
+
+    <string name="step_title_questionnaire">שאלון</string>
+    <string name="step_desc_questionnaire">ענה על מספר שאלות קצרות שיעזרו לנו להבין את המצב.</string>
+
+    <string name="step_title_location">מיקום</string>
+    <string name="step_desc_location">אשר את מיקום האירוע על גבי המפה.</string>
+
+    <string name="step_title_summary">סיכום</string>
+    <string name="step_desc_summary">בדוק שפרטי הדיווח נכונים לפני השליחה.</string>
+
+    <string name="call_for_help">קריאה לעזרה</string>
+    <string name="next_step">המשך</string>
+
+    <!-- Location Permission -->
     <string name="location_permission_enabled">שיתוף מיקומך בזמן אמת פעיל</string>
     <string name="location_permission_disabled">שיתוף מיקום בזמן אמת לא פעיל</string>
     <string name="location_permission_description">שיתוף מיקומך מאפשר לנו לעזור בעת הצורך</string>
@@ -78,43 +89,37 @@
     <string name="manage_permission">נהל הרשאות</string>
     <string name="allow_permission">אפשר הרשאה</string>
 
-    <!-- Sharing -->
     <string name="share_app_text">הורידו את האפליקציה שלנו: https://play.google.com/store/apps/dev?id=7946031944863744406&amp;hl=en-US</string>
     <string name="share_via">שתף באמצעות</string>
 
-    <!-- Logout -->
     <string name="logout_title">התנתקות</string>
     <string name="logout_message">האם אתה בטוח שברצונך להתנתק?</string>
     <string name="logout_yes">כן</string>
     <string name="logout_no">לא</string>
 
-    <!-- File and Image -->
     <string name="select_image">בחר תמונה</string>
 
-    <!-- Support -->
     <string name="support_email">theangelsyvc@gmail.com</string>
     <string name="support_website_url">https://github.com/theAngelsAPP</string>
     <string name="support_whatsapp_url">https://wa.me/972529568878</string>
 
-    <!-- Location and Safety -->
     <string name="your_location">המיקום שלך</string>
     <string name="safety_warning">יש להעביר את הבן אדם למקום בטוח!</string>
 
-    <!-- Event Close Dialog -->
+    <string name="event_location_title">מיקום האירוע</string>
+
     <string name="close_event_dialog_title">בחר את סיבת סגירת האירוע</string>
     <string name="close_event_confirm">סיום</string>
     <string name="close_event_cancel">ביטול</string>
 
-    <!-- Emergency Button -->
+
     <string name="emergency_button">Emergency Button</string>
 
-    <!-- UI Settings -->
     <string name="back">Back</string>
     <string name="title_display_interface">תצוגה וממשק</string>
     <string name="dark_mode">מצב כהה</string>
     <string name="text_size">גודל טקסט</string>
 
-    <!-- Training and Guidance -->
     <string name="search_hint">חיפוש הדרכה...</string>
     <string name="filter_medical">רפואי</string>
     <string name="filter_security">ביטחוני</string>
@@ -126,19 +131,17 @@
     <string name="training_choking">מה עושים במקרה של חנק?</string>
     <string name="training_cpr">איך נבצע החייאה?</string>
 
-    <!-- Defibrillator Guide -->
     <string name="defib_title">איך נשתמש בדפיברילטור?</string>
-    <string name="defib_intro">המדריך יסביר כיצד להשתמש בדפיברילטור...</string>
+    <string name="defib_intro">המדריך יסביר כיצד להשתמש בדפיברילטור בצורה נכונה בעת מקרה חירום. ביצוע החייאה מהיר עשוי להציל חיים.</string>
     <string name="step1_title">שלב 1: בדיקת המטופל</string>
-    <string name="step1_text">יש לוודא כי המטופל אינו מגיב...</string>
+    <string name="step1_text">יש לוודא כי המטופל אינו מגיב ואין לו דופק. במידה והמצב מצריך זאת, יש להפעיל את הדפיברילטור ולפעול לפי ההוראות הקוליות.</string>
     <string name="step2_title">שלב 2: הצמדת המדבקות</string>
-    <string name="step2_text">מדביקים את האלקטרודות על חזה המטופל...</string>
+    <string name="step2_text">מדביקים את האלקטרודות על חזה המטופל כפי שמופיע בהוראות, ומוודאים שאף אחד לא נוגע בגוף המטופל לפני מתן השוק החשמלי.</string>
     <string name="step3_title">שלב 3:  ניתוח קצב הלב</string>
-    <string name="step3_text">לאחר חיבור האלקטרודות...</string>
+    <string name="step3_text">לאחר חיבור האלקטרודות, הדפיברילטור ינתח את קצב הלב של המטופל באופן אוטומטי. יש לוודא שאף אחד אינו נוגע במטופל בזמן שהמכשיר מבצע את הניתוח.</string>
     <string name="step4_title">שלב 4: מתן שוק חשמלי (אם נדרש)</string>
-    <string name="step4_text">אם הדפיברילטור מזהה שהשוק נחוץ...</string>
+    <string name="step4_text">אם הדפיברילטור מזהה שהשוק נחוץ, הוא ינחה ללחוץ על כפתור מתן השוק. יש להתרחק מהמטופל, לוודא שאף אחד לא נוגע בו, וללחוץ על הכפתור. לאחר מכן, יש להמשיך בהחייאה בהתאם להנחיות.</string>
 
-    <!-- Event Details -->
     <string name="event_details">פרטי האירוע</string>
     <string name="address_text">שדרות אליעזר 27, חיפה</string>
     <string name="event_type">אירוע רפואי - אדם ללא הכרה</string>
@@ -156,12 +159,11 @@
     <string name="summary_footer">פעולות עזרה ראשונה ופינוי של מגן דוד אדום</string>
     <string name="volunteer_name">יונתן אזולאי</string>
 
-    <!-- Live Event View -->
     <string name="live_event_title">אירוע פעיל: מעקב בזמן אמת</string>
     <string name="status_title">סטטוס</string>
     <string name="status_text">מחפשים אחר מתנדב זמין בסביבתך</string>
     <string name="time_title">זמן</string>
-    <string name="safety_message">לאורך כל האירוע חשוב לוודא שאתם...</string>
+    <string name="safety_message">לאורך כל האירוע חשוב לוודא שאתם נמצאים במקום בטוח בלי סכנה לכם ולמטופל!</string>
     <string name="event_address_title">כתובת האירוע</string>
     <string name="event_address">האחים טרבס 27 רחובות</string>
     <string name="call_emergency">התקשר לכוחות הצלה</string>
@@ -172,8 +174,6 @@
     <string name="submit_rating">דירוג מתנדב</string>
     <string name="view_volunteer">מעבר לתצוגת המתנדב</string>
 
-    <!-- Event Search -->
     <string name="search_event_hint">חיפוש אירוע...</string>
     <string name="search_hint_event">חיפוש אירוע...</string>
-
 </resources>
