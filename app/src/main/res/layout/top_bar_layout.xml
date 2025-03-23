@@ -31,13 +31,11 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-        <!-- מסגרת פרופיל עם כנפיים -->
         <FrameLayout
             android:layout_width="95dp"
             android:layout_height="70dp"
             android:layout_gravity="center">
 
-            <!-- מסגרת עם כנפיים -->
             <ImageView
                 android:id="@+id/profile_frame"
                 android:layout_width="match_parent"
@@ -45,7 +43,6 @@
                 android:src="@drawable/newuserpic_border"
                 android:scaleType="fitXY" />
 
-            <!-- תמונת פרופיל (מותאמת לגודל המסגרת) -->
             <ImageView
                 android:id="@+id/img_profile"
                 android:layout_width="52dp"
@@ -57,7 +54,6 @@
                 android:background="@drawable/circle_image" />
         </FrameLayout>
 
-        <!-- טקסט של ברכה -->
         <TextView
             android:id="@+id/tv_greeting"
             android:layout_width="wrap_content"
@@ -70,7 +66,6 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <!-- עננים בתחתית -->
     <ImageView
         android:id="@+id/img_clouds"
         android:layout_width="match_parent"

@@ -1,5 +1,4 @@
 <resources>
-    <!-- אירוע רפואי -->
     <string name="medical_id">medical</string>
     <color name="medical_color">#ff5a5f</color>
     <color name="medical_color_bg">#FFEBEB</color>
@@ -11,7 +10,6 @@
     <string name="medical_location">הדקלים חיפה</string>
     <string name="medical_status">האירוע הסתיים</string>
 
-    <!-- אירוע ביטחוני -->
     <string name="security_id">security</string>
     <color name="security_color">#a17c6b</color>
     <string name="security_image">event_security</string>
@@ -22,7 +20,6 @@
     <string name="security_location">כיכר רבין</string>
     <string name="security_status">האירוע הסתיים</string>
 
-    <!-- אירוע רכב -->
     <string name="vehicle_id">vehicle</string>
     <color name="vehicle_color">#ffa630</color>
     <string name="vehicle_image">event_vehicle</string>
@@ -33,7 +30,6 @@
     <string name="vehicle_location">כביש 6</string>
     <string name="vehicle_status">האירוע הסתיים</string>
 
-    <!-- אירוע בעלי חיים -->
     <string name="animal_id">animal</string>
     <color name="animal_color">#a3f7b5</color>
     <string name="animal_image">event_animal</string>

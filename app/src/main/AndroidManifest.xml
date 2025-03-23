@@ -49,111 +49,105 @@
         <activity
             android:name=".activities.OnboardingActivity"
             android:exported="false"
-            android:label="Onboarding"
+            android:label="The Angels | Onboarding"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.RegistrationActivity"
             android:exported="false"
-            android:label="Registration"
+            android:label="The Angels | Registration Step 1"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.RegistrationActivity2"
             android:exported="false"
-            android:label="Registration"
-            android:theme="@style/Theme._2025_theangels_new"/>
-
-        <activity
-            android:name=".activities.HomepageActivity"
-            android:exported="false"
-            android:label="Home"
+            android:label="The Angels | Registration Step 2"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.HomeActivity"
             android:exported="false"
-            android:label="Home"
+            android:label="The Angels | Home"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.EventsActivity"
             android:exported="false"
-            android:label="Events"
+            android:label="The Angels | Events"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.EducationActivity"
             android:exported="false"
-            android:label="Education"
+            android:label="The Angels | Education"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.ProfileActivity"
             android:exported="false"
-            android:label="Profile"
+            android:label="The Angels | Profile"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.NewEventActivity"
             android:exported="false"
-            android:label="New Event"
+            android:label="The Angels | Report Event"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.MyDetailsActivity"
             android:exported="false"
-            android:label="My Details"
+            android:label="The Angels | My Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.PrivacySettingsActivity"
             android:exported="false"
-            android:label="My Details"
+            android:label="The Angels | Privacy Settings"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.DisplaySettingsActivity"
             android:exported="false"
-            android:label="My Details"
+            android:label="The Angels | Display Settings"
             android:theme="@style/Theme._2025_theangels_new"/>
-
 
         <activity
             android:name=".activities.SupportActivity"
             android:exported="false"
-            android:label="Support"
+            android:label="The Angels | Support"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.JoinVolSettingsActivity"
             android:exported="false"
-            android:label="Join Vol"
+            android:label="The Angels | Join as Volunteer"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.EventUserActivity"
             android:exported="false"
-            android:label="Event USER"
+            android:label="The Angels | User Event"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.EventDetailsActivity"
             android:exported="false"
-            android:label="Event USER"
+            android:label="The Angels | Event Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.EducationDetailsActivity"
             android:exported="false"
-            android:label="Edu "
+            android:label="The Angels | Lesson Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:name=".activities.EventVolActivity"
             android:exported="false"
-            android:label="VOL EVENT "
+            android:label="The Angels | Volunteer Event"
             android:theme="@style/Theme._2025_theangels_new"/>
+
 
 
     </application>
