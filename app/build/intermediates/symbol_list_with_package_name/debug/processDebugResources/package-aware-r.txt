@@ -3626,6 +3626,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id details_btn
 id dialog_button
 id dimensions
 id direct
@@ -3651,7 +3652,6 @@ id east
 id edge
 id edit_query
 id edit_text_id
-id education_card
 id elastic
 id email
 id email_section
@@ -3669,6 +3669,13 @@ id et_birth_date
 id et_id_number
 id eventAddressText
 id eventAddressTitle
+id event_address
+id event_case
+id event_date
+id event_picture
+id event_status
+id event_vol
+id events_lv
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3797,7 +3804,6 @@ id medical_asthma
 id medical_diabetes
 id medical_epilepsy
 id medical_event
-id medical_event_card
 id medical_heart
 id medical_pressure
 id message
@@ -4056,8 +4062,12 @@ id top
 id topPanel
 id top_bar
 id touch_outside
+id training_button
 id training_content_card
+id training_picture
+id training_title
 id training_title_card
+id trainings_list_view
 id transitionToEnd
 id transitionToStart
 id transition_clip
@@ -4262,6 +4272,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout event
 layout fragment_contact
 layout fragment_event_type
 layout fragment_faq
@@ -4342,6 +4353,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout top_bar_layout
+layout training_item
 layout widget_emergency
 layout wings_loading
 menu bottom_nav_menu

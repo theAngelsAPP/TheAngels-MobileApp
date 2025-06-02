@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="close_event_reasons">
+        <item>פינוי לבית חולים</item>
+        <item>מטופל מסרב טיפול</item>
+        <item>אירוע שווא</item>
+        <item>קיבל טיפול עזרה ראשונה</item>
+    </string-array>
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@null</item>
+    </array>
+    <string-array name="faq_answers">
+            <item>גש להגדרות > התראות והתאם אישית את ההעדפות שלך.</item>
+            <item>באפשרותך לפתוח קריאה לשירות דרך מסך הדיווחים באפליקציה.</item>
+            <item>תוכל להצטרף לקבוצות מתנדבים דרך תפריט מתנדבים.</item>
+            <item>הנתונים שלך מוצפנים ונשמרים בהתאם למדיניות הפרטיות.</item>
+            <item>תוכל לתרום דרך עמוד התרומות שלנו.</item>
+        </string-array>
+    <string-array name="faq_questions">
+            <item>איך אני משנה את הגדרות ההתראות?</item>
+            <item>איך אני פותח קריאה לשירות?</item>
+            <item>איך אני מצטרף לקבוצת מתנדבים?</item>
+            <item>האם המידע שלי בטוח?</item>
+            <item>כיצד ניתן לתרום?</item>
+        </string-array>
+    <color name="animal_color">#a3f7b5</color>
+    <color name="animal_event_color">#A1C65D</color>
+    <color name="background">#F0F0F0</color>
+    <color name="black">#FF000000</color>
+    <color name="blue_gradient_end">#7CBBFE</color>
+    <color name="blue_gradient_start">#4A90E2</color>
+    <color name="blue_primary">#2c7da0</color>
+    <color name="car_event_color">#0CB2AF</color>
+    <color name="chip_selected">#33B5E5</color>
+    <color name="chip_unselected">#A9A9A9</color>
+    <color name="circle1">#e01e37</color>
+    <color name="circle2">#ca1b31</color>
+    <color name="colorAccent">#ffba08</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorPrimary">#5fa8d3</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorSecondaryVariant">#018786</color>
+    <color name="confetti_pink">#f4306d</color>
+    <color name="confetti_purple">#b48def</color>
+    <color name="confetti_red">#ff726d</color>
+    <color name="confetti_yellow">#fce18a</color>
+    <color name="dark_blue">#3a506b</color>
+    <color name="event_default_color">#DCDCDC</color>
+    <color name="event_status">#1FBE42</color>
+    <color name="event_status_color">#E9F9EC</color>
+    <color name="gray">#8692f7</color>
+    <color name="gray_dark">#343a40</color>
+    <color name="gray_light">#e5e5e5</color>
+    <color name="gray_soft">#e9ecef</color>
+    <color name="green_dark">#40916c</color>
+    <color name="green_soft">#99d98c</color>
+    <color name="incident_option_default">#DCDCDC</color>
+    <color name="incident_option_selected">#E9C46A</color>
+    <color name="lavender">#4A90E2</color>
+    <color name="light_blue">#D0E8FF</color>
+    <color name="light_gray">#F8F9FA</color>
+    <color name="medical_color">#ff5a5f</color>
+    <color name="medical_color_bg">#FFEBEB</color>
+    <color name="medical_event_color">#E95E50</color>
+    <color name="orange_warning_bg">#FFF3E0</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="questionnaire_green">#388E3C</color>
+    <color name="questionnaire_red">#B00020</color>
+    <color name="red_dark">#c1121f</color>
+    <color name="red_magen_david">#e01e37</color>
+    <color name="security_color">#a17c6b</color>
+    <color name="security_event_color">#FAC723</color>
+    <color name="tab_selected">#4A90E2</color>
+    <color name="tab_unselected">#D3D3D3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="vehicle_color">#ffa630</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow_soft">#fcefb4</color>
+    <string name="address_text">שדרות אליעזר 27, חיפה</string>
+    <string name="allow_permission">אפשר הרשאה</string>
+    <string name="animal_date">08/03/2025</string>
+    <string name="animal_description">חיה פצועה</string>
+    <string name="animal_id">animal</string>
+    <string name="animal_image">event_animal</string>
+    <string name="animal_location">פארק הירקון</string>
+    <string name="animal_status">האירוע הסתיים</string>
+    <string name="animal_volunteer">נעם ברק</string>
+    <string name="animal_volunteer_image">event_angel</string>
+    <string name="app_name">המלאכים</string>
+    <string name="back">Back</string>
+    <string name="call_emergency">התקשר לכוחות הצלה</string>
+    <string name="call_for_help">קריאה לעזרה</string>
+    <string name="call_permission_description">אפשר לבצע שיחות לגורמי ביטחון במקרה הצורך</string>
+    <string name="call_permission_disabled">שיחות חירום אינן זמינות</string>
+    <string name="call_permission_enabled">אפשרות לבצע שיחות חירום פעילה</string>
+    <string name="close_event_cancel">ביטול</string>
+    <string name="close_event_confirm">סיום</string>
+    <string name="close_event_dialog_title">בחר את סיבת סגירת האירוע</string>
+    <string name="continue_display">המשך תצוגה</string>
+    <string name="dark_mode">מצב כהה</string>
+    <string name="dark_mode_off">מצב כהה כבוי</string>
+    <string name="dark_mode_on">מצב כהה פעיל</string>
+    <string name="defib_intro">המדריך יסביר כיצד להשתמש בדפיברילטור בצורה נכונה בעת מקרה חירום. ביצוע החייאה מהיר עשוי להציל חיים.</string>
+    <string name="defib_title">איך נשתמש בדפיברילטור?</string>
+    <string name="emergency_button">Emergency Button</string>
+    <string name="enable_permission_button">לחץ כאן לאפשר הרשאות</string>
+    <string name="enter_feedback">הכנס משוב חופשי</string>
+    <string name="error_title">שגיאה</string>
+    <string name="event_address">האחים טרבס 27 רחובות</string>
+    <string name="event_address_title">כתובת האירוע</string>
+    <string name="event_details">פרטי האירוע</string>
+    <string name="event_duration">⏳ האירוע התרחש במשך 27 דקות</string>
+    <string name="event_location_title">מיקום האירוע</string>
+    <string name="event_summary">סיכום האירוע</string>
+    <string name="event_type">אירוע רפואי - אדם ללא הכרה</string>
+    <string name="feedback_summary">הדירוג שלך: %1$.1f\nהמשוב שלך:\n%2$s</string>
+    <string name="filter_animal">בעח</string>
+    <string name="filter_medical">רפואי</string>
+    <string name="filter_security">ביטחוני</string>
+    <string name="filter_vehicle">רכב</string>
+    <string name="finding_bleeding">✖ קיים דימום.</string>
+    <string name="finding_breathing">✖ קצב הנשימה אינו תקין.</string>
+    <string name="finding_pulse">✔ יש דופק.</string>
+    <string name="finding_safe">✔ הבן אדם נמצא במקום בטוח.</string>
+    <string name="findings_title">ממצאים מקדימים</string>
+    <string name="fire_option">102 - מכבי אש</string>
+    <string name="free_text_label">טקסט חופשי:</string>
+    <string name="google_maps_key">AIzaSyDLJkYa9mPBpdhJx8dIsLSPs3O9JxU5Y9A</string>
+    <string name="greeting">בוקר טוב, שם!</string>
+    <string name="health_permission_description">מאפשר לנו לסנכרן עם אפליקציות כושר ובריאות</string>
+    <string name="health_permission_disabled">גישה למידע רפואי חסומה</string>
+    <string name="health_permission_enabled">גישה למידע רפואי מאופשרת</string>
+    <string name="id_field_locked">שדה זה לא ניתן לעריכה</string>
+    <string name="live_event_title">אירוע פעיל: מעקב בזמן אמת</string>
+    <string name="location_permission_description">שיתוף מיקומך מאפשר לנו לעזור בעת הצורך</string>
+    <string name="location_permission_disabled">שיתוף מיקום בזמן אמת לא פעיל</string>
+    <string name="location_permission_enabled">שיתוף מיקומך בזמן אמת פעיל</string>
+    <string name="location_permission_message">יש לאפשר גישה למיקומכם</string>
+    <string name="location_permission_settings_message">ניתן לאפשר את המיקום בהגדרות המכשיר.</string>
+    <string name="logout_message">האם אתה בטוח שברצונך להתנתק?</string>
+    <string name="logout_no">לא</string>
+    <string name="logout_title">התנתקות</string>
+    <string name="logout_yes">כן</string>
+    <string name="manage_permission">נהל הרשאות</string>
+    <string name="mda_option">101 - מגן דוד אדום</string>
+    <string name="medical_date">11/03/2025</string>
+    <string name="medical_description">אדם ללא הכרה</string>
+    <string name="medical_id">medical</string>
+    <string name="medical_image">event_medical</string>
+    <string name="medical_location">הדקלים חיפה</string>
+    <string name="medical_status">האירוע הסתיים</string>
+    <string name="medical_volunteer">אבינועם לוי</string>
+    <string name="medical_volunteer_image">event_angel</string>
+    <string name="next_step">המשך</string>
+    <string name="notifications_description">אם תאפשר הרשאות התראות, תוכל לקבל עדכונים חשובים בזמן אמת</string>
+    <string name="notifications_disabled">התראות האפליקציה חסומות</string>
+    <string name="notifications_enabled">התראות האפליקציה מופעלות</string>
+    <string name="ok_button">אישור</string>
+    <string name="open_settings_button">פתח הגדרות</string>
+    <string name="police_option">100 - משטרה</string>
+    <string name="rate_volunteer">יש לדרג את המתנדב</string>
+    <string name="safety_message">לאורך כל האירוע חשוב לוודא שאתם נמצאים במקום בטוח בלי סכנה לכם ולמטופל!</string>
+    <string name="safety_warning">יש להעביר את הבן אדם למקום בטוח!</string>
+    <string name="search_event_hint">חיפוש אירוע...</string>
+    <string name="search_hint">חיפוש הדרכה...</string>
+    <string name="search_hint_event">חיפוש אירוע...</string>
+    <string name="security_date">10/03/2025</string>
+    <string name="security_description">אירוע חבלני</string>
+    <string name="security_id">security</string>
+    <string name="security_image">event_security</string>
+    <string name="security_location">כיכר רבין</string>
+    <string name="security_status">האירוע הסתיים</string>
+    <string name="security_volunteer">דניאל כהן</string>
+    <string name="security_volunteer_image">event_angel</string>
+    <string name="select_emergency_service">בחר שירות חירום להתקשרות</string>
+    <string name="select_image">בחר תמונה</string>
+    <string name="select_rating_warning">נא לבחור דירוג לפני השליחה.</string>
+    <string name="share_app_text">הורידו את האפליקציה שלנו: https://play.google.com/store/apps/dev?id=7946031944863744406&amp;hl=en-US</string>
+    <string name="share_via">שתף באמצעות</string>
+    <string name="status_event_finished">האירוע הסתיים</string>
+    <string name="status_looking_for_volunteer">מחפשים אחר מתנדב זמין בסביבתך</string>
+    <string name="status_text">מחפשים אחר מתנדב זמין בסביבתך</string>
+    <string name="status_title">סטטוס</string>
+    <string name="status_volunteer_arrived">המתנדב הגיע לאירוע</string>
+    <string name="status_volunteer_on_the_way">המתנדב נמצא בדרך אליך</string>
+    <string name="step1_text">יש לוודא כי המטופל אינו מגיב ואין לו דופק. במידה והמצב מצריך זאת, יש להפעיל את הדפיברילטור ולפעול לפי ההוראות הקוליות.</string>
+    <string name="step1_title">שלב 1: בדיקת המטופל</string>
+    <string name="step2_text">מדביקים את האלקטרודות על חזה המטופל כפי שמופיע בהוראות, ומוודאים שאף אחד לא נוגע בגוף המטופל לפני מתן השוק החשמלי.</string>
+    <string name="step2_title">שלב 2: הצמדת המדבקות</string>
+    <string name="step3_text">לאחר חיבור האלקטרודות, הדפיברילטור ינתח את קצב הלב של המטופל באופן אוטומטי. יש לוודא שאף אחד אינו נוגע במטופל בזמן שהמכשיר מבצע את הניתוח.</string>
+    <string name="step3_title">שלב 3:  ניתוח קצב הלב</string>
+    <string name="step4_text">אם הדפיברילטור מזהה שהשוק נחוץ, הוא ינחה ללחוץ על כפתור מתן השוק. יש להתרחק מהמטופל, לוודא שאף אחד לא נוגע בו, וללחוץ על הכפתור. לאחר מכן, יש להמשיך בהחייאה בהתאם להנחיות.</string>
+    <string name="step4_title">שלב 4: מתן שוק חשמלי (אם נדרש)</string>
+    <string name="step_arrived">מתנדב באירוע</string>
+    <string name="step_desc_event_type">בחר את סוג האירוע שברצונך לדווח עליו.</string>
+    <string name="step_desc_location">אשר את מיקום האירוע על גבי המפה.</string>
+    <string name="step_desc_questionnaire">ענה על מספר שאלות קצרות שיעזרו לנו להבין את המצב.</string>
+    <string name="step_desc_summary">בדוק שפרטי הדיווח נכונים לפני השליחה.</string>
+    <string name="step_desc_what_happened">ספר בקצרה מה התרחש.</string>
+    <string name="step_finished">אירוע הסתיים</string>
+    <string name="step_looking">חיפוש מתנדב</string>
+    <string name="step_on_the_way">מתנדב בדרך</string>
+    <string name="step_title_event_type">סוג האירוע</string>
+    <string name="step_title_location">מיקום</string>
+    <string name="step_title_questionnaire">שאלון</string>
+    <string name="step_title_summary">סיכום</string>
+    <string name="step_title_what_happened">מה קרה</string>
+    <string name="step_vol_claim">שיוך אירוע</string>
+    <string name="step_vol_close">סגירת אירוע</string>
+    <string name="step_vol_status">עדכון הגעה</string>
+    <string name="submit_rating">דירוג מתנדב</string>
+    <string name="subtitle">משפט השראה מתחת לשם</string>
+    <string name="summary_1">09:12 - האירוע נפתח על ידי המשתמש.</string>
+    <string name="summary_2">09:14 - המתנדב יונתן אזולאי שויך לאירוע.</string>
+    <string name="summary_3">09:19 - המתנדב יונתן הגיע למקום האירוע.</string>
+    <string name="summary_4">09:31 - האירוע הסתיים.</string>
+    <string name="summary_footer">פעולות עזרה ראשונה ופינוי של מגן דוד אדום</string>
+    <string name="support_email">theangelsyvc@gmail.com</string>
+    <string name="support_website_url">https://github.com/theAngelsAPP</string>
+    <string name="support_whatsapp_url">https://wa.me/972529568878</string>
+    <string name="text_size">גודל טקסט</string>
+    <string name="text_size_huge">ענק</string>
+    <string name="text_size_label">גודל טקסט: %1$s</string>
+    <string name="text_size_large">גדול</string>
+    <string name="text_size_normal">רגיל</string>
+    <string name="text_size_very_small">קטן מאוד</string>
+    <string name="thank_you_title">תודה על הדירוג!</string>
+    <string name="time_title">זמן</string>
+    <string name="title_activity_test">testActivity</string>
+    <string name="title_display_interface">תצוגה וממשק</string>
+    <string name="training_choking">מה עושים במקרה של חנק?</string>
+    <string name="training_cpr">איך נבצע החייאה?</string>
+    <string name="training_defib">איך להשתמש בדפיברילטור?</string>
+    <string name="training_epipen">איך להשתמש באפיפן?</string>
+    <string name="training_tourniquet">איך לשים חוסם עורקים?</string>
+    <string name="vehicle_date">09/03/2025</string>
+    <string name="vehicle_description">תאונת דרכים</string>
+    <string name="vehicle_id">vehicle</string>
+    <string name="vehicle_image">event_vehicle</string>
+    <string name="vehicle_location">כביש 6</string>
+    <string name="vehicle_status">האירוע הסתיים</string>
+    <string name="vehicle_volunteer">רועי פרץ</string>
+    <string name="vehicle_volunteer_image">event_angel</string>
+    <string name="view_volunteer">מעבר לתצוגת המתנדב</string>
+    <string name="volunteer_name">יונתן אזולאי</string>
+    <string name="your_location">המיקום שלך</string>
+    <style name="BottomNavTextStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="DividerLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+    <style name="EventDetail">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    <style name="EventTypeButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">@drawable/event_type_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+    </style>
+    <style name="FieldLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+    <style name="ProfileInputStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/input_background</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+    <style name="RoundedInput">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:background">@drawable/rounded_edittext</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    <style name="SectionTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+    <style name="SettingsArrow">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:src">@drawable/ic_arrow_forward</item>
+    </style>
+    <style name="SettingsCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+    <style name="SettingsIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+    <style name="SettingsItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="SettingsText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/heebo_font</item>
+    </style>
+    <style name="Theme._2025_theangels_new" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        
+        <item name="android:fontFamily">@font/heebo_font</item>
+
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+
+        
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/gray</item>
+
+        
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+
+
+    </style>
+    <style name="VolunteerButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/heebo_bold</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+</resources>

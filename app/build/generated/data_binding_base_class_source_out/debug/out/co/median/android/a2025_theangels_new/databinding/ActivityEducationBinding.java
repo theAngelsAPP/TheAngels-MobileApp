@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -19,12 +20,12 @@ public final class ActivityEducationBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final LinearLayout educationCard;
+  public final ListView trainingsListView;
 
   private ActivityEducationBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout educationCard) {
+      @NonNull ListView trainingsListView) {
     this.rootView = rootView;
-    this.educationCard = educationCard;
+    this.trainingsListView = trainingsListView;
   }
 
   @Override
@@ -54,13 +55,13 @@ public final class ActivityEducationBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.education_card;
-      LinearLayout educationCard = ViewBindings.findChildViewById(rootView, id);
-      if (educationCard == null) {
+      id = R.id.trainings_list_view;
+      ListView trainingsListView = ViewBindings.findChildViewById(rootView, id);
+      if (trainingsListView == null) {
         break missingId;
       }
 
-      return new ActivityEducationBinding((LinearLayout) rootView, educationCard);
+      return new ActivityEducationBinding((LinearLayout) rootView, trainingsListView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

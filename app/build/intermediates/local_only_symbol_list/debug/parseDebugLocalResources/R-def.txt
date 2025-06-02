@@ -239,7 +239,7 @@ id continueButton
 id dark_mode_icon
 id dark_mode_status
 id defibrillator_image
-id education_card
+id details_btn
 id email
 id email_section
 id emergencyCallButton
@@ -250,6 +250,13 @@ id et_birth_date
 id et_id_number
 id eventAddressText
 id eventAddressTitle
+id event_address
+id event_case
+id event_date
+id event_picture
+id event_status
+id event_vol
+id events_lv
 id fab_add
 id fab_emergency
 id faq_list
@@ -284,7 +291,6 @@ id medical_asthma
 id medical_diabetes
 id medical_epilepsy
 id medical_event
-id medical_event_card
 id medical_heart
 id medical_pressure
 id nav_education
@@ -341,8 +347,12 @@ id timeTitle
 id timerTextView
 id title
 id top_bar
+id training_button
 id training_content_card
+id training_picture
+id training_title
 id training_title_card
+id trainings_list_view
 id tvStepDescription
 id tvStepTitle
 id tvTitle
@@ -380,6 +390,7 @@ layout activity_registration2
 layout activity_support
 layout bottom_app_bar
 layout bottom_bar_layout
+layout event
 layout fragment_contact
 layout fragment_event_type
 layout fragment_faq
@@ -397,6 +408,7 @@ layout item_faq_answer
 layout item_faq_question
 layout permission_section
 layout top_bar_layout
+layout training_item
 layout widget_emergency
 layout wings_loading
 menu bottom_nav_menu

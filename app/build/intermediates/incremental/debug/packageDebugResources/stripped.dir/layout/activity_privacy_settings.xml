@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="0dp">
+
+
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/gradient_header"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="24dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back"
+            android:padding="4dp"
+            android:layout_marginEnd="3dp"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="הגדרות פרטיות"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_container"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Location Permissions -->
+            <TextView style="@style/SectionTitle" android:text="הרשאות מיקום"/>
+            <include layout="@layout/permission_section"
+                android:id="@+id/location_permission_section"/>
+
+            <!-- Call Permissions -->
+            <TextView style="@style/SectionTitle" android:text="הרשאות שיחות"/>
+            <include layout="@layout/permission_section"
+                android:id="@+id/call_permission_section"/>
+
+            <!-- Health Permissions -->
+            <TextView style="@style/SectionTitle" android:text="הרשאות בריאות"/>
+            <include layout="@layout/permission_section"
+                android:id="@+id/health_permission_section"/>
+
+            <!-- Notification Permissions -->
+            <TextView style="@style/SectionTitle" android:text="הרשאות התראות"/>
+            <include layout="@layout/permission_section"
+                android:id="@+id/notification_permission_section"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
