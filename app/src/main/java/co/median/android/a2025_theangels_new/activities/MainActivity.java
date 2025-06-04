@@ -10,6 +10,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -82,11 +90,38 @@ public class MainActivity extends BaseActivity {
 
         // Login button click
         loginButton.setOnClickListener(v -> {
-            if (isInputsFilled()) {
-                startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                finish();
+            String email = usernameInput.getText().toString().trim();
+            String password = passwordInput.getText().toString().trim();
+
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "אנא הזן אימייל וסיסמה", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "כתובת האימייל אינה תקינה", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(this, "התחברת בהצלחה", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                            finish();
+                        } else {
+                            Exception e = task.getException();
+                            if (e instanceof FirebaseAuthInvalidUserException) {
+                                Toast.makeText(this, "המשתמש לא קיים", Toast.LENGTH_SHORT).show();
+                            } else if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                                Toast.makeText(this, "סיסמה שגויה", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(this, "שגיאה: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
         });
+
 
         // Register button click
         registerButton.setOnClickListener(v -> {
