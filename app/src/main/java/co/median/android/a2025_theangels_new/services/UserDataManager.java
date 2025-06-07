@@ -89,4 +89,38 @@ public class UserDataManager {
                     callback.accept(null);
                 });
     }
+
+    public static void getHandledEventsCount(String uid, Consumer<Integer> callback) {
+        db.collection("events")
+                .whereEqualTo("eventHandleBy", uid)
+                .get()
+                .addOnSuccessListener(querySnapshot -> callback.accept(querySnapshot.size()))
+                .addOnFailureListener(e -> {
+                    Log.e(TAG, "שגיאה בספירת אירועים", e);
+                    callback.accept(0);
+                });
+    }
+
+    public static void getHandledEventsAverageRating(String uid, Consumer<Double> callback) {
+        db.collection("events")
+                .whereEqualTo("eventHandleBy", uid)
+                .get()
+                .addOnSuccessListener(querySnapshot -> {
+                    double sum = 0;
+                    int count = 0;
+                    for (QueryDocumentSnapshot doc : querySnapshot) {
+                        Long rating = doc.getLong("eventRating");
+                        if (rating != null) {
+                            sum += rating;
+                            count++;
+                        }
+                    }
+                    callback.accept(count > 0 ? sum / count : 0.0);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e(TAG, "שגיאה בחישוב דירוג", e);
+                    callback.accept(0.0);
+                });
+    }
+
 }

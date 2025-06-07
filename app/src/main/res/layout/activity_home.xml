@@ -44,7 +44,9 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:id="@+id/tv_events_count"
                         android:src="@drawable/icon_events" />
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -116,6 +118,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/tv_avg_rating"
                         android:text="4.8"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -144,7 +147,8 @@
             android:padding="12dp"
             android:gravity="center_vertical"
             android:elevation="4dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="48dp"
