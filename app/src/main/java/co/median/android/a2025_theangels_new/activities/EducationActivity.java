@@ -23,7 +23,6 @@ public class EducationActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate called");
-        setContentView(R.layout.activity_education);
 
         showTopBar(true);
         showBottomBar(true);

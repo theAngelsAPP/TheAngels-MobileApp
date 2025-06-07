@@ -96,8 +96,8 @@ public abstract class BaseActivity extends AppCompatActivity {
                     startActivityWithAnimation(HomeActivity.class);
                 } else if (itemId == R.id.nav_education) {
                     startActivityWithAnimation(EducationActivity.class);
-//                } else if (itemId == R.id.nav_events) {
-//                    startActivityWithAnimation(EventsActivity.class);
+                } else if (itemId == R.id.nav_events) {
+                    startActivityWithAnimation(EventsActivity.class);
                 } else if (itemId == R.id.nav_profile) {
                     startActivityWithAnimation(ProfileActivity.class);
                 }
@@ -168,8 +168,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             return R.id.nav_home;
         } else if (this instanceof EducationActivity) {
             return R.id.nav_education;
-//        } else if (this instanceof EventsActivity) {
-//            return R.id.nav_events;
+        } else if (this instanceof EventsActivity) {
+            return R.id.nav_events;
         } else if (this instanceof ProfileActivity) {
             return R.id.nav_profile;
         }

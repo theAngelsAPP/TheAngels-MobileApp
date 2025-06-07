@@ -134,6 +134,22 @@ public class MainActivity extends BaseActivity {
     }
 
     // =======================================
+    // onStart - Automatically navigates to Home if a user is already signed in
+    // =======================================
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            UserDataManager.loadUserDetails(uid, session -> {
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                finish();
+            });
+        }
+    }
+
+
+    // =======================================
     // checkInputs - Enables login button only if both fields are filled
     // =======================================
     private void checkInputs() {

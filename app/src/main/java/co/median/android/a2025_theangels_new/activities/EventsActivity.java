@@ -22,7 +22,6 @@ public class EventsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
 
         showTopBar(true);
         showBottomBar(true);
