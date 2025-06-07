@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.lottie)
     implementation(libs.konfetti.xml)
     implementation(libs.okhttp)
+    implementation libs.glide
+    annotationProcessor libs.glide.compiler
 
 
     implementation libs.androidx.lifecycle.runtime.ktx

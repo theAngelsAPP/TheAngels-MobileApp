@@ -31,7 +31,9 @@ public class EventDataManager {
                         try {
                             Event event = doc.toObject(Event.class);
                             if (event != null) {
-                                Log.d(TAG, "Event loaded: " + event.getEventCase());
+                                //Log.d(TAG, "Event loaded: " + event.getEventCase()); השורה הלא נכונה
+                                Log.d(TAG, "Event loaded: " + event.getEventType());
+
                                 events.add(event);
                             } else {
                                 Log.w(TAG, "Event is null for document: " + doc.getId());

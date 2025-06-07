@@ -6,6 +6,8 @@
 .DS_Store
 /build
 /captures
+*/build
+app/build/
 .externalNativeBuild
 
 # Flutter-specific (אם זה פרויקט Flutter)

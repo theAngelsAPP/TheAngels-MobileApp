@@ -11,13 +11,18 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.bumptech.glide.Glide;
+
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.fragments.MapFragment;
+import co.median.android.a2025_theangels_new.models.UserSession;
 
 // =======================================
 // HomeActivity - Displays the home screen and handles location permission logic
@@ -29,6 +34,8 @@ public class HomeActivity extends BaseActivity {
     // =======================================
     private LinearLayout locationPermissionContainer;
     private TextView tvLocationMessage, btnEnableLocation;
+    private ImageView imgProfile;
+    private TextView tvGreeting;
 
     // =======================================
     // onCreate - Initializes UI and checks for location permission
@@ -42,6 +49,16 @@ public class HomeActivity extends BaseActivity {
         locationPermissionContainer = findViewById(R.id.location_permission_container);
         tvLocationMessage = findViewById(R.id.tv_location_message);
         btnEnableLocation = findViewById(R.id.btn_enable_location);
+        imgProfile = findViewById(R.id.img_profile);
+        tvGreeting = findViewById(R.id.tv_greeting);
+
+        UserSession session = UserSession.getInstance();
+        String fullName = session.getFirstName() + " " + session.getLastName();
+        tvGreeting.setText("שלום, " + fullName);
+        String url = session.getImageURL();
+        if (url != null && !url.isEmpty()) {
+            Glide.with(this).load(url).placeholder(R.drawable.newuserpic).into(imgProfile);
+        }
 
         checkLocationPermission();
 

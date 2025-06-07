@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import android.widget.Toast;
+import co.median.android.a2025_theangels_new.services.UserDataManager;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -106,9 +107,12 @@ public class MainActivity extends BaseActivity {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
-                            Toast.makeText(this, "התחברת בהצלחה", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                            finish();
+                            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            UserDataManager.loadUserDetails(uid, session -> {
+                                Toast.makeText(this, "התחברת בהצלחה", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                                finish();
+                            });
                         } else {
                             Exception e = task.getException();
                             if (e instanceof FirebaseAuthInvalidUserException) {
