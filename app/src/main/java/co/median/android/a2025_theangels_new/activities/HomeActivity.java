@@ -69,11 +69,13 @@ public class HomeActivity extends BaseActivity {
     // checkLocationPermission - Checks permission and displays map or request UI accordingly
     // =======================================
     private void checkLocationPermission() {
-        loadMapFragment();
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             hideLocationRequestBanner();
+            if (getSupportFragmentManager().findFragmentById(R.id.map_container) == null) {
+                loadMapFragment();
+            }
         } else {
             showLocationRequestBanner();
         }
