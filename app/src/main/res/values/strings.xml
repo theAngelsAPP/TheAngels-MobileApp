@@ -3,7 +3,9 @@
     <string name="title_activity_test">testActivity</string>
     <string name="greeting">בוקר טוב, שם!</string>
     <string name="subtitle">משפט השראה מתחת לשם</string>
-    <string name="google_maps_key">AIzaSyDLJkYa9mPBpdhJx8dIsLSPs3O9JxU5Y9A</string>
+    <string name="google_maps_key">AIzaSyDXslRAGx0OIxSUuZ9nZzv16id_inkXh7w</string>
+    <string name="google_geocoding_key">AIzaSyDXslRAGx0OIxSUuZ9nZzv16id_inkXh7w</string>
+
 
     <string name="dark_mode_on">מצב כהה פעיל</string>
     <string name="dark_mode_off">מצב כהה כבוי</string>
@@ -111,6 +113,13 @@
     <string name="close_event_dialog_title">בחר את סיבת סגירת האירוע</string>
     <string name="close_event_confirm">סיום</string>
     <string name="close_event_cancel">ביטול</string>
+
+    <!-- Manual address strings -->
+    <string name="enter_address">הזן כתובת</string>
+    <string name="address_not_found">הכתובת לא נמצאה</string>
+    <string name="address_lookup_error">שגיאה בחיפוש כתובת</string>
+    <string name="location_updated">המיקום עודכן</string>
+
 
 
     <string name="emergency_button">Emergency Button</string>

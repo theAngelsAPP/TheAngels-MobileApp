@@ -146,7 +146,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private void startActivityWithAnimation(Class<?> targetActivity) {
         Intent intent = new Intent(this, targetActivity);
         startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        overridePendingTransition(0, 0); // Disable transition animations
         finish();
     }
 

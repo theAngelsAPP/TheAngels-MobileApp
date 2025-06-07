@@ -27,11 +27,15 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 
     private Context context;
     private ArrayList<Event> events;
+    private int resource;
+
 
     public EventsAdapter(Context context, int resource, ArrayList<Event> events) {
         super(context, resource, events);
         this.context = context;
         this.events = events;
+        this.resource = resource;
+
     }
 
     @Override
@@ -51,7 +55,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
     public View getView(int position, @Nullable View rootView, @NonNull ViewGroup parent) {
         if (rootView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            rootView = inflater.inflate(R.layout.training_item, parent, false);
+            rootView = inflater.inflate(resource, parent, false);
         }
 
         Event event = getItem(position);
