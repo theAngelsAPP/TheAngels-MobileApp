@@ -44,11 +44,12 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:id="@+id/tv_events_count"
+                        android:id="@+id/img_events_icon"
                         android:src="@drawable/icon_events" />
 
 
                     <TextView
+                        android:id="@+id/tv_events_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
