@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/gradient_header"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="24dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back"
+            android:padding="4dp"
+            android:layout_marginEnd="3dp"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="הפרטים שלי"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_container"
+        android:layout_above="@id/btn_save_changes"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView style="@style/SectionTitle" android:text="פרטים אישיים"/>
+            <TextView style="@style/FieldLabel" android:text="שם פרטי"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="שם פרטי"
+                android:inputType="textPersonName"/>
+
+            <TextView style="@style/FieldLabel" android:text="שם משפחה"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="שם משפחה"
+                android:inputType="textPersonName"/>
+
+            <TextView style="@style/FieldLabel" android:text="תעודת זהות"/>
+            <EditText
+                android:id="@+id/et_id_number"
+                style="@style/RoundedInput"
+                android:hint="123456789"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="number"/>
+
+            <TextView style="@style/FieldLabel" android:text="תאריך לידה"/>
+            <EditText
+                android:id="@+id/et_birth_date"
+                style="@style/RoundedInput"
+                android:hint="בחר תאריך"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <TextView style="@style/FieldLabel" android:text="עיר מגורים"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="עיר מגורים"
+                android:inputType="textCapWords"/>
+
+            <TextView style="@style/SectionTitle" android:text="פרטי התחברות"/>
+            <TextView style="@style/FieldLabel" android:text="כתובת מייל"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="כתובת מייל"
+                android:inputType="textEmailAddress"/>
+
+            <TextView style="@style/FieldLabel" android:text="מספר טלפון"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="מספר טלפון"
+                android:inputType="phone"/>
+
+            <TextView style="@style/FieldLabel" android:text="סיסמה"/>
+            <EditText
+                style="@style/RoundedInput"
+                android:hint="******"
+                android:inputType="textPassword"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_save_changes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="שמירת שינויים"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_gradient"
+        android:elevation="6dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"/>
+</RelativeLayout>

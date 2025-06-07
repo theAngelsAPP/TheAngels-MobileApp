@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:background="@android:color/white"
+    android:padding="8dp">
+
+    <!-- עוטף חיפוש וסינון -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="@android:color/white">
+
+        <!-- שדה חיפוש -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="@drawable/search_background"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="חיפוש אירוע..."
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <!-- כפתורי סינון -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="6dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="רפואי"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/filter_button_medical"
+                android:gravity="center" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="ביטחוני"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/filter_button_security"
+                android:gravity="center"
+                android:layout_marginStart="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="רכב"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/filter_button_vehicle"
+                android:gravity="center"
+                android:layout_marginStart="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="בע''ח"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/filter_button_animal"
+                android:gravity="center"
+                android:layout_marginStart="1dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- רשימת אירועים -->
+    <ListView
+        android:id="@+id/events_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+</LinearLayout>

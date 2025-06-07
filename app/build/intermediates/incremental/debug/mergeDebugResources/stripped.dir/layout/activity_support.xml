@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="0dp">
+
+    <!-- Top Title -->
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/gradient_header"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="24dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back"
+            android:padding="4dp"
+            android:layout_marginEnd="3dp"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="שירות ותמיכה"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Navigation Tabs between "FAQ" and "Contact Us" -->
+    <LinearLayout
+        android:id="@+id/tabs_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp"
+        android:layout_below="@id/header_container">
+
+        <Button
+            android:id="@+id/btn_faq"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="תמיכה"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:letterSpacing="0"
+            android:textStyle="bold"
+            android:backgroundTint="#52b788"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+/>
+
+        <Button
+            android:id="@+id/btn_contact"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="דברו איתנו"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:letterSpacing="0"
+            android:textStyle="bold"
+            android:backgroundTint="#52b788"
+            android:layout_marginEnd="30dp"
+            />
+
+
+
+    </LinearLayout>
+
+    <!-- Dynamic Content Area -->
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabs_container"
+        android:padding="16dp"/>
+</RelativeLayout>

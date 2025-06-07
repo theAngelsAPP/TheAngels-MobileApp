@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFF8D1"/> <!-- רקע צהוב עדין -->
+    <corners android:radius="12dp"/> <!-- קצוות מעוגלים -->
+    <stroke android:width="2dp" android:color="#FFC107"/> <!-- מסגרת בולטת -->
+</shape>

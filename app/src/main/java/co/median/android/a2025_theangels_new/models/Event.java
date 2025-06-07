@@ -24,6 +24,33 @@ public class Event {
         // דרוש לפיירבייס בעת שליפה
     }
 
+    public Event(String eventCloseReason,
+                 String eventCreatedBy,
+                 Map<String, Object> eventForm,
+                 String eventHandleBy,
+                 GeoPoint eventLocation,
+                 String eventQuestionChoice,
+                 int eventRating,
+                 String eventRatingText,
+                 String eventStatus,
+                 Timestamp eventTimeStarted,
+                 Timestamp eventTimeEnded,
+                 String eventType) {
+        this.eventCloseReason = eventCloseReason;
+        this.eventCreatedBy = eventCreatedBy;
+        this.eventForm = eventForm;
+        this.eventHandleBy = eventHandleBy;
+        this.eventLocation = eventLocation;
+        this.eventQuestionChoice = eventQuestionChoice;
+        this.eventRating = eventRating;
+        this.eventRatingText = eventRatingText;
+        this.eventStatus = eventStatus;
+        this.eventTimeStarted = eventTimeStarted;
+        this.eventTimeEnded = eventTimeEnded;
+        this.eventType = eventType;
+    }
+
+
     public String getEventCloseReason() {
         return eventCloseReason;
     }

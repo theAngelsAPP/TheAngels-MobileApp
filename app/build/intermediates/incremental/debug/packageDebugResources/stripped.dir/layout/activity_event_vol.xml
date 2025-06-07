@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:padding="0dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/live_event_title"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@color/blue_primary"
+            android:layout_marginBottom="0dp"/>
+
+        <com.shuhart.stepview.StepView
+            android:id="@+id/step_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:layoutDirection="rtl"
+            app:sv_stepsNumber="3"
+            app:sv_animationType="All"
+            app:sv_selectedCircleColor="@color/blue_primary"
+            app:sv_selectedTextColor="@color/gray_dark"
+            app:sv_doneCircleColor="@color/green_soft"
+            app:sv_doneStepLineColor="@color/green_soft"
+            app:sv_doneStepMarkColor="@android:color/white"
+            app:sv_nextStepCircleEnabled="true"
+            app:sv_nextStepCircleColor="@color/gray_light"
+            app:sv_nextStepLineColor="@color/gray_light"
+            app:sv_stepNumberTextSize="14sp"
+            app:sv_selectedStepNumberColor="@android:color/white"
+            app:sv_stepLineWidth="2dp"
+            app:sv_selectedCircleRadius="14dp"
+            app:sv_doneCircleRadius="12dp"
+            app:sv_stepPadding="6dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_type"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:padding="3dp"
+            android:background="@color/blue_primary"
+            android:layout_marginBottom="0dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:background="@color/light_gray"
+            android:orientation="vertical"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finding_safe"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finding_pulse"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finding_breathing"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finding_bleeding"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginBottom="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/time_title"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="@color/gray_soft"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="00:00"
+            android:textSize="17sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="@android:color/white"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/redSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:padding="0dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@color/dark_blue"
+            android:layout_marginBottom="0dp"/>
+
+        <FrameLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="0dp"/>
+
+        <TextView
+            android:id="@+id/eventAddressTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/event_address_title"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@color/dark_blue"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:id="@+id/eventAddressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="@string/event_address"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:background="@color/light_gray"
+            android:layout_marginBottom="0dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:padding="0dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@color/dark_blue"
+            android:layout_marginBottom="0dp"/>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"/>
+
+        <Button
+            android:id="@+id/nextStepButton"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="@string/continue_display"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:backgroundTint="@color/gray_light"
+            android:padding="2dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</ScrollView>

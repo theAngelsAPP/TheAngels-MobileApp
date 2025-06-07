@@ -1,0 +1,596 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="co.median.android.a2025_theangels_new"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.VIBRATE" />
+11-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:5:5-65
+11-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:5:22-63
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:5-78
+12-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:7:5-80
+13-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:7:22-78
+14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:5-78
+14-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:6:22-76
+15    <uses-permission android:name="android.permission.BODY_SENSORS" />
+15-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:9:5-70
+15-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:9:22-68
+16    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+16-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:10:5-76
+16-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:10:22-74
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:11:5-67
+17-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:11:22-64
+18
+19    <!-- Include required permissions for Google Maps API to run. -->
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:20:5-78
+20-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:20:22-76
+21
+22    <uses-feature
+22-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:22:5-24:33
+23        android:glEsVersion="0x00020000"
+23-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:23:8-40
+24        android:required="true" />
+24-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:24:8-31
+25
+26    <queries>
+26-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:27:5-30:15
+27
+28        <!-- Needs to be explicitly declared on Android R+ -->
+29        <package android:name="com.google.android.apps.maps" />
+29-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:29:7-61
+29-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:29:16-59
+30    </queries>
+31
+32    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+32-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\5191084d33442eaf07a0b772c6133f75\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:5-98
+32-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\5191084d33442eaf07a0b772c6133f75\transformed\recaptcha-18.6.1\AndroidManifest.xml:9:22-95
+33
+34    <permission
+34-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\d64810f44656df8e01f317aec6ee4a46\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+35        android:name="co.median.android.a2025_theangels_new.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\d64810f44656df8e01f317aec6ee4a46\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+36        android:protectionLevel="signature" />
+36-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\d64810f44656df8e01f317aec6ee4a46\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+37
+38    <uses-permission android:name="co.median.android.a2025_theangels_new.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\d64810f44656df8e01f317aec6ee4a46\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\d64810f44656df8e01f317aec6ee4a46\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+39
+40    <application
+40-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:14:5-157:19
+41        android:name="co.median.android.a2025_theangels_new.MyApplication"
+41-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:16:9-38
+42        android:allowBackup="true"
+42-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:15:9-35
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.13.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\d64810f44656df8e01f317aec6ee4a46\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+44        android:dataExtractionRules="@xml/data_extraction_rules"
+44-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:17:9-65
+45        android:debuggable="true"
+46        android:extractNativeLibs="false"
+47        android:fullBackupContent="@xml/backup_rules"
+47-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:18:9-54
+48        android:icon="@mipmap/icon"
+48-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:19:9-36
+49        android:label="@string/app_name"
+49-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:20:9-41
+50        android:roundIcon="@mipmap/icon"
+50-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:21:9-41
+51        android:supportsRtl="true"
+51-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:22:9-35
+52        android:testOnly="true"
+53        android:theme="@style/Theme._2025_theangels_new" >
+53-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:23:9-57
+54        <meta-data
+54-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:26:9-28:54
+55            android:name="com.google.android.geo.API_KEY"
+55-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:27:13-58
+56            android:value="@string/google_maps_key" />
+56-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:28:13-52
+57
+58        <receiver
+58-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:30:9-38:20
+59            android:name="co.median.android.a2025_theangels_new.widget.EmergencyWidget"
+59-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:30:19-57
+60            android:exported="true" >
+60-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:31:13-36
+61            <intent-filter>
+61-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:32:13-34:29
+62                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+62-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:33:17-83
+62-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:33:25-81
+63            </intent-filter>
+64
+65            <meta-data
+65-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:35:13-37:65
+66                android:name="android.appwidget.provider"
+66-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:36:17-58
+67                android:resource="@xml/emergency_widget_info" />
+67-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:37:17-62
+68        </receiver>
+69
+70        <activity
+70-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:41:9-50:20
+71            android:name="co.median.android.a2025_theangels_new.activities.MainActivity"
+71-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:43:13-52
+72            android:exported="true"
+72-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:44:13-36
+73            android:theme="@style/Theme._2025_theangels_new"
+73-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:45:13-61
+74            android:windowSoftInputMode="adjustResize" >
+74-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:42:13-55
+75            <intent-filter>
+75-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:46:13-49:29
+76                <action android:name="android.intent.action.MAIN" />
+76-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:47:17-68
+76-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:47:25-66
+77
+78                <category android:name="android.intent.category.LAUNCHER" />
+78-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:48:17-76
+78-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:48:27-74
+79            </intent-filter>
+80        </activity>
+81        <activity
+81-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:52:9-56:63
+82            android:name="co.median.android.a2025_theangels_new.activities.OnboardingActivity"
+82-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:53:13-58
+83            android:exported="false"
+83-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:54:13-37
+84            android:label="The Angels | Onboarding"
+84-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:55:13-52
+85            android:theme="@style/Theme._2025_theangels_new" />
+85-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:56:13-61
+86        <activity
+86-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:58:9-63:63
+87            android:name="co.median.android.a2025_theangels_new.activities.RegistrationActivity"
+87-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:60:13-60
+88            android:exported="false"
+88-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:61:13-37
+89            android:label="The Angels | Registration Step 1"
+89-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:62:13-61
+90            android:theme="@style/Theme._2025_theangels_new"
+90-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:63:13-61
+91            android:windowSoftInputMode="adjustResize" />
+91-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:59:13-55
+92        <activity
+92-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:65:9-69:63
+93            android:name="co.median.android.a2025_theangels_new.activities.RegistrationActivity2"
+93-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:66:13-61
+94            android:exported="false"
+94-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:67:13-37
+95            android:label="The Angels | Registration Step 2"
+95-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:68:13-61
+96            android:theme="@style/Theme._2025_theangels_new" />
+96-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:69:13-61
+97        <activity
+97-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:71:9-75:63
+98            android:name="co.median.android.a2025_theangels_new.activities.HomeActivity"
+98-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:72:13-52
+99            android:exported="false"
+99-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:73:13-37
+100            android:label="The Angels | Home"
+100-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:74:13-46
+101            android:theme="@style/Theme._2025_theangels_new" />
+101-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:75:13-61
+102        <activity
+102-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:77:9-81:63
+103            android:name="co.median.android.a2025_theangels_new.activities.EventsActivity"
+103-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:78:13-54
+104            android:exported="false"
+104-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:79:13-37
+105            android:label="The Angels | Events"
+105-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:80:13-48
+106            android:theme="@style/Theme._2025_theangels_new" />
+106-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:81:13-61
+107        <activity
+107-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:83:9-87:63
+108            android:name="co.median.android.a2025_theangels_new.activities.EducationActivity"
+108-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:84:13-57
+109            android:exported="false"
+109-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:85:13-37
+110            android:label="The Angels | Education"
+110-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:86:13-51
+111            android:theme="@style/Theme._2025_theangels_new" />
+111-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:87:13-61
+112        <activity
+112-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:89:9-93:63
+113            android:name="co.median.android.a2025_theangels_new.activities.ProfileActivity"
+113-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:90:13-55
+114            android:exported="false"
+114-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:91:13-37
+115            android:label="The Angels | Profile"
+115-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:92:13-49
+116            android:theme="@style/Theme._2025_theangels_new" />
+116-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:93:13-61
+117        <activity
+117-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:95:9-99:63
+118            android:name="co.median.android.a2025_theangels_new.activities.NewEventActivity"
+118-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:96:13-56
+119            android:exported="false"
+119-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:97:13-37
+120            android:label="The Angels | Report Event"
+120-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:98:13-54
+121            android:theme="@style/Theme._2025_theangels_new" />
+121-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:99:13-61
+122        <activity
+122-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:101:9-105:63
+123            android:name="co.median.android.a2025_theangels_new.activities.MyDetailsActivity"
+123-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:102:13-57
+124            android:exported="false"
+124-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:103:13-37
+125            android:label="The Angels | My Details"
+125-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:104:13-52
+126            android:theme="@style/Theme._2025_theangels_new" />
+126-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:105:13-61
+127        <activity
+127-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:107:9-111:63
+128            android:name="co.median.android.a2025_theangels_new.activities.PrivacySettingsActivity"
+128-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:108:13-63
+129            android:exported="false"
+129-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:109:13-37
+130            android:label="The Angels | Privacy Settings"
+130-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:110:13-58
+131            android:theme="@style/Theme._2025_theangels_new" />
+131-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:111:13-61
+132        <activity
+132-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:113:9-117:63
+133            android:name="co.median.android.a2025_theangels_new.activities.DisplaySettingsActivity"
+133-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:114:13-63
+134            android:exported="false"
+134-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:115:13-37
+135            android:label="The Angels | Display Settings"
+135-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:116:13-58
+136            android:theme="@style/Theme._2025_theangels_new" />
+136-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:117:13-61
+137        <activity
+137-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:119:9-123:63
+138            android:name="co.median.android.a2025_theangels_new.activities.SupportActivity"
+138-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:120:13-55
+139            android:exported="false"
+139-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:121:13-37
+140            android:label="The Angels | Support"
+140-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:122:13-49
+141            android:theme="@style/Theme._2025_theangels_new" />
+141-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:123:13-61
+142        <activity
+142-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:125:9-129:63
+143            android:name="co.median.android.a2025_theangels_new.activities.JoinVolSettingsActivity"
+143-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:126:13-63
+144            android:exported="false"
+144-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:127:13-37
+145            android:label="The Angels | Join as Volunteer"
+145-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:128:13-59
+146            android:theme="@style/Theme._2025_theangels_new" />
+146-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:129:13-61
+147        <activity
+147-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:131:9-135:63
+148            android:name="co.median.android.a2025_theangels_new.activities.EventUserActivity"
+148-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:132:13-57
+149            android:exported="false"
+149-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:133:13-37
+150            android:label="The Angels | User Event"
+150-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:134:13-52
+151            android:theme="@style/Theme._2025_theangels_new" />
+151-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:135:13-61
+152        <activity
+152-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:137:9-141:63
+153            android:name="co.median.android.a2025_theangels_new.activities.EventDetailsActivity"
+153-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:138:13-60
+154            android:exported="false"
+154-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:139:13-37
+155            android:label="The Angels | Event Details"
+155-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:140:13-55
+156            android:theme="@style/Theme._2025_theangels_new" />
+156-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:141:13-61
+157        <activity
+157-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:143:9-147:63
+158            android:name="co.median.android.a2025_theangels_new.activities.EducationDetailsActivity"
+158-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:144:13-64
+159            android:exported="false"
+159-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:145:13-37
+160            android:label="The Angels | Lesson Details"
+160-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:146:13-56
+161            android:theme="@style/Theme._2025_theangels_new" />
+161-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:147:13-61
+162        <activity
+162-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:149:9-153:63
+163            android:name="co.median.android.a2025_theangels_new.activities.EventVolActivity"
+163-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:150:13-56
+164            android:exported="false"
+164-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:151:13-37
+165            android:label="The Angels | Volunteer Event"
+165-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:152:13-57
+166            android:theme="@style/Theme._2025_theangels_new" />
+166-->C:\TheAngels-MobileApp\app\src\main\AndroidManifest.xml:153:13-61
+167
+168        <!-- Needs to be explicitly declared on P+ -->
+169        <uses-library
+169-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:7-86
+170            android:name="org.apache.http.legacy"
+170-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:21-58
+171            android:required="false" />
+171-->[com.google.android.gms:play-services-maps:19.1.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\ed33a1ddfb8013e70d92a9703931a9f5\transformed\play-services-maps-19.1.0\AndroidManifest.xml:33:59-83
+172
+173        <provider
+173-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\8c55a816fc7b89f8deb00dcd92973530\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+174            android:name="androidx.startup.InitializationProvider"
+174-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\8c55a816fc7b89f8deb00dcd92973530\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+175            android:authorities="co.median.android.a2025_theangels_new.androidx-startup"
+175-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\8c55a816fc7b89f8deb00dcd92973530\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+176            android:exported="false" >
+176-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\8c55a816fc7b89f8deb00dcd92973530\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+177            <meta-data
+177-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\8c55a816fc7b89f8deb00dcd92973530\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+178                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+178-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\8c55a816fc7b89f8deb00dcd92973530\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+179                android:value="androidx.startup" />
+179-->[androidx.emoji2:emoji2:1.3.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\8c55a816fc7b89f8deb00dcd92973530\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+180            <meta-data
+180-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\batel\.gradle\caches\8.11.1\transforms\cbab35008d6bfe5854b7e709c6c0912c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:29:13-31:52
+181                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+181-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\batel\.gradle\caches\8.11.1\transforms\cbab35008d6bfe5854b7e709c6c0912c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:30:17-78
+182                android:value="androidx.startup" />
+182-->[androidx.lifecycle:lifecycle-process:2.8.7] C:\Users\batel\.gradle\caches\8.11.1\transforms\cbab35008d6bfe5854b7e709c6c0912c\transformed\lifecycle-process-2.8.7\AndroidManifest.xml:31:17-49
+183            <meta-data
+183-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
+184                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+184-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:30:17-85
+185                android:value="androidx.startup" />
+185-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:31:17-49
+186        </provider>
+187
+188        <activity
+188-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:29:9-46:20
+189            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+189-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:30:13-80
+190            android:excludeFromRecents="true"
+190-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:31:13-46
+191            android:exported="true"
+191-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:32:13-36
+192            android:launchMode="singleTask"
+192-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:33:13-44
+193            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+193-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:34:13-72
+194            <intent-filter>
+194-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:35:13-45:29
+195                <action android:name="android.intent.action.VIEW" />
+195-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:36:17-69
+195-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:36:25-66
+196
+197                <category android:name="android.intent.category.DEFAULT" />
+197-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:38:17-76
+197-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:38:27-73
+198                <category android:name="android.intent.category.BROWSABLE" />
+198-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:39:17-78
+198-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:39:27-75
+199
+200                <data
+200-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:41:17-44:51
+201                    android:host="firebase.auth"
+201-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:42:21-49
+202                    android:path="/"
+202-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:43:21-37
+203                    android:scheme="genericidp" />
+203-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:44:21-48
+204            </intent-filter>
+205        </activity>
+206        <activity
+206-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:47:9-64:20
+207            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+207-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:48:13-79
+208            android:excludeFromRecents="true"
+208-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:49:13-46
+209            android:exported="true"
+209-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:50:13-36
+210            android:launchMode="singleTask"
+210-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:51:13-44
+211            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+211-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:52:13-72
+212            <intent-filter>
+212-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:53:13-63:29
+213                <action android:name="android.intent.action.VIEW" />
+213-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:36:17-69
+213-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:36:25-66
+214
+215                <category android:name="android.intent.category.DEFAULT" />
+215-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:38:17-76
+215-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:38:27-73
+216                <category android:name="android.intent.category.BROWSABLE" />
+216-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:39:17-78
+216-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:39:27-75
+217
+218                <data
+218-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:41:17-44:51
+219                    android:host="firebase.auth"
+219-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:42:21-49
+220                    android:path="/"
+220-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:43:21-37
+221                    android:scheme="recaptcha" />
+221-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:44:21-48
+222            </intent-filter>
+223        </activity>
+224
+225        <service
+225-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:66:9-72:19
+226            android:name="com.google.firebase.components.ComponentDiscoveryService"
+226-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:67:13-84
+227            android:directBootAware="true"
+227-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+228            android:exported="false" >
+228-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:68:13-37
+229            <meta-data
+229-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:69:13-71:85
+230                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+230-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:70:17-109
+231                android:value="com.google.firebase.components.ComponentRegistrar" />
+231-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\batel\.gradle\caches\8.11.1\transforms\62b23c038c4878dd67b84905782e282a\transformed\firebase-auth-23.2.1\AndroidManifest.xml:71:17-82
+232            <meta-data
+232-->[com.google.firebase:firebase-firestore:25.1.4] C:\Users\batel\.gradle\caches\8.11.1\transforms\508c49340e7425efae5d69d0e2035c01\transformed\firebase-firestore-25.1.4\AndroidManifest.xml:17:13-19:85
+233                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+233-->[com.google.firebase:firebase-firestore:25.1.4] C:\Users\batel\.gradle\caches\8.11.1\transforms\508c49340e7425efae5d69d0e2035c01\transformed\firebase-firestore-25.1.4\AndroidManifest.xml:18:17-122
+234                android:value="com.google.firebase.components.ComponentRegistrar" />
+234-->[com.google.firebase:firebase-firestore:25.1.4] C:\Users\batel\.gradle\caches\8.11.1\transforms\508c49340e7425efae5d69d0e2035c01\transformed\firebase-firestore-25.1.4\AndroidManifest.xml:19:17-82
+235            <meta-data
+235-->[com.google.firebase:firebase-firestore:25.1.4] C:\Users\batel\.gradle\caches\8.11.1\transforms\508c49340e7425efae5d69d0e2035c01\transformed\firebase-firestore-25.1.4\AndroidManifest.xml:20:13-22:85
+236                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+236-->[com.google.firebase:firebase-firestore:25.1.4] C:\Users\batel\.gradle\caches\8.11.1\transforms\508c49340e7425efae5d69d0e2035c01\transformed\firebase-firestore-25.1.4\AndroidManifest.xml:21:17-111
+237                android:value="com.google.firebase.components.ComponentRegistrar" />
+237-->[com.google.firebase:firebase-firestore:25.1.4] C:\Users\batel\.gradle\caches\8.11.1\transforms\508c49340e7425efae5d69d0e2035c01\transformed\firebase-firestore-25.1.4\AndroidManifest.xml:22:17-82
+238            <meta-data
+238-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9778513e7e7ad5220b6701d853a7be40\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+239                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+239-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9778513e7e7ad5220b6701d853a7be40\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+240                android:value="com.google.firebase.components.ComponentRegistrar" />
+240-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9778513e7e7ad5220b6701d853a7be40\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+241            <meta-data
+241-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+242                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+242-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+243                android:value="com.google.firebase.components.ComponentRegistrar" />
+243-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+244        </service>
+245        <service
+245-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
+246            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+246-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
+247            android:enabled="true"
+247-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
+248            android:exported="false" >
+248-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
+249            <meta-data
+249-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
+250                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+250-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
+251                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+251-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
+252        </service>
+253
+254        <activity
+254-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
+255            android:name="androidx.credentials.playservices.HiddenActivity"
+255-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
+256            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+256-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
+257            android:enabled="true"
+257-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
+258            android:exported="false"
+258-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
+259            android:fitsSystemWindows="true"
+259-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
+260            android:theme="@style/Theme.Hidden" >
+260-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\batel\.gradle\caches\8.11.1\transforms\abe6e0d77b75fb9808ffe0470f33de4a\transformed\credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
+261        </activity>
+262        <activity
+262-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:23:9-27:75
+263            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+263-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:24:13-93
+264            android:excludeFromRecents="true"
+264-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:25:13-46
+265            android:exported="false"
+265-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:26:13-37
+266            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+266-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:27:13-72
+267        <!--
+268            Service handling Google Sign-In user revocation. For apps that do not integrate with
+269            Google Sign-In, this service will never be started.
+270        -->
+271        <service
+271-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:33:9-37:51
+272            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+272-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:34:13-89
+273            android:exported="true"
+273-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:35:13-36
+274            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+274-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:36:13-107
+275            android:visibleToInstantApps="true" />
+275-->[com.google.android.gms:play-services-auth:20.7.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\9e17460809d1f631f047fc33a5e59614\transformed\play-services-auth-20.7.0\AndroidManifest.xml:37:13-48
+276
+277        <activity
+277-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\04879a4da9ebef2040d19aefcbe3b5c1\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+278            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+278-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\04879a4da9ebef2040d19aefcbe3b5c1\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+279            android:exported="false"
+279-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\04879a4da9ebef2040d19aefcbe3b5c1\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+280            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+280-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\04879a4da9ebef2040d19aefcbe3b5c1\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+281
+282        <provider
+282-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+283            android:name="com.google.firebase.provider.FirebaseInitProvider"
+283-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+284            android:authorities="co.median.android.a2025_theangels_new.firebaseinitprovider"
+284-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+285            android:directBootAware="true"
+285-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+286            android:exported="false"
+286-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+287            android:initOrder="100" />
+287-->[com.google.firebase:firebase-common:21.0.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\0559e143728eb2703f64eca9f770e1fc\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+288
+289        <meta-data
+289-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\771193d381fd75beeea5141dc9ddb460\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+290            android:name="com.google.android.gms.version"
+290-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\771193d381fd75beeea5141dc9ddb460\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+291            android:value="@integer/google_play_services_version" />
+291-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\771193d381fd75beeea5141dc9ddb460\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+292
+293        <receiver
+293-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:34:9-52:20
+294            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+294-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:35:13-76
+295            android:directBootAware="false"
+295-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:36:13-44
+296            android:enabled="true"
+296-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:37:13-35
+297            android:exported="true"
+297-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:38:13-36
+298            android:permission="android.permission.DUMP" >
+298-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:39:13-57
+299            <intent-filter>
+299-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:40:13-42:29
+300                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+300-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:17-91
+300-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:41:25-88
+301            </intent-filter>
+302            <intent-filter>
+302-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:43:13-45:29
+303                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+303-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:17-85
+303-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:44:25-82
+304            </intent-filter>
+305            <intent-filter>
+305-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:46:13-48:29
+306                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+306-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:17-88
+306-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:47:25-85
+307            </intent-filter>
+308            <intent-filter>
+308-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:49:13-51:29
+309                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+309-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:17-95
+309-->[androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\batel\.gradle\caches\8.11.1\transforms\70b613520f9d484a6901d8484c84afe2\transformed\profileinstaller-1.4.0\AndroidManifest.xml:50:25-92
+310            </intent-filter>
+311        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+312        <activity
+312-->[com.google.android.play:core-common:2.0.3] C:\Users\batel\.gradle\caches\8.11.1\transforms\a2706bb8c3e95d89850e1157d3092f78\transformed\core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+313            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+313-->[com.google.android.play:core-common:2.0.3] C:\Users\batel\.gradle\caches\8.11.1\transforms\a2706bb8c3e95d89850e1157d3092f78\transformed\core-common-2.0.3\AndroidManifest.xml:15:13-93
+314            android:exported="false"
+314-->[com.google.android.play:core-common:2.0.3] C:\Users\batel\.gradle\caches\8.11.1\transforms\a2706bb8c3e95d89850e1157d3092f78\transformed\core-common-2.0.3\AndroidManifest.xml:16:13-37
+315            android:stateNotNeeded="true"
+315-->[com.google.android.play:core-common:2.0.3] C:\Users\batel\.gradle\caches\8.11.1\transforms\a2706bb8c3e95d89850e1157d3092f78\transformed\core-common-2.0.3\AndroidManifest.xml:17:13-42
+316            android:theme="@style/Theme.PlayCore.Transparent" />
+316-->[com.google.android.play:core-common:2.0.3] C:\Users\batel\.gradle\caches\8.11.1\transforms\a2706bb8c3e95d89850e1157d3092f78\transformed\core-common-2.0.3\AndroidManifest.xml:18:13-62
+317    </application>
+318
+319</manifest>
