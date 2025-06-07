@@ -4,7 +4,7 @@
             "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-3:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\310bd05f64daf1669ecc15bacce54425\\transformed\\appcompat-1.7.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\Computer\\.gradle\\caches\\8.11.1\\transforms\\310bd05f64daf1669ecc15bacce54425\\transformed\\appcompat-1.7.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\3e701dd123f18581a2df08824641db90\\transformed\\credentials-1.2.0-rc01\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\Computer\\.gradle\\caches\\8.11.1\\transforms\\3e701dd123f18581a2df08824641db90\\transformed\\credentials-1.2.0-rc01\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\06877d8c4a57e7a9b312392412c4f36c\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\Computer\\.gradle\\caches\\8.11.1\\transforms\\06877d8c4a57e7a9b312392412c4f36c\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\d64810f44656df8e01f317aec6ee4a46\\transformed\\core-1.13.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\Computer\\.gradle\\caches\\8.11.1\\transforms\\d64810f44656df8e01f317aec6ee4a46\\transformed\\core-1.13.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
