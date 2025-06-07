@@ -22,7 +22,10 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import co.median.android.a2025_theangels_new.R;
-
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.bumptech.glide.Glide;
+import co.median.android.a2025_theangels_new.models.UserSession;
 // =======================================
 // BaseActivity - Abstract base class for all activities
 // Handles layout setup, top/bottom bars, and shared UI logic
@@ -38,6 +41,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     private BottomAppBar bottomAppBar;
     private BottomNavigationView bottomNavigationView;
     private FloatingActionButton fabEmergency;
+    private ImageView imgProfile;
+    private TextView tvGreeting;
 
     // =======================================
     // onCreate - Called when the activity is first created
@@ -58,6 +63,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (topBar != null) {
             topBar.setAlpha(0f);
             topBar.animate().alpha(1f).setDuration(600).start();
+            imgProfile = topBar.findViewById(R.id.img_profile);
+            tvGreeting = topBar.findViewById(R.id.tv_greeting);
+            updateUserInfo();
         }
 
         bottomAppBar = findViewById(R.id.bottomAppBar);
@@ -185,6 +193,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onResume();
         hideSystemUI();
         highlightCurrentTab();
+        updateUserInfo();
+
     }
 
     // =======================================
@@ -210,6 +220,29 @@ public abstract class BaseActivity extends AppCompatActivity {
             fabEmergency.setVisibility(show ? View.VISIBLE : View.GONE);
         }
     }
+
+    // =======================================
+    // updateUserInfo - Updates the greeting and profile picture from UserSession
+    // =======================================
+    protected void updateUserInfo() {
+        if (imgProfile == null || tvGreeting == null) return;
+
+        UserSession session = UserSession.getInstance();
+        String first = session.getFirstName();
+        String last = session.getLastName();
+        if (first != null) {
+            String name = first + (last != null ? " " + last : "");
+            tvGreeting.setText("שלום, " + name);
+        }
+
+        String url = session.getImageURL();
+        if (url != null && !url.isEmpty()) {
+            Glide.with(this).load(url).placeholder(R.drawable.newuserpic).into(imgProfile);
+        } else {
+            imgProfile.setImageResource(R.drawable.newuserpic);
+        }
+    }
+
 
     // =======================================
     // getLayoutResourceId - Abstract method to define the layout resource in subclasses
