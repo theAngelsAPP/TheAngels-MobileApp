@@ -4,7 +4,7 @@
             "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-3:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Computer\\.gradle\\caches\\8.11.1\\transforms\\6346c5809694e3a01f64fff03a223550\\transformed\\appcompat-1.7.0\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\6346c5809694e3a01f64fff03a223550\\transformed\\appcompat-1.7.0\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",
