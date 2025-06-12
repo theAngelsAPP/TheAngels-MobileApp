@@ -75,6 +75,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
         mapPlaceholder = view.findViewById(R.id.map_placeholder);
 
+        // Request permission when the placeholder is tapped
+        mapPlaceholder.setOnClickListener(v ->
+                locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION));
+
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
 
