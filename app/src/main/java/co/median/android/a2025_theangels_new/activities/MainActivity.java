@@ -10,7 +10,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import com.google.firebase.FirebaseApp;
+import android.widget.ProgressBar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
@@ -34,6 +34,7 @@ public class MainActivity extends BaseActivity {
     // =======================================
     private TextInputEditText usernameInput, passwordInput;
     private Button loginButton, registerButton;
+    private ProgressBar loginProgressBar;
 
     // =======================================
     // onCreate - Initializes the login screen and handles onboarding check
@@ -73,6 +74,7 @@ public class MainActivity extends BaseActivity {
         passwordInput = findViewById(R.id.passwordInput);
         loginButton = findViewById(R.id.loginButton);
         registerButton = findViewById(R.id.registerButton);
+        loginProgressBar = findViewById(R.id.loginProgressBar);
 
         // Initially disable login button
         loginButton.setEnabled(false);
@@ -104,8 +106,12 @@ public class MainActivity extends BaseActivity {
                 return;
             }
 
+            loginButton.setEnabled(false);
+            loginProgressBar.setVisibility(View.VISIBLE);
+
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, task -> {
+                        loginProgressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
                             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                             UserDataManager.loadUserDetails(uid, session -> {
@@ -114,6 +120,7 @@ public class MainActivity extends BaseActivity {
                                 finish();
                             });
                         } else {
+                            loginButton.setEnabled(true);
                             Exception e = task.getException();
                             if (e instanceof FirebaseAuthInvalidUserException) {
                                 Toast.makeText(this, "המשתמש לא קיים", Toast.LENGTH_SHORT).show();
@@ -140,8 +147,10 @@ public class MainActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            loginProgressBar.setVisibility(View.VISIBLE);
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             UserDataManager.loadUserDetails(uid, session -> {
+                loginProgressBar.setVisibility(View.GONE);
                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
                 finish();
             });
