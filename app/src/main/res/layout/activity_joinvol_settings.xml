@@ -1,17 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:padding="0dp">
+    android:background="@android:color/white">
 
+    <!-- Header with gradient background -->
     <LinearLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:background="@drawable/gradient_header"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingTop="24dp">
@@ -20,19 +21,18 @@
             android:id="@+id/btn_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_back_arrow"
-            android:contentDescription="Back"
+            android:layout_marginEnd="8dp"
             android:padding="4dp"
-            android:layout_marginEnd="8dp"/>
+            android:src="@drawable/ic_back_arrow" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="הצטרפות למערך המתנדבים"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ScrollView
@@ -45,164 +45,213 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layoutDirection="rtl"
-            android:gravity="start">
+            android:layoutDirection="rtl">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="מערך המתנדבים מספק עזרה ראשונה, סיוע במצבי חירום ותמיכה בקהילה. אנו מחפשים מתנדבים מסורים שמעוניינים לקחת חלק בעשייה החשובה."
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:padding="16dp"
-                android:gravity="start"
+                android:layout_marginBottom="16dp"
                 android:background="#FFF8E1"
                 android:elevation="2dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="בחר את תחום ההתנדבות שלך:"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:gravity="start"
+                android:padding="16dp"
+                android:text="מערך המתנדבים מספק עזרה ראשונה, סיוע במצבי חירום ותמיכה בקהילה. אנו מחפשים מתנדבים מסורים שמעוניינים לקחת חלק בעשייה החשובה."
                 android:textColor="@android:color/black"
-                android:layout_marginBottom="8dp"/>
+                android:textSize="16sp" />
 
-            <LinearLayout
+            <!-- Volunteer Type Selection -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#F9F9F9">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="עזרה ראשונה"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="אבטחה"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="בחר את תחום ההתנדבות שלך:"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="תקלות רכב"/>
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:singleSelection="false"
+                        app:chipSpacingHorizontal="8dp"
+                        app:chipSpacingVertical="6dp">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="עזרה לבעלי חיים"/>
-            </LinearLayout>
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="עזרה ראשונה" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="נדרש להעלות הסמכה לאימות היכולת שלך להגיש סיוע:"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"/>
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="אבטחה" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="בחר קובץ"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:background="#E0E0E0"
-                android:paddingHorizontal="24dp"
-                android:paddingVertical="12dp"
-                android:layout_marginBottom="16dp"/>
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="תקלות רכב" />
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="יש לי רישיון נהיגה"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"/>
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="עזרה לבעלי חיים" />
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="בחר אזור:"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"/>
-
-            <RadioGroup
+            <!-- Certification Upload -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#F9F9F9">
 
-                <RadioButton
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="צפון"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="מרכז"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="נדרש להעלות הסמכה לאימות היכולת שלך להגיש סיוע:"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="דרום"/>
-            </RadioGroup>
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="בחר קובץ"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="@color/blue_primary" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="העדפות זמינות:"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"/>
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="יש לי רישיון נהיגה" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
+            <!-- Region Selection -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#F9F9F9">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="כל הימים"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="בחר אזור:"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:singleSelection="true"
+                        app:chipSpacingHorizontal="8dp"
+                        app:chipSpacingVertical="6dp">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="צפון" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="מרכז" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="דרום" />
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Availability Preferences -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#F9F9F9">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ימים ספציפיים"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="בלי שבתות"/>
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="העדפות זמינות:"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-            <CheckBox
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:singleSelection="false"
+                        app:chipSpacingHorizontal="8dp"
+                        app:chipSpacingVertical="6dp">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="כל הימים" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="ימים ספציפיים" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:text="בלי שבתות" />
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="בהגשת טופס זה אני מסכים לתנאי ההתנדבות והמחויבות למתן שירות בעת הצורך"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp"
+                android:text="בהגשת טופס זה אני מסכים לתנאי ההתנדבות והמחויבות למתן שירות בעת הצורך" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="הצטרפות"
-                android:textSize="16sp"
                 android:textColor="@android:color/white"
-                android:background="#FF9800"
-                android:layout_marginBottom="24dp"/>
+                android:backgroundTint="@color/blue_primary"
+                app:cornerRadius="12dp" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
