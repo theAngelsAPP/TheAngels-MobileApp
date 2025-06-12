@@ -1,38 +1,34 @@
-# Android specific files
+# Android Studio
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
+.gradle/
+.idea/
+.idea/*
+
+# Include only necessary IntelliJ configs
+!.idea/gradle.xml
+!.idea/misc.xml
+!.idea/runConfigurations/
 
 # Build output
-/build
-.cxx
-.externalNativeBuild
-/captures
+/build/
+**/build/
+.cxx/
+.externalNativeBuild/
+captures/
 
-# Local configuration
+# Local properties
 local.properties
 
-# Environment variables and sensitive files
-.env
-.env.local
+# Mac
+.DS_Store
 
 # Logs
 *.log
 *.orig
-*.pf
 
-# IDE and Editor files
-/.idea/*
-!.idea/gradle.xml
-!.idea/misc.xml
-!.idea/runConfigurations
+# Env
+.env
+.env.*
 
-# Gradle Wrapper
-/gradle-wrapper.jar
+# Others
+*.keystore
