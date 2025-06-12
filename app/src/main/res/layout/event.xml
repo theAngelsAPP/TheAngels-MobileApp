@@ -1,146 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    app:cardCornerRadius="12dp"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="16dp"
     app:cardElevation="6dp"
-    app:cardUseCompatPadding="true">
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layoutDirection="rtl"
-        android:minHeight="96dp">
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/event_status_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:text="סטטוס"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:background="@drawable/status_label_bg"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/event_picture"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/event_medical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-        <TextView
-            android:id="@+id/event_case"
+            android:id="@+id/event_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="אירוע רפואי"
-            android:textColor="@android:color/black"
+            android:layout_marginEnd="16dp"
+            android:text="אירוע רפואי דחוף"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
             android:textStyle="bold"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
-            app:layout_constraintTop_toTopOf="@id/event_picture" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/event_status"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/event_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:text="12/12/2024 10:30"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
-            app:layout_constraintTop_toBottomOf="@id/event_case" />
+            android:text="יום חמישי, 12 ביוני | 16:00"
+            android:textAlignment="viewEnd"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintEnd_toEndOf="@+id/event_title"
+            app:layout_constraintTop_toBottomOf="@+id/event_title" />
 
-        <LinearLayout
-            android:id="@+id/volunteer_container"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
-            app:layout_constraintTop_toBottomOf="@id/event_date">
-
-            <TextView
-                android:id="@+id/volunteer_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="מתנדב:"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:layout_marginEnd="4dp" />
-
-            <TextView
-                android:id="@+id/volunteer_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:text="יונתן אזולאי"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:id="@+id/volunteer_image"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/circle_image"
-                android:scaleType="centerCrop"
-                android:src="@drawable/newuserpic" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rating_container"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
-            app:layout_constraintTop_toBottomOf="@id/volunteer_container">
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_star" />
-
-            <TextView
-                android:id="@+id/event_rating_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:text="דירוג: 5"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/details_btn"
+        <TextView
+            android:id="@+id/event_status"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/button_gradient"
-            android:text="לפרטי האירוע"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/status_background_green"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="הסתיים ✔"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:textColor="?attr/colorOnPrimaryContainer"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rating_container"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="?attr/colorOutlineVariant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_date" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/creator_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:padding="2dp"
+            android:src="@drawable/newuserpic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material.Circle"
+            app:strokeColor="?attr/colorPrimary"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/creator_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="עומר גמליאל"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/creator_image"
+            app:layout_constraintTop_toTopOf="@+id/creator_image" />
+
+        <RatingBar
+            android:id="@+id/event_rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/creator_image"
+            app:layout_constraintEnd_toEndOf="@+id/creator_name"
+            app:layout_constraintTop_toBottomOf="@+id/creator_name"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/details_button"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="פרטי האירוע"
+            app:icon="@drawable/ic_arrow_left"
+            app:iconGravity="textStart"
+            app:layout_constraintBottom_toBottomOf="@+id/creator_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/creator_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
