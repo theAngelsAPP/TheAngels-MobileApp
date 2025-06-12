@@ -17,6 +17,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
@@ -41,6 +42,7 @@ public class HomeActivity extends BaseActivity {
     private TextView tvGreeting;
     private LinearLayout volDashboard;
     private TextView tvEventsCount, tvAvgRating;
+    private FrameLayout mapContainer;
 
     // =======================================
     // onCreate - Initializes UI and checks for location permission
@@ -59,6 +61,7 @@ public class HomeActivity extends BaseActivity {
         volDashboard = findViewById(R.id.volDashboard);
         tvEventsCount = findViewById(R.id.tv_events_count);
         tvAvgRating = findViewById(R.id.tv_avg_rating);
+        mapContainer = findViewById(R.id.map_container);
 
         UserSession session = UserSession.getInstance();
         String fullName = session.getFirstName() + " " + session.getLastName();
@@ -89,10 +92,12 @@ public class HomeActivity extends BaseActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             hideLocationRequestBanner();
+            mapContainer.setVisibility(View.VISIBLE);
             if (getSupportFragmentManager().findFragmentById(R.id.map_container) == null) {
                 loadMapFragment();
             }
         } else {
+            mapContainer.setVisibility(View.GONE);
             showLocationRequestBanner();
         }
     }
@@ -150,6 +155,7 @@ public class HomeActivity extends BaseActivity {
     // =======================================
     private void showMap() {
         hideLocationRequestBanner();
+        mapContainer.setVisibility(View.VISIBLE);
         loadMapFragment();
     }
 
