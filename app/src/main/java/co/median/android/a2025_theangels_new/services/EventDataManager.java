@@ -88,4 +88,25 @@ public class EventDataManager {
                     callback.onError(e);
                 });
     }
+
+    public interface SingleEventCallback {
+        void onEventLoaded(Event event);
+        void onError(Exception e);
+    }
+
+    public static void getEventByType(@NonNull String eventType, SingleEventCallback callback) {
+        FirebaseFirestore.getInstance().collection("events")
+                .whereEqualTo("eventType", eventType)
+                .limit(1)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    Event event = null;
+                    for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()) {
+                        event = doc.toObject(Event.class);
+                        break;
+                    }
+                    callback.onEventLoaded(event);
+                })
+                .addOnFailureListener(callback::onError);
+    }
 }
