@@ -8,16 +8,24 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import com.google.firebase.auth.FirebaseAuth;
+import co.median.android.a2025_theangels_new.services.UserDataManager;
+import java.util.Locale;
 import android.provider.Settings;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.bumptech.glide.Glide;
+
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.fragments.MapFragment;
+import co.median.android.a2025_theangels_new.models.UserSession;
 
 // =======================================
 // HomeActivity - Displays the home screen and handles location permission logic
@@ -29,6 +37,10 @@ public class HomeActivity extends BaseActivity {
     // =======================================
     private LinearLayout locationPermissionContainer;
     private TextView tvLocationMessage, btnEnableLocation;
+    private ImageView imgProfile;
+    private TextView tvGreeting;
+    private LinearLayout volDashboard;
+    private TextView tvEventsCount, tvAvgRating;
 
     // =======================================
     // onCreate - Initializes UI and checks for location permission
@@ -42,6 +54,27 @@ public class HomeActivity extends BaseActivity {
         locationPermissionContainer = findViewById(R.id.location_permission_container);
         tvLocationMessage = findViewById(R.id.tv_location_message);
         btnEnableLocation = findViewById(R.id.btn_enable_location);
+        imgProfile = findViewById(R.id.img_profile);
+        tvGreeting = findViewById(R.id.tv_greeting);
+        volDashboard = findViewById(R.id.volDashboard);
+        tvEventsCount = findViewById(R.id.tv_events_count);
+        tvAvgRating = findViewById(R.id.tv_avg_rating);
+
+        UserSession session = UserSession.getInstance();
+        String fullName = session.getFirstName() + " " + session.getLastName();
+        tvGreeting.setText("שלום, " + fullName);
+        String url = session.getImageURL();
+        if (url != null && !url.isEmpty()) {
+            Glide.with(this).load(url).placeholder(R.drawable.newuserpic).into(imgProfile);
+        }
+
+        if ("מתנדב".equals(session.getRole())) {
+            volDashboard.setVisibility(View.VISIBLE);
+            loadVolunteerDashboardData();
+        } else {
+            volDashboard.setVisibility(View.GONE);
+        }
+
 
         checkLocationPermission();
 
@@ -52,11 +85,13 @@ public class HomeActivity extends BaseActivity {
     // checkLocationPermission - Checks permission and displays map or request UI accordingly
     // =======================================
     private void checkLocationPermission() {
-        loadMapFragment();
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             hideLocationRequestBanner();
+            if (getSupportFragmentManager().findFragmentById(R.id.map_container) == null) {
+                loadMapFragment();
+            }
         } else {
             showLocationRequestBanner();
         }
@@ -116,6 +151,14 @@ public class HomeActivity extends BaseActivity {
     private void showMap() {
         hideLocationRequestBanner();
         loadMapFragment();
+    }
+
+    private void loadVolunteerDashboardData() {
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        UserDataManager.getHandledEventsCount(uid, count ->
+                tvEventsCount.setText(String.valueOf(count)));
+        UserDataManager.getHandledEventsAverageRating(uid, avg ->
+                tvAvgRating.setText(String.format(Locale.getDefault(), "%.1f", avg)));
     }
 
     // =======================================

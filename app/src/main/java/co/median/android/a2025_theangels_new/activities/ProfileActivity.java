@@ -9,13 +9,21 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.bumptech.glide.Glide;
+import co.median.android.a2025_theangels_new.models.UserSession;
 import co.median.android.a2025_theangels_new.R;
 
 // =======================================
 // ProfileActivity - Handles user profile screen and navigation to settings/help/logout
 // =======================================
 public class ProfileActivity extends BaseActivity {
+
+    private ImageView imgProfile;
+    private TextView tvUsername;
+    private TextView tvUserRole;
+
 
     // =======================================
     // onCreate - Initializes the profile screen
@@ -25,6 +33,11 @@ public class ProfileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         showTopBar(false);
         showBottomBar(true);
+        imgProfile = findViewById(R.id.img_profile);
+        tvUsername = findViewById(R.id.tv_username);
+        tvUserRole = findViewById(R.id.tv_user_role);
+
+        populateUserDetails();
     }
 
     // =======================================
@@ -84,6 +97,26 @@ public class ProfileActivity extends BaseActivity {
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
         startActivity(Intent.createChooser(shareIntent, getString(R.string.share_via)));
+    }
+
+    // =======================================
+    // populateUserDetails - Fills UI with logged in user information
+    // =======================================
+    private void populateUserDetails() {
+        UserSession session = UserSession.getInstance();
+
+        String fullName = session.getFirstName() + " " + session.getLastName();
+        tvUsername.setText(fullName);
+
+        String role = session.getRole();
+        if (role != null && !role.isEmpty()) {
+            tvUserRole.setText(role);
+        }
+
+        String url = session.getImageURL();
+        if (url != null && !url.isEmpty()) {
+            Glide.with(this).load(url).placeholder(R.drawable.newuserpic).into(imgProfile);
+        }
     }
 
     // =======================================

@@ -1,41 +1,59 @@
-// =======================================
-// IMPORTS
-// =======================================
 package co.median.android.a2025_theangels_new.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.util.Log;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.models.Event;
+import co.median.android.a2025_theangels_new.services.EventDataManager;
 
-// =======================================
-// EventsActivity - Displays the events screen and handles navigation to event details
-// =======================================
 public class EventsActivity extends BaseActivity {
 
-    // =======================================
-    // onCreate - Initializes the events screen and sets click listener for event card
-    // =======================================
+    private static final String TAG = "EventsActivity";
+
+    private ListView eventsListView;
+    private EventsAdapter adapter;
+    private ArrayList<Event> events;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         showTopBar(true);
         showBottomBar(true);
 
-        // Find the medical event card layout
-        LinearLayout medicalEvent = findViewById(R.id.medical_event_card);
+        eventsListView = findViewById(R.id.events_lv);
+        events = new ArrayList<>();
+        adapter = new EventsAdapter(this, R.layout.event, events);
+        eventsListView.setAdapter(adapter);
 
-        // Handle click on the medical event card
-        medicalEvent.setOnClickListener(v -> {
-            Intent intent = new Intent(EventsActivity.this, EventDetailsActivity.class);
-            startActivity(intent);
+        loadEventsFromFirestore();
+    }
+
+    private void loadEventsFromFirestore() {
+        Log.d(TAG, "Fetching events from Firestore...");
+        EventDataManager.getAllEvents(new EventDataManager.EventCallback() {
+            @Override
+            public void onEventsLoaded(ArrayList<Event> loadedEvents) {
+                Log.d(TAG, "evets loaded successfully. Count: " + loadedEvents.size());
+                events.clear();
+                events.addAll(loadedEvents);
+                adapter.notifyDataSetChanged();
+                Log.d(TAG, "Adapter updated with new trainings");
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "Error loading events from Firestore", e);
+                Toast.makeText(EventsActivity.this, "שגיאה בטעינת האירועים", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
-    // =======================================
-    // getLayoutResourceId - Returns layout resource for this screen
-    // =======================================
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_events;

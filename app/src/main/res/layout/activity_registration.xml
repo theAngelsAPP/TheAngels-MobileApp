@@ -4,139 +4,247 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context="co.median.android.a2025_theangels_new.activities.RegistrationActivity">
 
-    <!-- Screen background -->
-    <ImageView
-        android:id="@+id/registerBackground"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/registerbackground"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- White content area -->
     <LinearLayout
-        android:id="@+id/registerContent"
-        android:layout_width="377dp"
-        android:layout_height="520dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="100dp"
-        android:background="@android:color/white"
+        android:id="@+id/topSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_horizontal"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.89">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <ImageView
+            android:layout_width="328dp"
+            android:layout_height="147dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/mapuser_logo"
+            android:contentDescription="לוגו" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="הצטרפות למלאכים"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topSection"
+        app:layout_constraintBottom_toTopOf="@id/registerButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- 🧍 פרטים אישיים -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🧍 פרטים אישיים"
+                android:textStyle="bold"
+                android:textColor="#0466c8"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/firstNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:hint="שם פרטי"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/firstName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="שם פרטי"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <EditText
+                android:id="@+id/lastNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:hint="שם משפחה"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/lastName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="שם משפחה"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <EditText
+                android:id="@+id/idNumberEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:hint="תעודת זהות"
+                android:inputType="number"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="תעודת זהות"
-                    android:inputType="number"/>
-            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 📞 פרטי יצירת קשר -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📞 פרטי יצירת קשר"
+                android:textStyle="bold"
+                android:textColor="#0466c8"
+                android:layout_marginBottom="8dp" />
 
-            <!-- Date of Birth -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/birthDateButton"
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="אימייל"
+                android:inputType="textEmailAddress"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/phoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="טלפון נייד"
+                android:inputType="phone"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- 🔒 סיסמה -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔒 סיסמה"
+                android:textStyle="bold"
+                android:textColor="#0466c8"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="סיסמה"
+                android:inputType="textPassword"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/confirmPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="אימות סיסמה"
+                android:inputType="textPassword"
+                android:background="@android:drawable/editbox_background"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- 📅 תאריך לידה -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅 תאריך לידה"
+                android:textStyle="bold"
+                android:textColor="#0466c8"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/selectBirthDateButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="בחר תאריך לידה"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_marginBottom="10dp"/>
+                android:backgroundTint="#e0e0e0"
+                android:textColor="#000000"
+                android:layout_marginBottom="20dp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <!-- 🏠 עיר מגורים -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏠 עיר מגורים"
+                android:textStyle="bold"
+                android:textColor="#0466c8"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/citySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="20dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/city"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="עיר מגורים"
-                    android:inputType="text"/>
-            </com.google.android.material.textfield.TextInputLayout>
+            <!-- 🖼️ תמונה -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🖼️ תמונת פרופיל"
+                android:textStyle="bold"
+                android:textColor="#0466c8"
+                android:layout_marginBottom="8dp" />
 
-            <!-- Profile Picture Selection -->
-            <LinearLayout
+            <Button
+                android:id="@+id/selectImageButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginBottom="10dp">
+                android:text="בחר תמונה"
+                android:layout_marginBottom="8dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/uploadImageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="בחר תמונה"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                android:src="@drawable/ic_launcher_foreground" />
 
-                <ImageView
-                    android:id="@+id/profileImageView"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginStart="10dp"
-                    android:scaleType="centerCrop"
-                    android:visibility="gone"
-                    android:background="@android:color/darker_gray"/>
-            </LinearLayout>
+            <!-- ⚕️ פרטים רפואיים -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚕️ פרטים רפואיים חשובים"
+                android:textStyle="bold"
+                android:textColor="#0466c8"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp" />
 
-        <!-- Styled Continue Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/continueButton"
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/medicalOptions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="המשך"
-                android:textSize="18sp"
-                android:backgroundTint="@color/blue_gradient_end"
-                android:textColor="@android:color/white"/>
+                app:singleSelection="false"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="6dp" />
+
+            <!-- רישיון נשק -->
+            <CheckBox
+                android:id="@+id/weaponLicenseCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="יש לי רישיון נשק"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="60dp" />
         </LinearLayout>
+    </ScrollView>
 
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="הרשמה"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#0466c8"
+        android:layout_margin="16dp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

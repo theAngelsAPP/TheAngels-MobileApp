@@ -1,0 +1,28 @@
+# Android specific
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+*/build
+app/build/
+.externalNativeBuild
+
+# Flutter-specific (אם זה פרויקט Flutter)
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+build/
+
+# Keystore files
+*.jks
+*.keystore
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
