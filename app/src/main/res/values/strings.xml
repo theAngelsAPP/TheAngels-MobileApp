@@ -48,6 +48,10 @@
     <string name="open_settings_button">פתח הגדרות</string>
 
     <string name="id_field_locked">שדה זה לא ניתן לעריכה</string>
+    <string name="fill_all_fields">נא למלא את כל השדות</string>
+    <string name="invalid_email">כתובת האימייל אינה תקינה</string>
+    <string name="details_saved">הפרטים נשמרו בהצלחה</string>
+    <string name="error_saving_details">שגיאה בשמירת הפרטים</string>
 
     <string name="step_title_event_type">סוג האירוע</string>
     <string name="step_desc_event_type">בחר את סוג האירוע שברצונך לדווח עליו.</string>

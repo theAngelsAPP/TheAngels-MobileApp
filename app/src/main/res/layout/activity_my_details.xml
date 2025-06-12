@@ -49,52 +49,106 @@
 
             <TextView style="@style/SectionTitle" android:text="פרטים אישיים"/>
             <TextView style="@style/FieldLabel" android:text="שם פרטי"/>
-            <EditText
-                style="@style/RoundedInput"
-                android:hint="שם פרטי"
-                android:inputType="textPersonName"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="שם פרטי"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView style="@style/FieldLabel" android:text="שם משפחה"/>
-            <EditText
-                style="@style/RoundedInput"
-                android:hint="שם משפחה"
-                android:inputType="textPersonName"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="שם משפחה"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView style="@style/FieldLabel" android:text="תעודת זהות"/>
-            <EditText
-                android:id="@+id/et_id_number"
-                style="@style/RoundedInput"
-                android:hint="123456789"
-                android:focusable="false"
-                android:clickable="true"
-                android:inputType="number"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_id_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="123456789"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView style="@style/FieldLabel" android:text="תאריך לידה"/>
-            <EditText
-                android:id="@+id/et_birth_date"
-                style="@style/RoundedInput"
-                android:hint="בחר תאריך"
-                android:focusable="false"
-                android:clickable="true"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_birth_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="בחר תאריך"
+                    android:focusable="false"
+                    android:clickable="true"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView style="@style/FieldLabel" android:text="עיר מגורים"/>
-            <EditText
-                style="@style/RoundedInput"
-                android:hint="עיר מגורים"
-                android:inputType="textCapWords"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="עיר מגורים"
+                    android:inputType="textCapWords"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView style="@style/SectionTitle" android:text="פרטי התחברות"/>
             <TextView style="@style/FieldLabel" android:text="כתובת מייל"/>
-            <EditText
-                style="@style/RoundedInput"
-                android:hint="כתובת מייל"
-                android:inputType="textEmailAddress"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="כתובת מייל"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView style="@style/FieldLabel" android:text="מספר טלפון"/>
-            <EditText
-                style="@style/RoundedInput"
-                android:hint="מספר טלפון"
-                android:inputType="phone"/>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="מספר טלפון"
+                    android:inputType="phone"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView style="@style/FieldLabel" android:text="סיסמה"/>
             <EditText
