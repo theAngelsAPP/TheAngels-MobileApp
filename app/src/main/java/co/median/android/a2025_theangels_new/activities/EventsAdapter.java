@@ -107,7 +107,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
                     if (info != null) {
                         volunteerName.setText(info.getFirstName() + " " + info.getLastName());
                         if (info.getImageURL() != null && !info.getImageURL().isEmpty()) {
-                            Glide.with(context)
+                            Glide.with(context.getApplicationContext())
                                     .load(info.getImageURL())
                                     .placeholder(R.drawable.newuserpic)
                                     .circleCrop()
@@ -120,7 +120,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
                             volunteerCache.put(uid, info);
                             volunteerName.setText(info.getFirstName() + " " + info.getLastName());
                             if (info.getImageURL() != null && !info.getImageURL().isEmpty()) {
-                                Glide.with(context)
+                                Glide.with(context.getApplicationContext())
                                         .load(info.getImageURL())
                                         .placeholder(R.drawable.newuserpic)
                                         .circleCrop()
