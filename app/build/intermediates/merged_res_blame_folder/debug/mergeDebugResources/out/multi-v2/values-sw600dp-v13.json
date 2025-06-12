@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-45:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-46:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\6346c5809694e3a01f64fff03a223550\\transformed\\appcompat-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\9440005ee53ba70d42c091b34ffd52be\\transformed\\appcompat-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\4b19b98d74f4b9a9990c938294619182\\transformed\\material-1.12.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\a92dc423254491ed87b3cc87d3c473af\\transformed\\material-1.12.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",

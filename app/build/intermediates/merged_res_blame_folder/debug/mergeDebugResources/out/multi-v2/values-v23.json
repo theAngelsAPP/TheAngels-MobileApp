@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-45:/values-v23/values-v23.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-46:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\39f325da837c1de520ad01cd42b24508\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\66423b86fae9136e9002c85694fdcc04\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\6346c5809694e3a01f64fff03a223550\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\9440005ee53ba70d42c091b34ffd52be\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\4b19b98d74f4b9a9990c938294619182\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\a92dc423254491ed87b3cc87d3c473af\\transformed\\material-1.12.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

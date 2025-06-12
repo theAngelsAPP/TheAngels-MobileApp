@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-45:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-46:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\4b19b98d74f4b9a9990c938294619182\\transformed\\material-1.12.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\a92dc423254491ed87b3cc87d3c473af\\transformed\\material-1.12.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
