@@ -66,16 +66,31 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/event_type"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:padding="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:background="@color/red_magen_david"
-                android:layout_marginBottom="8dp"/>
+                android:padding="12dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/event_type_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/event_medical"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/event_type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_type"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -214,6 +229,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/volunteer_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/black"
@@ -222,6 +238,7 @@
                         android:textStyle="bold"/>
 
                     <RatingBar
+                        android:id="@+id/ratingBarDetails"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:numStars="5"

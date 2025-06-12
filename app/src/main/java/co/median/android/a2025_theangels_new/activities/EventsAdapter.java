@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import com.bumptech.glide.Glide;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.models.Event;
@@ -28,6 +32,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
     private Context context;
     private ArrayList<Event> events;
     private int resource;
+    private Map<String, String> eventTypeImages;
 
 
     public EventsAdapter(Context context, int resource, ArrayList<Event> events) {
@@ -35,7 +40,10 @@ public class EventsAdapter extends ArrayAdapter<Event> {
         this.context = context;
         this.events = events;
         this.resource = resource;
+    }
 
+    public void setEventTypeImages(Map<String, String> eventTypeImages) {
+        this.eventTypeImages = eventTypeImages;
     }
 
     @Override
@@ -65,10 +73,15 @@ public class EventsAdapter extends ArrayAdapter<Event> {
         TextView date = rootView.findViewById(R.id.event_date);
         TextView volunteer = rootView.findViewById(R.id.event_vol);
         TextView status = rootView.findViewById(R.id.event_status);
+        ImageView picture = rootView.findViewById(R.id.event_picture);
         Button details = rootView.findViewById(R.id.details_btn);
 
         if (event != null) {
             whatHappened.setText(event.getEventType());
+            if (eventTypeImages != null && eventTypeImages.containsKey(event.getEventType())) {
+                String url = eventTypeImages.get(event.getEventType());
+                Glide.with(context).load(url).placeholder(R.drawable.event_medical).into(picture);
+            }
 
             if (event.getEventLocation() != null) {
                 Geocoder geocoder = new Geocoder(context, Locale.getDefault());
@@ -105,6 +118,20 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 
         details.setOnClickListener(v -> {
             Intent intent = new Intent(context, EventDetailsActivity.class);
+            intent.putExtra("eventType", event.getEventType());
+            intent.putExtra("eventStatus", event.getEventStatus());
+            intent.putExtra("eventHandleBy", event.getEventHandleBy());
+            if (event.getEventTimeStarted() != null) {
+                intent.putExtra("eventTimeStarted", event.getEventTimeStarted().getSeconds());
+            }
+            intent.putExtra("eventRating", event.getEventRating());
+            if (event.getEventLocation() != null) {
+                intent.putExtra("lat", event.getEventLocation().getLatitude());
+                intent.putExtra("lng", event.getEventLocation().getLongitude());
+            }
+            if (eventTypeImages != null && eventTypeImages.containsKey(event.getEventType())) {
+                intent.putExtra("typeImageURL", eventTypeImages.get(event.getEventType()));
+            }
             context.startActivity(intent);
         });
 

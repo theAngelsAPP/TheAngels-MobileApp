@@ -6,10 +6,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.models.Event;
 import co.median.android.a2025_theangels_new.services.EventDataManager;
+import co.median.android.a2025_theangels_new.services.EventTypeDataManager;
+import co.median.android.a2025_theangels_new.models.EventType;
 
 public class EventsActivity extends BaseActivity {
 
@@ -18,6 +22,7 @@ public class EventsActivity extends BaseActivity {
     private ListView eventsListView;
     private EventsAdapter adapter;
     private ArrayList<Event> events;
+    private Map<String, String> typeImageMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +36,26 @@ public class EventsActivity extends BaseActivity {
         adapter = new EventsAdapter(this, R.layout.event, events);
         eventsListView.setAdapter(adapter);
 
-        loadEventsFromFirestore();
+        loadEventTypes();
+    }
+
+    private void loadEventTypes() {
+        EventTypeDataManager.getAllEventTypes(new EventTypeDataManager.EventTypeCallback() {
+            @Override
+            public void onEventTypesLoaded(ArrayList<EventType> types) {
+                for (EventType type : types) {
+                    typeImageMap.put(type.getTypeName(), type.getTypeImageURL());
+                }
+                adapter.setEventTypeImages(typeImageMap);
+                loadEventsFromFirestore();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "Error loading event types", e);
+                loadEventsFromFirestore();
+            }
+        });
     }
 
     private void loadEventsFromFirestore() {
