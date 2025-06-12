@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity {
         SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
         boolean onboardingComplete = prefs.getBoolean("onboarding_complete", false);
 
-        // Hide system UI for immersive mode
+// Hide system UI for immersive mode
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
                         View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
@@ -58,6 +58,12 @@ public class MainActivity extends BaseActivity {
                         View.SYSTEM_UI_FLAG_FULLSCREEN |
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         );
+
+// ✅ Force RTL layout direction
+        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+
+
+
 
         // Redirect to onboarding if needed
         if (!onboardingComplete) {
