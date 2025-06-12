@@ -61,3 +61,16 @@ dependencies {
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
 }
+
+task generateJavadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += files(android.bootClasspath)
+    destinationDir = file("$buildDir/docs/javadoc")
+
+    failOnError false // ← הוספה חשובה!
+    options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+    options.docEncoding = 'UTF-8'
+
+    exclude '**/*.kt'
+}
