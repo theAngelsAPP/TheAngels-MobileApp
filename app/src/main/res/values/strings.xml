@@ -123,6 +123,7 @@
     <string name="address_not_found">הכתובת לא נמצאה</string>
     <string name="address_lookup_error">שגיאה בחיפוש כתובת</string>
     <string name="location_updated">המיקום עודכן</string>
+    <string name="retrieving_address">טוען כתובת...</string>
 
 
 

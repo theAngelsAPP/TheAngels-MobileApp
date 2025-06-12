@@ -40,7 +40,7 @@ import co.median.android.a2025_theangels_new.activities.RecentEventsAdapter;
 // =======================================
 // HomeActivity - Displays the home screen and handles location permission logic
 // =======================================
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements MapFragment.OnAddressChangeListener {
 
     // =======================================
     // VARIABLES
@@ -52,6 +52,7 @@ public class HomeActivity extends BaseActivity {
     private LinearLayout volDashboard;
     private TextView tvEventsCount, tvAvgRating;
     private FrameLayout mapContainer;
+    private TextView tvCurrentAddress;
     private LinearLayout recentEventsContainer;
     private RecentEventsAdapter recentEventsAdapter;
     private ArrayList<Event> recentEvents = new ArrayList<>();
@@ -76,6 +77,7 @@ public class HomeActivity extends BaseActivity {
         tvEventsCount = findViewById(R.id.tv_events_count);
         tvAvgRating = findViewById(R.id.tv_avg_rating);
         mapContainer = findViewById(R.id.map_container);
+        tvCurrentAddress = findViewById(R.id.tv_current_address);
         recentEventsContainer = findViewById(R.id.recent_events_container);
         recentEventsAdapter = new RecentEventsAdapter(this, R.layout.item_recent_event, recentEvents);
 
@@ -125,7 +127,9 @@ public class HomeActivity extends BaseActivity {
     // =======================================
     private void loadMapFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.map_container, new MapFragment());
+        MapFragment fragment = new MapFragment();
+        fragment.setAddressChangeListener(this);
+        transaction.replace(R.id.map_container, fragment);
         transaction.commit();
     }
 
@@ -266,5 +270,12 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_home;
+    }
+
+    @Override
+    public void onAddressChanged(String address) {
+        if (tvCurrentAddress != null) {
+            tvCurrentAddress.setText(address);
+        }
     }
 }
