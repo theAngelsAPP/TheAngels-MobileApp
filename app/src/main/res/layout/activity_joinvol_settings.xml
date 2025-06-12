@@ -92,19 +92,27 @@
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="עזרה ראשונה" />
+                            android:text="עזרה ראשונה"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="אבטחה" />
+                            android:text="אבטחה"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="תקלות רכב" />
+                            android:text="תקלות רכב"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="עזרה לבעלי חיים" />
+                            android:text="עזרה לבעלי חיים"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
                     </com.google.android.material.chip.ChipGroup>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -180,15 +188,21 @@
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="צפון" />
+                            android:text="צפון"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="מרכז" />
+                            android:text="מרכז"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="דרום" />
+                            android:text="דרום"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
                     </com.google.android.material.chip.ChipGroup>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -226,15 +240,21 @@
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="כל הימים" />
+                            android:text="כל הימים"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="ימים ספציפיים" />
+                            android:text="ימים ספציפיים"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
                             style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="בלי שבתות" />
+                            android:text="בלי שבתות"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
                     </com.google.android.material.chip.ChipGroup>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
