@@ -6,10 +6,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.models.Training;
+import co.median.android.a2025_theangels_new.models.EventType;
 import co.median.android.a2025_theangels_new.services.TrainingDataManager;
+import co.median.android.a2025_theangels_new.services.EventTypeDataManager;
 
 public class EducationActivity extends BaseActivity {
 
@@ -18,6 +22,8 @@ public class EducationActivity extends BaseActivity {
     private ListView trainingsListView;
     private ArrayList<Training> trainings;
     private Trainingadapter adapter;
+    private Map<String, String> typeImages = new HashMap<>();
+    private Map<String, String> typeColors = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +40,30 @@ public class EducationActivity extends BaseActivity {
         trainingsListView.setAdapter(adapter);
         Log.d(TAG, "ListView and adapter initialized");
 
-        loadTrainingsFromFirestore();
+        loadEventTypes();
+    }
+
+    private void loadEventTypes() {
+        EventTypeDataManager.getAllEventTypes(new EventTypeDataManager.EventTypeCallback() {
+            @Override
+            public void onEventTypesLoaded(ArrayList<EventType> types) {
+                for (EventType type : types) {
+                    typeImages.put(type.getTypeName(), type.getTypeImageURL());
+                    if (type.getTypeColor() != null) {
+                        typeColors.put(type.getTypeName(), type.getTypeColor());
+                    }
+                }
+                adapter.setTypeImages(typeImages);
+                adapter.setTypeColors(typeColors);
+                loadTrainingsFromFirestore();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "Error loading event types", e);
+                loadTrainingsFromFirestore();
+            }
+        });
     }
 
     private void loadTrainingsFromFirestore() {
