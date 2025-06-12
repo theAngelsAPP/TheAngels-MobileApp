@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme._2025_theangels_new" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme._2025_theangels_new" parent="Theme.Material3.DayNight.NoActionBar">
 
         <!-- Global font style -->
         <item name="android:fontFamily">@font/heebo_font</item>

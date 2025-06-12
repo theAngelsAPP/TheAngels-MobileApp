@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="6dp"
-    app:cardUseCompatPadding="true">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,12 +17,13 @@
 
         <TextView
             android:id="@+id/event_status_label"
+            style="@style/TextAppearance.Material3.LabelSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
             android:text="סטטוס"
             android:textColor="@android:color/white"
-            android:textSize="12sp"
             android:background="@drawable/status_label_bg"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +32,8 @@
             android:id="@+id/event_picture"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/event_picture"
             android:scaleType="centerCrop"
             android:src="@drawable/event_medical"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,65 +42,59 @@
 
         <TextView
             android:id="@+id/event_case"
+            style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
             android:text="אירוע רפואי"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
+            app:layout_constraintStart_toEndOf="@id/event_picture"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/event_picture" />
 
         <TextView
             android:id="@+id/event_date"
+            style="@style/TextAppearance.Material3.BodyMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:text="12/12/2024 10:30"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
+            android:layout_marginEnd="16dp"
+            android:text="12 Dec 2024, 10:30"
+            app:layout_constraintStart_toEndOf="@id/event_picture"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/event_case" />
 
         <LinearLayout
             android:id="@+id/volunteer_container"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
+            app:layout_constraintStart_toEndOf="@id/event_picture"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/event_date">
 
             <TextView
                 android:id="@+id/volunteer_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="מתנדב:"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="12sp"
-                android:layout_marginEnd="4dp" />
-
-            <TextView
-                android:id="@+id/volunteer_name"
+                style="@style/TextAppearance.Material3.LabelSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
-                android:text="יונתן אזולאי"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:text="מתנדב:" />
+
+            <TextView
+                android:id="@+id/volunteer_name"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="יונתן אזולאי" />
 
             <ImageView
                 android:id="@+id/volunteer_image"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/circle_image"
+                android:contentDescription="@string/volunteer_photo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/newuserpic" />
         </LinearLayout>
@@ -107,40 +103,39 @@
             android:id="@+id/rating_container"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/event_picture"
+            app:layout_constraintStart_toEndOf="@id/event_picture"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/volunteer_container">
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:src="@drawable/ic_star" />
+                android:src="@drawable/ic_star"
+                android:tint="?attr/colorPrimary" />
 
             <TextView
                 android:id="@+id/event_rating_value"
+                style="@style/TextAppearance.Material3.BodyMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:text="דירוג: 5"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:text="דירוג: 5" />
         </LinearLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/details_btn"
+            style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/button_gradient"
-            android:text="לפרטי האירוע"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/event_details"
+            app:layout_constraintStart_toEndOf="@id/event_picture"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rating_container"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
