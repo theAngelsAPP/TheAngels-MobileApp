@@ -152,6 +152,8 @@
     <string name="step4_text">אם הדפיברילטור מזהה שהשוק נחוץ, הוא ינחה ללחוץ על כפתור מתן השוק. יש להתרחק מהמטופל, לוודא שאף אחד לא נוגע בו, וללחוץ על הכפתור. לאחר מכן, יש להמשיך בהחייאה בהתאם להנחיות.</string>
 
     <string name="event_details">פרטי האירוע</string>
+    <string name="event_picture">תמונת אירוע</string>
+    <string name="volunteer_photo">תמונת מתנדב</string>
     <string name="address_text">שדרות אליעזר 27, חיפה</string>
     <string name="event_type">אירוע רפואי - אדם ללא הכרה</string>
     <string name="findings_title">ממצאים מקדימים</string>

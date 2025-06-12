@@ -89,7 +89,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
             }
 
             if (event.getEventTimeStarted() != null) {
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", new Locale("he"));
+                SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.ENGLISH);
                 date.setText(sdf.format(event.getEventTimeStarted().toDate()));
             } else {
                 date.setText("תאריך לא ידוע");
@@ -113,7 +113,11 @@ public class EventsAdapter extends ArrayAdapter<Event> {
                     if (info != null) {
                         volunteerName.setText(info.getFirstName() + " " + info.getLastName());
                         if (info.getImageURL() != null && !info.getImageURL().isEmpty()) {
-                            Glide.with(context).load(info.getImageURL()).placeholder(R.drawable.newuserpic).into(volunteerImage);
+                            Glide.with(context)
+                                    .load(info.getImageURL())
+                                    .placeholder(R.drawable.newuserpic)
+                                    .circleCrop()
+                                    .into(volunteerImage);
                         }
                     }
                 } else {
@@ -122,7 +126,11 @@ public class EventsAdapter extends ArrayAdapter<Event> {
                             volunteerCache.put(uid, info);
                             volunteerName.setText(info.getFirstName() + " " + info.getLastName());
                             if (info.getImageURL() != null && !info.getImageURL().isEmpty()) {
-                                Glide.with(context).load(info.getImageURL()).placeholder(R.drawable.newuserpic).into(volunteerImage);
+                                Glide.with(context)
+                                        .load(info.getImageURL())
+                                        .placeholder(R.drawable.newuserpic)
+                                        .circleCrop()
+                                        .into(volunteerImage);
                             }
                         }
                     });
