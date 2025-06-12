@@ -23,6 +23,7 @@ public class ProfileActivity extends BaseActivity {
     private ImageView imgProfile;
     private TextView tvUsername;
     private TextView tvUserRole;
+    private View btnJoinVolunteers;
 
 
     // =======================================
@@ -36,6 +37,7 @@ public class ProfileActivity extends BaseActivity {
         imgProfile = findViewById(R.id.img_profile_large);
         tvUsername = findViewById(R.id.tv_username);
         tvUserRole = findViewById(R.id.tv_user_role);
+        btnJoinVolunteers = findViewById(R.id.btn_join_volunteers);
 
         populateUserDetails();
     }
@@ -111,6 +113,12 @@ public class ProfileActivity extends BaseActivity {
         String role = session.getRole();
         if (role != null && !role.isEmpty()) {
             tvUserRole.setText(role);
+        }
+
+        if ("מתנדב".equals(role)) {
+            btnJoinVolunteers.setVisibility(View.GONE);
+        } else {
+            btnJoinVolunteers.setVisibility(View.VISIBLE);
         }
 
         String url = session.getImageURL();
