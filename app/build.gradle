@@ -41,6 +41,7 @@ dependencies {
     implementation libs.androidx.coordinatorlayout
     implementation libs.google.play.services.maps
     implementation libs.google.play.services.location
+    implementation libs.google.places
     implementation libs.stepview
     implementation(libs.cardview)
     implementation(libs.lottie)
