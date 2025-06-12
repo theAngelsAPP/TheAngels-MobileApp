@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,11 +16,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
+import java.util.HashMap;
 
 import com.bumptech.glide.Glide;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.models.Event;
+import co.median.android.a2025_theangels_new.models.UserBasicInfo;
+import co.median.android.a2025_theangels_new.services.UserDataManager;
 
 public class EventsAdapter extends ArrayAdapter<Event> {
 
@@ -29,6 +31,8 @@ public class EventsAdapter extends ArrayAdapter<Event> {
     private ArrayList<Event> events;
     private int resource;
     private Map<String, String> eventTypeImages;
+    private Map<String, String> eventStatusColors;
+    private Map<String, UserBasicInfo> volunteerCache = new HashMap<>();
 
 
     public EventsAdapter(Context context, int resource, ArrayList<Event> events) {
@@ -40,6 +44,10 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 
     public void setEventTypeImages(Map<String, String> eventTypeImages) {
         this.eventTypeImages = eventTypeImages;
+    }
+
+    public void setEventStatusColors(Map<String, String> eventStatusColors) {
+        this.eventStatusColors = eventStatusColors;
     }
 
     @Override
@@ -66,26 +74,60 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 
         TextView whatHappened = rootView.findViewById(R.id.event_case);
         TextView date = rootView.findViewById(R.id.event_date);
-        TextView status = rootView.findViewById(R.id.event_status);
-        RatingBar ratingBar = rootView.findViewById(R.id.event_rating);
+        TextView statusLabel = rootView.findViewById(R.id.event_status_label);
+        TextView ratingValue = rootView.findViewById(R.id.event_rating_value);
+        ImageView volunteerImage = rootView.findViewById(R.id.volunteer_image);
+        TextView volunteerName = rootView.findViewById(R.id.volunteer_name);
         ImageView picture = rootView.findViewById(R.id.event_picture);
         Button details = rootView.findViewById(R.id.details_btn);
 
         if (event != null) {
-            whatHappened.setText(event.getEventType());
+            whatHappened.setText("אירוע " + event.getEventType());
             if (eventTypeImages != null && eventTypeImages.containsKey(event.getEventType())) {
                 String url = eventTypeImages.get(event.getEventType());
                 Glide.with(context).load(url).placeholder(R.drawable.event_medical).into(picture);
             }
 
             if (event.getEventTimeStarted() != null) {
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", new Locale("he"));
                 date.setText(sdf.format(event.getEventTimeStarted().toDate()));
             } else {
                 date.setText("תאריך לא ידוע");
             }
-            status.setText(event.getEventStatus() != null ? event.getEventStatus() : "לא ידוע");
-            ratingBar.setRating(event.getEventRating());
+
+            String statusText = event.getEventStatus() != null ? event.getEventStatus() : "לא ידוע";
+            statusLabel.setText(statusText);
+            if (eventStatusColors != null && eventStatusColors.containsKey(statusText)) {
+                try {
+                    int color = android.graphics.Color.parseColor(eventStatusColors.get(statusText));
+                    statusLabel.setBackgroundColor(color);
+                } catch (Exception ignored) {}
+            }
+
+            ratingValue.setText(String.format(Locale.getDefault(), "דירוג: %d", event.getEventRating()));
+
+            String uid = event.getEventHandleBy();
+            if (uid != null && !uid.isEmpty()) {
+                if (volunteerCache.containsKey(uid)) {
+                    UserBasicInfo info = volunteerCache.get(uid);
+                    if (info != null) {
+                        volunteerName.setText(info.getFirstName() + " " + info.getLastName());
+                        if (info.getImageURL() != null && !info.getImageURL().isEmpty()) {
+                            Glide.with(context).load(info.getImageURL()).placeholder(R.drawable.newuserpic).into(volunteerImage);
+                        }
+                    }
+                } else {
+                    UserDataManager.loadBasicUserInfo(uid, info -> {
+                        if (info != null) {
+                            volunteerCache.put(uid, info);
+                            volunteerName.setText(info.getFirstName() + " " + info.getLastName());
+                            if (info.getImageURL() != null && !info.getImageURL().isEmpty()) {
+                                Glide.with(context).load(info.getImageURL()).placeholder(R.drawable.newuserpic).into(volunteerImage);
+                            }
+                        }
+                    });
+                }
+            }
         }
 
         details.setOnClickListener(v -> {

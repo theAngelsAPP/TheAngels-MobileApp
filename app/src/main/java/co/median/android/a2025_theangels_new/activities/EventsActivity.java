@@ -13,6 +13,7 @@ import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.models.Event;
 import co.median.android.a2025_theangels_new.services.EventDataManager;
 import co.median.android.a2025_theangels_new.services.EventTypeDataManager;
+import co.median.android.a2025_theangels_new.services.EventStatusDataManager;
 import co.median.android.a2025_theangels_new.models.EventType;
 
 public class EventsActivity extends BaseActivity {
@@ -23,6 +24,7 @@ public class EventsActivity extends BaseActivity {
     private EventsAdapter adapter;
     private ArrayList<Event> events;
     private Map<String, String> typeImageMap = new HashMap<>();
+    private Map<String, String> statusColorMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +49,29 @@ public class EventsActivity extends BaseActivity {
                     typeImageMap.put(type.getTypeName(), type.getTypeImageURL());
                 }
                 adapter.setEventTypeImages(typeImageMap);
-                loadEventsFromFirestore();
+                loadEventStatuses();
             }
 
             @Override
             public void onError(Exception e) {
                 Log.e(TAG, "Error loading event types", e);
+                loadEventStatuses();
+            }
+        });
+    }
+
+    private void loadEventStatuses() {
+        EventStatusDataManager.getAllEventStatuses(new EventStatusDataManager.EventStatusCallback() {
+            @Override
+            public void onStatusesLoaded(Map<String, String> statusMap) {
+                statusColorMap.putAll(statusMap);
+                adapter.setEventStatusColors(statusColorMap);
+                loadEventsFromFirestore();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "Error loading event statuses", e);
                 loadEventsFromFirestore();
             }
         });
