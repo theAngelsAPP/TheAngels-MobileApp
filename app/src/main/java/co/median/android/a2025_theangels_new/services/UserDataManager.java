@@ -123,4 +123,22 @@ public class UserDataManager {
                 });
     }
 
+    public static void loadBasicUserInfo(String uid, Consumer<co.median.android.a2025_theangels_new.models.UserBasicInfo> callback) {
+        db.collection("users").document(uid).get()
+                .addOnSuccessListener(document -> {
+                    if (document != null && document.exists()) {
+                        String firstName = document.getString("firstName");
+                        String lastName = document.getString("lastName");
+                        String imageURL = document.getString("imageURL");
+                        callback.accept(new co.median.android.a2025_theangels_new.models.UserBasicInfo(firstName, lastName, imageURL));
+                    } else {
+                        callback.accept(null);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    Log.e(TAG, "שגיאה בשליפת נתוני משתמש בסיסיים", e);
+                    callback.accept(null);
+                });
+    }
+
 }
