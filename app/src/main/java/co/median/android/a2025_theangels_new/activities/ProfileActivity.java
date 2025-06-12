@@ -33,7 +33,7 @@ public class ProfileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         showTopBar(false);
         showBottomBar(true);
-        imgProfile = findViewById(R.id.img_profile);
+        imgProfile = findViewById(R.id.img_profile_large);
         tvUsername = findViewById(R.id.tv_username);
         tvUserRole = findViewById(R.id.tv_user_role);
 

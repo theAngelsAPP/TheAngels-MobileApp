@@ -23,7 +23,7 @@
             android:background="@drawable/profile_glow">
 
             <ImageView
-                android:id="@+id/img_profile"
+                android:id="@+id/img_profile_large"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:src="@drawable/newuserpic"
