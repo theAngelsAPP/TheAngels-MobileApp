@@ -1,9 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:padding="0dp">
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:id="@+id/header_container"
@@ -13,8 +14,7 @@
         android:gravity="center_vertical"
         android:background="@color/blue_gradient_start"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="5dp">
+        android:paddingEnd="16dp">
 
         <ImageView
             android:id="@+id/btn_back"
@@ -23,138 +23,44 @@
             android:src="@drawable/ic_back_arrow"
             android:contentDescription="@string/back"
             android:padding="4dp"
-            android:layout_marginEnd="3dp"/>
+            android:layout_marginEnd="3dp" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/defib_title"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/header_image"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="160dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/defibrillator"
-        android:layout_below="@id/header_container"/>
+        android:src="@drawable/training1" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/training_title_card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="8dp"
-        android:padding="6dp"
-        android:layout_margin="9dp"
-        android:layout_below="@id/header_image">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="6dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
             <TextView
+                android:id="@+id/education_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/defib_intro"
-                android:textSize="13sp"
                 android:textColor="@android:color/black"
-                android:gravity="center"/>
-        </LinearLayout>
+                android:textSize="16sp" />
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/training_content_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="8dp"
-        android:padding="16dp"
-        android:layout_margin="4dp"
-        android:layout_below="@id/training_title_card">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step1_title"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="6dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step1_text"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step2_title"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="6dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step2_text"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"/>
-
-            <ImageView
-                android:id="@+id/defibrillator_image"
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_def" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step3_title"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="6dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step3_text"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step4_title"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="6dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/step4_text"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-</RelativeLayout>
+</LinearLayout>
