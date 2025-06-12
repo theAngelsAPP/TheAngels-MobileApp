@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-3:/values-v17/values-v17.xml",
+            "outputFile": "co.median.android.a2025_theangels_new.app-mergeDebugResources-45:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\batel\\.gradle\\caches\\8.11.1\\transforms\\6346c5809694e3a01f64fff03a223550\\transformed\\appcompat-1.7.0\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\omerg\\.gradle\\caches\\8.11.1\\transforms\\6346c5809694e3a01f64fff03a223550\\transformed\\appcompat-1.7.0\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
