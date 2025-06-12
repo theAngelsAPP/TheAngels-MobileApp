@@ -9,15 +9,35 @@ import java.util.ArrayList;
 
 import co.median.android.a2025_theangels_new.models.EventType;
 
+/**
+ * מנהל שליפת סוגי אירועים ממסד הנתונים של Firebase.
+ */
 public class EventTypeDataManager {
 
     private static final String TAG = "EventTypeDataManager";
 
+    /**
+     * ממשק החוזר מידע לאחר השליפה או שגיאה במקרה של כישלון.
+     */
     public interface EventTypeCallback {
+        /**
+         * נקרא כאשר הרשימה נטענה בהצלחה.
+         * @param types רשימת סוגי האירועים שהתקבלה
+         */
         void onEventTypesLoaded(ArrayList<EventType> types);
+
+        /**
+         * נקרא כאשר התרחשה שגיאה בשליפה.
+         * @param e הפרט על השגיאה
+         */
         void onError(Exception e);
     }
 
+    /**
+     * טוען את כל סוגי האירועים ממסד הנתונים של Firebase.
+     *
+     * @param callback ממשק לקבלת התוצאות או שגיאה
+     */
     public static void getAllEventTypes(EventTypeCallback callback) {
         Log.d(TAG, "getAllEventTypes called - starting Firestore fetch");
         FirebaseFirestore.getInstance().collection("eventsType")

@@ -12,15 +12,35 @@ import java.util.Collections;
 
 import co.median.android.a2025_theangels_new.models.Event;
 
+/**
+ * אחראי לשליפת אירועים ממסד הנתונים של Firebase.
+ */
 public class EventDataManager {
 
     private static final String TAG = "EventDataManager";
 
+    /**
+     * ממשק לקבלת רשימת אירועים או הודעת שגיאה.
+     */
     public interface EventCallback {
+        /**
+         * נקרא עם סיום השליפה המוצלחת.
+         * @param events רשימת האירועים שהתקבלה
+         */
         void onEventsLoaded(ArrayList<Event> events);
+
+        /**
+         * נקרא במקרה של שגיאה.
+         * @param e פירוט השגיאה
+         */
         void onError(Exception e);
     }
 
+    /**
+     * טוען את כל האירועים הקיימים במסד הנתונים.
+     *
+     * @param callback יוזם התוצאה לקבלה
+     */
     public static void getAllEvents(EventCallback callback) {
         Log.d(TAG, "getAllEvents called - starting Firestore fetch");
 
@@ -53,6 +73,13 @@ public class EventDataManager {
                 });
     }
 
+    /**
+     * מביא את האירועים האחרונים שנוצרו על ידי משתמש מסוים.
+     *
+     * @param uid      מזהה המשתמש המבוקש
+     * @param limit    כמות האירועים המקסימלית להחזרה
+     * @param callback מחזיר התוצאה
+     */
     public static void getLastEventsCreatedByUser(String uid, int limit, EventCallback callback) {
         FirebaseFirestore.getInstance().collection("events")
                 .whereEqualTo("eventCreatedBy", uid)
@@ -89,11 +116,29 @@ public class EventDataManager {
                 });
     }
 
+    /**
+     * ממשק לקבלת אירוע בודד או הודעת שגיאה.
+     */
     public interface SingleEventCallback {
+        /**
+         * אירוע שנמצא נשלח לכאן.
+         * @param event האירוע שהתקבל או null אם לא נמצא
+         */
         void onEventLoaded(Event event);
+
+        /**
+         * קריאה במקרה של תקלה בשליפה.
+         * @param e פירוט השגיאה
+         */
         void onError(Exception e);
     }
 
+    /**
+     * מחפש אירוע ראשון התואם לסוג מסוים.
+     *
+     * @param eventType סוג האירוע הרצוי
+     * @param callback  יקבל את האירוע או שגיאה
+     */
     public static void getEventByType(@NonNull String eventType, SingleEventCallback callback) {
         FirebaseFirestore.getInstance().collection("events")
                 .whereEqualTo("eventType", eventType)
