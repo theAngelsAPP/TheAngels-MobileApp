@@ -23,7 +23,9 @@ public class TrainingDataManager {
     public static void getAllTrainings(TrainingCallback callback) {
         Log.d(TAG, "getAllTrainings called - starting Firestore fetch");
 
-        FirebaseFirestore.getInstance().collection("trainings")
+        // Fetch education documents from Firestore. Collection name is
+        // "education" as defined in the DB.
+        FirebaseFirestore.getInstance().collection("education")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     ArrayList<Training> trainings = new ArrayList<>();

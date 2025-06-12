@@ -6,11 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -50,22 +51,22 @@ public class Trainingadapter extends ArrayAdapter<Training> {
 
         TextView title = rootView.findViewById(R.id.training_title);
         ImageView picture = rootView.findViewById(R.id.training_picture);
-        Button button = rootView.findViewById(R.id.training_button);
 
         if (training != null) {
             title.setText(training.getEduTitle());
 
-            int imageResId = context.getResources().getIdentifier(
-                    training.getEduImageURL(), "drawable", context.getPackageName());
+            // Load image from URL using Glide. Fallback to placeholder if needed
+            Glide.with(context)
+                    .load(training.getEduImageURL())
+                    .placeholder(R.drawable.training1)
+                    .into(picture);
 
-            if (imageResId != 0) {
-                picture.setImageResource(imageResId);
-            } else {
-                picture.setImageResource(R.drawable.training1);
-            }
-
-            button.setOnClickListener(v -> {
+            // Open details screen when the card is clicked
+            rootView.setOnClickListener(v -> {
                 Intent intent = new Intent(context, EducationDetailsActivity.class);
+                intent.putExtra("eduTitle", training.getEduTitle());
+                intent.putExtra("eduData", training.getEduData());
+                intent.putExtra("eduImageURL", training.getEduImageURL());
                 context.startActivity(intent);
             });
         }

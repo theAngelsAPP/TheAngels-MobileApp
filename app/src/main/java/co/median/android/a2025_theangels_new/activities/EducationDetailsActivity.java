@@ -5,6 +5,10 @@ package co.median.android.a2025_theangels_new.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import co.median.android.a2025_theangels_new.R;
 
@@ -21,12 +25,29 @@ public class EducationDetailsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         showTopBar(false);
         showBottomBar(false);
-        setContentView(R.layout.activity_education_details);
 
-        // Handle back button click
+        // Retrieve data passed from the list screen
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("eduTitle");
+        String data = intent.getStringExtra("eduData");
+        String imageUrl = intent.getStringExtra("eduImageURL");
+
+        TextView tvTitle = findViewById(R.id.title);
+        TextView tvContent = findViewById(R.id.education_content);
+        ImageView ivHeader = findViewById(R.id.header_image);
+
+        if (tvTitle != null) {
+            tvTitle.setText(title);
+        }
+        if (tvContent != null) {
+            tvContent.setText(data);
+        }
+        if (ivHeader != null) {
+            Glide.with(this).load(imageUrl).placeholder(R.drawable.training1).into(ivHeader);
+        }
+
+        // Back button
         findViewById(R.id.btn_back).setOnClickListener(v -> {
-            Intent intent = new Intent(EducationDetailsActivity.this, EducationActivity.class);
-            startActivity(intent);
             finish();
         });
     }
