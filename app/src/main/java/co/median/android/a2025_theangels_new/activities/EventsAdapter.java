@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.RatingBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -72,21 +73,16 @@ public class EventsAdapter extends ArrayAdapter<Event> {
 
         Event event = getItem(position);
 
-        TextView whatHappened = rootView.findViewById(R.id.event_case);
+        TextView whatHappened = rootView.findViewById(R.id.event_title);
         TextView date = rootView.findViewById(R.id.event_date);
-        TextView statusLabel = rootView.findViewById(R.id.event_status_label);
-        TextView ratingValue = rootView.findViewById(R.id.event_rating_value);
-        ImageView volunteerImage = rootView.findViewById(R.id.volunteer_image);
-        TextView volunteerName = rootView.findViewById(R.id.volunteer_name);
-        ImageView picture = rootView.findViewById(R.id.event_picture);
-        Button details = rootView.findViewById(R.id.details_btn);
+        TextView statusLabel = rootView.findViewById(R.id.event_status);
+        RatingBar ratingBar = rootView.findViewById(R.id.event_rating);
+        ImageView volunteerImage = rootView.findViewById(R.id.creator_image);
+        TextView volunteerName = rootView.findViewById(R.id.creator_name);
+        Button details = rootView.findViewById(R.id.details_button);
 
         if (event != null) {
             whatHappened.setText("אירוע " + event.getEventType());
-            if (eventTypeImages != null && eventTypeImages.containsKey(event.getEventType())) {
-                String url = eventTypeImages.get(event.getEventType());
-                Glide.with(context).load(url).placeholder(R.drawable.event_medical).into(picture);
-            }
 
             if (event.getEventTimeStarted() != null) {
                 SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.ENGLISH);
@@ -104,7 +100,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
                 } catch (Exception ignored) {}
             }
 
-            ratingValue.setText(String.format(Locale.getDefault(), "דירוג: %d", event.getEventRating()));
+            ratingBar.setRating(event.getEventRating());
 
             String uid = event.getEventHandleBy();
             if (uid != null && !uid.isEmpty()) {
