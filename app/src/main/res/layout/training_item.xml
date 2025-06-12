@@ -43,8 +43,8 @@
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:background="@drawable/event_label_bg"
-            app:layout_constraintStart_toEndOf="@id/arrow_icon"
-            app:layout_constraintEnd_toStartOf="@id/training_picture"
+            app:layout_constraintStart_toEndOf="@id/training_picture"
+            app:layout_constraintEnd_toStartOf="@id/arrow_icon"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -55,8 +55,8 @@
             android:text="כותרת הדרכה"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/training_type_label"
-            app:layout_constraintEnd_toStartOf="@id/training_picture"
+            app:layout_constraintStart_toEndOf="@id/training_picture"
+            app:layout_constraintEnd_toStartOf="@id/arrow_icon"
             app:layout_constraintTop_toBottomOf="@id/training_type_label" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
