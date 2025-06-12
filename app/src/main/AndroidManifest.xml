@@ -42,7 +42,7 @@
 
         <activity
             android:windowSoftInputMode="adjustResize"
-            android:name=".activities.MainActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.MainActivity"
             android:exported="true"
             android:theme="@style/Theme._2025_theangels_new">
             <intent-filter>
@@ -52,104 +52,104 @@
         </activity>
 
         <activity
-            android:name=".activities.OnboardingActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.OnboardingActivity"
             android:exported="false"
             android:label="The Angels | Onboarding"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
             android:windowSoftInputMode="adjustResize"
-            android:name=".activities.RegistrationActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.RegistrationActivity"
             android:exported="false"
             android:label="The Angels | Registration Step 1"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.RegistrationActivity2"
+            android:name="co.median.android.a2025_theangels_new.activities.RegistrationActivity2"
             android:exported="false"
             android:label="The Angels | Registration Step 2"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.HomeActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.HomeActivity"
             android:exported="false"
             android:label="The Angels | Home"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.EventsActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.EventsActivity"
             android:exported="false"
             android:label="The Angels | Events"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.EducationActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.EducationActivity"
             android:exported="false"
             android:label="The Angels | Education"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.ProfileActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.ProfileActivity"
             android:exported="false"
             android:label="The Angels | Profile"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.NewEventActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.NewEventActivity"
             android:exported="false"
             android:label="The Angels | Report Event"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.MyDetailsActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.MyDetailsActivity"
             android:exported="false"
             android:label="The Angels | My Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.PrivacySettingsActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.PrivacySettingsActivity"
             android:exported="false"
             android:label="The Angels | Privacy Settings"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.DisplaySettingsActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.DisplaySettingsActivity"
             android:exported="false"
             android:label="The Angels | Display Settings"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.SupportActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.SupportActivity"
             android:exported="false"
             android:label="The Angels | Support"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.JoinVolSettingsActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.JoinVolSettingsActivity"
             android:exported="false"
             android:label="The Angels | Join as Volunteer"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.EventUserActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.EventUserActivity"
             android:exported="false"
             android:label="The Angels | User Event"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.EventDetailsActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.EventDetailsActivity"
             android:exported="false"
             android:label="The Angels | Event Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.EducationDetailsActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.EducationDetailsActivity"
             android:exported="false"
             android:label="The Angels | Lesson Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".activities.EventVolActivity"
+            android:name="co.median.android.a2025_theangels_new.activities.EventVolActivity"
             android:exported="false"
             android:label="The Angels | Volunteer Event"
             android:theme="@style/Theme._2025_theangels_new"/>
