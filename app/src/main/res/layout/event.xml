@@ -21,7 +21,6 @@
         android:padding="16dp"
         android:layoutDirection="rtl">
 
-        <!-- אייקון קטגוריה - צד שמאל -->
         <ImageView
             android:id="@+id/event_category_icon"
             android:layout_width="32dp"
@@ -31,7 +30,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
-        <!-- תגית סטטוס - צד ימין -->
         <TextView
             android:id="@+id/event_status"
             android:layout_width="wrap_content"
@@ -45,7 +43,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- כותרת האירוע -->
         <TextView
             android:id="@+id/event_title"
             android:layout_width="0dp"
@@ -60,7 +57,6 @@
             app:layout_constraintEnd_toStartOf="@+id/event_status"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- תאריך האירוע -->
         <TextView
             android:id="@+id/event_date"
             android:layout_width="0dp"
@@ -74,7 +70,6 @@
             app:layout_constraintEnd_toEndOf="@+id/event_title"
             app:layout_constraintTop_toBottomOf="@+id/event_title" />
 
-        <!-- קו מפריד -->
         <View
             android:id="@+id/divider"
             android:layout_width="0dp"
@@ -85,7 +80,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_date" />
 
-        <!-- תמונת מתנדב - צד שמאל -->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/creator_image"
             android:layout_width="32dp"
@@ -98,22 +92,6 @@
             app:strokeColor="?attr/colorPrimary"
             app:strokeWidth="1dp" />
 
-        <!-- תגית המציינת שהמשתמש הינו מתנדב -->
-        <TextView
-            android:id="@+id/volunteer_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="2dp"
-            android:text="מתנדב"
-            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
-            android:textColor="@android:color/white"
-            android:background="@drawable/volunteer_label_bg"
-            app:layout_constraintStart_toEndOf="@+id/creator_image"
-            app:layout_constraintTop_toTopOf="@+id/creator_image"/>
-
-        <!-- שם מתנדב - ימינה מהתמונה -->
         <TextView
             android:id="@+id/creator_name"
             android:layout_width="wrap_content"
@@ -122,26 +100,24 @@
             android:text="עומר גמליאל"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/volunteer_label"
-            app:layout_constraintBottom_toTopOf="@+id/event_rating"
+            app:layout_constraintTop_toTopOf="@+id/creator_image"
+            app:layout_constraintBottom_toTopOf="@+id/volunteer_label"
             app:layout_constraintStart_toEndOf="@+id/creator_image"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <!-- דירוג -->
-        <RatingBar
-            android:id="@+id/event_rating"
-            style="?android:attr/ratingBarStyleSmall"
+        <TextView
+            android:id="@+id/volunteer_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:isIndicator="true"
-            android:numStars="5"
-            android:rating="5"
-            android:stepSize="0.5"
-            android:progressDrawable="@drawable/custom_rating_bar"
-            app:layout_constraintTop_toBottomOf="@+id/creator_name"
+            android:background="@drawable/volunteer_label_bg"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:text="מתנדב"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="@+id/creator_name"
-            app:layout_constraintBottom_toBottomOf="@+id/creator_image"
-            tools:ignore="SpeakableTextPresentCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/creator_name"
+            app:layout_constraintBottom_toBottomOf="@+id/creator_image" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/details_button"

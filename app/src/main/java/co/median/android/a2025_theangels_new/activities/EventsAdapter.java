@@ -76,7 +76,6 @@ public class EventsAdapter extends ArrayAdapter<Event> {
         TextView whatHappened = rootView.findViewById(R.id.event_title);
         TextView date = rootView.findViewById(R.id.event_date);
         TextView statusLabel = rootView.findViewById(R.id.event_status);
-        RatingBar ratingBar = rootView.findViewById(R.id.event_rating);
         ImageView volunteerImage = rootView.findViewById(R.id.creator_image);
         TextView volunteerName = rootView.findViewById(R.id.creator_name);
         Button details = rootView.findViewById(R.id.details_button);
@@ -100,7 +99,6 @@ public class EventsAdapter extends ArrayAdapter<Event> {
                 } catch (Exception ignored) {}
             }
 
-            ratingBar.setRating(event.getEventRating());
 
             String uid = event.getEventHandleBy();
             if (uid != null && !uid.isEmpty()) {
