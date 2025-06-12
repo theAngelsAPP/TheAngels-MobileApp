@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.graphics.Color;
 
 import androidx.annotation.Nullable;
 
@@ -22,11 +23,21 @@ public class Trainingadapter extends ArrayAdapter<Training> {
 
     private Context context;
     private ArrayList<Training> trainingsList;
+    private java.util.Map<String, String> typeImages;
+    private java.util.Map<String, String> typeColors;
 
     public Trainingadapter(Context context, int resource, ArrayList<Training> trainingsList) {
         super(context, resource, trainingsList);
         this.context = context;
         this.trainingsList = trainingsList;
+    }
+
+    public void setTypeImages(java.util.Map<String, String> typeImages) {
+        this.typeImages = typeImages;
+    }
+
+    public void setTypeColors(java.util.Map<String, String> typeColors) {
+        this.typeColors = typeColors;
     }
 
     @Override
@@ -50,10 +61,19 @@ public class Trainingadapter extends ArrayAdapter<Training> {
         Training training = getItem(position);
 
         TextView title = rootView.findViewById(R.id.training_title);
+        TextView typeLabel = rootView.findViewById(R.id.training_type_label);
         ImageView picture = rootView.findViewById(R.id.training_picture);
 
         if (training != null) {
             title.setText(training.getEduTitle());
+            typeLabel.setText(training.getEduType());
+
+            if (typeColors != null && typeColors.containsKey(training.getEduType())) {
+                try {
+                    int color = Color.parseColor(typeColors.get(training.getEduType()));
+                    typeLabel.setBackgroundColor(color);
+                } catch (Exception ignored) {}
+            }
 
             // Load image from URL using Glide. Fallback to placeholder if needed
             Glide.with(context)

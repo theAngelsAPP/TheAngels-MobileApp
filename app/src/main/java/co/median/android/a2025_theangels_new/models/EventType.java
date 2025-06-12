@@ -6,6 +6,7 @@ public class EventType {
 
     private String typeName;
     private String typeImageURL;
+    private String typeColor;
     private List<String> questions;
 
     public EventType() {
@@ -26,6 +27,14 @@ public class EventType {
 
     public void setTypeImageURL(String typeImageURL) {
         this.typeImageURL = typeImageURL;
+    }
+
+    public String getTypeColor() {
+        return typeColor;
+    }
+
+    public void setTypeColor(String typeColor) {
+        this.typeColor = typeColor;
     }
 
     public List<String> getQuestions() {
