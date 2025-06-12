@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "219447468038",
+    "project_id": "yvctheangelsproject",
+    "storage_bucket": "yvctheangelsproject.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219447468038:android:1dab6d1ae9939d53922387",
+        "android_client_info": {
+          "package_name": "co.median.android.a2025_theangels_new"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3pnbD_CNlcE9tApZU3j6BvImBLormUzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219447468038:android:e2875d59c88be528922387",
+        "android_client_info": {
+          "package_name": "com.example.yvc_theangelsproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3pnbD_CNlcE9tApZU3j6BvImBLormUzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
