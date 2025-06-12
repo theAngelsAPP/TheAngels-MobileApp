@@ -18,15 +18,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
+import co.median.android.a2025_theangels_new.services.EventDataManager;
+import co.median.android.a2025_theangels_new.services.EventTypeDataManager;
+import co.median.android.a2025_theangels_new.services.EventStatusDataManager;
+import co.median.android.a2025_theangels_new.models.EventType;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.fragments.MapFragment;
 import co.median.android.a2025_theangels_new.models.UserSession;
+import co.median.android.a2025_theangels_new.models.Event;
+import co.median.android.a2025_theangels_new.activities.RecentEventsAdapter;
 
 // =======================================
 // HomeActivity - Displays the home screen and handles location permission logic
@@ -43,6 +52,11 @@ public class HomeActivity extends BaseActivity {
     private LinearLayout volDashboard;
     private TextView tvEventsCount, tvAvgRating;
     private FrameLayout mapContainer;
+    private LinearLayout recentEventsContainer;
+    private RecentEventsAdapter recentEventsAdapter;
+    private ArrayList<Event> recentEvents = new ArrayList<>();
+    private Map<String, String> typeImageMap = new HashMap<>();
+    private Map<String, String> statusColorMap = new HashMap<>();
 
     // =======================================
     // onCreate - Initializes UI and checks for location permission
@@ -62,6 +76,8 @@ public class HomeActivity extends BaseActivity {
         tvEventsCount = findViewById(R.id.tv_events_count);
         tvAvgRating = findViewById(R.id.tv_avg_rating);
         mapContainer = findViewById(R.id.map_container);
+        recentEventsContainer = findViewById(R.id.recent_events_container);
+        recentEventsAdapter = new RecentEventsAdapter(this, R.layout.item_recent_event, recentEvents);
 
         UserSession session = UserSession.getInstance();
         String fullName = session.getFirstName() + " " + session.getLastName();
@@ -77,6 +93,8 @@ public class HomeActivity extends BaseActivity {
         } else {
             volDashboard.setVisibility(View.GONE);
         }
+
+        loadEventTypes();
 
 
         checkLocationPermission();
@@ -165,6 +183,64 @@ public class HomeActivity extends BaseActivity {
                 tvEventsCount.setText(String.valueOf(count)));
         UserDataManager.getHandledEventsAverageRating(uid, avg ->
                 tvAvgRating.setText(String.format(Locale.getDefault(), "%.1f", avg)));
+    }
+
+    private void loadEventTypes() {
+        EventTypeDataManager.getAllEventTypes(new EventTypeDataManager.EventTypeCallback() {
+            @Override
+            public void onEventTypesLoaded(ArrayList<EventType> types) {
+                for (EventType type : types) {
+                    typeImageMap.put(type.getTypeName(), type.getTypeImageURL());
+                }
+                recentEventsAdapter.setEventTypeImages(typeImageMap);
+                loadEventStatuses();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                loadEventStatuses();
+            }
+        });
+    }
+
+    private void loadEventStatuses() {
+        EventStatusDataManager.getAllEventStatuses(new EventStatusDataManager.EventStatusCallback() {
+            @Override
+            public void onStatusesLoaded(Map<String, String> statusMap) {
+                statusColorMap.putAll(statusMap);
+                recentEventsAdapter.setEventStatusColors(statusColorMap);
+                loadRecentEvents();
+            }
+
+            @Override
+            public void onError(Exception e) {
+                loadRecentEvents();
+            }
+        });
+    }
+
+    private void loadRecentEvents() {
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        EventDataManager.getLastEventsCreatedByUser(uid, 3, new EventDataManager.EventCallback() {
+            @Override
+            public void onEventsLoaded(ArrayList<Event> events) {
+                recentEvents.clear();
+                recentEvents.addAll(events);
+                displayRecentEvents();
+            }
+
+            @Override
+            public void onError(Exception e) {
+            }
+        });
+    }
+
+    private void displayRecentEvents() {
+        recentEventsContainer.removeAllViews();
+        for (int i = 0; i < recentEvents.size(); i++) {
+            View item = recentEventsAdapter.getView(i, null, recentEventsContainer);
+            recentEventsContainer.addView(item);
+        }
     }
 
     // =======================================

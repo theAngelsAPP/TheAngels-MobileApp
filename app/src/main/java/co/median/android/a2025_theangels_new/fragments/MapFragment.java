@@ -10,6 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -22,6 +23,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -47,6 +51,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     private FusedLocationProviderClient fusedLocationClient;
     private LinearLayout mapPlaceholder;
+    private LocationRequest locationRequest;
+    private LocationCallback locationCallback;
 
     // Request permission result handler
     private final ActivityResultLauncher<String> locationPermissionLauncher =
@@ -74,6 +80,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
         mapPlaceholder = view.findViewById(R.id.map_placeholder);
+
+        locationRequest = LocationRequest.create();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(5000);
+
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(@NonNull LocationResult locationResult) {
+                Location location = locationResult.getLastLocation();
+                if (location != null) {
+                    updateMapLocation(location);
+                }
+            }
+        };
 
         // Request permission when the placeholder is tapped
         mapPlaceholder.setOnClickListener(v ->
@@ -136,7 +156,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             mapPlaceholder.setVisibility(View.GONE);
 
             mMap.setMyLocationEnabled(true);
-            getUserLocation();
+            startLocationUpdates();
         }
     }
 
@@ -156,7 +176,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(location -> {
                     if (location != null) {
@@ -164,6 +183,24 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     }
                 })
                 .addOnFailureListener(Throwable::printStackTrace);
+    }
+
+    private void startLocationUpdates() {
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper());
+        getUserLocation();
+    }
+
+    private void stopLocationUpdates() {
+        fusedLocationClient.removeLocationUpdates(locationCallback);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        stopLocationUpdates();
     }
 
     // =======================================
