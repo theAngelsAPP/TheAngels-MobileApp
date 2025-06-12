@@ -123,6 +123,16 @@ public class UserDataManager {
                 });
     }
 
+    public static void updateUserDetails(String uid, Map<String, Object> updates, Consumer<Boolean> callback) {
+        db.collection("users").document(uid).update(updates)
+                .addOnSuccessListener(unused ->
+                        loadUserDetails(uid, session -> callback.accept(true)))
+                .addOnFailureListener(e -> {
+                    Log.e(TAG, "\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e2\u05d3\u05db\u05d5\u05df \u05e4\u05e8\u05d8\u05d9 \u05d4\u05de\u05e9\u05ea\u05de\u05e9", e);
+                    callback.accept(false);
+                });
+    }
+
     public static void loadBasicUserInfo(String uid, Consumer<co.median.android.a2025_theangels_new.models.UserBasicInfo> callback) {
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(document -> {
