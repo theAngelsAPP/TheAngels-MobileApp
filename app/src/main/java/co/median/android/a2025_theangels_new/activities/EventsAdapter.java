@@ -13,11 +13,11 @@ import android.widget.RatingBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import java.text.SimpleDateFormat;
+import android.text.format.DateUtils;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Date;
 
 import com.bumptech.glide.Glide;
 
@@ -85,8 +85,8 @@ public class EventsAdapter extends ArrayAdapter<Event> {
             whatHappened.setText("אירוע " + event.getEventType());
 
             if (event.getEventTimeStarted() != null) {
-                SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.ENGLISH);
-                date.setText(sdf.format(event.getEventTimeStarted().toDate()));
+                Date d = event.getEventTimeStarted().toDate();
+                date.setText(getTimeAgo(d));
             } else {
                 date.setText("תאריך לא ידוע");
             }
@@ -154,5 +154,16 @@ public class EventsAdapter extends ArrayAdapter<Event> {
         });
 
         return rootView;
+    }
+
+    private String getTimeAgo(Date date) {
+        long now = System.currentTimeMillis();
+        if (date == null) return "";
+        CharSequence ago = DateUtils.getRelativeTimeSpanString(
+                date.getTime(),
+                now,
+                DateUtils.MINUTE_IN_MILLIS,
+                DateUtils.FORMAT_SHOW_DATE);
+        return ago != null ? ago.toString() : "";
     }
 }
