@@ -51,4 +51,26 @@ public class EventDataManager {
                     callback.onError(e);
                 });
     }
+
+    public static void getLastEventsCreatedByUser(String uid, int limit, EventCallback callback) {
+        FirebaseFirestore.getInstance().collection("events")
+                .whereEqualTo("eventCreatedBy", uid)
+                .orderBy("eventTimeStarted", com.google.firebase.firestore.Query.Direction.DESCENDING)
+                .limit(limit)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    ArrayList<Event> events = new ArrayList<>();
+                    for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()) {
+                        Event event = doc.toObject(Event.class);
+                        if (event != null) {
+                            events.add(event);
+                        }
+                    }
+                    callback.onEventsLoaded(events);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e(TAG, "Error fetching recent events", e);
+                    callback.onError(e);
+                });
+    }
 }
