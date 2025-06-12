@@ -8,6 +8,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import co.median.android.a2025_theangels_new.models.Event;
 
@@ -55,8 +56,6 @@ public class EventDataManager {
     public static void getLastEventsCreatedByUser(String uid, int limit, EventCallback callback) {
         FirebaseFirestore.getInstance().collection("events")
                 .whereEqualTo("eventCreatedBy", uid)
-                .orderBy("eventTimeStarted", com.google.firebase.firestore.Query.Direction.DESCENDING)
-                .limit(limit)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     ArrayList<Event> events = new ArrayList<>();
@@ -66,6 +65,22 @@ public class EventDataManager {
                             events.add(event);
                         }
                     }
+
+                    Collections.sort(events, (e1, e2) -> {
+                        if (e1.getEventTimeStarted() == null && e2.getEventTimeStarted() == null) {
+                            return 0;
+                        } else if (e1.getEventTimeStarted() == null) {
+                            return 1;
+                        } else if (e2.getEventTimeStarted() == null) {
+                            return -1;
+                        }
+                        return e2.getEventTimeStarted().compareTo(e1.getEventTimeStarted());
+                    });
+
+                    if (events.size() > limit) {
+                        events = new ArrayList<>(events.subList(0, limit));
+                    }
+
                     callback.onEventsLoaded(events);
                 })
                 .addOnFailureListener(e -> {
