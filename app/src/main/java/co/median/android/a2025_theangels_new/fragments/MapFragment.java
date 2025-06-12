@@ -8,8 +8,13 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 import android.os.Looper;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -54,6 +59,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
 
+    private OnAddressChangeListener addressChangeListener;
+
     // Request permission result handler
     private final ActivityResultLauncher<String> locationPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -69,6 +76,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     // =======================================
     public MapFragment() {
         super(R.layout.fragment_map);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        addressChangeListener = null;
+    }
+
+    public void setAddressChangeListener(OnAddressChangeListener listener) {
+        this.addressChangeListener = listener;
+    }
+
+    public interface OnAddressChangeListener {
+        void onAddressChanged(String address);
     }
 
     // =======================================
@@ -167,6 +188,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         View mapView = requireView().findViewById(R.id.map);
         mapView.setVisibility(View.GONE);
         mapPlaceholder.setVisibility(View.VISIBLE);
+        if (addressChangeListener != null) {
+            addressChangeListener.onAddressChanged(getString(R.string.address_not_found));
+        }
     }
 
     // =======================================
@@ -222,6 +246,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 .position(userLatLng)
                 .title(getString(R.string.your_location))
                 .icon(resizeMarker(R.drawable.custom_marker, 130, 130)));
+
+        if (addressChangeListener != null) {
+            String address = getAddressFromLocation(location);
+            addressChangeListener.onAddressChanged(address);
+        }
     }
 
     // =======================================
@@ -237,5 +266,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         drawable.draw(canvas);
 
         return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
+
+    private String getAddressFromLocation(Location location) {
+        Geocoder geocoder = new Geocoder(requireContext(), Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+            if (addresses != null && !addresses.isEmpty()) {
+                return addresses.get(0).getAddressLine(0);
+            }
+        } catch (IOException ignored) {}
+        return getString(R.string.address_not_found);
     }
 }
