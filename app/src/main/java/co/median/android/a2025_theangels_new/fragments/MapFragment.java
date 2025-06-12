@@ -45,9 +45,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import co.median.android.a2025_theangels_new.R;
 
-// =======================================
-// MapFragment - Displays Google Map with current user location
-// =======================================
+/**
+ * פרגמנט המציג מפה ומאתר את מיקומו הנוכחי של המשתמש.
+ * אם אין הרשאה למיקום, מוצג מסך חלופי המבקש גישה.
+ */
 public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     // =======================================
@@ -92,9 +93,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         void onAddressChanged(String address);
     }
 
-    // =======================================
-    // onViewCreated - Initializes map and views
-    // =======================================
+    /**
+     * מופעל לאחר יצירת תצוגת הפרגמנט ומאתחל את המפה והרכיבים השונים.
+     * כאן גם נרשמת בקשת ההרשאה למיקום במידת הצורך.
+     *
+     * @param view               התצוגה של הפרגמנט
+     * @param savedInstanceState מצב שמור אם קיים
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -128,9 +133,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
-    // =======================================
-    // onMapReady - Called when map is ready to use
-    // =======================================
+    /**
+     * נקרא כאשר המפה נטענה ומוכנה לשימוש.
+     * כאן מוחלים עיצוב מותאם ונבדקות הרשאות מיקום.
+     *
+     * @param googleMap מופע המפה שהתקבל
+     */
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
@@ -165,9 +173,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
-    // =======================================
-    // enableUserLocation - Enables MyLocation and requests user position
-    // =======================================
+    /**
+     * מפעיל את הצגת המיקום על המפה ומתחיל בקבלת עדכוני מיקום.
+     * נקרא לאחר קבלת הרשאת מיקום מהמשתמש.
+     */
     private void enableUserLocation() {
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -181,9 +190,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
-    // =======================================
-    // showPlaceholder - Shows fallback UI when location permission is denied
-    // =======================================
+    /**
+     * מציג שכבת חלופה במקרה שהרשאת המיקום נדחתה על ידי המשתמש.
+     * בנוסף מעדכן את המאזין בכתובת כללית שאין מיקום.
+     */
     private void showPlaceholder() {
         View mapView = requireView().findViewById(R.id.map);
         mapView.setVisibility(View.GONE);
@@ -193,9 +203,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
-    // =======================================
-    // getUserLocation - Requests the user's current location
-    // =======================================
+    /**
+     * מבקש מהמכשיר את מיקומו האחרון הזמין ומעדכן את המפה בהתאם.
+     * במקרה של כישלון יירשם בלוג אך לא תבוצע פעולה נוספת.
+     */
     private void getUserLocation() {
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -209,6 +220,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 .addOnFailureListener(Throwable::printStackTrace);
     }
 
+    /**
+     * מתחיל קבלת עדכוני מיקום שוטפים מהמכשיר ומעדכן מיד את המפה.
+     */
     private void startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -217,19 +231,28 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         getUserLocation();
     }
 
+    /**
+     * מפסיק את קבלת עדכוני המיקום כאשר הפרגמנט נעצר.
+     */
     private void stopLocationUpdates() {
         fusedLocationClient.removeLocationUpdates(locationCallback);
     }
 
+    /**
+     * כאשר הפרגמנט מפסיק לפעול מפסיקים גם את עדכוני המיקום כדי לחסוך משאבים.
+     */
     @Override
     public void onStop() {
         super.onStop();
         stopLocationUpdates();
     }
 
-    // =======================================
-    // updateMapLocation - Centers camera and adds marker at user location
-    // =======================================
+    /**
+     * מעדכן את מיקום המשתמש על המפה ומרכז את התצוגה סביבו.
+     * בנוסף מוצב סמן מותאם אישית ומדווח על הכתובת למאזין.
+     *
+     * @param location מיקום משתמש שנמצא
+     */
     private void updateMapLocation(Location location) {
         LatLng userLatLng = new LatLng(location.getLatitude(), location.getLongitude());
 
@@ -253,9 +276,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
-    // =======================================
-    // resizeMarker - Resizes custom marker drawable
-    // =======================================
+    /**
+     * משנה את גודל האייקון של הסמן כדי שיוצג במפה בצורה נכונה.
+     *
+     * @param drawableRes מזהה המשאב של האייקון
+     * @param width       רוחב נדרש בפיקסלים
+     * @param height      גובה נדרש בפיקסלים
+     * @return אובייקט ביטמאפ לאחר שינוי גודל
+     */
     private BitmapDescriptor resizeMarker(int drawableRes, int width, int height) {
         Drawable drawable = ContextCompat.getDrawable(requireContext(), drawableRes);
         if (drawable == null) return null;
@@ -268,6 +296,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
+    /**
+     * ממיר את נקודת המיקום לכתובת קריאה למשתמש.
+     * במקרה ואין כתובת זמינה מוחזר טקסט כללי.
+     *
+     * @param location מיקום שממנו מחפשים כתובת
+     * @return מחרוזת כתובת תיאורית
+     */
     private String getAddressFromLocation(Location location) {
         Geocoder geocoder = new Geocoder(requireContext(), Locale.getDefault());
         try {
