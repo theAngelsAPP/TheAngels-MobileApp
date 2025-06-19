@@ -28,6 +28,9 @@ glide = "4.16.0"
 mapsUtils = "3.10.0"
 retrofit = "2.9.0"
 gsonConverter = "2.9.0"
+paging = "3.2.1"
+firebaseMessaging = "24.0.0"
+shimmer = "0.5.0"
 
 
 
@@ -69,6 +72,9 @@ glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = 
 google-maps-utils = { module = "com.google.maps.android:android-maps-utils", version.ref = "mapsUtils" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gsonConverter" }
+androidx-paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
+shimmer = { group = "com.facebook.shimmer", name = "shimmer", version.ref = "shimmer" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
