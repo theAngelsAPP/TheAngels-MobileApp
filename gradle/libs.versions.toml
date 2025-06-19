@@ -103,6 +103,10 @@ konfetti-xml = { module = "nl.dionsegijn:konfetti-xml", version.ref = "konfetti"
 stepview = { module = "com.github.shuhart:stepview", version.ref = "stepview" } # הצגת שלבי תהליך
 cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" } # תצוגת כרטיסים
 
+# ===== טעינת נתונים מדורגת =====
+androidx-paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" } # ניהול נתונים מדורגים
+
+
 # ===== בדיקות =====
 junit = { group = "junit", name = "junit", version.ref = "junit" } # בדיקות יחידה
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" } # הרחבות JUnit לאנדרואיד
