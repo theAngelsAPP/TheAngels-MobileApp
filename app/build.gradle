@@ -51,7 +51,6 @@ dependencies {
     implementation(libs.lottie)
     implementation(libs.konfetti.xml)
     implementation libs.google.maps.utils
-    implementation libs.google.navigation
     implementation libs.retrofit
     implementation libs.retrofit.converter.gson
     implementation(libs.okhttp)

@@ -28,7 +28,6 @@ glide = "4.16.0"
 mapsUtils = "3.10.0"
 retrofit = "2.9.0"
 gsonConverter = "2.9.0"
-navigation = "1.1.0-beta"
 
 
 
@@ -68,7 +67,6 @@ firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 google-maps-utils = { module = "com.google.maps.android:android-maps-utils", version.ref = "mapsUtils" }
-google-navigation = { module = "com.google.android.libraries.navigation:navigation", version.ref = "navigation" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gsonConverter" }
 
