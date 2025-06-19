@@ -16,6 +16,8 @@ android {
 
         def mapsKey = project.findProperty("GOOGLE_MAPS_API_KEY") ?: ""
         resValue "string", "google_maps_key", mapsKey
+        def placesKey = project.findProperty("GOOGLE_PLACES_API_KEY") ?: mapsKey
+        resValue "string", "google_places_key", placesKey
 
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -46,6 +48,9 @@ dependencies {
     implementation libs.google.play.services.maps
     implementation libs.google.play.services.location
     implementation libs.google.places
+    implementation libs.androidx.paging.runtime
+    implementation libs.firebase.messaging
+    implementation libs.shimmer
     implementation libs.stepview
     implementation(libs.cardview)
     implementation(libs.lottie)
