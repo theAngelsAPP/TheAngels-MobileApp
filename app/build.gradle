@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -55,6 +56,8 @@ dependencies {
     implementation(libs.cardview)
     implementation(libs.lottie)
     implementation(libs.konfetti.xml)
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
     implementation libs.google.maps.utils
     implementation libs.retrofit
     implementation libs.retrofit.converter.gson
