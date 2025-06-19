@@ -1,34 +1,83 @@
 # Android Studio
 *.iml
-.gradle/
 .idea/
-.idea/*
+.gradle/
+local.properties
+*.log
+*.orig
 
-# Include only necessary IntelliJ configs
-!.idea/gradle.xml
-!.idea/misc.xml
-!.idea/runConfigurations/
-
-# Build output
+# Ignore build output
 /build/
 **/build/
 .cxx/
 .externalNativeBuild/
 captures/
+outputs/
+intermediates/
+.kotlinc/
+.gradle/
 
-# Local properties
-local.properties
+# Ignore generated files
+*.apk
+*.ap_
+*.aar
+*.dex
+*.class
+*.jar
+*.so
+*.o
+*.d
+*.hprof
 
-# Mac
+# Firebase / Google services
+google-services.json
+firebase-debug.log
+
+# NDK / CMake
+**/obj/
+**/libs/
+**/native-debug-symbols/
+
+# Signing files
+*.jks
+*.keystore
+*.key
+*.pem
+
+# Misc
 .DS_Store
-
-# Logs
-*.log
-*.orig
-
-# Env
 .env
 .env.*
+secrets.properties
 
-# Others
-*.keystore
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code / JetBrains IDEs
+.vscode/
+.idea/
+*.swp
+
+# Node/JS related (if used)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Test results
+test-results/
+**/test-output/
+
+# Lint and logs
+lint/reports/
+*.lint
+
+# Ignore crashlytics / performance / analytics artifacts
+crashlytics-build.properties
+fabric.properties
+
+# Ignore temporary gradle files
+.gradle/
+gradle-app.setting
+gradle-wrapper.properties.lock

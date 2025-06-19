@@ -3,8 +3,6 @@
     <string name="title_activity_test">testActivity</string>
     <string name="greeting">בוקר טוב, שם!</string>
     <string name="subtitle">משפט השראה מתחת לשם</string>
-    <string name="google_maps_key">AIzaSyDXslRAGx0OIxSUuZ9nZzv16id_inkXh7w</string>
-    <string name="google_geocoding_key">AIzaSyDXslRAGx0OIxSUuZ9nZzv16id_inkXh7w</string>
 
 
     <string name="dark_mode_on">מצב כהה פעיל</string>

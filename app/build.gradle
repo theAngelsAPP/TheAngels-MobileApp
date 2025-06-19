@@ -14,6 +14,10 @@ android {
         versionCode 1
         versionName "1.0"
 
+        def mapsKey = project.findProperty("GOOGLE_MAPS_API_KEY") ?: ""
+        resValue "string", "google_maps_key", mapsKey
+
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -46,6 +50,10 @@ dependencies {
     implementation(libs.cardview)
     implementation(libs.lottie)
     implementation(libs.konfetti.xml)
+    implementation libs.google.maps.utils
+    implementation libs.google.navigation
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
     implementation(libs.okhttp)
     implementation libs.glide
     annotationProcessor libs.glide.compiler
