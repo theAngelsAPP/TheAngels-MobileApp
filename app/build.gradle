@@ -75,7 +75,7 @@ task generateJavadoc(type: Javadoc) {
     classpath += files(android.bootClasspath)
     destinationDir = file("$buildDir/docs/javadoc")
 
-    failOnError false // ← הוספה חשובה!
+    failOnError false
     options.encoding = 'UTF-8'
     options.charSet = 'UTF-8'
     options.docEncoding = 'UTF-8'
