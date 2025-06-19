@@ -57,7 +57,6 @@ Desktop.ini
 
 # VS Code / JetBrains IDEs
 .vscode/
-.idea/
 *.swp
 
 # Node/JS related (if used)
