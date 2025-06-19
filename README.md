@@ -37,3 +37,24 @@
     <img src="https://i.imagesup.co/images2/ac78807b55790ba5fb1d5675e15acc60db939932.png" style="width:100px; height:100px; border-radius:50%;" />
   </a>
 </div>
+
+## Local Configuration
+
+The following files are intentionally excluded from version control:
+
+- `secrets.properties`
+- `app/google-services.json`
+- `key/key.jks`
+- `private_key.pepk`
+
+Create a `secrets.properties` file or define the environment variables `GOOGLE_MAPS_API_KEY` and `GOOGLE_PLACES_API_KEY` before building the project:
+
+```properties
+GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+GOOGLE_PLACES_API_KEY=your_google_places_api_key
+```
+
+Download your Firebase `google-services.json` and place it inside the `app/` directory. Keep your signing keys (`key.jks` and `private_key.pepk`) outside of the repository and reference them via environment variables or a local `key.properties` file.
+
+Previously exposed keys have been revoked. Make sure to generate new credentials for your environment.
+

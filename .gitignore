@@ -43,6 +43,7 @@ firebase-debug.log
 *.keystore
 *.key
 *.pem
+private_key.pepk
 
 # Misc
 .DS_Store
