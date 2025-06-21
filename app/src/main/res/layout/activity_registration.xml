@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F7FA"
-    tools:context="co.median.android.a2025_theangels_new.activities.RegistrationActivity">
+    tools:context="co.median.android.a2025_theangels_new.ui.registration.RegistrationActivity">
 
     <LinearLayout
         android:id="@+id/topSection"
