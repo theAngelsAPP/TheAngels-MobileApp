@@ -81,31 +81,46 @@
             android:visibility="gone"
             android:padding="8dp">
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/volunteerAnimation"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:lottie_rawRes="@raw/animation_hello"
-                app:lottie_autoPlay="false"
-                app:lottie_loop="false"/>
-
-            <ImageView
-                android:id="@+id/volunteerImage"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/newuserpic"
-                android:background="@drawable/circle_image"
-                android:scaleType="centerCrop"/>
-
-            <TextView
-                android:id="@+id/volunteerName"
-                android:layout_width="wrap_content"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/volunteerCard"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:textSize="18sp"/>
+                android:layout_margin="8dp"
+                android:background="@drawable/volunteer_card_bg"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:layoutDirection="rtl">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/volunteerImage"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:src="@drawable/newuserpic"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Circle"
+                        app:strokeColor="@color/blue_primary"
+                        app:strokeWidth="1dp" />
+
+                    <TextView
+                        android:id="@+id/volunteerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:drawableStart="@drawable/ic_star"
+                        android:drawableTint="@color/blue_primary"
+                        android:drawablePadding="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
         <TextView
