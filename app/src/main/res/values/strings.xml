@@ -197,4 +197,7 @@
     <string name="go_to_event">מעבר לאירוע</string>
     <string name="places_init_error">חסר מפתח API של Google Places</string>
     <string name="select_city_error">יש לבחור עיר מהרשימה</string>
+    <string name="select_cities_title">בחר ערים בהן תרצה להתנדב:</string>
+    <string name="city_search_hint">הקלד עיר לחיפוש</string>
+    <string name="city_already_selected">העיר כבר נבחרה</string>
 </resources>

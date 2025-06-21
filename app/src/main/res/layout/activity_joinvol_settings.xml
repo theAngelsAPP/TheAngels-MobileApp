@@ -155,7 +155,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Region Selection -->
+            <!-- City Selection -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -168,42 +168,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:layoutDirection="rtl"
                     android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="בחר אזור:"
+                        android:text="@string/select_cities_title"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <com.google.android.material.chip.ChipGroup
+                    <EditText
+                        android:id="@+id/input_city"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        app:singleSelection="true"
-                        app:chipSpacingHorizontal="8dp"
-                        app:chipSpacingVertical="6dp">
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:hint="@string/city_search_hint"
+                        style="@style/ProfileInputStyle" />
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="צפון"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="מרכז"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Choice"
-                            android:text="דרום"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                    </com.google.android.material.chip.ChipGroup>
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_cities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layoutDirection="rtl"
+                        app:singleSelection="false"
+                        app:chipSpacingHorizontal="4dp"
+                        app:chipSpacingVertical="4dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
