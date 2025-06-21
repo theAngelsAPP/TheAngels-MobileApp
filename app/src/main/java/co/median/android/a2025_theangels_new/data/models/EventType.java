@@ -4,8 +4,13 @@
 package co.median.android.a2025_theangels_new.data.models;
 
 import java.util.List;
+import com.google.firebase.firestore.DocumentId;
 
 public class EventType {
+
+    /** מזהה המסמך */
+    @DocumentId
+    private String id;
 
     /** שם הסוג */
     private String typeName;
@@ -49,4 +54,10 @@ public class EventType {
     public void setQuestions(List<String> questions) {
         this.questions = questions;
     }
+
+    /** @return מזהה המסמך */
+    public String getId() { return id; }
+
+    /** @param id מזהה המסמך */
+    public void setId(String id) { this.id = id; }
 }

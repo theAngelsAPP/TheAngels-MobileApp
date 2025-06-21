@@ -1,34 +1,36 @@
-/**
- * מודל עבור סטטוס אפשרי של אירוע.
- */
 package co.median.android.a2025_theangels_new.data.models;
 
-public class EventStatus {
-    /** שם הסטטוס כפי שמופיע במסד */
-    private String statusName;
-    /** צבע המייצג את הסטטוס */
-    private String statusColor;
+/**
+ * Central enum for all event status values stored in Firestore.
+ */
+public enum EventStatus {
+    LOOKING_FOR_VOLUNTEER("חיפוש מתנדב"),
+    VOLUNTEER_ON_THE_WAY("מתנדב בדרך"),
+    VOLUNTEER_AT_EVENT("מתנדב באירוע"),
+    EVENT_FINISHED("האירוע הסתיים");
 
-    /** בנאי ריק הנדרש לפיירבייס */
-    public EventStatus() {}
+    private final String dbValue;
 
-    /** @return שם הסטטוס */
-    public String getStatusName() {
-        return statusName;
+    EventStatus(String dbValue) {
+        this.dbValue = dbValue;
     }
 
-    /** @param statusName שם הסטטוס */
-    public void setStatusName(String statusName) {
-        this.statusName = statusName;
+    /**
+     * @return value stored in Firestore
+     */
+    public String getDbValue() {
+        return dbValue;
     }
 
-    /** @return צבע הסטטוס */
-    public String getStatusColor() {
-        return statusColor;
-    }
-
-    /** @param statusColor צבע ההצגה */
-    public void setStatusColor(String statusColor) {
-        this.statusColor = statusColor;
+    /**
+     * Returns the enum constant for the given Firestore value.
+     */
+    public static EventStatus fromDbValue(String value) {
+        for (EventStatus s : values()) {
+            if (s.dbValue.equals(value)) {
+                return s;
+            }
+        }
+        return null;
     }
 }

@@ -3,7 +3,13 @@
  */
 package co.median.android.a2025_theangels_new.data.models;
 
+import com.google.firebase.firestore.DocumentId;
+
 public class Message {
+
+    /** מזהה המסמך */
+    @DocumentId
+    private String id;
 
     /** כותרת ההודעה */
     private String messageTitle;
@@ -58,4 +64,10 @@ public class Message {
     public void setMessageRef(String messageRef) {
         this.messageRef = messageRef;
     }
+
+    /** @return מזהה המסמך */
+    public String getId() { return id; }
+
+    /** @param id מזהה המסמך */
+    public void setId(String id) { this.id = id; }
 }

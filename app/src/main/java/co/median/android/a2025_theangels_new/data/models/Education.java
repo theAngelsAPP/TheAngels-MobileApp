@@ -3,7 +3,13 @@
  */
 package co.median.android.a2025_theangels_new.data.models;
 
+import com.google.firebase.firestore.DocumentId;
+
 public class Education {
+
+    /** מזהה המסמך */
+    @DocumentId
+    private String id;
 
     /** כותרת ההדרכה */
     private String eduTitle;
@@ -91,4 +97,10 @@ public class Education {
     public void setEduType(String eduType) {
         this.eduType = eduType;
     }
+
+    /** @return מזהה המסמך */
+    public String getId() { return id; }
+
+    /** @param id מזהה המסמך */
+    public void setId(String id) { this.id = id; }
 }

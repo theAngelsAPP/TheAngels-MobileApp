@@ -53,13 +53,7 @@ public class EventDataManager {
                         try {
                             Event event = doc.toObject(Event.class);
                             if (event != null) {
-                                try {
-                                    java.lang.reflect.Field f = Event.class.getDeclaredField("id");
-                                    f.setAccessible(true);
-                                    f.set(event, doc.getId());
-                                } catch (Exception ignored) {}
                                 Log.d(TAG, "Event loaded: " + event.getEventType());
-
                                 events.add(event);
                             } else {
                                 Log.w(TAG, "Event is null for document: " + doc.getId());
@@ -94,12 +88,6 @@ public class EventDataManager {
                     for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()) {
                         Event event = doc.toObject(Event.class);
                         if (event != null) {
-                            // store document id for later use
-                            try {
-                                java.lang.reflect.Field f = Event.class.getDeclaredField("id");
-                                f.setAccessible(true);
-                                f.set(event, doc.getId());
-                            } catch (Exception ignored) {}
                             events.add(event);
                         }
                     }
@@ -160,13 +148,8 @@ public class EventDataManager {
                     for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()) {
                         event = doc.toObject(Event.class);
                         if (event != null) {
-                            try {
-                                java.lang.reflect.Field f = Event.class.getDeclaredField("id");
-                                f.setAccessible(true);
-                                f.set(event, doc.getId());
-                            } catch (Exception ignored) {}
+                            break;
                         }
-                        break;
                     }
                     callback.onEventLoaded(event);
                 })
@@ -192,13 +175,6 @@ public class EventDataManager {
                     Event ev = null;
                     if (doc != null && doc.exists()) {
                         ev = doc.toObject(Event.class);
-                        if (ev != null) {
-                            try {
-                                java.lang.reflect.Field f = Event.class.getDeclaredField("id");
-                                f.setAccessible(true);
-                                f.set(ev, doc.getId());
-                            } catch (Exception ignored) {}
-                        }
                     }
                     callback.onEventLoaded(ev);
                 })
