@@ -269,7 +269,7 @@ public class EventDataManager {
                                   ErrorCallback onError) {
         java.util.Map<String, Object> updates = new java.util.HashMap<>();
         updates.put("eventHandleBy", volunteerUid);
-        updates.put("eventStatus", "מתנדב בדרך");
+        updates.put("eventStatus", co.median.android.a2025_theangels_new.data.models.UserEventStatus.VOLUNTEER_ON_THE_WAY.getDbValue());
         updateEvent(eventId, updates, onSuccess, onError);
     }
 
@@ -300,7 +300,9 @@ public class EventDataManager {
      */
     public static com.google.firebase.firestore.ListenerRegistration listenToActiveEvents(OpenEventsListener listener) {
         java.util.List<String> activeStatuses = java.util.Arrays.asList(
-                "חיפוש מתנדב", "מתנדב בדרך", "מתנדב באירוע"
+                co.median.android.a2025_theangels_new.data.models.UserEventStatus.LOOKING_FOR_VOLUNTEER.getDbValue(),
+                co.median.android.a2025_theangels_new.data.models.UserEventStatus.VOLUNTEER_ON_THE_WAY.getDbValue(),
+                co.median.android.a2025_theangels_new.data.models.UserEventStatus.VOLUNTEER_AT_EVENT.getDbValue()
         );
         return FirebaseFirestore.getInstance().collection("events")
                 .whereIn("eventStatus", activeStatuses)
