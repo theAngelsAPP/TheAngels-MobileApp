@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -18,6 +21,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.firebase.firestore.ListenerRegistration;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
+import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 import java.util.Arrays;
 import java.util.List;
 import com.shuhart.stepview.StepView;
@@ -25,6 +29,7 @@ import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
+import com.airbnb.lottie.LottieAnimationView;
 // =======================================
 // EventUserActivity - Handles the live event screen, step progression, and user feedback
 // =======================================
@@ -42,6 +47,10 @@ public class EventUserActivity extends BaseActivity {
     private Button nextStepButton;
     private Button volview;
     private Button emergencyCallButton;
+    private LinearLayout volunteerInfoLayout;
+    private ImageView volunteerImage;
+    private TextView volunteerName;
+    private LottieAnimationView volunteerAnimation;
     private LinearLayout ratingLayout;
     private LinearLayout safetyMessageLayout;
     private RatingBar ratingBar;
@@ -53,6 +62,8 @@ public class EventUserActivity extends BaseActivity {
     private int currentStep = 0;
     private boolean isRunning = true;
     private int seconds = 0;
+    private long eventStartMillis = -1L;
+    private String previousStatus = null;
     private Handler handler = new Handler();
 
     private List<String> statuses;
@@ -84,6 +95,10 @@ public class EventUserActivity extends BaseActivity {
         freeTextFeedback = findViewById(R.id.freeTextFeedback);
         submitFeedbackButton = findViewById(R.id.submitFeedbackButton);
         mapContainer = findViewById(R.id.map_container);
+        volunteerInfoLayout = findViewById(R.id.volunteerInfoLayout);
+        volunteerImage = findViewById(R.id.volunteerImage);
+        volunteerName = findViewById(R.id.volunteerName);
+        volunteerAnimation = findViewById(R.id.volunteerAnimation);
 
         // Step statuses (translated from strings.xml)
         statuses = Arrays.asList(
@@ -122,15 +137,30 @@ public class EventUserActivity extends BaseActivity {
             eventListener = EventDataManager.listenToEvent(eventId, (snapshot, e) -> {
                 if (e == null && snapshot != null && snapshot.exists()) {
                     Event event = snapshot.toObject(Event.class);
-                    if (event != null && event.getEventStatus() != null) {
-                        statusTextView.setText(event.getEventStatus());
-                        java.util.List<String> sts = java.util.Arrays.asList(
-                                getString(R.string.status_looking_for_volunteer),
-                                getString(R.string.status_volunteer_on_the_way),
-                                getString(R.string.status_volunteer_arrived),
-                                getString(R.string.status_event_finished));
-                        int i = sts.indexOf(event.getEventStatus());
-                        if (i >= 0) updateStep(i);
+                    if (event != null) {
+                        if (event.getEventTimeStarted() != null && eventStartMillis == -1L) {
+                            eventStartMillis = event.getEventTimeStarted().toDate().getTime();
+                        }
+
+                        String status = event.getEventStatus();
+                        if (status != null) {
+                            statusTextView.setText(status);
+                            java.util.List<String> sts = java.util.Arrays.asList(
+                                    getString(R.string.status_looking_for_volunteer),
+                                    getString(R.string.status_volunteer_on_the_way),
+                                    getString(R.string.status_volunteer_arrived),
+                                    getString(R.string.status_event_finished));
+                            int i = sts.indexOf(status);
+                            if (i >= 0) updateStep(i);
+
+                            if ((previousStatus != null &&
+                                    previousStatus.equals(getString(R.string.status_looking_for_volunteer)) &&
+                                    status.equals(getString(R.string.status_volunteer_on_the_way))) ||
+                                    (previousStatus == null && status.equals(getString(R.string.status_volunteer_on_the_way)))) {
+                                triggerVolunteerAssigned(event.getEventHandleBy());
+                            }
+                            previousStatus = status;
+                        }
                     }
                 }
             });
@@ -152,15 +182,17 @@ public class EventUserActivity extends BaseActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                int minutes = seconds / 60;
-                int secs = seconds % 60;
+                long elapsed;
+                if (eventStartMillis > 0) {
+                    elapsed = (System.currentTimeMillis() - eventStartMillis) / 1000;
+                } else {
+                    elapsed = seconds;
+                    if (isRunning) seconds++;
+                }
+                int minutes = (int) (elapsed / 60);
+                int secs = (int) (elapsed % 60);
                 String timeFormatted = String.format("%02d:%02d", minutes, secs);
                 timerTextView.setText(timeFormatted);
-
-                if (isRunning) {
-                    seconds++;
-                }
-
                 handler.postDelayed(this, 1000);
             }
         });
@@ -214,6 +246,34 @@ public class EventUserActivity extends BaseActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.map_container, mapFragment);
         transaction.commit();
+    }
+
+    private void triggerVolunteerAssigned(String uid) {
+        if (uid == null) return;
+        Vibrator v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        if (v != null) {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                v.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                v.vibrate(300);
+            }
+        }
+        volunteerInfoLayout.setVisibility(View.VISIBLE);
+        if (volunteerAnimation != null) {
+            volunteerAnimation.playAnimation();
+        }
+        UserDataManager.loadBasicUserInfo(uid, info -> {
+            if (info != null) {
+                volunteerName.setText(info.getFirstName() + " " + info.getLastName());
+                String url = info.getImageURL();
+                if (url != null && !url.isEmpty()) {
+                    com.bumptech.glide.Glide.with(this)
+                            .load(url)
+                            .placeholder(R.drawable.newuserpic)
+                            .into(volunteerImage);
+                }
+            }
+        });
     }
 
     // =======================================

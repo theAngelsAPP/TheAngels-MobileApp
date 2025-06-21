@@ -38,6 +38,7 @@ public class EventVolActivity extends BaseActivity {
     private Button nextStepButton;
     private boolean isRunning = true;
     private int seconds = 0;
+    private long eventStartMillis = -1L;
     private Handler handler = new Handler();
     private FrameLayout mapContainer;
     private int currentStep = 0;
@@ -83,15 +84,20 @@ public class EventVolActivity extends BaseActivity {
             eventListener = EventDataManager.listenToEvent(eventId, (snapshot, e) -> {
                 if (e == null && snapshot != null && snapshot.exists()) {
                     Event event = snapshot.toObject(Event.class);
-                    if (event != null && event.getEventStatus() != null) {
-                        java.util.List<String> statuses = java.util.Arrays.asList(
-                                getString(R.string.status_looking_for_volunteer),
-                                getString(R.string.status_volunteer_on_the_way),
-                                getString(R.string.status_volunteer_arrived),
-                                getString(R.string.status_event_finished)
-                        );
-                        int idx = statuses.indexOf(event.getEventStatus());
-                        if (idx >= 0 && idx < 3) updateStep(idx);
+                    if (event != null) {
+                        if (event.getEventTimeStarted() != null && eventStartMillis == -1L) {
+                            eventStartMillis = event.getEventTimeStarted().toDate().getTime();
+                        }
+                        if (event.getEventStatus() != null) {
+                            java.util.List<String> statuses = java.util.Arrays.asList(
+                                    getString(R.string.status_looking_for_volunteer),
+                                    getString(R.string.status_volunteer_on_the_way),
+                                    getString(R.string.status_volunteer_arrived),
+                                    getString(R.string.status_event_finished)
+                            );
+                            int idx = statuses.indexOf(event.getEventStatus());
+                            if (idx >= 0 && idx < 3) updateStep(idx);
+                        }
                     }
                 }
             });
@@ -166,14 +172,17 @@ public class EventVolActivity extends BaseActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                int minutes = seconds / 60;
-                int secs = seconds % 60;
+                long elapsed;
+                if (eventStartMillis > 0) {
+                    elapsed = (System.currentTimeMillis() - eventStartMillis) / 1000;
+                } else {
+                    elapsed = seconds;
+                    if (isRunning) seconds++;
+                }
+                int minutes = (int) (elapsed / 60);
+                int secs = (int) (elapsed % 60);
                 String timeFormatted = String.format("%02d:%02d", minutes, secs);
                 timerTextView.setText(timeFormatted);
-
-                if (isRunning) {
-                    seconds++;
-                }
 
                 handler.postDelayed(this, 1000);
             }
