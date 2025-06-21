@@ -53,7 +53,10 @@ public class MyDetailsActivity extends AppCompatActivity {
         UserSession session = UserSession.getInstance();
         if (session.getFirstName() != null) etFirstName.setText(session.getFirstName());
         if (session.getLastName() != null) etLastName.setText(session.getLastName());
-        if (session.getBirthDate() != null) etBirthDate.setText(session.getBirthDate());
+        if (session.getBirthDate() != null) {
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.getDefault());
+            etBirthDate.setText(sdf.format(session.getBirthDate()));
+        }
         if (session.getIdNumber() != null) etIdNumber.setText(session.getIdNumber());
         if (session.getCity() != null) etCity.setText(session.getCity());
         if (session.getEmail() != null) etEmail.setText(session.getEmail());
@@ -69,7 +72,13 @@ public class MyDetailsActivity extends AppCompatActivity {
             Map<String, Object> updates = new HashMap<>();
             updates.put("firstName", etFirstName.getText().toString().trim());
             updates.put("lastName", etLastName.getText().toString().trim());
-            updates.put("birthDate", etBirthDate.getText().toString().trim());
+            try {
+                java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.getDefault());
+                java.util.Date d = sdf.parse(etBirthDate.getText().toString().trim());
+                updates.put("birthDate", d);
+            } catch (Exception e) {
+                updates.put("birthDate", null);
+            }
             updates.put("city", etCity.getText().toString().trim());
             updates.put("Email", etEmail.getText().toString().trim());
             updates.put("Phone", etPhone.getText().toString().trim());

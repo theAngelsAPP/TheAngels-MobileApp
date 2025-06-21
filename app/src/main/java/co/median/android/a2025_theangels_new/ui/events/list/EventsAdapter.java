@@ -23,7 +23,7 @@ import com.bumptech.glide.Glide;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.models.Event;
-import co.median.android.a2025_theangels_new.data.models.UserBasicInfo;
+import co.median.android.a2025_theangels_new.data.models.UserSession;
 import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 
 public class EventsAdapter extends ArrayAdapter<Event> {
@@ -33,7 +33,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
     private int resource;
     private Map<String, String> eventTypeImages;
     private Map<String, String> eventStatusColors;
-    private Map<String, UserBasicInfo> volunteerCache = new HashMap<>();
+    private Map<String, UserSession> volunteerCache = new HashMap<>();
 
 
     public EventsAdapter(Context context, int resource, ArrayList<Event> events) {
@@ -103,7 +103,7 @@ public class EventsAdapter extends ArrayAdapter<Event> {
             String uid = event.getEventHandleBy();
             if (uid != null && !uid.isEmpty()) {
                 if (volunteerCache.containsKey(uid)) {
-                    UserBasicInfo info = volunteerCache.get(uid);
+                    UserSession info = volunteerCache.get(uid);
                     if (info != null) {
                         volunteerName.setText(info.getFirstName() + " " + info.getLastName());
                         if (info.getImageURL() != null && !info.getImageURL().isEmpty()) {

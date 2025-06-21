@@ -172,7 +172,13 @@ public class RegistrationActivity extends AppCompatActivity {
         userData.put("idNumber", idNumber.getText().toString().trim());
         userData.put("Email", email.getText().toString().trim());
         userData.put("Phone", phone.getText().toString().trim());
-        userData.put("birthDate", selectedBirthDate);
+        try {
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy", java.util.Locale.getDefault());
+            java.util.Date d = sdf.parse(selectedBirthDate);
+            userData.put("birthDate", d);
+        } catch (Exception e) {
+            userData.put("birthDate", null);
+        }
         userData.put("haveGunLicense", weaponLicenseCheckBox.isChecked());
         userData.put("imageURL", imageUrl);
         userData.put("medicalDetails", medicalSelections);

@@ -3,6 +3,7 @@
  */
 package co.median.android.a2025_theangels_new.data.models;
 
+import java.util.Date;
 import java.util.List;
 
 public class UserSession {
@@ -14,7 +15,7 @@ public class UserSession {
     /** מספר הטלפון של המשתמש */
     private String phone;
     /** תאריך לידה */
-    private String birthDate;
+    private Date birthDate;
     /** עיר מגורים */
     private String city;
     /** שם פרטי */
@@ -32,8 +33,28 @@ public class UserSession {
     /** תפקיד המשתמש במערכת */
     private String role;
 
+    /** זמינות כמתנדב - ימי השבוע */
+    private List<String> volAvailable;
+    /** ערים בהן מתנדב פועל */
+    private List<String> volCities;
+    /** האם למתנדב יש רישיון נהיגה */
+    private Boolean volHaveDriverLicense;
+    /** קישור להוכחת התנדבות */
+    private String volVerification;
+    /** תחומי התנדבות */
+    private List<String> volSpecialty;
+
     /** בנאי פרטי למניעת יצירת מופעים נוספים */
     private UserSession() {}
+
+    /**
+     * בנאי ליצירת אובייקט עם מידע בסיסי בלבד
+     */
+    public UserSession(String firstName, String lastName, String imageURL) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.imageURL = imageURL;
+    }
 
     /**
      * @return המופע היחיד של UserSession
@@ -48,9 +69,12 @@ public class UserSession {
     /**
      * מאתחל את נתוני המשתמש שנשלפו מהמסד.
      */
-    public void initialize(String email, String phone, String birthDate, String city,
+    public void initialize(String email, String phone, Date birthDate, String city,
                            String firstName, boolean haveGunLicense, String idNumber,
-                           String imageURL, String lastName, List<String> medicalDetails, String role) {
+                           String imageURL, String lastName, List<String> medicalDetails, String role,
+                           List<String> volAvailable, List<String> volCities,
+                           Boolean volHaveDriverLicense, String volVerification,
+                           List<String> volSpecialty) {
         this.email = email;
         this.phone = phone;
         this.birthDate = birthDate;
@@ -62,6 +86,11 @@ public class UserSession {
         this.lastName = lastName;
         this.medicalDetails = medicalDetails;
         this.role = role;
+        this.volAvailable = volAvailable;
+        this.volCities = volCities;
+        this.volHaveDriverLicense = volHaveDriverLicense;
+        this.volVerification = volVerification;
+        this.volSpecialty = volSpecialty;
     }
 
     /** @return כתובת האימייל */
@@ -69,7 +98,7 @@ public class UserSession {
     /** @return מספר הטלפון */
     public String getPhone() { return phone; }
     /** @return תאריך הלידה */
-    public String getBirthDate() { return birthDate; }
+    public Date getBirthDate() { return birthDate; }
     /** @return עיר המגורים */
     public String getCity() { return city; }
     /** @return שם פרטי */
@@ -86,6 +115,21 @@ public class UserSession {
     public List<String> getMedicalDetails() { return medicalDetails; }
     /** @return תפקיד המשתמש */
     public String getRole() { return role; }
+
+    /** @return זמינות כמתנדב */
+    public List<String> getVolAvailable() { return volAvailable; }
+
+    /** @return ערי ההתנדבות */
+    public List<String> getVolCities() { return volCities; }
+
+    /** @return האם יש רישיון נהיגה */
+    public Boolean getVolHaveDriverLicense() { return volHaveDriverLicense; }
+
+    /** @return קישור להוכחת ההתנדבות */
+    public String getVolVerification() { return volVerification; }
+
+    /** @return תחומי ההתנדבות */
+    public List<String> getVolSpecialty() { return volSpecialty; }
 
     /** נקה את המופע המאוחסן */
     public void clear() {

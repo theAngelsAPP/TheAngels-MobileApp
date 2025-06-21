@@ -11,8 +11,6 @@ public class EventType {
     private String typeName;
     /** כתובת אייקון/תמונה לסוג */
     private String typeImageURL;
-    /** צבע ברירת מחדל להצגה */
-    private String typeColor;
     /** רשימת שאלות הקשורות לסוג האירוע */
     private List<String> questions;
 
@@ -41,15 +39,6 @@ public class EventType {
         this.typeImageURL = typeImageURL;
     }
 
-    /** @return צבע הסוג */
-    public String getTypeColor() {
-        return typeColor;
-    }
-
-    /** @param typeColor צבע הסוג */
-    public void setTypeColor(String typeColor) {
-        this.typeColor = typeColor;
-    }
 
     /** @return שאלות ברירת המחדל לסוג */
     public List<String> getQuestions() {
