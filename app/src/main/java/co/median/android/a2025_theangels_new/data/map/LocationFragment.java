@@ -49,8 +49,12 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
     private Marker locationMarker;
     private LinearLayout locationBox;
     private TextView tvAddress;
+    private LinearLayout manualInputContainer;
     private TextInputEditText etManualAddress;
     private Button btnManualLocation;
+    private Button btnConfirmManual;
+    private Button btnUseCurrent;
+    private TextView tvManualMode;
     private boolean manualMode = false;
     private LatLng manualLatLng;
 
@@ -81,8 +85,12 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        manualInputContainer = view.findViewById(R.id.manual_input_container);
         etManualAddress = view.findViewById(R.id.etManualAddress);
         btnManualLocation = view.findViewById(R.id.btnManualLocation);
+        btnConfirmManual = view.findViewById(R.id.btnConfirmManual);
+        btnUseCurrent = view.findViewById(R.id.btnUseCurrent);
+        tvManualMode = view.findViewById(R.id.tv_manual_mode);
         locationBox = view.findViewById(R.id.location_box);
         tvAddress = view.findViewById(R.id.tv_current_address);
         locationService = new LocationService(requireContext());
@@ -94,11 +102,21 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         }
 
         btnManualLocation.setOnClickListener(v -> {
-            if (etManualAddress.getVisibility() == View.GONE) {
-                etManualAddress.setVisibility(View.VISIBLE);
+            if (manualInputContainer.getVisibility() == View.GONE) {
+                manualInputContainer.setVisibility(View.VISIBLE);
             } else {
-                etManualAddress.setVisibility(View.GONE);
+                manualInputContainer.setVisibility(View.GONE);
             }
+        });
+
+        btnConfirmManual.setOnClickListener(v -> handleManualAddress());
+
+        btnUseCurrent.setOnClickListener(v -> {
+            manualMode = false;
+            manualLatLng = null;
+            tvManualMode.setVisibility(View.GONE);
+            manualInputContainer.setVisibility(View.GONE);
+            startLocationUpdates();
         });
 
         etManualAddress.setOnEditorActionListener((v1, actionId, event) -> {
@@ -114,6 +132,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
         applyCustomStyle();
+        mMap.setOnMapClickListener(this::handleMapSelection);
+        mMap.setOnMapLongClickListener(this::handleMapSelection);
         checkPermission();
     }
 
@@ -131,6 +151,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         mapView.setVisibility(View.VISIBLE);
         locationBox.setVisibility(View.GONE);
         if (!manualMode) {
+            manualInputContainer.setVisibility(View.GONE);
+            tvManualMode.setVisibility(View.GONE);
             startLocationUpdates();
         }
     }
@@ -202,6 +224,9 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         }
         MapHelper.moveCamera(mMap, pos, 15f);
         tvAddress.setText(address);
+        tvManualMode.setVisibility(View.VISIBLE);
+        manualInputContainer.setVisibility(View.GONE);
+        etManualAddress.setText(address);
     }
 
     private void handleManualAddress() {
@@ -216,8 +241,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
                 if ("IL".equalsIgnoreCase(addr.getCountryCode())) {
                     LatLng pos = new LatLng(addr.getLatitude(), addr.getLongitude());
                     updateManualLocation(pos, addr.getAddressLine(0));
-                    etManualAddress.setVisibility(View.GONE);
                     Toast.makeText(requireContext(), R.string.location_updated, Toast.LENGTH_SHORT).show();
+                    manualInputContainer.setVisibility(View.GONE);
                     return;
                 } else {
                     Toast.makeText(requireContext(), R.string.invalid_israel_address, Toast.LENGTH_SHORT).show();
@@ -228,6 +253,12 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         } catch (Exception e) {
             Toast.makeText(requireContext(), R.string.address_lookup_error, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void handleMapSelection(LatLng pos) {
+        String address = AddressHelper.getAddressFromLatLng(requireContext(), pos.latitude, pos.longitude);
+        if (address == null) address = getString(R.string.address_not_found);
+        updateManualLocation(pos, address);
     }
 
     private void applyCustomStyle() {
