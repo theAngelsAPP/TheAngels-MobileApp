@@ -15,10 +15,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/volDashboard"
+            style="@style/Card.Info"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="5dp"
-            android:background="@drawable/event_row_background"
             android:gravity="center"
             android:layout_marginBottom="16dp">
 
@@ -143,11 +143,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/notification_background"
+            style="@style/Card.Warning"
             android:orientation="horizontal"
             android:padding="12dp"
             android:gravity="center_vertical"
-            android:elevation="4dp"
             android:layout_marginBottom="16dp"
             android:visibility="gone">
 
@@ -183,13 +182,12 @@
 
         <LinearLayout
             android:id="@+id/location_permission_container"
+            style="@style/Card.Warning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/location_permission_background"
             android:orientation="horizontal"
             android:padding="12dp"
             android:gravity="center_vertical"
-            android:elevation="4dp"
             android:layout_marginBottom="16dp"
             android:visibility="gone">
 
@@ -241,11 +239,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/good_to_know_background"
+            style="@style/Card.Info"
             android:orientation="horizontal"
             android:padding="12dp"
             android:gravity="center_vertical"
-            android:elevation="4dp"
             android:layout_marginBottom="16dp">
 
             <ImageView
@@ -283,10 +280,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/event_item_background"
+            style="@style/Card.Default"
             android:orientation="vertical"
             android:padding="12dp"
-            android:elevation="4dp"
             android:layout_marginBottom="16dp">
 
             <TextView
