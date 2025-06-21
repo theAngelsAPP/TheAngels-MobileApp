@@ -126,6 +126,8 @@
     <string name="retrieving_address">טוען כתובת...</string>
     <string name="manual_location_button">בחירת מיקום ידנית</string>
     <string name="invalid_israel_address">אנא הזן כתובת חוקית בישראל</string>
+    <string name="use_current_location">השתמש במיקום הנוכחי</string>
+    <string name="manual_mode_label">מצב בחירה ידני פעיל</string>
 
 
 
