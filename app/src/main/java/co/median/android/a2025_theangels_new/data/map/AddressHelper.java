@@ -1,4 +1,4 @@
-package co.median.android.a2025_theangels_new.maps;
+package co.median.android.a2025_theangels_new.data.map;
 
 import android.content.Context;
 import android.location.Address;
