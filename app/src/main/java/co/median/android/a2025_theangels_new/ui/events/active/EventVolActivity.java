@@ -18,6 +18,8 @@ import android.os.Handler;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
+import co.median.android.a2025_theangels_new.data.map.AddressHelper;
+import com.google.firebase.firestore.GeoPoint;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import com.google.firebase.firestore.ListenerRegistration;
@@ -44,6 +46,7 @@ public class EventVolActivity extends BaseActivity {
     private int currentStep = 0;
 
     private String eventId;
+    private GeoPoint eventLocation;
 
     private List<Fragment> stepFragments;
 
@@ -75,7 +78,7 @@ public class EventVolActivity extends BaseActivity {
 
         startTimer();
         setupStepView();
-        setupMap();
+        // map will be updated once event data arrives
 
         initFragments();
         loadStepFragment(0);
@@ -85,6 +88,15 @@ public class EventVolActivity extends BaseActivity {
                 if (e == null && snapshot != null && snapshot.exists()) {
                     Event event = snapshot.toObject(Event.class);
                     if (event != null) {
+                        eventLocation = event.getEventLocation();
+                        if (eventLocation != null) {
+                            updateMap(eventLocation.getLatitude(), eventLocation.getLongitude());
+                            String addr = AddressHelper.getAddressFromLatLng(this, eventLocation.getLatitude(), eventLocation.getLongitude());
+                            if (addr != null) {
+                                TextView tv = findViewById(R.id.eventAddressText);
+                                if (tv != null) tv.setText(addr);
+                            }
+                        }
                         if (event.getEventTimeStarted() != null && eventStartMillis == -1L) {
                             eventStartMillis = event.getEventTimeStarted().toDate().getTime();
                         }
@@ -123,11 +135,8 @@ public class EventVolActivity extends BaseActivity {
     // =======================================
     // setupMap - Initializes static map fragment with event location
     // =======================================
-    private void setupMap() {
-        double eventLat = 31.8912;
-        double eventLng = 34.8115;
-
-        StaticMapFragment mapFragment = StaticMapFragment.newInstance(eventLat, eventLng);
+    private void updateMap(double lat, double lng) {
+        StaticMapFragment mapFragment = StaticMapFragment.newInstance(lat, lng);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.map_container, mapFragment);
         transaction.commit();
@@ -148,11 +157,16 @@ public class EventVolActivity extends BaseActivity {
     // =======================================
     // updateStep - Updates StepView and replaces fragment according to current step
     // =======================================
-    private void updateStep(int step) {
+    public void updateStep(int step) {
         if (stepView != null) {
             stepView.go(step, true);
             loadStepFragment(step);
         }
+    }
+
+    public void advanceToStep(int step) {
+        currentStep = step;
+        updateStep(step);
     }
 
     // =======================================

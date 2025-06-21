@@ -93,10 +93,15 @@ public class VolStatusFragment extends Fragment {
             btnStreetView.setOnClickListener(v -> openStreetView());
         }
         if (btnCancel != null) {
-            btnCancel.setOnClickListener(v -> updateStatus(getString(R.string.status_event_finished)));
+            btnCancel.setOnClickListener(v -> showCancelDialog());
         }
         if (btnArrived != null) {
-            btnArrived.setOnClickListener(v -> updateStatus(getString(R.string.status_volunteer_arrived)));
+            btnArrived.setOnClickListener(v -> {
+                updateStatus(getString(R.string.status_volunteer_arrived));
+                if (getActivity() instanceof EventVolActivity) {
+                    ((EventVolActivity) getActivity()).advanceToStep(2);
+                }
+            });
         }
     }
 
@@ -115,6 +120,23 @@ public class VolStatusFragment extends Fragment {
         MapHelper.openStreetView(requireContext(), 0.0, 0.0);
     }
 
+    private void showCancelDialog() {
+        final android.widget.EditText input = new android.widget.EditText(requireContext());
+        input.setHint(getString(R.string.close_event_other_hint));
+        new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                .setTitle(getString(R.string.close_event_dialog_title))
+                .setView(input)
+                .setPositiveButton(getString(R.string.close_event_confirm), (d, w) -> {
+                    String reason = input.getText().toString().trim();
+                    updateStatusWithReason(getString(R.string.status_event_finished), reason);
+                    if (getActivity() instanceof EventVolActivity) {
+                        ((EventVolActivity) getActivity()).advanceToStep(2);
+                    }
+                })
+                .setNegativeButton(getString(R.string.close_event_cancel), null)
+                .show();
+    }
+
     private void updateStatus(String status) {
         if (eventId == null) return;
         java.util.Map<String, Object> updates = new java.util.HashMap<>();
@@ -122,6 +144,17 @@ public class VolStatusFragment extends Fragment {
         if (status.equals(getString(R.string.status_event_finished))) {
             updates.put("eventTimeEnded", com.google.firebase.firestore.FieldValue.serverTimestamp());
         }
-        EventDataManager.updateEvent(eventId, updates, null, null);
+        EventDataManager.updateEvent(eventId, updates, null,
+                e -> android.widget.Toast.makeText(requireContext(), R.string.error_title, android.widget.Toast.LENGTH_SHORT).show());
+    }
+
+    private void updateStatusWithReason(String status, String reason) {
+        if (eventId == null) return;
+        java.util.Map<String, Object> updates = new java.util.HashMap<>();
+        updates.put("eventStatus", status);
+        updates.put("eventCloseReason", reason);
+        updates.put("eventTimeEnded", com.google.firebase.firestore.FieldValue.serverTimestamp());
+        EventDataManager.updateEvent(eventId, updates, null,
+                e -> android.widget.Toast.makeText(requireContext(), R.string.error_title, android.widget.Toast.LENGTH_SHORT).show());
     }
 }
