@@ -22,6 +22,7 @@ import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.AddressHelper;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.events.active.EventVolActivity;
+import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 
 public class OpenEventsAdapter extends ArrayAdapter<Event> {
 
@@ -29,6 +30,7 @@ public class OpenEventsAdapter extends ArrayAdapter<Event> {
     private final ArrayList<Event> events;
     private final ArrayList<String> ids;
     private final int resource;
+    private final java.util.Map<String, String> volunteerNames = new java.util.HashMap<>();
     private final Handler timerHandler = new Handler(Looper.getMainLooper());
     private final Runnable timerRunnable = new Runnable() {
         @Override
@@ -78,6 +80,7 @@ public class OpenEventsAdapter extends ArrayAdapter<Event> {
         TextView address = convertView.findViewById(R.id.open_event_address);
         TextView time = convertView.findViewById(R.id.open_event_time);
         TextView timer = convertView.findViewById(R.id.open_event_timer);
+        TextView volunteer = convertView.findViewById(R.id.open_event_volunteer);
 
         if (event != null) {
             type.setText(event.getEventType());
@@ -95,6 +98,25 @@ public class OpenEventsAdapter extends ArrayAdapter<Event> {
                 long diff = (System.currentTimeMillis() - d.getTime()) / 1000;
                 String t = String.format(Locale.getDefault(), "%02d:%02d", diff / 60, diff % 60);
                 timer.setText(t);
+            }
+
+            String uid = event.getEventHandleBy();
+            if (uid != null && !uid.isEmpty()) {
+                String name = volunteerNames.get(uid);
+                if (name != null) {
+                    volunteer.setText(name);
+                } else {
+                    volunteer.setText("");
+                    UserDataManager.loadBasicUserInfo(uid, info -> {
+                        if (info != null) {
+                            String n = info.getFirstName() + " " + info.getLastName();
+                            volunteerNames.put(uid, n);
+                            volunteer.setText(n);
+                        }
+                    });
+                }
+            } else {
+                volunteer.setText("");
             }
         }
 
