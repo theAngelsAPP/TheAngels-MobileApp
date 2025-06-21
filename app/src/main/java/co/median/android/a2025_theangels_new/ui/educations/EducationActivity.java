@@ -14,6 +14,7 @@ import co.median.android.a2025_theangels_new.data.models.Education;
 import co.median.android.a2025_theangels_new.data.models.EventType;
 import co.median.android.a2025_theangels_new.data.services.EducationDataManager;
 import co.median.android.a2025_theangels_new.data.services.EventTypeDataManager;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 public class EducationActivity extends BaseActivity {
 

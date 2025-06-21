@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 // =======================================
 // EducationDetailsActivity - Shows detailed education content and handles back navigation
