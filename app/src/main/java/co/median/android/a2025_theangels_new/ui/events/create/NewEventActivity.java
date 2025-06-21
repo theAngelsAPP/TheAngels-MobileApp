@@ -25,6 +25,7 @@ import com.shuhart.stepview.StepView;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import java.util.Arrays;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 // =======================================
 // NewEventActivity - Multi-step form for creating a new event

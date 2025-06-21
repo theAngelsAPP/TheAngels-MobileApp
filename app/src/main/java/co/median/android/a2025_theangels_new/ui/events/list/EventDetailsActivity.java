@@ -28,6 +28,7 @@ import co.median.android.a2025_theangels_new.data.models.UserBasicInfo;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 import com.bumptech.glide.Glide;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 // =======================================
 // EventDetailsActivity - Displays event details screen including a static map

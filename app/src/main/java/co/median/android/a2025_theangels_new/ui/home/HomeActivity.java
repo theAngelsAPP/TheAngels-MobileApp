@@ -36,6 +36,7 @@ import co.median.android.a2025_theangels_new.data.map.MapFragment;
 import co.median.android.a2025_theangels_new.data.models.UserSession;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.events.list.RecentEventsAdapter;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 // =======================================
 // HomeActivity - Displays the home screen and handles location permission logic
