@@ -16,6 +16,14 @@ public class MyApplication extends Application {
      */
     @Override
     public void onCreate() {
+        // Configure Flogger to use the Android backend before any
+        // libraries emit log messages. This prevents the frequent
+        // "Too many Flogger logs received before configuration" warnings
+        // that were appearing in Logcat.
+        System.setProperty(
+                "flogger.backend_factory",
+                "com.google.common.flogger.backend.android.AndroidBackendFactory");
+
         super.onCreate();
         FirebaseApp.initializeApp(this);
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
