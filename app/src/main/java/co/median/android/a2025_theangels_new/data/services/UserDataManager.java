@@ -174,4 +174,32 @@ public class UserDataManager {
                     callback.accept(null);
                 });
     }
+
+    /**
+     * יוצר משתמש חדש במסד הנתונים.
+     */
+    public static void createUser(String uid, Map<String, Object> data, Runnable onSuccess, Consumer<Exception> onError) {
+        db.collection("users").document(uid).set(data)
+                .addOnSuccessListener(unused -> { if (onSuccess != null) onSuccess.run(); })
+                .addOnFailureListener(e -> { if (onError != null) onError.accept(e); });
+    }
+
+    /**
+     * טוען את רשימת אפשרויות המצב הרפואי הזמינות.
+     */
+    public static void loadMedicalDetails(Consumer<java.util.List<String>> callback) {
+        db.collection("medicalDetails").get()
+                .addOnSuccessListener(querySnapshot -> {
+                    java.util.List<String> list = new java.util.ArrayList<>();
+                    for (QueryDocumentSnapshot doc : querySnapshot) {
+                        String name = doc.getString("name");
+                        if (name != null) list.add(name);
+                    }
+                    callback.accept(list);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e(TAG, "שגיאה בטעינת פרטי רפואה", e);
+                    callback.accept(new java.util.ArrayList<>());
+                });
+    }
 }

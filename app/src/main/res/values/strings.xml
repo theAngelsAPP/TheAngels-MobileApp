@@ -221,4 +221,10 @@
     <string name="city_search_hint">הקלד עיר לחיפוש</string>
     <string name="city_already_selected">העיר כבר נבחרה</string>
     <string name="education_not_found">תוכן ההדרכה לא נמצא</string>
+    <string name="error_loading_educations">שגיאה בטעינת ההדרכות</string>
+    <string name="error_loading_events">שגיאה בטעינת האירועים</string>
+    <string name="registration_success">נרשמת בהצלחה!</string>
+    <string name="error_select_city">שגיאה בבחירת עיר: %1$s</string>
+    <string name="fill_details_correctly">נא למלא את כל הפרטים כראוי</string>
+    <string name="error_generic">שגיאה: %1$s</string>
 </resources>

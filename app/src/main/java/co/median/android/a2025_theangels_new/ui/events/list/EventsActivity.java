@@ -93,7 +93,7 @@ public class EventsActivity extends BaseActivity {
             @Override
             public void onError(Exception e) {
                 Log.e(TAG, "Error loading events from Firestore", e);
-                Toast.makeText(EventsActivity.this, "שגיאה בטעינת האירועים", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EventsActivity.this, R.string.error_loading_events, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -77,7 +77,7 @@ public class EducationActivity extends BaseActivity {
             @Override
             public void onError(Exception e) {
                 Log.e(TAG, "Error loading educations from Firestore", e);
-                Toast.makeText(EducationActivity.this, "שגיאה בטעינת ההדרכות", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EducationActivity.this, R.string.error_loading_educations, Toast.LENGTH_SHORT).show();
             }
         });
     }

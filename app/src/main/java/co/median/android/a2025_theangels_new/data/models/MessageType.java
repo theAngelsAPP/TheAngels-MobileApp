@@ -3,7 +3,13 @@
  */
 package co.median.android.a2025_theangels_new.data.models;
 
+import com.google.firebase.firestore.DocumentId;
+
 public class MessageType {
+
+    /** מזהה המסמך */
+    @DocumentId
+    private String id;
 
     /** שם הסוג */
     private String typeName;
@@ -46,4 +52,10 @@ public class MessageType {
     public void setIconURL(String iconURL) {
         this.iconURL = iconURL;
     }
+
+    /** @return מזהה המסמך */
+    public String getId() { return id; }
+
+    /** @param id מזהה המסמך */
+    public void setId(String id) { this.id = id; }
 }

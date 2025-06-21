@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import co.median.android.a2025_theangels_new.databinding.ActivityRegistrationBinding;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
@@ -19,8 +20,6 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -29,9 +28,11 @@ import java.util.*;
 import okhttp3.*;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.ui.main.MainActivity;
+import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 
 public class RegistrationActivity extends AppCompatActivity {
 
+    private ActivityRegistrationBinding binding;
     private EditText firstName, lastName, idNumber, email, phone, password, confirmPassword;
     private Button selectBirthDateButton, selectImageButton, registerButton;
     private CheckBox weaponLicenseCheckBox;
@@ -44,7 +45,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private static final int CITY_AUTOCOMPLETE_REQUEST = 2;
     private Bitmap selectedImageBitmap = null;
     private String selectedBirthDate = "";
-    private FirebaseFirestore db;
     private FirebaseAuth auth;
 
     private final String IMGUR_CLIENT_ID = "47eaf978d864043";
@@ -52,25 +52,25 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        binding = ActivityRegistrationBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
 
-        firstName = findViewById(R.id.firstNameEditText);
-        lastName = findViewById(R.id.lastNameEditText);
-        idNumber = findViewById(R.id.idNumberEditText);
-        email = findViewById(R.id.emailEditText);
-        phone = findViewById(R.id.phoneEditText);
-        password = findViewById(R.id.passwordEditText);
-        confirmPassword = findViewById(R.id.confirmPasswordEditText);
-        selectBirthDateButton = findViewById(R.id.selectBirthDateButton);
-        selectImageButton = findViewById(R.id.selectImageButton);
-        registerButton = findViewById(R.id.registerButton);
-        weaponLicenseCheckBox = findViewById(R.id.weaponLicenseCheckBox);
-        profileImageView = findViewById(R.id.profileImageView);
-        medicalOptionsGroup = findViewById(R.id.medicalOptions);
-        cityEditText = findViewById(R.id.cityEditText);
+        firstName = binding.firstNameEditText;
+        lastName = binding.lastNameEditText;
+        idNumber = binding.idNumberEditText;
+        email = binding.emailEditText;
+        phone = binding.phoneEditText;
+        password = binding.passwordEditText;
+        confirmPassword = binding.confirmPasswordEditText;
+        selectBirthDateButton = binding.selectBirthDateButton;
+        selectImageButton = binding.selectImageButton;
+        registerButton = binding.registerButton;
+        weaponLicenseCheckBox = binding.weaponLicenseCheckBox;
+        profileImageView = binding.profileImageView;
+        medicalOptionsGroup = binding.medicalOptions;
+        cityEditText = binding.cityEditText;
         // פותח את ממשק החיפוש של גוגל כאשר המשתמש לוחץ על שדה העיר
         cityEditText.setOnClickListener(v ->
                 AutocompleteHelper.openCityAutocomplete(this, CITY_AUTOCOMPLETE_REQUEST));
@@ -100,7 +100,7 @@ public class RegistrationActivity extends AppCompatActivity {
         Log.d("Registration", "handleRegister called");
 
         if (!validateInputs()) {
-            Toast.makeText(this, "נא למלא את כל הפרטים כראוי", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.fill_details_correctly), Toast.LENGTH_SHORT).show();
             Log.e("Registration", "Input validation failed");
             return;
         }
@@ -118,7 +118,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         uploadImageToImgur(imageUrl -> saveUserData(uid, imageUrl));
                     } else {
                         Log.e("Registration", "Firebase registration failed: " + task.getException());
-                        Toast.makeText(this, "שגיאה: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.error_generic, task.getException().getMessage()), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -192,16 +192,16 @@ public class RegistrationActivity extends AppCompatActivity {
         userData.put("city", selectedCity);
         userData.put("role", "משתמש");
 
-        db.collection("users").document(uid).set(userData)
-                .addOnSuccessListener(unused -> {
+        UserDataManager.createUser(uid, userData,
+                () -> {
                     Log.d("Registration", "User data saved successfully");
-                    Toast.makeText(this, "נרשמת בהצלחה!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.registration_success), Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(this, MainActivity.class));
                     finish();
-                })
-                .addOnFailureListener(e -> {
+                },
+                e -> {
                     Log.e("Registration", "Failed to save user data: " + e.getMessage());
-                    Toast.makeText(this, "שגיאה בשמירת הנתונים", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.error_saving_details), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -245,17 +245,17 @@ public class RegistrationActivity extends AppCompatActivity {
                 cityEditText.setText(selectedCity);
             } else if (resultCode == AutocompleteActivity.RESULT_ERROR && data != null) {
                 Status status = AutocompleteHelper.getErrorStatus(data);
-                Toast.makeText(this, "שגיאה בבחירת עיר: " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.error_select_city, status.getStatusMessage()), Toast.LENGTH_SHORT).show();
             }
         }
     }
 
 
     private void loadMedicalDetails() {
-        db.collection("medicalDetails").get().addOnSuccessListener(querySnapshot -> {
-            for (QueryDocumentSnapshot doc : querySnapshot) {
+        UserDataManager.loadMedicalDetails(list -> {
+            for (String name : list) {
                 Chip chip = new Chip(this);
-                chip.setText(doc.getString("name"));
+                chip.setText(name);
                 chip.setCheckable(true);
                 medicalOptionsGroup.addView(chip);
             }

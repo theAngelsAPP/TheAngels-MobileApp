@@ -24,6 +24,7 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.GeoPoint;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
+import co.median.android.a2025_theangels_new.util.TimerUtils;
 import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 import java.util.Arrays;
 import java.util.List;
@@ -202,23 +203,11 @@ public class EventUserActivity extends BaseActivity {
     // startTimer - Starts a real-time timer that updates every second
     // =======================================
     private void startTimer() {
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                long elapsed;
-                if (eventStartMillis > 0) {
-                    elapsed = (System.currentTimeMillis() - eventStartMillis) / 1000;
-                } else {
-                    elapsed = seconds;
-                    if (isRunning) seconds++;
-                }
-                int minutes = (int) (elapsed / 60);
-                int secs = (int) (elapsed % 60);
-                String timeFormatted = String.format("%02d:%02d", minutes, secs);
-                timerTextView.setText(timeFormatted);
-                handler.postDelayed(this, 1000);
-            }
-        });
+        java.util.concurrent.atomic.AtomicLong counter = new java.util.concurrent.atomic.AtomicLong(seconds);
+        TimerUtils.startTimer(timerTextView, handler,
+                () -> eventStartMillis,
+                () -> isRunning,
+                counter);
     }
 
     // =======================================
