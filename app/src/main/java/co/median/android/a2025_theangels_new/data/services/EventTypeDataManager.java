@@ -66,4 +66,29 @@ public class EventTypeDataManager {
                     callback.onError(e);
                 });
     }
+
+    /** Callback for a single event type fetch. */
+    public interface SingleEventTypeCallback {
+        void onEventTypeLoaded(EventType type);
+        void onError(Exception e);
+    }
+
+    /**
+     * Fetches a single event type document by its name.
+     */
+    public static void getEventTypeByName(@NonNull String typeName, SingleEventTypeCallback callback) {
+        FirebaseFirestore.getInstance().collection("eventsType")
+                .whereEqualTo("typeName", typeName)
+                .limit(1)
+                .get()
+                .addOnSuccessListener(q -> {
+                    EventType type = null;
+                    for (DocumentSnapshot doc : q.getDocuments()) {
+                        type = doc.toObject(EventType.class);
+                        break;
+                    }
+                    callback.onEventTypeLoaded(type);
+                })
+                .addOnFailureListener(callback::onError);
+    }
 }

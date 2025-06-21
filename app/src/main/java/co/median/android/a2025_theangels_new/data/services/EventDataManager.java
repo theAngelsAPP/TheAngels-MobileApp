@@ -155,4 +155,50 @@ public class EventDataManager {
                 })
                 .addOnFailureListener(callback::onError);
     }
+
+    /** Callback returning a string value on success. */
+    public interface StringCallback {
+        void onSuccess(String value);
+    }
+
+    /** Callback returning an error on failure. */
+    public interface ErrorCallback {
+        void onError(Exception e);
+    }
+
+    /**
+     * Creates a new event document in Firestore.
+     *
+     * @param data      event fields to store
+     * @param onSuccess called with the created document id
+     * @param onError   called when an error occurs
+     */
+    public static void createNewEvent(@NonNull java.util.Map<String, Object> data,
+                                      StringCallback onSuccess,
+                                      ErrorCallback onError) {
+        FirebaseFirestore.getInstance().collection("events")
+                .add(data)
+                .addOnSuccessListener(docRef -> {
+                    if (onSuccess != null) onSuccess.onSuccess(docRef.getId());
+                })
+                .addOnFailureListener(e -> {
+                    if (onError != null) onError.onError(e);
+                });
+    }
+
+    /**
+     * Starts listening for real-time updates of the given event.
+     *
+     * @param eventId  ID of the event document
+     * @param listener Firestore snapshot listener
+     * @return ListenerRegistration to remove the listener
+     */
+    public static com.google.firebase.firestore.ListenerRegistration listenToEvent(
+            @NonNull String eventId,
+            com.google.firebase.firestore.EventListener<DocumentSnapshot> listener) {
+        return FirebaseFirestore.getInstance()
+                .collection("events")
+                .document(eventId)
+                .addSnapshotListener(listener);
+    }
 }
