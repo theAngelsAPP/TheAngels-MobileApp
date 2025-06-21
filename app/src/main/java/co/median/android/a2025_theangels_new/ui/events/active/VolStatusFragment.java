@@ -29,6 +29,8 @@ public class VolStatusFragment extends Fragment {
     private static final String ARG_EVENT_ID = "eventId";
     private String eventId;
     private String userPhone = "";
+    private double eventLat = 0.0;
+    private double eventLng = 0.0;
 
     public static VolStatusFragment newInstance(String eventId) {
         VolStatusFragment f = new VolStatusFragment();
@@ -48,12 +50,18 @@ public class VolStatusFragment extends Fragment {
             EventDataManager.getEventById(eventId, new EventDataManager.SingleEventCallback() {
                 @Override
                 public void onEventLoaded(Event event) {
-                    if (event != null && event.getEventCreatedBy() != null) {
-                        UserDataManager.loadUserDetails(event.getEventCreatedBy(), session -> {
-                            if (session != null) {
-                                userPhone = session.getPhone();
-                            }
-                        });
+                    if (event != null) {
+                        if (event.getEventCreatedBy() != null) {
+                            UserDataManager.loadUserDetails(event.getEventCreatedBy(), session -> {
+                                if (session != null) {
+                                    userPhone = session.getPhone();
+                                }
+                            });
+                        }
+                        if (event.getEventLocation() != null) {
+                            eventLat = event.getEventLocation().getLatitude();
+                            eventLng = event.getEventLocation().getLongitude();
+                        }
                     }
                 }
 
@@ -112,12 +120,11 @@ public class VolStatusFragment extends Fragment {
     }
 
     private void navigateToEvent() {
-        // Without actual coordinates we just open google maps
-        MapHelper.openNavigation(requireContext(), 0.0, 0.0);
+        MapHelper.openNavigation(requireContext(), eventLat, eventLng);
     }
 
     private void openStreetView() {
-        MapHelper.openStreetView(requireContext(), 0.0, 0.0);
+        MapHelper.openStreetView(requireContext(), eventLat, eventLng);
     }
 
     private void showCancelDialog() {
