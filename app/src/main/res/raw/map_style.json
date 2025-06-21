@@ -1,23 +1,20 @@
-{
-  "version": 1,
-  "layers": [
-    {
-      "id": "land",
-      "stylers": [
-        { "color": "#f2efe9" }
-      ]
-    },
-    {
-      "id": "road",
-      "stylers": [
-        { "color": "#ffffff" }
-      ]
-    },
-    {
-      "id": "water",
-      "stylers": [
-        { "color": "#b5d0d0" }
-      ]
-    }
-  ]
-}
+[
+  {
+    "featureType": "landscape",
+    "stylers": [
+      { "color": "#f2efe9" }
+    ]
+  },
+  {
+    "featureType": "road",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },
+  {
+    "featureType": "water",
+    "stylers": [
+      { "color": "#b5d0d0" }
+    ]
+  }
+]

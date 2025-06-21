@@ -31,8 +31,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
+import co.median.android.a2025_theangels_new.data.map.MapStyleHelper;
 
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.AutocompletePrediction;
@@ -380,9 +380,6 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void applyCustomStyle() {
-        try {
-            mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.map_style));
-        } catch (Exception ignored) {
-        }
+        MapStyleHelper.applyStyle(mMap, requireContext(), R.raw.map_style);
     }
 }
