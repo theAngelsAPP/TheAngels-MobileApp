@@ -11,8 +11,12 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.text.Editable;
+import android.text.TextWatcher;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -29,6 +33,15 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
+
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.AutocompletePrediction;
+import com.google.android.libraries.places.api.model.AutocompleteSessionToken;
+import com.google.android.libraries.places.api.net.FetchPlaceRequest;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.model.TypeFilter;
+import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest;
+import com.google.android.libraries.places.api.net.PlacesClient;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -57,6 +70,13 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
     private TextView tvManualMode;
     private boolean manualMode = false;
     private LatLng manualLatLng;
+
+    private ListView lvAddressSuggestions;
+    private ArrayAdapter<String> suggestionsAdapter;
+    private final java.util.ArrayList<String> suggestionList = new java.util.ArrayList<>();
+    private final java.util.Map<String, String> suggestionIdMap = new java.util.HashMap<>();
+    private PlacesClient placesClient;
+    private AutocompleteSessionToken sessionToken;
 
     private final ActivityResultLauncher<String> permissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -95,6 +115,21 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         tvAddress = view.findViewById(R.id.tv_current_address);
         locationService = new LocationService(requireContext());
 
+        lvAddressSuggestions = view.findViewById(R.id.lvAddressSuggestions);
+        suggestionsAdapter = new ArrayAdapter<>(requireContext(), R.layout.address_suggestion_item, suggestionList);
+        lvAddressSuggestions.setAdapter(suggestionsAdapter);
+        lvAddressSuggestions.setOnItemClickListener((parent, v1, position, id) -> {
+            String address = suggestionList.get(position);
+            String placeId = suggestionIdMap.get(address);
+            handleSuggestionSelection(address, placeId);
+        });
+
+        AutocompleteHelper.initPlaces(requireContext());
+        if (Places.isInitialized()) {
+            placesClient = Places.createClient(requireContext());
+            sessionToken = AutocompleteSessionToken.newInstance();
+        }
+
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
         if (mapFragment != null) {
@@ -106,6 +141,7 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
                 manualInputContainer.setVisibility(View.VISIBLE);
             } else {
                 manualInputContainer.setVisibility(View.GONE);
+                lvAddressSuggestions.setVisibility(View.GONE);
             }
         });
 
@@ -116,7 +152,21 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
             manualLatLng = null;
             tvManualMode.setVisibility(View.GONE);
             manualInputContainer.setVisibility(View.GONE);
+            lvAddressSuggestions.setVisibility(View.GONE);
             startLocationUpdates();
+        });
+
+        etManualAddress.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                fetchAddressSuggestions(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) { }
         });
 
         etManualAddress.setOnEditorActionListener((v1, actionId, event) -> {
@@ -153,6 +203,7 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         if (!manualMode) {
             manualInputContainer.setVisibility(View.GONE);
             tvManualMode.setVisibility(View.GONE);
+            lvAddressSuggestions.setVisibility(View.GONE);
             startLocationUpdates();
         }
     }
@@ -162,6 +213,7 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         mapView.setVisibility(View.GONE);
         locationBox.setVisibility(View.VISIBLE);
         tvAddress.setText(getString(R.string.address_not_found));
+        lvAddressSuggestions.setVisibility(View.GONE);
     }
 
     private void startLocationUpdates() {
@@ -243,6 +295,7 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
                     updateManualLocation(pos, addr.getAddressLine(0));
                     Toast.makeText(requireContext(), R.string.location_updated, Toast.LENGTH_SHORT).show();
                     manualInputContainer.setVisibility(View.GONE);
+                    lvAddressSuggestions.setVisibility(View.GONE);
                     return;
                 } else {
                     Toast.makeText(requireContext(), R.string.invalid_israel_address, Toast.LENGTH_SHORT).show();
@@ -253,6 +306,62 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         } catch (Exception e) {
             Toast.makeText(requireContext(), R.string.address_lookup_error, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void fetchAddressSuggestions(String query) {
+        if (placesClient == null || query.length() < 3) {
+            suggestionList.clear();
+            suggestionIdMap.clear();
+            suggestionsAdapter.notifyDataSetChanged();
+            lvAddressSuggestions.setVisibility(View.GONE);
+            return;
+        }
+
+        FindAutocompletePredictionsRequest request = FindAutocompletePredictionsRequest.builder()
+                .setSessionToken(sessionToken)
+                .setTypeFilter(TypeFilter.ADDRESS)
+                .setCountries(java.util.Collections.singletonList("IL"))
+                .setQuery(query)
+                .build();
+
+        placesClient.findAutocompletePredictions(request)
+                .addOnSuccessListener(response -> {
+                    suggestionList.clear();
+                    suggestionIdMap.clear();
+                    for (AutocompletePrediction prediction : response.getAutocompletePredictions()) {
+                        String text = prediction.getFullText(null).toString();
+                        suggestionList.add(text);
+                        suggestionIdMap.put(text, prediction.getPlaceId());
+                    }
+                    suggestionsAdapter.notifyDataSetChanged();
+                    lvAddressSuggestions.setVisibility(suggestionList.isEmpty() ? View.GONE : View.VISIBLE);
+                })
+                .addOnFailureListener(e -> {
+                    lvAddressSuggestions.setVisibility(View.GONE);
+                });
+    }
+
+    private void handleSuggestionSelection(String address, String placeId) {
+        etManualAddress.setText(address);
+        lvAddressSuggestions.setVisibility(View.GONE);
+        if (placesClient == null || placeId == null) {
+            handleManualAddress();
+            return;
+        }
+
+        FetchPlaceRequest request = FetchPlaceRequest.builder(placeId, java.util.Arrays.asList(Place.Field.LAT_LNG, Place.Field.ADDRESS))
+                .setSessionToken(sessionToken)
+                .build();
+        placesClient.fetchPlace(request)
+                .addOnSuccessListener(response -> {
+                    Place place = response.getPlace();
+                    LatLng pos = place.getLatLng();
+                    if (pos != null) {
+                        updateManualLocation(pos, place.getAddress());
+                        Toast.makeText(requireContext(), R.string.location_updated, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> handleManualAddress());
     }
 
     private void handleMapSelection(LatLng pos) {
