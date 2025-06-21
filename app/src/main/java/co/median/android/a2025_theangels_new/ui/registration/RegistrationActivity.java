@@ -12,7 +12,7 @@ import android.widget.*;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
-import co.median.android.a2025_theangels_new.maps.AutocompleteHelper;
+import co.median.android.a2025_theangels_new.data.map.AutocompleteHelper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.chip.Chip;
