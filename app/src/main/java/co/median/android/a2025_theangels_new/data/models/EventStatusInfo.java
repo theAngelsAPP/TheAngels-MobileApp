@@ -1,16 +1,17 @@
-/**
- * מודל עבור סטטוס אפשרי של אירוע.
- */
 package co.median.android.a2025_theangels_new.data.models;
 
-public class EventStatus {
+/**
+ * Model representing an event status document stored in Firestore.
+ * מודל עבור סטטוס אפשרי של אירוע.
+ */
+public class EventStatusInfo {
     /** שם הסטטוס כפי שמופיע במסד */
     private String statusName;
     /** צבע המייצג את הסטטוס */
     private String statusColor;
 
     /** בנאי ריק הנדרש לפיירבייס */
-    public EventStatus() {}
+    public EventStatusInfo() {}
 
     /** @return שם הסטטוס */
     public String getStatusName() {
