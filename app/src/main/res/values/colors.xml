@@ -3,11 +3,25 @@
     <!-- ///////////////////////////////////////////////////////////// -->
     <!-- /////////////////// PRIMARY & SECONDARY COLORS ////////////// -->
     <!-- ///////////////////////////////////////////////////////////// -->
-    <color name="colorPrimary">#5fa8d3</color>
+    <!-- Primary brand colors used throughout the app -->
+    <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryVariant">#3700B3</color>
     <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Secondary accent colors -->
     <color name="colorSecondary">#03DAC5</color>
     <color name="colorSecondaryVariant">#018786</color>
+
+    <!-- Material background colors -->
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorError">#B00020</color>
+
+    <!-- Colors for text/iconography on top of the above backgrounds -->
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorOnError">#FFFFFF</color>
     <color name="colorAccent">#ffba08</color>
 
     <!-- ///////////////////////////////////////////////////////////// -->
