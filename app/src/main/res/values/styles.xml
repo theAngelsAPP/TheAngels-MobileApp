@@ -136,33 +136,33 @@
     </style>
 
     <style name="Button.Primary" parent="Button.Base">
-        <item name="android:background">@drawable/buttons/primary_button</item>
+        <item name="android:background">@drawable/primary_button</item>
     </style>
 
     <style name="Button.Secondary" parent="Button.Base">
-        <item name="android:background">@drawable/buttons/secondary_button</item>
+        <item name="android:background">@drawable/secondary_button</item>
     </style>
 
     <style name="Button.Alert" parent="Button.Base">
-        <item name="android:background">@drawable/buttons/alert_button</item>
+        <item name="android:background">@drawable/alert_button</item>
     </style>
 
     <!-- Card styles -->
-    <style name="Card.Base" parent="Widget.Material3.CardView">
+    <style name="Card.Base" parent="Widget.Material3.MaterialCardView">
         <item name="cardCornerRadius">8dp</item>
         <item name="cardElevation">4dp</item>
     </style>
 
     <style name="Card.Info" parent="Card.Base">
-        <item name="android:background">@drawable/cards/info_card</item>
+        <item name="android:background">@drawable/info_card</item>
     </style>
 
     <style name="Card.Warning" parent="Card.Base">
-        <item name="android:background">@drawable/cards/warning_card</item>
+        <item name="android:background">@drawable/warning_card</item>
     </style>
 
     <style name="Card.Default" parent="Card.Base">
-        <item name="android:background">@drawable/cards/default_card</item>
+        <item name="android:background">@drawable/default_card</item>
     </style>
 
     <!-- Input field style -->
@@ -180,11 +180,12 @@
     </style>
 
     <style name="Chip.Selected" parent="Chip.Base">
-        <item name="android:background">@drawable/labels/chip_selected</item>
+        <item name="android:background">@drawable/chip_selected</item>
     </style>
 
     <style name="Chip.Unselected" parent="Chip.Base">
-        <item name="android:background">@drawable/labels/chip_unselected</item>
+        <item name="android:background">@drawable/chip_unselected</item>
     </style>
 
+    <style name="Chip" parent="Chip.Base" />
 </resources>
