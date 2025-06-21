@@ -18,6 +18,8 @@ import androidx.fragment.app.Fragment;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.ui.home.HomeActivity;
+import co.median.android.a2025_theangels_new.data.services.EventDataManager;
+import com.google.firebase.firestore.FieldValue;
 
 // =======================================
 // VolCloseFragment - Allows the volunteer to close the event with a reason
@@ -27,9 +29,27 @@ public class VolCloseFragment extends Fragment {
     // =======================================
     // VARIABLES
     // =======================================
+    private static final String ARG_EVENT_ID = "eventId";
     private Button btnCloseEvent;
     private String selectedReason = null;
     private String[] closeReasons;
+    private String eventId;
+
+    public static VolCloseFragment newInstance(String eventId) {
+        VolCloseFragment f = new VolCloseFragment();
+        Bundle b = new Bundle();
+        b.putString(ARG_EVENT_ID, eventId);
+        f.setArguments(b);
+        return f;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            eventId = getArguments().getString(ARG_EVENT_ID);
+        }
+    }
 
     // =======================================
     // onCreateView - Inflates layout for closing event UI
@@ -71,7 +91,15 @@ public class VolCloseFragment extends Fragment {
 
         builder.setPositiveButton(getString(R.string.close_event_confirm), (dialog, which) -> {
             if (selectedReason != null) {
-                navigateToHome();
+                if (eventId != null) {
+                    java.util.Map<String, Object> updates = new java.util.HashMap<>();
+                    updates.put("eventCloseReason", selectedReason);
+                    updates.put("eventStatus", getString(R.string.status_event_finished));
+                    updates.put("eventTimeEnded", FieldValue.serverTimestamp());
+                    EventDataManager.updateEvent(eventId, updates, this::navigateToHome, null);
+                } else {
+                    navigateToHome();
+                }
             }
         });
 

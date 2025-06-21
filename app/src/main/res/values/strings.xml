@@ -129,6 +129,7 @@
     <string name="close_event_dialog_title">בחר את סיבת סגירת האירוע</string>
     <string name="close_event_confirm">סיום</string>
     <string name="close_event_cancel">ביטול</string>
+    <string name="event_claimed">האירוע שויך אליך</string>
 
     <!-- Manual address strings -->
     <string name="enter_address">הזן כתובת</string>
