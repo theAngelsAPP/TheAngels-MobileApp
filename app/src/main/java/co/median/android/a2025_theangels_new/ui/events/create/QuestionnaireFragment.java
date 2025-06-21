@@ -1,7 +1,7 @@
 // =======================================
 // IMPORTS
 // =======================================
-package co.median.android.a2025_theangels_new.events.create;
+package co.median.android.a2025_theangels_new.ui.events.create;
 
 import android.graphics.Color;
 import android.os.Bundle;

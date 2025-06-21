@@ -1,4 +1,4 @@
-package co.median.android.a2025_theangels_new.educations;
+package co.median.android.a2025_theangels_new.ui.educations;
 
 import android.os.Bundle;
 import android.util.Log;

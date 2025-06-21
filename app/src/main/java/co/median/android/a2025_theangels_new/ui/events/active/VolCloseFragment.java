@@ -1,7 +1,7 @@
 // =======================================
 // IMPORTS
 // =======================================
-package co.median.android.a2025_theangels_new.events.active;
+package co.median.android.a2025_theangels_new.ui.events.active;
 
 import android.content.DialogInterface;
 import android.content.Intent;

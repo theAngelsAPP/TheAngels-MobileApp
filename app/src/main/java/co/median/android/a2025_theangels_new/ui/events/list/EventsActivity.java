@@ -1,4 +1,4 @@
-package co.median.android.a2025_theangels_new.events.list;
+package co.median.android.a2025_theangels_new.ui.events.list;
 
 import android.os.Bundle;
 import android.util.Log;

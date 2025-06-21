@@ -1,4 +1,4 @@
-package co.median.android.a2025_theangels_new.notifications;
+package co.median.android.a2025_theangels_new.data.notifications;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
