@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.os.Handler;
+import android.os.Looper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +29,22 @@ public class OpenEventsAdapter extends ArrayAdapter<Event> {
     private final ArrayList<Event> events;
     private final ArrayList<String> ids;
     private final int resource;
+    private final Handler timerHandler = new Handler(Looper.getMainLooper());
+    private final Runnable timerRunnable = new Runnable() {
+        @Override
+        public void run() {
+            notifyDataSetChanged();
+            timerHandler.postDelayed(this, 1000);
+        }
+    };
+
+    public void startTimers() {
+        timerHandler.post(timerRunnable);
+    }
+
+    public void stopTimers() {
+        timerHandler.removeCallbacks(timerRunnable);
+    }
 
     public OpenEventsAdapter(Context context, int resource, ArrayList<Event> events, ArrayList<String> ids) {
         super(context, resource, events);
@@ -59,6 +77,7 @@ public class OpenEventsAdapter extends ArrayAdapter<Event> {
         TextView type = convertView.findViewById(R.id.open_event_type);
         TextView address = convertView.findViewById(R.id.open_event_address);
         TextView time = convertView.findViewById(R.id.open_event_time);
+        TextView timer = convertView.findViewById(R.id.open_event_timer);
 
         if (event != null) {
             type.setText(event.getEventType());
@@ -72,6 +91,10 @@ public class OpenEventsAdapter extends ArrayAdapter<Event> {
                 Date d = event.getEventTimeStarted().toDate();
                 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
                 time.setText(sdf.format(d));
+
+                long diff = (System.currentTimeMillis() - d.getTime()) / 1000;
+                String t = String.format(Locale.getDefault(), "%02d:%02d", diff / 60, diff % 60);
+                timer.setText(t);
             }
         }
 

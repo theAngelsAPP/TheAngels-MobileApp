@@ -72,6 +72,42 @@
             android:background="@android:color/white"
             android:layout_marginBottom="0dp"/>
 
+        <LinearLayout
+            android:id="@+id/volunteerInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="8dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/volunteerAnimation"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:lottie_rawRes="@raw/animation_hello"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"/>
+
+            <ImageView
+                android:id="@+id/volunteerImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/newuserpic"
+                android:background="@drawable/circle_image"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/volunteerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
         <TextView
             android:id="@+id/timeTitle"
             android:layout_width="match_parent"

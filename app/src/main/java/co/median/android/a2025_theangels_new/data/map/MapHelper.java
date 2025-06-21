@@ -83,4 +83,14 @@ public class MapHelper {
         intent.setPackage("com.google.android.apps.maps");
         context.startActivity(intent);
     }
+
+    /**
+     * Opens Google Street View at the given location.
+     */
+    public static void openStreetView(Context context, double lat, double lng) {
+        Uri uri = Uri.parse("google.streetview:cbll=" + lat + "," + lng);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        intent.setPackage("com.google.android.apps.maps");
+        context.startActivity(intent);
+    }
 }

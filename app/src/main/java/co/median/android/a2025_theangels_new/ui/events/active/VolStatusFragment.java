@@ -59,6 +59,7 @@ public class VolStatusFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Button btnCall = view.findViewById(R.id.btnCall);
         Button btnNavigate = view.findViewById(R.id.btnNavigate);
+        Button btnStreetView = view.findViewById(R.id.btnStreetView);
         Button btnCancel = view.findViewById(R.id.btnCancelEvent);
         Button btnArrived = view.findViewById(R.id.btnArrived);
 
@@ -67,6 +68,9 @@ public class VolStatusFragment extends Fragment {
         }
         if (btnNavigate != null) {
             btnNavigate.setOnClickListener(v -> navigateToEvent());
+        }
+        if (btnStreetView != null) {
+            btnStreetView.setOnClickListener(v -> openStreetView());
         }
         if (btnCancel != null) {
             btnCancel.setOnClickListener(v -> updateStatus(getString(R.string.status_event_finished)));
@@ -86,6 +90,10 @@ public class VolStatusFragment extends Fragment {
     private void navigateToEvent() {
         // Without actual coordinates we just open google maps
         MapHelper.openNavigation(requireContext(), 0.0, 0.0);
+    }
+
+    private void openStreetView() {
+        MapHelper.openStreetView(requireContext(), 0.0, 0.0);
     }
 
     private void updateStatus(String status) {

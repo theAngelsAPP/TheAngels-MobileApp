@@ -324,9 +324,11 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
         openEventsContainer.removeAllViews();
         if (openEvents.isEmpty()) {
             openEventsWidget.setVisibility(View.GONE);
+            openEventsAdapter.stopTimers();
             return;
         }
         openEventsWidget.setVisibility(View.VISIBLE);
+        openEventsAdapter.startTimers();
         for (int i = 0; i < openEvents.size(); i++) {
             View item = openEventsAdapter.getView(i, null, openEventsContainer);
             openEventsContainer.addView(item);
@@ -400,5 +402,6 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
         if (openEventsListener != null) {
             openEventsListener.remove();
         }
+        openEventsAdapter.stopTimers();
     }
 }
