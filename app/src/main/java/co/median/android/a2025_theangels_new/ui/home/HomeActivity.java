@@ -32,7 +32,7 @@ import co.median.android.a2025_theangels_new.data.services.EventStatusDataManage
 import co.median.android.a2025_theangels_new.data.models.EventType;
 
 import co.median.android.a2025_theangels_new.R;
-import co.median.android.a2025_theangels_new.data.map.MapFragment;
+import co.median.android.a2025_theangels_new.data.map.HomeMapFragment;
 import co.median.android.a2025_theangels_new.data.models.UserSession;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.events.list.RecentEventsAdapter;
@@ -41,7 +41,7 @@ import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 // =======================================
 // HomeActivity - Displays the home screen and handles location permission logic
 // =======================================
-public class HomeActivity extends BaseActivity implements MapFragment.OnAddressChangeListener {
+public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddressChangeListener {
 
     // =======================================
     // VARIABLES
@@ -128,7 +128,7 @@ public class HomeActivity extends BaseActivity implements MapFragment.OnAddressC
     // =======================================
     private void loadMapFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        MapFragment fragment = new MapFragment();
+        HomeMapFragment fragment = new HomeMapFragment();
         fragment.setAddressChangeListener(this);
         transaction.replace(R.id.map_container, fragment);
         transaction.commit();
