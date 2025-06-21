@@ -37,7 +37,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.bumptech.glide.Glide;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import co.median.android.a2025_theangels_new.data.services.EventTypeDataManager;
-import co.median.android.a2025_theangels_new.data.services.EventStatusDataManager;
 import co.median.android.a2025_theangels_new.data.models.EventType;
 import com.google.firebase.firestore.ListenerRegistration;
 
@@ -69,7 +68,6 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
     private RecentEventsAdapter recentEventsAdapter;
     private ArrayList<Event> recentEvents = new ArrayList<>();
     private Map<String, String> typeImageMap = new HashMap<>();
-    private Map<String, String> statusColorMap = new HashMap<>();
     private LinearLayout messagesContainer;
     private MessagesAdapter messagesAdapter;
     private ArrayList<Message> messages = new ArrayList<>();
@@ -227,22 +225,6 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
                     typeImageMap.put(type.getTypeName(), type.getTypeImageURL());
                 }
                 recentEventsAdapter.setEventTypeImages(typeImageMap);
-                loadEventStatuses();
-            }
-
-            @Override
-            public void onError(Exception e) {
-                loadEventStatuses();
-            }
-        });
-    }
-
-    private void loadEventStatuses() {
-        EventStatusDataManager.getAllEventStatuses(new EventStatusDataManager.EventStatusCallback() {
-            @Override
-            public void onStatusesLoaded(Map<String, String> statusMap) {
-                statusColorMap.putAll(statusMap);
-                recentEventsAdapter.setEventStatusColors(statusColorMap);
                 loadRecentEvents();
             }
 
@@ -252,6 +234,7 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
             }
         });
     }
+
 
     private void loadRecentEvents() {
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();

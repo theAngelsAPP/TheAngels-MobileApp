@@ -13,7 +13,6 @@ import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import co.median.android.a2025_theangels_new.data.services.EventTypeDataManager;
-import co.median.android.a2025_theangels_new.data.services.EventStatusDataManager;
 import co.median.android.a2025_theangels_new.data.models.EventType;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
@@ -25,7 +24,6 @@ public class EventsActivity extends BaseActivity {
     private EventsAdapter adapter;
     private ArrayList<Event> events;
     private Map<String, String> typeImageMap = new HashMap<>();
-    private Map<String, String> statusColorMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,33 +48,18 @@ public class EventsActivity extends BaseActivity {
                     typeImageMap.put(type.getTypeName(), type.getTypeImageURL());
                 }
                 adapter.setEventTypeImages(typeImageMap);
-                loadEventStatuses();
+                loadEventsFromFirestore();
             }
 
             @Override
             public void onError(Exception e) {
                 Log.e(TAG, "Error loading event types", e);
-                loadEventStatuses();
-            }
-        });
-    }
-
-    private void loadEventStatuses() {
-        EventStatusDataManager.getAllEventStatuses(new EventStatusDataManager.EventStatusCallback() {
-            @Override
-            public void onStatusesLoaded(Map<String, String> statusMap) {
-                statusColorMap.putAll(statusMap);
-                adapter.setEventStatusColors(statusColorMap);
-                loadEventsFromFirestore();
-            }
-
-            @Override
-            public void onError(Exception e) {
-                Log.e(TAG, "Error loading event statuses", e);
                 loadEventsFromFirestore();
             }
         });
     }
+
+
 
     private void loadEventsFromFirestore() {
         Log.d(TAG, "Fetching events from Firestore...");
