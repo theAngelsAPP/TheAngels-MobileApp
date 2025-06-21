@@ -53,7 +53,11 @@ public class EventDataManager {
                         try {
                             Event event = doc.toObject(Event.class);
                             if (event != null) {
-                                //Log.d(TAG, "Event loaded: " + event.getEventCase()); השורה הלא נכונה
+                                try {
+                                    java.lang.reflect.Field f = Event.class.getDeclaredField("id");
+                                    f.setAccessible(true);
+                                    f.set(event, doc.getId());
+                                } catch (Exception ignored) {}
                                 Log.d(TAG, "Event loaded: " + event.getEventType());
 
                                 events.add(event);
@@ -90,6 +94,12 @@ public class EventDataManager {
                     for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()) {
                         Event event = doc.toObject(Event.class);
                         if (event != null) {
+                            // store document id for later use
+                            try {
+                                java.lang.reflect.Field f = Event.class.getDeclaredField("id");
+                                f.setAccessible(true);
+                                f.set(event, doc.getId());
+                            } catch (Exception ignored) {}
                             events.add(event);
                         }
                     }
@@ -149,6 +159,13 @@ public class EventDataManager {
                     Event event = null;
                     for (DocumentSnapshot doc : queryDocumentSnapshots.getDocuments()) {
                         event = doc.toObject(Event.class);
+                        if (event != null) {
+                            try {
+                                java.lang.reflect.Field f = Event.class.getDeclaredField("id");
+                                f.setAccessible(true);
+                                f.set(event, doc.getId());
+                            } catch (Exception ignored) {}
+                        }
                         break;
                     }
                     callback.onEventLoaded(event);
@@ -244,5 +261,37 @@ public class EventDataManager {
         java.util.Map<String, Object> updates = new java.util.HashMap<>();
         updates.put("eventStatus", status);
         updateEvent(eventId, updates, onSuccess, onError);
+    }
+
+    /**
+     * Listener interface for receiving updates about open events (looking for volunteer).
+     */
+    public interface OpenEventsListener {
+        void onEventsUpdate(java.util.ArrayList<String> ids, java.util.ArrayList<Event> events);
+    }
+
+    /**
+     * Starts real-time listening for events with status "חיפוש מתנדב".
+     *
+     * @param listener callback for updates
+     * @return registration handle to remove the listener
+     */
+    public static com.google.firebase.firestore.ListenerRegistration listenToOpenEvents(OpenEventsListener listener) {
+        return FirebaseFirestore.getInstance().collection("events")
+                .whereEqualTo("eventStatus", "חיפוש מתנדב")
+                .addSnapshotListener((snap, e) -> {
+                    if (e == null && snap != null) {
+                        java.util.ArrayList<Event> list = new java.util.ArrayList<>();
+                        java.util.ArrayList<String> ids = new java.util.ArrayList<>();
+                        for (DocumentSnapshot doc : snap.getDocuments()) {
+                            Event ev = doc.toObject(Event.class);
+                            if (ev != null) {
+                                list.add(ev);
+                                ids.add(doc.getId());
+                            }
+                        }
+                        if (listener != null) listener.onEventsUpdate(ids, list);
+                    }
+                });
     }
 }
