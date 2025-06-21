@@ -20,6 +20,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.GeoPoint;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 import java.util.Arrays;
@@ -27,6 +29,7 @@ import java.util.List;
 import com.shuhart.stepview.StepView;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
+import co.median.android.a2025_theangels_new.data.map.AddressHelper;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 import com.airbnb.lottie.LottieAnimationView;
@@ -57,6 +60,8 @@ public class EventUserActivity extends BaseActivity {
     private EditText freeTextFeedback;
     private Button submitFeedbackButton;
     private FrameLayout mapContainer;
+    private TextView closeReasonView;
+    private TextView endTimeView;
     private View redSeparator;
 
     private int currentStep = 0;
@@ -68,6 +73,10 @@ public class EventUserActivity extends BaseActivity {
 
     private List<String> statuses;
     private ListenerRegistration eventListener;
+    private String eventId;
+    private String eventCloseReason;
+    private com.google.firebase.Timestamp eventEnded;
+    private com.google.firebase.firestore.GeoPoint eventLocation;
 
     // =======================================
     // onCreate - Initializes UI, step view, timer, map, and button logic
@@ -99,6 +108,8 @@ public class EventUserActivity extends BaseActivity {
         volunteerImage = findViewById(R.id.volunteerImage);
         volunteerName = findViewById(R.id.volunteerName);
         volunteerAnimation = findViewById(R.id.volunteerAnimation);
+        closeReasonView = findViewById(R.id.closeReasonTextView);
+        endTimeView = findViewById(R.id.endTimeTextView);
 
         // Step statuses (translated from strings.xml)
         statuses = Arrays.asList(
@@ -110,7 +121,7 @@ public class EventUserActivity extends BaseActivity {
 
         setupStepView();
         startTimer();
-        setupMap();
+        // map will be updated once event data arrives
 
         // Step progression button
         nextStepButton.setOnClickListener(v -> {
@@ -132,12 +143,20 @@ public class EventUserActivity extends BaseActivity {
             startActivity(intent);
         });
 
-        String eventId = getIntent().getStringExtra("eventId");
+        eventId = getIntent().getStringExtra("eventId");
         if (eventId != null) {
             eventListener = EventDataManager.listenToEvent(eventId, (snapshot, e) -> {
                 if (e == null && snapshot != null && snapshot.exists()) {
                     Event event = snapshot.toObject(Event.class);
                     if (event != null) {
+                        eventLocation = event.getEventLocation();
+                        eventCloseReason = event.getEventCloseReason();
+                        eventEnded = event.getEventTimeEnded();
+                        if (eventLocation != null) {
+                            updateMap(eventLocation.getLatitude(), eventLocation.getLongitude());
+                            String addr = AddressHelper.getAddressFromLatLng(this, eventLocation.getLatitude(), eventLocation.getLongitude());
+                            if (addr != null) eventAddressText.setText(addr);
+                        }
                         if (event.getEventTimeStarted() != null && eventStartMillis == -1L) {
                             eventStartMillis = event.getEventTimeStarted().toDate().getTime();
                         }
@@ -232,17 +251,29 @@ public class EventUserActivity extends BaseActivity {
             eventAddressTitle.setVisibility(isFinal ? View.GONE : View.VISIBLE);
             eventAddressText.setVisibility(isFinal ? View.GONE : View.VISIBLE);
             emergencyCallButton.setVisibility(isFinal ? View.GONE : View.VISIBLE);
+            if (isFinal) {
+                if (eventCloseReason != null) {
+                    closeReasonView.setText(getString(R.string.close_reason_label, eventCloseReason));
+                    closeReasonView.setVisibility(View.VISIBLE);
+                }
+                if (eventEnded != null) {
+                    java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("HH:mm", java.util.Locale.getDefault());
+                    String time = sdf.format(eventEnded.toDate());
+                    endTimeView.setText(getString(R.string.end_time_label, time));
+                    endTimeView.setVisibility(View.VISIBLE);
+                }
+            } else {
+                closeReasonView.setVisibility(View.GONE);
+                endTimeView.setVisibility(View.GONE);
+            }
         }
     }
 
     // =======================================
     // setupMap - Loads static map fragment into screen
     // =======================================
-    private void setupMap() {
-        double eventLat = 31.8912;
-        double eventLng = 34.8115;
-
-        StaticMapFragment mapFragment = StaticMapFragment.newInstance(eventLat, eventLng);
+    private void updateMap(double lat, double lng) {
+        StaticMapFragment mapFragment = StaticMapFragment.newInstance(lat, lng);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.map_container, mapFragment);
         transaction.commit();
@@ -316,7 +347,15 @@ public class EventUserActivity extends BaseActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getString(R.string.thank_you_title));
         builder.setMessage(getString(R.string.feedback_summary, rating, feedbackText));
-        builder.setPositiveButton(getString(R.string.ok_button), null);
+        builder.setPositiveButton(getString(R.string.ok_button), (d, w) -> {
+            if (eventId != null) {
+                java.util.Map<String, Object> updates = new java.util.HashMap<>();
+                updates.put("eventRating", (int) rating);
+                updates.put("eventRatingText", feedbackText);
+                EventDataManager.updateEvent(eventId, updates, null,
+                        err -> android.widget.Toast.makeText(this, R.string.error_title, android.widget.Toast.LENGTH_SHORT).show());
+            }
+        });
         builder.show();
     }
 

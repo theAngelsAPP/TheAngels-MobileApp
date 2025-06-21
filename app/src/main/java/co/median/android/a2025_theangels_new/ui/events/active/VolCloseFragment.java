@@ -41,7 +41,8 @@ public class VolCloseFragment extends Fragment {
             updates.put("eventCloseReason", reason);
             updates.put("eventStatus", getString(R.string.status_event_finished));
             updates.put("eventTimeEnded", FieldValue.serverTimestamp());
-            EventDataManager.updateEvent(eventId, updates, this::navigateToHome, null);
+            EventDataManager.updateEvent(eventId, updates, this::navigateToHome,
+                    e -> android.widget.Toast.makeText(requireContext(), R.string.error_title, android.widget.Toast.LENGTH_SHORT).show());
         } else {
             navigateToHome();
         }

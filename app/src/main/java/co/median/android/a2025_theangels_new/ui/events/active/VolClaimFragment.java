@@ -78,6 +78,9 @@ public class VolClaimFragment extends Fragment {
         EventDataManager.claimEvent(eventId, uid, () -> {
             AlertDialog.Builder b = new AlertDialog.Builder(requireContext());
             b.setMessage(R.string.event_claimed).setPositiveButton(R.string.ok_button, (d, w) -> d.dismiss()).show();
+            if (getActivity() instanceof EventVolActivity) {
+                ((EventVolActivity) getActivity()).advanceToStep(1);
+            }
         }, e -> {
             AlertDialog.Builder b = new AlertDialog.Builder(requireContext());
             b.setMessage(R.string.error_title).setPositiveButton(R.string.ok_button, null).show();
