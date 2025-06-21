@@ -44,6 +44,8 @@ android {
 dependencies {
     implementation libs.androidx.appcompat
     implementation libs.androidx.material
+    // Explicit dependency on Material Components to enable Material 3 widgets
+    implementation 'com.google.android.material:material:1.11.0'
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.coordinatorlayout
     implementation libs.google.play.services.maps

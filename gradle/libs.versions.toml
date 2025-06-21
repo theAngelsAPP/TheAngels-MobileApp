@@ -9,7 +9,7 @@ kotlin = "2.0.0"       # שפת קוטלין המשמשת בפרויקט
 # ===== ספריות ליבה של AndroidX =====
 coreKtx = "1.15.0"      # הרחבות שימושיות ל‑Android API
 appcompat = "1.7.0"     # תמיכה לאחור ברכיבי ממשק
-material = "1.12.0"     # רכיבי Material Design
+material = "1.11.0"     # רכיבי Material Design
 constraintlayout = "2.2.1" # פריסת ConstraintLayout
 coordinatorlayout = "1.3.0" # תיאום תנועות בין רכיבים
 
