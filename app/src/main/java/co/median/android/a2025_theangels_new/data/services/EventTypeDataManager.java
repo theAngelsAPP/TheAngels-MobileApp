@@ -2,6 +2,8 @@ package co.median.android.a2025_theangels_new.data.services;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 

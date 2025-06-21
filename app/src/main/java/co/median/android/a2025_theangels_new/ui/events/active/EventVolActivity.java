@@ -75,8 +75,8 @@ public class EventVolActivity extends BaseActivity {
                 if (e == null && snapshot != null && snapshot.exists()) {
                     Event event = snapshot.toObject(Event.class);
                     if (event != null && event.getEventStatus() != null) {
-                        int index = statuses.indexOf(event.getEventStatus());
-                        if (index >= 0) updateStep(index);
+                        //int index = statuses.indexOf(event.getEventStatus());
+                        //if (index >= 0) updateStep(index);
                     }
                 }
             });
