@@ -293,24 +293,32 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
     }
 
     private void handleMessageClick(Message message) {
-        if ("Education".equals(message.getMessageType())) {
-            EducationDataManager.getEducationById(message.getMessageRef(), new EducationDataManager.SingleEducationCallback() {
-                @Override
-                public void onEducationLoaded(Education education) {
-                    if (education != null) {
-                        Intent intent = new Intent(HomeActivity.this, EducationDetailsActivity.class);
-                        intent.putExtra("eduTitle", education.getEduTitle());
-                        intent.putExtra("eduData", education.getEduData());
-                        intent.putExtra("eduImageURL", education.getEduImageURL());
-                        startActivity(intent);
-                    }
-                }
-
-                @Override
-                public void onError(Exception e) {
-                }
-            });
+        String ref = message.getMessageRef();
+        if (ref == null || ref.isEmpty()) {
+            return;
         }
+
+        EducationDataManager.getEducationById(ref, new EducationDataManager.SingleEducationCallback() {
+            @Override
+            public void onEducationLoaded(Education education) {
+                if (education != null) {
+                    Intent intent = new Intent(HomeActivity.this, EducationDetailsActivity.class);
+                    intent.putExtra("id", ref);
+                    intent.putExtra("eduTitle", education.getEduTitle());
+                    intent.putExtra("eduData", education.getEduData());
+                    intent.putExtra("eduImageURL", education.getEduImageURL());
+                    intent.putExtra("eduType", education.getEduType());
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(HomeActivity.this, R.string.education_not_found, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Toast.makeText(HomeActivity.this, R.string.education_not_found, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     // =======================================

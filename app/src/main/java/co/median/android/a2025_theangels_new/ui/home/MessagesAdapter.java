@@ -99,11 +99,14 @@ public class MessagesAdapter extends ArrayAdapter<Message> {
             content.setText(msg.getMessageData());
         }
 
-        convertView.setOnClickListener(v -> {
-            if (clickListener != null && msg != null && msg.getMessageRef() != null && !msg.getMessageRef().isEmpty()) {
-                clickListener.onMessageClicked(msg);
-            }
-        });
+        boolean hasRef = msg != null && msg.getMessageRef() != null && !msg.getMessageRef().isEmpty();
+        convertView.setClickable(hasRef);
+
+        if (hasRef && clickListener != null) {
+            convertView.setOnClickListener(v -> clickListener.onMessageClicked(msg));
+        } else {
+            convertView.setOnClickListener(null);
+        }
 
         return convertView;
     }

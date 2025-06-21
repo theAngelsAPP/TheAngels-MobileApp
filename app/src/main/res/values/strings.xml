@@ -200,4 +200,5 @@
     <string name="select_cities_title">בחר ערים בהן תרצה להתנדב:</string>
     <string name="city_search_hint">הקלד עיר לחיפוש</string>
     <string name="city_already_selected">העיר כבר נבחרה</string>
+    <string name="education_not_found">תוכן ההדרכה לא נמצא</string>
 </resources>
