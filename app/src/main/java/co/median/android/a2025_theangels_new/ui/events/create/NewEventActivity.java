@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.events.active.EventUserActivity;
 import co.median.android.a2025_theangels_new.ui.events.create.EventTypeFragment;
 import co.median.android.a2025_theangels_new.ui.events.create.WhatHappenedFragment;
 import co.median.android.a2025_theangels_new.ui.events.create.QuestionnaireFragment;

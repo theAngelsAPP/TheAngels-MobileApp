@@ -15,6 +15,11 @@ import com.bumptech.glide.Glide;
 import co.median.android.a2025_theangels_new.data.models.UserSession;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
+import co.median.android.a2025_theangels_new.ui.main.MainActivity;
+import co.median.android.a2025_theangels_new.ui.profile.settings.DisplaySettingsActivity;
+import co.median.android.a2025_theangels_new.ui.profile.settings.JoinVolSettingsActivity;
+import co.median.android.a2025_theangels_new.ui.profile.settings.PrivacySettingsActivity;
+import co.median.android.a2025_theangels_new.ui.profile.support.SupportActivity;
 
 // =======================================
 // ProfileActivity - Handles user profile screen and navigation to settings/help/logout

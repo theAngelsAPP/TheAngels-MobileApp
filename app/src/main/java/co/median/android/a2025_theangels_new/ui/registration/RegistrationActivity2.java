@@ -16,6 +16,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.home.HomeActivity;
 
 // =======================================
 // RegistrationActivity2 - Second part of the registration process

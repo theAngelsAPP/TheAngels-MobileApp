@@ -23,7 +23,10 @@ import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 import com.google.android.material.textfield.TextInputEditText;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.home.HomeActivity;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
+import co.median.android.a2025_theangels_new.ui.onboarding.OnboardingActivity;
+import co.median.android.a2025_theangels_new.ui.registration.RegistrationActivity;
 
 // =======================================
 // MainActivity - Handles login screen and navigation to registration or onboarding

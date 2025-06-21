@@ -26,6 +26,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import co.median.android.a2025_theangels_new.data.models.UserSession;
+import co.median.android.a2025_theangels_new.ui.educations.EducationActivity;
+import co.median.android.a2025_theangels_new.ui.events.create.NewEventActivity;
+import co.median.android.a2025_theangels_new.ui.events.list.EventsActivity;
+import co.median.android.a2025_theangels_new.ui.home.HomeActivity;
+import co.median.android.a2025_theangels_new.ui.profile.ProfileActivity;
 // =======================================
 // BaseActivity - Abstract base class for all activities
 // Handles layout setup, top/bottom bars, and shared UI logic

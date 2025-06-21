@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Arrays;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.main.MainActivity;
 import co.median.android.a2025_theangels_new.ui.onboarding.OnboardingAdapter;
 
 // =======================================
