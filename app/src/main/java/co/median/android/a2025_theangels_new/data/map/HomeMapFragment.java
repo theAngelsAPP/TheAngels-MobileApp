@@ -20,10 +20,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.data.map.MapStyleHelper;
 
 /**
  * פרגמנט הבית המציג מפה סטטית עם סימון מיקום המשתמש הנוכחי.
@@ -202,9 +202,6 @@ public class HomeMapFragment extends Fragment implements OnMapReadyCallback {
      * החלת סגנון מותאם ממקור המשאבים.
      */
     private void applyCustomStyle() {
-        try {
-            mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.map_style));
-        } catch (Exception ignored) {
-        }
+        MapStyleHelper.applyStyle(mMap, requireContext(), R.raw.map_style);
     }
 }

@@ -40,10 +40,10 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.data.map.MapStyleHelper;
 
 /**
  * פרגמנט המציג מפה ומאתר את מיקומו הנוכחי של המשתמש.
@@ -150,15 +150,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     // applyCustomMapStyle - Applies custom map styling from raw/map_style.json
     // =======================================
     private void applyCustomMapStyle() {
-        try {
-            boolean success = mMap.setMapStyle(
-                    MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.map_style));
-            if (!success) {
-                System.out.println("Error applying map style.");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        MapStyleHelper.applyStyle(mMap, requireContext(), R.raw.map_style);
     }
 
     // =======================================
