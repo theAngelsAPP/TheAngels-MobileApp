@@ -1,0 +1,84 @@
+Deleted drawables:
+- alerts.xml
+- asset_7.xml
+- border_animation.xml
+- button_glow.xml
+- circle_button.xml
+- clouds_shape.xml
+- custom_rating_bar.xml
+- dashboard_background.xml
+- dashboard_box.xml
+- defibrillator.png
+- event_category_selector.xml
+- fab_background.xml
+- header_background.xml
+- ic_arrow_right.xml
+- ic_calendar.png
+- ic_camera.xml
+- ic_event.xml
+- ic_location.png
+- ic_more.png
+- ic_my_location.xml
+- ic_note.png
+- ic_people.xml
+- ic_star.xml
+- image_def.jpg
+- loginbackground.png
+- loginbutton.xml
+- loginbutton_filled.xml
+- loginregisterbutton.xml
+- logintext.xml
+- profile_header_background.xml
+- registerbackground.png
+- rounded_button_background.xml
+- rounded_white.xml
+- status_closed.xml
+- status_label_bg.xml
+- tab_selected.xml
+- tab_unselected.xml
+- test.xml
+- training2.png
+- training3.png
+- training4.png
+- training5.png
+- userpic.png
+- filter_button_animal.xml
+- filter_button_medical.xml
+- filter_button_security.xml
+- filter_button_vehicle.xml
+
+Deleted layouts:
+- activity_homepage.xml
+- bottom_app_bar.xml
+- wings_loading.xml
+
+Deleted values files:
+- eventslist.xml
+- shape_appearance.xml
+
+Deleted XML:
+- motion_scene_profile.xml
+
+Added drawables:
+- filter_button.xml (consolidated duplicate filter buttons)
+
+Renamed/moved drawables for organization:
+- newuserpic.webp -> drawable/auth/
+- newuserpic_border.png -> drawable/auth/
+- event_angel.png -> drawable/events/
+- event_dog.png -> drawable/events/
+- event_medical.png -> drawable/events/
+- event_security.png -> drawable/events/
+- event_vehicle.png -> drawable/events/
+- icon_events.png -> drawable/events/
+- icon_nomap.png -> drawable/events/
+- icon_rating.png -> drawable/events/
+- icon_trophy.png -> drawable/events/
+- training1.png -> drawable/training/
+- onboarding_1.png -> drawable/onboarding/
+- onboarding_2.png -> drawable/onboarding/
+- onboarding_3.png -> drawable/onboarding/
+- onboarding_startbutton.png -> drawable/onboarding/
+
+Removed 39 unused strings from values/strings.xml.
+Large images such as onboarding_2.png (1.6M) and image_def.jpg (removed) should be optimized in future.
