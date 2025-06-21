@@ -8,7 +8,7 @@ public enum UserEventStatus {
     LOOKING_FOR_VOLUNTEER("חיפוש מתנדב"),
     VOLUNTEER_ON_THE_WAY("מתנדב בדרך"),
     VOLUNTEER_AT_EVENT("מתנדב באירוע"),
-    EVENT_FINISHED("אירוע הסתיים");
+    EVENT_FINISHED("האירוע הסתיים");
 
     private final String dbValue;
 
@@ -31,6 +31,9 @@ public enum UserEventStatus {
             if (s.dbValue.equals(value)) {
                 return s;
             }
+        }
+        if ("אירוע הסתיים".equals(value)) {
+            return EVENT_FINISHED;
         }
         return null;
     }
