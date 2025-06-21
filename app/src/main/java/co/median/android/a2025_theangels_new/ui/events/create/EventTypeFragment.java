@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -27,6 +28,7 @@ public class EventTypeFragment extends Fragment {
     // =======================================
     private MaterialButton btnMedical, btnSecurity, btnCar, btnAnimals;
     private MaterialButton selectedButton = null;
+    private NewEventViewModel viewModel;
 
     // =======================================
     // onCreateView - Inflates layout and sets up event type buttons
@@ -36,8 +38,8 @@ public class EventTypeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_event_type, container, false);
+        viewModel = new ViewModelProvider(requireActivity()).get(NewEventViewModel.class);
 
         // Bind buttons
         btnMedical = view.findViewById(R.id.btnMedical);
@@ -64,6 +66,7 @@ public class EventTypeFragment extends Fragment {
             }
             button.setBackgroundColor(ContextCompat.getColor(requireContext(), selectedColorRes));
             selectedButton = button;
+            viewModel.setEventType(button.getText().toString());
         });
     }
 }

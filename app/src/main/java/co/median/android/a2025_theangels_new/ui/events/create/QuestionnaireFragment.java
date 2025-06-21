@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import co.median.android.a2025_theangels_new.R;
 
@@ -23,6 +24,8 @@ import co.median.android.a2025_theangels_new.R;
 // QuestionnaireFragment - Handles questionnaire logic for incident state
 // =======================================
 public class QuestionnaireFragment extends Fragment {
+
+    private NewEventViewModel viewModel;
 
     // =======================================
     // onCreateView - Inflates the questionnaire layout
@@ -41,17 +44,18 @@ public class QuestionnaireFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel = new ViewModelProvider(requireActivity()).get(NewEventViewModel.class);
 
-        setupRadioGroup(view, R.id.rgSafety, true);
-        setupRadioGroup(view, R.id.rgPulse, false);
-        setupRadioGroup(view, R.id.rgBreathing, false);
-        setupRadioGroup(view, R.id.rgBleeding, false);
+        setupRadioGroup(view, R.id.rgSafety, getString(R.string.q_safety), true);
+        setupRadioGroup(view, R.id.rgPulse, getString(R.string.q_pulse), false);
+        setupRadioGroup(view, R.id.rgBreathing, getString(R.string.q_breathing), false);
+        setupRadioGroup(view, R.id.rgBleeding, getString(R.string.q_bleeding), false);
     }
 
     // =======================================
     // setupRadioGroup - Sets up radio button behavior and conditional styling
     // =======================================
-    private void setupRadioGroup(View view, int radioGroupId, boolean isSafetyQuestion) {
+    private void setupRadioGroup(View view, int radioGroupId, String question, boolean isSafetyQuestion) {
         RadioGroup radioGroup = view.findViewById(radioGroupId);
 
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
@@ -74,6 +78,9 @@ public class QuestionnaireFragment extends Fragment {
             if (isSafetyQuestion && selectedButton.getId() == R.id.rbSafetyNo) {
                 Toast.makeText(getContext(), getString(R.string.safety_warning), Toast.LENGTH_LONG).show();
             }
+
+            boolean answer = selectedButton.getId() % 2 != 0;
+            viewModel.setFormAnswer(question, answer);
         });
     }
 }

@@ -18,6 +18,9 @@ import android.os.Handler;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
+import co.median.android.a2025_theangels_new.data.models.Event;
+import co.median.android.a2025_theangels_new.data.services.EventDataManager;
+import com.google.firebase.firestore.ListenerRegistration;
 import co.median.android.a2025_theangels_new.ui.events.active.VolClaimFragment;
 import co.median.android.a2025_theangels_new.ui.events.active.VolStatusFragment;
 import co.median.android.a2025_theangels_new.ui.events.active.VolCloseFragment;
@@ -44,6 +47,7 @@ public class EventVolActivity extends BaseActivity {
             new VolStatusFragment(),
             new VolCloseFragment()
     );
+    private ListenerRegistration eventListener;
 
     // =======================================
     // onCreate - Initializes volunteer event screen and step flow
@@ -64,6 +68,19 @@ public class EventVolActivity extends BaseActivity {
         setupStepView();
         setupMap();
         loadStepFragment(0);
+
+        String eventId = getIntent().getStringExtra("eventId");
+        if (eventId != null) {
+            eventListener = EventDataManager.listenToEvent(eventId, (snapshot, e) -> {
+                if (e == null && snapshot != null && snapshot.exists()) {
+                    Event event = snapshot.toObject(Event.class);
+                    if (event != null && event.getEventStatus() != null) {
+                        int index = statuses.indexOf(event.getEventStatus());
+                        if (index >= 0) updateStep(index);
+                    }
+                }
+            });
+        }
 
         // Step progression
         nextStepButton.setOnClickListener(v -> {
@@ -146,5 +163,13 @@ public class EventVolActivity extends BaseActivity {
                 handler.postDelayed(this, 1000);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (eventListener != null) {
+            eventListener.remove();
+        }
     }
 }

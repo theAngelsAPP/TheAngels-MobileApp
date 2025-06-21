@@ -102,6 +102,8 @@
     <string name="logout_message">האם אתה בטוח שברצונך להתנתק?</string>
     <string name="logout_yes">כן</string>
     <string name="logout_no">לא</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
 
     <string name="select_image">בחר תמונה</string>
 
@@ -111,8 +113,15 @@
 
     <string name="your_location">המיקום שלך</string>
     <string name="safety_warning">יש להעביר את הבן אדם למקום בטוח!</string>
+    <string name="q_safety">האם הבן אדם נמצא במקום בטוח?</string>
+    <string name="q_pulse">האם יש דופק?</string>
+    <string name="q_breathing">האם קצב הנשימה תקין?</string>
+    <string name="q_bleeding">האם קיים דימום?</string>
 
     <string name="event_location_title">מיקום האירוע</string>
+    <string name="event_type_label">סוג אירוע: %1$s</string>
+    <string name="what_happened_label">מה קרה: %1$s</string>
+    <string name="location_label">מיקום: %1$.5f, %2$.5f</string>
 
     <string name="close_event_dialog_title">בחר את סיבת סגירת האירוע</string>
     <string name="close_event_confirm">סיום</string>

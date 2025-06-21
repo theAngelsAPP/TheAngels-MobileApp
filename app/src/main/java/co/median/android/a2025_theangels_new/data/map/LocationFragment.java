@@ -48,6 +48,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Locale;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.events.create.NewEventViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 // =======================================
 // LocationFragment - Displays a map with optional manual address input
@@ -78,6 +80,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
     private PlacesClient placesClient;
     private AutocompleteSessionToken sessionToken;
 
+    private NewEventViewModel viewModel;
+
     private final ActivityResultLauncher<String> permissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
@@ -104,6 +108,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        viewModel = new ViewModelProvider(requireActivity()).get(NewEventViewModel.class);
 
         manualInputContainer = view.findViewById(R.id.manual_input_container);
         etManualAddress = view.findViewById(R.id.etManualAddress);
@@ -260,6 +266,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         }
         MapHelper.moveCamera(mMap, pos, 15f);
 
+        viewModel.setEventLocation(new com.google.firebase.firestore.GeoPoint(pos.latitude, pos.longitude));
+
         String address = AddressHelper.getAddressFromLatLng(requireContext(), pos.latitude, pos.longitude);
         if (address == null) address = getString(R.string.address_not_found);
         tvAddress.setText(address);
@@ -279,6 +287,7 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback {
         tvManualMode.setVisibility(View.VISIBLE);
         manualInputContainer.setVisibility(View.GONE);
         etManualAddress.setText(address);
+        viewModel.setEventLocation(new com.google.firebase.firestore.GeoPoint(pos.latitude, pos.longitude));
     }
 
     private void handleManualAddress() {

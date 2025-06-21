@@ -16,11 +16,14 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentTransaction;
+import com.google.firebase.firestore.ListenerRegistration;
+import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import java.util.Arrays;
 import java.util.List;
 import com.shuhart.stepview.StepView;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
+import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 // =======================================
 // EventUserActivity - Handles the live event screen, step progression, and user feedback
@@ -53,6 +56,7 @@ public class EventUserActivity extends BaseActivity {
     private Handler handler = new Handler();
 
     private List<String> statuses;
+    private ListenerRegistration eventListener;
 
     // =======================================
     // onCreate - Initializes UI, step view, timer, map, and button logic
@@ -112,6 +116,18 @@ public class EventUserActivity extends BaseActivity {
             Intent intent = new Intent(EventUserActivity.this, EventVolActivity.class);
             startActivity(intent);
         });
+
+        String eventId = getIntent().getStringExtra("eventId");
+        if (eventId != null) {
+            eventListener = EventDataManager.listenToEvent(eventId, (snapshot, e) -> {
+                if (e == null && snapshot != null && snapshot.exists()) {
+                    Event event = snapshot.toObject(Event.class);
+                    if (event != null && event.getEventStatus() != null) {
+                        statusTextView.setText(event.getEventStatus());
+                    }
+                }
+            });
+        }
     }
 
     // =======================================
@@ -235,5 +251,13 @@ public class EventUserActivity extends BaseActivity {
         builder.setMessage(getString(R.string.feedback_summary, rating, feedbackText));
         builder.setPositiveButton(getString(R.string.ok_button), null);
         builder.show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (eventListener != null) {
+            eventListener.remove();
+        }
     }
 }

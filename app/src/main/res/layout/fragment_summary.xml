@@ -9,11 +9,11 @@
 
     <!-- Event Type Rectangle -->
     <TextView
+        android:id="@+id/tvSummaryType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:background="#E0E0E0"
-        android:text="סוג אירוע: אירוע רפואי"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -21,11 +21,11 @@
 
     <!-- What Happened Rectangle -->
     <TextView
+        android:id="@+id/tvSummaryWhat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:background="#E0E0E0"
-        android:text="מה קרה: אדם ללא הכרה"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -33,6 +33,7 @@
 
     <!-- Questionnaire Rectangle -->
     <LinearLayout
+        android:id="@+id/llSummaryForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
@@ -141,11 +142,11 @@
 
     <!-- Location Rectangle -->
     <TextView
+        android:id="@+id/tvSummaryLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:background="#E0E0E0"
-        android:text="מיקום: שדרות אליעזר 27 חיפה"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"/>
