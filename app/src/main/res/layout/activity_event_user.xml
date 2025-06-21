@@ -104,7 +104,7 @@
                         android:layout_height="96dp"
                         android:src="@drawable/newuserpic"
                         android:scaleType="centerCrop"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Circle"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material.Circle"
                         app:strokeColor="@color/blue_primary"
                         app:strokeWidth="1dp" />
 
