@@ -12,6 +12,8 @@ import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.libraries.places.api.model.AutocompletePrediction;
 import com.google.android.gms.common.api.Status;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,8 +35,13 @@ public class AutocompleteHelper {
      */
     public static void initPlaces(Context context) {
         if (!Places.isInitialized()) {
-            Places.initialize(context.getApplicationContext(),
-                    context.getString(R.string.google_places_key), new Locale("he"));
+            String apiKey = context.getString(R.string.google_places_key);
+            if (apiKey == null || apiKey.isEmpty()) {
+                Toast.makeText(context, R.string.places_init_error, Toast.LENGTH_SHORT).show();
+                Log.e("AutocompleteHelper", "Google Places API key missing");
+                return;
+            }
+            Places.initialize(context.getApplicationContext(), apiKey, new Locale("he"));
         }
     }
 
@@ -47,6 +54,9 @@ public class AutocompleteHelper {
      */
     public static void openCityAutocomplete(Activity activity, int requestCode) {
         initPlaces(activity);
+        if (!Places.isInitialized()) {
+            return;
+        }
         List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
         Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
                 .setTypeFilter(TypeFilter.CITIES)
@@ -64,6 +74,9 @@ public class AutocompleteHelper {
      */
     public static void openAddressAutocomplete(Activity activity, int requestCode) {
         initPlaces(activity);
+        if (!Places.isInitialized()) {
+            return;
+        }
         List<Place.Field> fields = Arrays.asList(
                 Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG);
         Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, fields)
