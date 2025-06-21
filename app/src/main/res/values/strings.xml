@@ -44,6 +44,8 @@
     <string name="enable_permission_button">לחץ כאן לאפשר הרשאות</string>
     <string name="location_permission_settings_message">ניתן לאפשר את המיקום בהגדרות המכשיר.</string>
     <string name="open_settings_button">פתח הגדרות</string>
+    <string name="enable_location_services">הפעלת שירותי מיקום</string>
+    <string name="request_location_permission">לחץ כאן לאישור</string>
 
     <string name="id_field_locked">שדה זה לא ניתן לעריכה</string>
     <string name="fill_all_fields">נא למלא את כל השדות</string>
