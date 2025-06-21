@@ -104,4 +104,15 @@
     <color name="green_dark">#40916c</color>
     <color name="orange_warning_bg">#FFF3E0</color>
 
+    <!-- ///////////////////////////////////////////////////////////// -->
+    <!-- /////////////////////// UI COMPONENT COLORS ////////////////// -->
+    <!-- ///////////////////////////////////////////////////////////// -->
+    <color name="button_primary">@color/colorPrimary</color>
+    <color name="button_secondary">#76c893</color>
+    <color name="card_info_bg">@color/light_blue</color>
+    <color name="card_warning_bg">@color/orange_warning_bg</color>
+    <color name="card_default_bg">@color/white</color>
+    <color name="chip_selected_bg">@color/chip_selected</color>
+    <color name="chip_unselected_bg">@color/chip_unselected</color>
+
 </resources>
