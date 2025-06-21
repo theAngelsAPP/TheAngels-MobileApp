@@ -21,6 +21,8 @@ import co.median.android.a2025_theangels_new.ui.profile.settings.DisplaySettings
 import co.median.android.a2025_theangels_new.ui.profile.settings.JoinVolSettingsActivity;
 import co.median.android.a2025_theangels_new.ui.profile.settings.PrivacySettingsActivity;
 import co.median.android.a2025_theangels_new.ui.profile.support.SupportActivity;
+import com.google.firebase.auth.FirebaseAuth;
+
 
 // =======================================
 // ProfileActivity - Handles user profile screen and navigation to settings/help/logout
