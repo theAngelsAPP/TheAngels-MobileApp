@@ -42,11 +42,17 @@ public class EventVolActivity extends BaseActivity {
     private FrameLayout mapContainer;
     private int currentStep = 0;
 
-    private List<Fragment> stepFragments = Arrays.asList(
-            new VolClaimFragment(),
-            new VolStatusFragment(),
-            new VolCloseFragment()
-    );
+    private String eventId;
+
+    private List<Fragment> stepFragments;
+
+    private void initFragments() {
+        stepFragments = Arrays.asList(
+                VolClaimFragment.newInstance(eventId),
+                VolStatusFragment.newInstance(eventId),
+                VolCloseFragment.newInstance(eventId)
+        );
+    }
     private ListenerRegistration eventListener;
 
     // =======================================
@@ -64,19 +70,28 @@ public class EventVolActivity extends BaseActivity {
         timerTextView = findViewById(R.id.timerTextView);
         mapContainer = findViewById(R.id.map_container);
 
+        eventId = getIntent().getStringExtra("eventId");
+
         startTimer();
         setupStepView();
         setupMap();
+
+        initFragments();
         loadStepFragment(0);
 
-        String eventId = getIntent().getStringExtra("eventId");
         if (eventId != null) {
             eventListener = EventDataManager.listenToEvent(eventId, (snapshot, e) -> {
                 if (e == null && snapshot != null && snapshot.exists()) {
                     Event event = snapshot.toObject(Event.class);
                     if (event != null && event.getEventStatus() != null) {
-                        //int index = statuses.indexOf(event.getEventStatus());
-                        //if (index >= 0) updateStep(index);
+                        java.util.List<String> statuses = java.util.Arrays.asList(
+                                getString(R.string.status_looking_for_volunteer),
+                                getString(R.string.status_volunteer_on_the_way),
+                                getString(R.string.status_volunteer_arrived),
+                                getString(R.string.status_event_finished)
+                        );
+                        int idx = statuses.indexOf(event.getEventStatus());
+                        if (idx >= 0 && idx < 3) updateStep(idx);
                     }
                 }
             });

@@ -201,4 +201,48 @@ public class EventDataManager {
                 .document(eventId)
                 .addSnapshotListener(listener);
     }
+
+    /**
+     * Updates fields of an existing event document.
+     *
+     * @param eventId   ID of the event to update
+     * @param updates   map of fields and values to update
+     * @param onSuccess callback on successful update
+     * @param onError   callback on failure
+     */
+    public static void updateEvent(@NonNull String eventId,
+                                   @NonNull java.util.Map<String, Object> updates,
+                                   Runnable onSuccess,
+                                   ErrorCallback onError) {
+        FirebaseFirestore.getInstance().collection("events")
+                .document(eventId)
+                .update(updates)
+                .addOnSuccessListener(unused -> { if (onSuccess != null) onSuccess.run(); })
+                .addOnFailureListener(e -> { if (onError != null) onError.onError(e); });
+    }
+
+    /**
+     * Assigns a volunteer to handle the event and updates the status.
+     */
+    public static void claimEvent(@NonNull String eventId,
+                                  @NonNull String volunteerUid,
+                                  Runnable onSuccess,
+                                  ErrorCallback onError) {
+        java.util.Map<String, Object> updates = new java.util.HashMap<>();
+        updates.put("eventHandleBy", volunteerUid);
+        updates.put("eventStatus", "מתנדב בדרך");
+        updateEvent(eventId, updates, onSuccess, onError);
+    }
+
+    /**
+     * Updates only the eventStatus field.
+     */
+    public static void updateEventStatus(@NonNull String eventId,
+                                         @NonNull String status,
+                                         Runnable onSuccess,
+                                         ErrorCallback onError) {
+        java.util.Map<String, Object> updates = new java.util.HashMap<>();
+        updates.put("eventStatus", status);
+        updateEvent(eventId, updates, onSuccess, onError);
+    }
 }

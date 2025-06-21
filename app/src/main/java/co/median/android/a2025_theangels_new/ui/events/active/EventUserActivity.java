@@ -124,6 +124,13 @@ public class EventUserActivity extends BaseActivity {
                     Event event = snapshot.toObject(Event.class);
                     if (event != null && event.getEventStatus() != null) {
                         statusTextView.setText(event.getEventStatus());
+                        java.util.List<String> sts = java.util.Arrays.asList(
+                                getString(R.string.status_looking_for_volunteer),
+                                getString(R.string.status_volunteer_on_the_way),
+                                getString(R.string.status_volunteer_arrived),
+                                getString(R.string.status_event_finished));
+                        int i = sts.indexOf(event.getEventStatus());
+                        if (i >= 0) updateStep(i);
                     }
                 }
             });
