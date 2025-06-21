@@ -123,9 +123,7 @@
         <item name="android:background">@android:color/darker_gray</item>
     </style>
 
-    <!-- ------------------------------------------------------------ -->
     <!-- Base application theme used for all screens and components.  -->
-    <!-- ------------------------------------------------------------ -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand colors -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -138,7 +136,6 @@
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
 
         <!-- Backgrounds and surfaces -->
-        <item name="colorBackground">@color/colorBackground</item>
         <item name="colorSurface">@color/colorSurface</item>
         <item name="colorOnBackground">@color/colorOnBackground</item>
         <item name="colorOnSurface">@color/colorOnSurface</item>
