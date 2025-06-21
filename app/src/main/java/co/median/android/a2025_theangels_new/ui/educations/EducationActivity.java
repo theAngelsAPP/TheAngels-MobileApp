@@ -24,7 +24,6 @@ public class EducationActivity extends BaseActivity {
     private ArrayList<Education> educations;
     private EducationAdapter adapter;
     private Map<String, String> typeImages = new HashMap<>();
-    private Map<String, String> typeColors = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +49,8 @@ public class EducationActivity extends BaseActivity {
             public void onEventTypesLoaded(ArrayList<EventType> types) {
                 for (EventType type : types) {
                     typeImages.put(type.getTypeName(), type.getTypeImageURL());
-                    if (type.getTypeColor() != null) {
-                        typeColors.put(type.getTypeName(), type.getTypeColor());
-                    }
                 }
                 adapter.setTypeImages(typeImages);
-                adapter.setTypeColors(typeColors);
                 loadEducationsFromFirestore();
             }
 

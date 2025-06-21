@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.graphics.Color;
 
 import androidx.annotation.Nullable;
 
@@ -24,7 +23,6 @@ public class EducationAdapter extends ArrayAdapter<Education> {
     private Context context;
     private ArrayList<Education> educationsList;
     private java.util.Map<String, String> typeImages;
-    private java.util.Map<String, String> typeColors;
 
     public EducationAdapter(Context context, int resource, ArrayList<Education> educationsList) {
         super(context, resource, educationsList);
@@ -36,9 +34,6 @@ public class EducationAdapter extends ArrayAdapter<Education> {
         this.typeImages = typeImages;
     }
 
-    public void setTypeColors(java.util.Map<String, String> typeColors) {
-        this.typeColors = typeColors;
-    }
 
     @Override
     public int getCount() {
@@ -68,12 +63,7 @@ public class EducationAdapter extends ArrayAdapter<Education> {
             title.setText(education.getEduTitle());
             typeLabel.setText(education.getEduType());
 
-            if (typeColors != null && typeColors.containsKey(education.getEduType())) {
-                try {
-                    int color = Color.parseColor(typeColors.get(education.getEduType()));
-                    typeLabel.setBackgroundColor(color);
-                } catch (Exception ignored) {}
-            }
+
 
             // Load image from URL using Glide. Fallback to placeholder if needed
             Glide.with(context)

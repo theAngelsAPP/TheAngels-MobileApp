@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
 import co.median.android.a2025_theangels_new.data.models.Event;
-import co.median.android.a2025_theangels_new.data.models.UserBasicInfo;
+import co.median.android.a2025_theangels_new.data.models.UserSession;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import co.median.android.a2025_theangels_new.data.services.UserDataManager;
 import com.bumptech.glide.Glide;

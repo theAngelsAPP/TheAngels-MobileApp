@@ -68,7 +68,7 @@ public class UserDataManager {
                     if (document != null && document.exists()) {
                         String email = document.getString("Email");
                         String phone = document.getString("Phone");
-                        String birthDate = document.getString("birthDate");
+                        java.util.Date birthDate = document.getDate("birthDate");
                         String city = document.getString("city");
                         String firstName = document.getString("firstName");
                         Boolean gun = document.getBoolean("haveGunLicense");
@@ -77,12 +77,20 @@ public class UserDataManager {
                         String lastName = document.getString("lastName");
                         List<String> medicalDetails = (List<String>) document.get("medicalDetails");
                         String role = document.getString("role");
+                        java.util.List<String> volAvailable = (java.util.List<String>) document.get("volAvailable");
+                        java.util.List<String> volCities = (java.util.List<String>) document.get("volCities");
+                        Boolean volDriver = document.getBoolean("volHaveDriverLicense");
+                        String volVerification = document.getString("volVerification");
+                        java.util.List<String> volSpecialty = (java.util.List<String>) document.get("volSpecialty");
 
                         UserSession.getInstance().initialize(
                                 email, phone, birthDate, city,
                                 firstName, gun != null && gun,
                                 idNumber, imageURL, lastName,
-                                medicalDetails, role);
+                                medicalDetails, role,
+                                volAvailable, volCities,
+                                volDriver, volVerification,
+                                volSpecialty);
                         callback.accept(UserSession.getInstance());
                     } else {
                         callback.accept(null);
@@ -149,14 +157,14 @@ public class UserDataManager {
     /**
      * טוען מידע בסיסי בלבד על משתמש
      */
-    public static void loadBasicUserInfo(String uid, Consumer<co.median.android.a2025_theangels_new.data.models.UserBasicInfo> callback) {
+    public static void loadBasicUserInfo(String uid, Consumer<co.median.android.a2025_theangels_new.data.models.UserSession> callback) {
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(document -> {
                     if (document != null && document.exists()) {
                         String firstName = document.getString("firstName");
                         String lastName = document.getString("lastName");
                         String imageURL = document.getString("imageURL");
-                        callback.accept(new co.median.android.a2025_theangels_new.data.models.UserBasicInfo(firstName, lastName, imageURL));
+                        callback.accept(new co.median.android.a2025_theangels_new.data.models.UserSession(firstName, lastName, imageURL));
                     } else {
                         callback.accept(null);
                     }
