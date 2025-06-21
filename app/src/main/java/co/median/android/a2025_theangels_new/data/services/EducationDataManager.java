@@ -63,4 +63,25 @@ public class EducationDataManager {
                     callback.onError(e);
                 });
     }
+
+    /**
+     * מחזיר הדרכה לפי מזהה מסמך.
+     */
+    public interface SingleEducationCallback {
+        void onEducationLoaded(Education education);
+        void onError(Exception e);
+    }
+
+    public static void getEducationById(@NonNull String id, SingleEducationCallback callback) {
+        FirebaseFirestore.getInstance().collection("education").document(id)
+                .get()
+                .addOnSuccessListener(doc -> {
+                    if (doc != null && doc.exists()) {
+                        callback.onEducationLoaded(doc.toObject(Education.class));
+                    } else {
+                        callback.onEducationLoaded(null);
+                    }
+                })
+                .addOnFailureListener(callback::onError);
+    }
 }
