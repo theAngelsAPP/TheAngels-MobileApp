@@ -18,6 +18,8 @@ import androidx.fragment.app.Fragment;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.MapHelper;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;
+import co.median.android.a2025_theangels_new.data.services.UserDataManager;
+import co.median.android.a2025_theangels_new.data.models.Event;
 
 // =======================================
 // VolStatusFragment - Displays volunteer's event progress/status
@@ -26,6 +28,7 @@ public class VolStatusFragment extends Fragment {
 
     private static final String ARG_EVENT_ID = "eventId";
     private String eventId;
+    private String userPhone = "";
 
     public static VolStatusFragment newInstance(String eventId) {
         VolStatusFragment f = new VolStatusFragment();
@@ -40,6 +43,23 @@ public class VolStatusFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             eventId = getArguments().getString(ARG_EVENT_ID);
+        }
+        if (eventId != null) {
+            EventDataManager.getEventById(eventId, new EventDataManager.SingleEventCallback() {
+                @Override
+                public void onEventLoaded(Event event) {
+                    if (event != null && event.getEventCreatedBy() != null) {
+                        UserDataManager.loadUserDetails(event.getEventCreatedBy(), session -> {
+                            if (session != null) {
+                                userPhone = session.getPhone();
+                            }
+                        });
+                    }
+                }
+
+                @Override
+                public void onError(Exception e) { }
+            });
         }
     }
 
@@ -81,9 +101,8 @@ public class VolStatusFragment extends Fragment {
     }
 
     private void callUser() {
-        if (getActivity() == null) return;
-        // Phone number should be fetched from event or user, placeholder below
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"));
+        if (getActivity() == null || userPhone.isEmpty()) return;
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + userPhone));
         startActivity(intent);
     }
 
@@ -98,6 +117,11 @@ public class VolStatusFragment extends Fragment {
 
     private void updateStatus(String status) {
         if (eventId == null) return;
-        EventDataManager.updateEventStatus(eventId, status, null, null);
+        java.util.Map<String, Object> updates = new java.util.HashMap<>();
+        updates.put("eventStatus", status);
+        if (status.equals(getString(R.string.status_event_finished))) {
+            updates.put("eventTimeEnded", com.google.firebase.firestore.FieldValue.serverTimestamp());
+        }
+        EventDataManager.updateEvent(eventId, updates, null, null);
     }
 }

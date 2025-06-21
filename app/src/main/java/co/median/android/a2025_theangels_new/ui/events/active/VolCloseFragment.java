@@ -35,6 +35,18 @@ public class VolCloseFragment extends Fragment {
     private String[] closeReasons;
     private String eventId;
 
+    private void closeEvent(String reason) {
+        if (eventId != null) {
+            java.util.Map<String, Object> updates = new java.util.HashMap<>();
+            updates.put("eventCloseReason", reason);
+            updates.put("eventStatus", getString(R.string.status_event_finished));
+            updates.put("eventTimeEnded", FieldValue.serverTimestamp());
+            EventDataManager.updateEvent(eventId, updates, this::navigateToHome, null);
+        } else {
+            navigateToHome();
+        }
+    }
+
     public static VolCloseFragment newInstance(String eventId) {
         VolCloseFragment f = new VolCloseFragment();
         Bundle b = new Bundle();
@@ -85,26 +97,36 @@ public class VolCloseFragment extends Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setTitle(getString(R.string.close_event_dialog_title));
 
-        builder.setSingleChoiceItems(closeReasons, -1, (dialog, which) -> {
-            selectedReason = closeReasons[which];
-        });
+        builder.setSingleChoiceItems(closeReasons, -1, (dialog, which) -> selectedReason = closeReasons[which]);
 
         builder.setPositiveButton(getString(R.string.close_event_confirm), (dialog, which) -> {
             if (selectedReason != null) {
-                if (eventId != null) {
-                    java.util.Map<String, Object> updates = new java.util.HashMap<>();
-                    updates.put("eventCloseReason", selectedReason);
-                    updates.put("eventStatus", getString(R.string.status_event_finished));
-                    updates.put("eventTimeEnded", FieldValue.serverTimestamp());
-                    EventDataManager.updateEvent(eventId, updates, this::navigateToHome, null);
+                if ("אחר".equals(selectedReason)) {
+                    showOtherReasonDialog();
                 } else {
-                    navigateToHome();
+                    closeEvent(selectedReason);
                 }
             }
         });
 
         builder.setNegativeButton(getString(R.string.close_event_cancel), null);
         builder.show();
+    }
+
+    private void showOtherReasonDialog() {
+        final android.widget.EditText input = new android.widget.EditText(requireContext());
+        input.setHint(getString(R.string.close_event_other_hint));
+        AlertDialog.Builder b = new AlertDialog.Builder(requireContext());
+        b.setTitle(getString(R.string.close_event_dialog_title));
+        b.setView(input);
+        b.setPositiveButton(getString(R.string.close_event_confirm), (d, w) -> {
+            String text = input.getText().toString().trim();
+            if (!text.isEmpty()) {
+                closeEvent(text);
+            }
+        });
+        b.setNegativeButton(getString(R.string.close_event_cancel), null);
+        b.show();
     }
 
     // =======================================

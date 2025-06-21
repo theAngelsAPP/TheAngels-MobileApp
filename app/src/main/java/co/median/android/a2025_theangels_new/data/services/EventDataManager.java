@@ -183,6 +183,28 @@ public class EventDataManager {
         void onError(Exception e);
     }
 
+    /** Returns a single event by its id. */
+    public static void getEventById(@NonNull String eventId, SingleEventCallback callback) {
+        FirebaseFirestore.getInstance().collection("events")
+                .document(eventId)
+                .get()
+                .addOnSuccessListener(doc -> {
+                    Event ev = null;
+                    if (doc != null && doc.exists()) {
+                        ev = doc.toObject(Event.class);
+                        if (ev != null) {
+                            try {
+                                java.lang.reflect.Field f = Event.class.getDeclaredField("id");
+                                f.setAccessible(true);
+                                f.set(ev, doc.getId());
+                            } catch (Exception ignored) {}
+                        }
+                    }
+                    callback.onEventLoaded(ev);
+                })
+                .addOnFailureListener(callback::onError);
+    }
+
     /**
      * Creates a new event document in Firestore.
      *
@@ -271,14 +293,17 @@ public class EventDataManager {
     }
 
     /**
-     * Starts real-time listening for events with status "חיפוש מתנדב".
+     * Starts real-time listening for all events that are not yet ended.
      *
      * @param listener callback for updates
      * @return registration handle to remove the listener
      */
-    public static com.google.firebase.firestore.ListenerRegistration listenToOpenEvents(OpenEventsListener listener) {
+    public static com.google.firebase.firestore.ListenerRegistration listenToActiveEvents(OpenEventsListener listener) {
+        java.util.List<String> activeStatuses = java.util.Arrays.asList(
+                "חיפוש מתנדב", "מתנדב בדרך", "מתנדב באירוע"
+        );
         return FirebaseFirestore.getInstance().collection("events")
-                .whereEqualTo("eventStatus", "חיפוש מתנדב")
+                .whereIn("eventStatus", activeStatuses)
                 .addSnapshotListener((snap, e) -> {
                     if (e == null && snap != null) {
                         java.util.ArrayList<Event> list = new java.util.ArrayList<>();

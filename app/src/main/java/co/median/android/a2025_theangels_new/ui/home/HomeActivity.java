@@ -310,7 +310,7 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
 
     private void startOpenEventsListener() {
         if (openEventsListener != null) openEventsListener.remove();
-        openEventsListener = EventDataManager.listenToOpenEvents((ids, events) -> {
+        openEventsListener = EventDataManager.listenToActiveEvents((ids, events) -> {
             openEventIds.clear();
             openEvents.clear();
             openEventIds.addAll(ids);
