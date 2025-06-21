@@ -8,41 +8,100 @@
     android:gravity="top"
     android:background="@android:color/white">
 
-    <!-- Map View -->
     <FrameLayout
-        android:id="@+id/map_container"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_margin="0dp"/>
+        android:id="@+id/map_container">
 
-    <!-- Sign Up Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/location_box"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_gray"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_nomap" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_location_services"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/btn_request_permission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/request_location_permission"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingTop="4dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_current_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/light_gray"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/retrieving_address"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
     <Button
         android:id="@+id/btnManualLocation"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="המיקום שגוי? לעדכון ידני"
+        android:layout_marginTop="8dp"
+        android:text="@string/manual_location_button"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:letterSpacing="0"
         android:textStyle="bold"
         android:backgroundTint="#fff3b0"
         android:elevation="10dp"
-        android:gravity="center"/>
+        android:gravity="center" />
 
-    <!-- Free Text Field with Autocomplete -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_marginTop="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etManualAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="הזן כתובת ידנית"
+            android:hint="@string/enter_address"
             android:textSize="16sp"
             android:background="@android:color/white"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:imeOptions="actionDone"/>
     </com.google.android.material.textfield.TextInputLayout>
+
 </LinearLayout>
