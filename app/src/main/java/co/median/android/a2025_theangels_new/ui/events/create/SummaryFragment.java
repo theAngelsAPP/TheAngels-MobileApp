@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.data.map.AddressHelper;
 
 // =======================================
 // SummaryFragment - Final summary step in event creation
@@ -53,9 +54,14 @@ public class SummaryFragment extends Fragment {
             tvWhat.setText(getString(R.string.what_happened_label, viewModel.getEventQuestionChoice()));
         }
         if (tvLocation != null && viewModel.getEventLocation() != null) {
-            tvLocation.setText(getString(R.string.location_label,
-                    viewModel.getEventLocation().getLatitude(),
-                    viewModel.getEventLocation().getLongitude()));
+            double lat = viewModel.getEventLocation().getLatitude();
+            double lng = viewModel.getEventLocation().getLongitude();
+            String address = AddressHelper.getAddressFromLatLng(requireContext(), lat, lng);
+            if (address != null) {
+                tvLocation.setText(getString(R.string.location_label_address, address));
+            } else {
+                tvLocation.setText(getString(R.string.location_label, lat, lng));
+            }
         }
 
         if (llForm != null) {

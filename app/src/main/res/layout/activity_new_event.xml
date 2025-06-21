@@ -102,13 +102,30 @@
         android:padding="0dp"
         android:gravity="center"
         android:background="#ffffff"
-        android:elevation="6dp">
+        android:elevation="6dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:text="@string/previous_step"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="#6c757d"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNext"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="64dp"
-            android:text="המשך"
+            android:layout_weight="1"
+            android:text="@string/next_step"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#ffffff"

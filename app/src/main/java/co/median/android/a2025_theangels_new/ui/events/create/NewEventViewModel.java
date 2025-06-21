@@ -51,6 +51,16 @@ public class NewEventViewModel extends ViewModel {
     }
 
     /**
+     * Clears all stored event data.
+     */
+    public void clear() {
+        eventType = null;
+        eventQuestionChoice = null;
+        eventForm.clear();
+        eventLocation = null;
+    }
+
+    /**
      * Creates a new event document in Firestore.
      */
     public void createEvent(String uid,
