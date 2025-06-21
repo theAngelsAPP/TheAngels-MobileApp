@@ -105,7 +105,7 @@ public class VolStatusFragment extends Fragment {
         }
         if (btnArrived != null) {
             btnArrived.setOnClickListener(v -> {
-                updateStatus(getString(R.string.status_volunteer_arrived));
+                updateStatus(co.median.android.a2025_theangels_new.data.models.UserEventStatus.VOLUNTEER_AT_EVENT.getDbValue());
                 if (getActivity() instanceof EventVolActivity) {
                     ((EventVolActivity) getActivity()).advanceToStep(2);
                 }
@@ -135,7 +135,7 @@ public class VolStatusFragment extends Fragment {
                 .setView(input)
                 .setPositiveButton(getString(R.string.close_event_confirm), (d, w) -> {
                     String reason = input.getText().toString().trim();
-                    updateStatusWithReason(getString(R.string.status_event_finished), reason);
+                    updateStatusWithReason(co.median.android.a2025_theangels_new.data.models.UserEventStatus.EVENT_FINISHED.getDbValue(), reason);
                     if (getActivity() instanceof EventVolActivity) {
                         ((EventVolActivity) getActivity()).advanceToStep(2);
                     }
@@ -148,7 +148,7 @@ public class VolStatusFragment extends Fragment {
         if (eventId == null) return;
         java.util.Map<String, Object> updates = new java.util.HashMap<>();
         updates.put("eventStatus", status);
-        if (status.equals(getString(R.string.status_event_finished))) {
+        if (status.equals(co.median.android.a2025_theangels_new.data.models.UserEventStatus.EVENT_FINISHED.getDbValue())) {
             updates.put("eventTimeEnded", com.google.firebase.firestore.FieldValue.serverTimestamp());
         }
         EventDataManager.updateEvent(eventId, updates, null,

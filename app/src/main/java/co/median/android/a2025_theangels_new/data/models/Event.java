@@ -5,12 +5,14 @@ package co.median.android.a2025_theangels_new.data.models;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.GeoPoint;
+import com.google.firebase.firestore.DocumentId;
 
 import java.util.Map;
 
 public class Event {
 
     /** מזהה מסמך האירוע */
+    @DocumentId
     private String id;
 
     /** סיבת סגירת האירוע */

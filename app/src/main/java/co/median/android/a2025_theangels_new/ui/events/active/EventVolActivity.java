@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import co.median.android.a2025_theangels_new.databinding.ActivityEventVolBinding;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -44,6 +45,7 @@ public class EventVolActivity extends BaseActivity {
     private Handler handler = new Handler();
     private FrameLayout mapContainer;
     private int currentStep = 0;
+    private ActivityEventVolBinding binding;
 
     private String eventId;
     private GeoPoint eventLocation;
@@ -68,11 +70,13 @@ public class EventVolActivity extends BaseActivity {
         showTopBar(false);
         showBottomBar(true);
 
-        // Bind views
-        stepView = findViewById(R.id.step_view);
-        nextStepButton = findViewById(R.id.nextStepButton);
-        timerTextView = findViewById(R.id.timerTextView);
-        mapContainer = findViewById(R.id.map_container);
+        android.view.ViewGroup content = findViewById(co.median.android.a2025_theangels_new.R.id.activity_content);
+        binding = ActivityEventVolBinding.bind(content.getChildAt(0));
+
+        stepView = binding.stepView;
+        nextStepButton = binding.nextStepButton;
+        timerTextView = binding.timerTextView;
+        mapContainer = binding.mapContainer;
 
         eventId = getIntent().getStringExtra("eventId");
 
@@ -209,5 +213,11 @@ public class EventVolActivity extends BaseActivity {
         if (eventListener != null) {
             eventListener.remove();
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        handler.removeCallbacksAndMessages(null);
     }
 }

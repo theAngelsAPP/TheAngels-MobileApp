@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import co.median.android.a2025_theangels_new.databinding.ActivityEventUserBinding;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.firebase.firestore.ListenerRegistration;
@@ -63,6 +64,7 @@ public class EventUserActivity extends BaseActivity {
     private TextView closeReasonView;
     private TextView endTimeView;
     private View redSeparator;
+    private ActivityEventUserBinding binding;
 
     private int currentStep = 0;
     private boolean isRunning = true;
@@ -87,29 +89,31 @@ public class EventUserActivity extends BaseActivity {
         showTopBar(false);
         showBottomBar(true);
 
-        // Bind views
-        timerTextView = findViewById(R.id.timerTextView);
-        timeTitle = findViewById(R.id.timeTitle);
-        eventAddressTitle = findViewById(R.id.eventAddressTitle);
-        eventAddressText = findViewById(R.id.eventAddressText);
-        redSeparator = findViewById(R.id.redSeparator);
-        statusTextView = findViewById(R.id.statusTextView);
-        stepView = findViewById(R.id.step_view);
-        nextStepButton = findViewById(R.id.nextStepButton);
-        volview = findViewById(R.id.volview);
-        emergencyCallButton = findViewById(R.id.emergencyCallButton);
-        ratingLayout = findViewById(R.id.ratingLayout);
-        safetyMessageLayout = findViewById(R.id.safetyMessageLayout);
-        ratingBar = findViewById(R.id.ratingBar);
-        freeTextFeedback = findViewById(R.id.freeTextFeedback);
-        submitFeedbackButton = findViewById(R.id.submitFeedbackButton);
-        mapContainer = findViewById(R.id.map_container);
-        volunteerInfoLayout = findViewById(R.id.volunteerInfoLayout);
-        volunteerImage = findViewById(R.id.volunteerImage);
-        volunteerName = findViewById(R.id.volunteerName);
-        volunteerAnimation = findViewById(R.id.volunteerAnimation);
-        closeReasonView = findViewById(R.id.closeReasonTextView);
-        endTimeView = findViewById(R.id.endTimeTextView);
+        android.view.ViewGroup content = findViewById(co.median.android.a2025_theangels_new.R.id.activity_content);
+        binding = ActivityEventUserBinding.bind(content.getChildAt(0));
+
+        timerTextView = binding.timerTextView;
+        timeTitle = binding.timeTitle;
+        eventAddressTitle = binding.eventAddressTitle;
+        eventAddressText = binding.eventAddressText;
+        redSeparator = binding.redSeparator;
+        statusTextView = binding.statusTextView;
+        stepView = binding.stepView;
+        nextStepButton = binding.nextStepButton;
+        volview = binding.volview;
+        emergencyCallButton = binding.emergencyCallButton;
+        ratingLayout = binding.ratingLayout;
+        safetyMessageLayout = binding.safetyMessageLayout;
+        ratingBar = binding.ratingBar;
+        freeTextFeedback = binding.freeTextFeedback;
+        submitFeedbackButton = binding.submitFeedbackButton;
+        mapContainer = binding.mapContainer;
+        volunteerInfoLayout = binding.volunteerInfoLayout;
+        volunteerImage = binding.volunteerImage;
+        volunteerName = binding.volunteerName;
+        volunteerAnimation = binding.volunteerAnimation;
+        closeReasonView = binding.closeReasonTextView;
+        endTimeView = binding.endTimeTextView;
 
         // Step statuses (translated from strings.xml)
         statuses = Arrays.asList(
@@ -365,5 +369,11 @@ public class EventUserActivity extends BaseActivity {
         if (eventListener != null) {
             eventListener.remove();
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        handler.removeCallbacksAndMessages(null);
     }
 }

@@ -72,7 +72,7 @@ public class NewEventViewModel extends ViewModel {
         data.put("eventQuestionChoice", eventQuestionChoice);
         data.put("eventForm", eventForm);
         data.put("eventLocation", eventLocation);
-        data.put("eventStatus", "חיפוש מתנדב");
+        data.put("eventStatus", co.median.android.a2025_theangels_new.data.models.UserEventStatus.LOOKING_FOR_VOLUNTEER.getDbValue());
         data.put("eventTimeStarted", com.google.firebase.firestore.FieldValue.serverTimestamp());
 
         EventDataManager.createNewEvent(data, onSuccess, onError);
