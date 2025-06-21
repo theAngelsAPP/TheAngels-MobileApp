@@ -42,6 +42,7 @@ public class NewEventActivity extends BaseActivity {
     private StepView stepView;
     private TextView tvStepTitle, tvStepDescription;
     private Button btnNext;
+    private Button btnBack;
     private Vibrator vibrator;
     private NewEventViewModel viewModel;
 
@@ -67,6 +68,7 @@ public class NewEventActivity extends BaseActivity {
         stepView = findViewById(R.id.step_view);
         ImageView ivClose = findViewById(R.id.ivClose);
         btnNext = findViewById(R.id.btnNext);
+        btnBack = findViewById(R.id.btnBack);
         tvStepTitle = findViewById(R.id.tvStepTitle);
         tvStepDescription = findViewById(R.id.tvStepDescription);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
@@ -87,6 +89,19 @@ public class NewEventActivity extends BaseActivity {
             updateStepInfo();
         }
 
+        btnBack.setEnabled(false);
+
+        btnBack.setOnClickListener(v -> {
+            if (currentStep > 0) {
+                currentStep--;
+                replaceFragment(steps[currentStep]);
+                stepView.go(currentStep, true);
+                updateStepInfo();
+                btnNext.setText(R.string.next_step);
+                btnBack.setEnabled(currentStep != 0);
+            }
+        });
+
         // Handle next step
         btnNext.setOnClickListener(v -> {
             if (currentStep < steps.length - 1) {
@@ -96,6 +111,7 @@ public class NewEventActivity extends BaseActivity {
                 updateStepInfo();
                 triggerVibration();
                 animateStepCircle();
+                btnBack.setEnabled(true);
 
                 // Update button text on last step
                 if (currentStep == steps.length - 1) {
@@ -118,8 +134,16 @@ public class NewEventActivity extends BaseActivity {
             }
         });
 
-        // Close screen
-        ivClose.setOnClickListener(v -> finish());
+        // Close screen with confirmation
+        ivClose.setOnClickListener(v -> new androidx.appcompat.app.AlertDialog.Builder(this)
+                .setMessage(R.string.cancel_event_creation_message)
+                .setPositiveButton(R.string.yes, (d, which) -> {
+                    viewModel.clear();
+                    startActivity(new Intent(NewEventActivity.this, co.median.android.a2025_theangels_new.ui.home.HomeActivity.class));
+                    finish();
+                })
+                .setNegativeButton(R.string.no, (d, which) -> d.dismiss())
+                .show());
     }
 
     // =======================================

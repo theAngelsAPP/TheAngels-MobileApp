@@ -70,6 +70,7 @@
 
     <string name="call_for_help">קריאה לעזרה</string>
     <string name="next_step">המשך</string>
+    <string name="previous_step">חזור</string>
 
     <!-- Location Permission -->
     <string name="location_permission_enabled">שיתוף מיקומך בזמן אמת פעיל</string>
@@ -102,6 +103,7 @@
     <string name="logout_message">האם אתה בטוח שברצונך להתנתק?</string>
     <string name="logout_yes">כן</string>
     <string name="logout_no">לא</string>
+    <string name="cancel_event_creation_message">האם אתה בטוח שברצונך לבטל יצירת האירוע?</string>
     <string name="yes">כן</string>
     <string name="no">לא</string>
 
@@ -122,6 +124,7 @@
     <string name="event_type_label">סוג אירוע: %1$s</string>
     <string name="what_happened_label">מה קרה: %1$s</string>
     <string name="location_label">מיקום: %1$.5f, %2$.5f</string>
+    <string name="location_label_address">מיקום: %1$s</string>
 
     <string name="close_event_dialog_title">בחר את סיבת סגירת האירוע</string>
     <string name="close_event_confirm">סיום</string>
