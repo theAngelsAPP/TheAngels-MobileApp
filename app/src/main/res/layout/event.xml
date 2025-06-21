@@ -39,7 +39,7 @@
             android:paddingVertical="4dp"
             android:text="הסתיים ✔"
             android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
-            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textColor="@color/event_status"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +65,7 @@
             android:text="יום חמישי, 12 ביוני | 16:00"
             android:textDirection="rtl"
             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textColor="@color/gray_dark"
             app:layout_constraintStart_toStartOf="@+id/event_title"
             app:layout_constraintEnd_toEndOf="@+id/event_title"
             app:layout_constraintTop_toBottomOf="@+id/event_title" />
@@ -75,7 +75,7 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginTop="12dp"
-            android:background="?attr/colorOutlineVariant"
+            android:background="@color/gray_soft"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_date" />
