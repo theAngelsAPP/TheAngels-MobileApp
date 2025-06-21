@@ -138,48 +138,15 @@
 
 
 
-        <!-- Messages and Updates -->
+        <!-- Messages -->
 
         <LinearLayout
+            android:id="@+id/messages_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/notification_background"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:gravity="center_vertical"
-            android:elevation="4dp"
+            android:orientation="vertical"
             android:layout_marginBottom="16dp"
-            android:visibility="gone">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/messagebox_icon"
-                android:contentDescription="הודעה"
-                android:layout_marginEnd="12dp"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="הודעת מערכת חדשה"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="לאחר שיקלול הנתונים, הדירוג הכולל שלך עלה ל4.8, כל הכבוד! 👏🏻"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/black"/>
-            </LinearLayout>
-        </LinearLayout>
+            android:visibility="gone"/>
 
         <LinearLayout
             android:id="@+id/location_permission_container"

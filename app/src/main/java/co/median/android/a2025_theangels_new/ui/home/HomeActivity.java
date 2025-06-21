@@ -21,6 +21,13 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import co.median.android.a2025_theangels_new.data.services.MessageDataManager;
+import co.median.android.a2025_theangels_new.data.services.EducationDataManager;
+import co.median.android.a2025_theangels_new.data.models.Message;
+import co.median.android.a2025_theangels_new.data.models.MessageType;
+import co.median.android.a2025_theangels_new.ui.home.MessagesAdapter.OnMessageClickListener;
+import co.median.android.a2025_theangels_new.data.models.Education;
+import co.median.android.a2025_theangels_new.ui.educations.EducationDetailsActivity;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
@@ -59,6 +66,9 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
     private ArrayList<Event> recentEvents = new ArrayList<>();
     private Map<String, String> typeImageMap = new HashMap<>();
     private Map<String, String> statusColorMap = new HashMap<>();
+    private LinearLayout messagesContainer;
+    private MessagesAdapter messagesAdapter;
+    private ArrayList<Message> messages = new ArrayList<>();
 
     // =======================================
     // onCreate - Initializes UI and checks for location permission
@@ -81,6 +91,8 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
         tvCurrentAddress = findViewById(R.id.tv_current_address);
         recentEventsContainer = findViewById(R.id.recent_events_container);
         recentEventsAdapter = new RecentEventsAdapter(this, R.layout.item_recent_event, recentEvents);
+        messagesContainer = findViewById(R.id.messages_container);
+        messagesAdapter = new MessagesAdapter(this, R.layout.message_item, messages);
 
         UserSession session = UserSession.getInstance();
         String fullName = session.getFirstName() + " " + session.getLastName();
@@ -98,6 +110,7 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
         }
 
         loadEventTypes();
+        loadMessages();
 
 
         checkLocationPermission();
@@ -245,6 +258,58 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
         for (int i = 0; i < recentEvents.size(); i++) {
             View item = recentEventsAdapter.getView(i, null, recentEventsContainer);
             recentEventsContainer.addView(item);
+        }
+    }
+
+    private void loadMessages() {
+        messagesAdapter.setOnMessageClickListener(this::handleMessageClick);
+        MessageDataManager.getMessagesWithTypes(new MessageDataManager.MessagesCallback() {
+            @Override
+            public void onMessagesLoaded(ArrayList<Message> msgs, Map<String, MessageType> types) {
+                messages.clear();
+                messages.addAll(msgs);
+                messagesAdapter.setTypeMap(types);
+                displayMessages();
+            }
+
+            @Override
+            public void onError(Exception e) {
+            }
+        });
+    }
+
+    private void displayMessages() {
+        if (messagesContainer == null) return;
+        messagesContainer.removeAllViews();
+        if (messages.isEmpty()) {
+            messagesContainer.setVisibility(View.GONE);
+            return;
+        }
+        messagesContainer.setVisibility(View.VISIBLE);
+        for (int i = 0; i < messages.size(); i++) {
+            View item = messagesAdapter.getView(i, null, messagesContainer);
+            messagesContainer.addView(item);
+        }
+    }
+
+    private void handleMessageClick(Message message) {
+        if ("Education".equals(message.getMessageType())) {
+            EducationDataManager.getEducationById(message.getMessageRef(), new EducationDataManager.SingleEducationCallback() {
+                @Override
+                public void onEducationLoaded(Education education) {
+                    if (education != null) {
+                        Intent intent = new Intent(HomeActivity.this, EducationDetailsActivity.class);
+                        intent.putExtra("eduTitle", education.getEduTitle());
+                        intent.putExtra("eduData", education.getEduData());
+                        intent.putExtra("eduImageURL", education.getEduImageURL());
+                        startActivity(intent);
+                    }
+                }
+
+                @Override
+                public void onError(Exception e) {
+                }
+            });
         }
     }
 
