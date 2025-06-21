@@ -39,6 +39,7 @@ import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import co.median.android.a2025_theangels_new.data.services.EventTypeDataManager;
 import co.median.android.a2025_theangels_new.data.services.EventStatusDataManager;
 import co.median.android.a2025_theangels_new.data.models.EventType;
+import com.google.firebase.firestore.ListenerRegistration;
 
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.HomeMapFragment;
@@ -46,6 +47,7 @@ import co.median.android.a2025_theangels_new.data.models.UserSession;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.events.list.RecentEventsAdapter;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
+import co.median.android.a2025_theangels_new.ui.home.OpenEventsAdapter;
 
 // =======================================
 // HomeActivity - Displays the home screen and handles location permission logic
@@ -71,6 +73,12 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
     private LinearLayout messagesContainer;
     private MessagesAdapter messagesAdapter;
     private ArrayList<Message> messages = new ArrayList<>();
+    private LinearLayout openEventsWidget;
+    private LinearLayout openEventsContainer;
+    private OpenEventsAdapter openEventsAdapter;
+    private ArrayList<Event> openEvents = new ArrayList<>();
+    private ArrayList<String> openEventIds = new ArrayList<>();
+    private ListenerRegistration openEventsListener;
 
     // =======================================
     // onCreate - Initializes UI and checks for location permission
@@ -95,6 +103,9 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
         recentEventsAdapter = new RecentEventsAdapter(this, R.layout.item_recent_event, recentEvents);
         messagesContainer = findViewById(R.id.messages_container);
         messagesAdapter = new MessagesAdapter(this, R.layout.message_item, messages);
+        openEventsWidget = findViewById(R.id.vol_active_events_widget);
+        openEventsContainer = findViewById(R.id.open_events_container);
+        openEventsAdapter = new OpenEventsAdapter(this, R.layout.item_open_event, openEvents, openEventIds);
 
         UserSession session = UserSession.getInstance();
         String fullName = session.getFirstName() + " " + session.getLastName();
@@ -106,9 +117,12 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
 
         if ("מתנדב".equals(session.getRole())) {
             volDashboard.setVisibility(View.VISIBLE);
+            openEventsWidget.setVisibility(View.VISIBLE);
             loadVolunteerDashboardData();
+            startOpenEventsListener();
         } else {
             volDashboard.setVisibility(View.GONE);
+            openEventsWidget.setVisibility(View.GONE);
         }
 
         loadEventTypes();
@@ -294,6 +308,31 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
         }
     }
 
+    private void startOpenEventsListener() {
+        if (openEventsListener != null) openEventsListener.remove();
+        openEventsListener = EventDataManager.listenToOpenEvents((ids, events) -> {
+            openEventIds.clear();
+            openEvents.clear();
+            openEventIds.addAll(ids);
+            openEvents.addAll(events);
+            displayOpenEvents();
+        });
+    }
+
+    private void displayOpenEvents() {
+        if (openEventsContainer == null) return;
+        openEventsContainer.removeAllViews();
+        if (openEvents.isEmpty()) {
+            openEventsWidget.setVisibility(View.GONE);
+            return;
+        }
+        openEventsWidget.setVisibility(View.VISIBLE);
+        for (int i = 0; i < openEvents.size(); i++) {
+            View item = openEventsAdapter.getView(i, null, openEventsContainer);
+            openEventsContainer.addView(item);
+        }
+    }
+
     private void handleMessageClick(Message message) {
         String ref = message.getMessageRef();
         if (ref == null || ref.isEmpty()) {
@@ -352,6 +391,14 @@ public class HomeActivity extends BaseActivity implements HomeMapFragment.OnAddr
     public void onAddressChanged(String address) {
         if (tvCurrentAddress != null) {
             tvCurrentAddress.setText(address);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (openEventsListener != null) {
+            openEventsListener.remove();
         }
     }
 }

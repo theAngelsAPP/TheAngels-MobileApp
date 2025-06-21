@@ -10,6 +10,9 @@ import java.util.Map;
 
 public class Event {
 
+    /** מזהה מסמך האירוע */
+    private String id;
+
     /** סיבת סגירת האירוע */
     private String eventCloseReason;
     /** מזהה המשתמש שיצר את האירוע */
@@ -190,4 +193,10 @@ public class Event {
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
+
+    /** @return מזהה המסמך */
+    public String getId() { return id; }
+
+    /** @param id מזהה המסמך */
+    public void setId(String id) { this.id = id; }
 }
