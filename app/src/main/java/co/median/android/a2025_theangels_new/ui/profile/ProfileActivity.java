@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import co.median.android.a2025_theangels_new.data.models.UserSession;
+import com.google.firebase.auth.FirebaseAuth;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 import co.median.android.a2025_theangels_new.ui.main.MainActivity;
@@ -143,6 +144,8 @@ public class ProfileActivity extends BaseActivity {
                 .setPositiveButton(R.string.logout_yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        FirebaseAuth.getInstance().signOut();
+                        UserSession.getInstance().clear();
                         Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
