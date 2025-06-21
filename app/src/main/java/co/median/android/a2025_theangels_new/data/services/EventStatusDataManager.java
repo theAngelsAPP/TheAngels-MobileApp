@@ -1,3 +1,6 @@
+/**
+ * שירות לשליפת סטטוסי אירועים מהמסד.
+ */
 package co.median.android.a2025_theangels_new.data.services;
 
 import android.util.Log;
@@ -6,12 +9,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+    /** תגית לוג */
 public class EventStatusDataManager {
     private static final String TAG = "EventStatusDataManager";
 
+    /**
+     * קריאה חוזרת לאחר שליפת סטטוסים.
+     */
     public interface EventStatusCallback {
         void onStatusesLoaded(Map<String, String> statusMap);
         void onError(Exception e);
+    /**
+     * טוען את כל הסטטוסים מקולקציית eventStatus.
+     */
     }
 
     public static void getAllEventStatuses(EventStatusCallback callback) {

@@ -15,6 +15,7 @@ import co.median.android.a2025_theangels_new.data.models.EventType;
 public class EventTypeDataManager {
 
     private static final String TAG = "EventTypeDataManager";
+    /** תגית לוג */
 
     /**
      * ממשק החוזר מידע לאחר השליפה או שגיאה במקרה של כישלון.

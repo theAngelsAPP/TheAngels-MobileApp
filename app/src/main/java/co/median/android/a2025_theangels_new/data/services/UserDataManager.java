@@ -1,3 +1,6 @@
+/**
+ * שירות לשליפת ועדכון נתוני משתמשים במסד Firebase.
+ */
 package co.median.android.a2025_theangels_new.data.services;
 
 import android.util.Log;
@@ -11,7 +14,9 @@ import java.util.Map;
 import co.median.android.a2025_theangels_new.data.models.UserSession;
 
 public class UserDataManager {
+    /** תגית לוג */
     private static final String TAG = "UserDataManager";
+    /** מופע Firestore לשימוש פנימי */
     private static final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     /**
@@ -54,7 +59,6 @@ public class UserDataManager {
                 });
     }
 
-
     /**
      * טוען את נתוני המשתמש מהמסד ושומר אותם ב-UserSession
      */
@@ -90,6 +94,9 @@ public class UserDataManager {
                 });
     }
 
+    /**
+     * מחזיר את מספר האירועים שהמשתמש טיפל בהם
+     */
     public static void getHandledEventsCount(String uid, Consumer<Integer> callback) {
         db.collection("events")
                 .whereEqualTo("eventHandleBy", uid)
@@ -101,6 +108,9 @@ public class UserDataManager {
                 });
     }
 
+    /**
+     * מחשב את ממוצע הדירוג שקיבל המשתמש עבור האירועים שטיפל בהם
+     */
     public static void getHandledEventsAverageRating(String uid, Consumer<Double> callback) {
         db.collection("events")
                 .whereEqualTo("eventHandleBy", uid)
@@ -123,16 +133,22 @@ public class UserDataManager {
                 });
     }
 
+    /**
+     * מעדכן את פרטי המשתמש במסד הנתונים
+     */
     public static void updateUserDetails(String uid, Map<String, Object> updates, Consumer<Boolean> callback) {
         db.collection("users").document(uid).update(updates)
                 .addOnSuccessListener(unused ->
                         loadUserDetails(uid, session -> callback.accept(true)))
                 .addOnFailureListener(e -> {
-                    Log.e(TAG, "\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e2\u05d3\u05db\u05d5\u05df \u05e4\u05e8\u05d8\u05d9 \u05d4\u05de\u05e9\u05ea\u05de\u05e9", e);
+                    Log.e(TAG, "שגיאה בעדכון פרטי המשתמש", e);
                     callback.accept(false);
                 });
     }
 
+    /**
+     * טוען מידע בסיסי בלבד על משתמש
+     */
     public static void loadBasicUserInfo(String uid, Consumer<co.median.android.a2025_theangels_new.data.models.UserBasicInfo> callback) {
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(document -> {
@@ -150,5 +166,4 @@ public class UserDataManager {
                     callback.accept(null);
                 });
     }
-
 }
