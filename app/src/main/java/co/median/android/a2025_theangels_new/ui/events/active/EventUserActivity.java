@@ -34,7 +34,6 @@ import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
 import co.median.android.a2025_theangels_new.data.map.AddressHelper;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
-import com.airbnb.lottie.LottieAnimationView;
 // =======================================
 // EventUserActivity - Handles the live event screen, step progression, and user feedback
 // =======================================
@@ -55,7 +54,6 @@ public class EventUserActivity extends BaseActivity {
     private LinearLayout volunteerInfoLayout;
     private ImageView volunteerImage;
     private TextView volunteerName;
-    private LottieAnimationView volunteerAnimation;
     private LinearLayout ratingLayout;
     private LinearLayout safetyMessageLayout;
     private RatingBar ratingBar;
@@ -112,7 +110,6 @@ public class EventUserActivity extends BaseActivity {
         volunteerInfoLayout = binding.volunteerInfoLayout;
         volunteerImage = binding.volunteerImage;
         volunteerName = binding.volunteerName;
-        volunteerAnimation = binding.volunteerAnimation;
         closeReasonView = binding.closeReasonTextView;
         endTimeView = binding.endTimeTextView;
 
@@ -283,9 +280,7 @@ public class EventUserActivity extends BaseActivity {
             }
         }
         volunteerInfoLayout.setVisibility(View.VISIBLE);
-        if (volunteerAnimation != null) {
-            volunteerAnimation.playAnimation();
-        }
+        volunteerInfoLayout.startAnimation(android.view.animation.AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
         UserDataManager.loadBasicUserInfo(uid, info -> {
             if (info != null) {
                 volunteerName.setText(info.getFirstName() + " " + info.getLastName());
