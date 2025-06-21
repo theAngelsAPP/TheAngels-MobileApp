@@ -6,3 +6,15 @@ plugins {
     id 'androidx.navigation.safeargs' version '2.7.7' apply false
 
 }
+// Expose API keys from secrets.properties or environment variables
+def secretsFile = rootProject.file('secrets.properties')
+if (secretsFile.exists()) {
+    def props = new Properties()
+    secretsFile.withInputStream { props.load(it) }
+    props.each { k, v -> project.ext.set(k.toString(), v) }
+} else {
+    ['GOOGLE_MAPS_API_KEY', 'GOOGLE_PLACES_API_KEY'].each { keyName ->
+        def envVal = System.getenv(keyName)
+        if (envVal) project.ext.set(keyName, envVal)
+    }
+}

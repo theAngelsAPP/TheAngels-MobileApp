@@ -3,7 +3,8 @@ package co.median.android.a2025_theangels_new.data.map;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-
+import android.util.Log;
+import android.widget.Toast;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.model.TypeFilter;
