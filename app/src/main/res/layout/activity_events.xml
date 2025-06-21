@@ -57,7 +57,7 @@
                 android:text="רפואי"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/filter_button_medical"
+                android:background="@drawable/filter_button"
                 android:gravity="center" />
 
             <Button
@@ -67,7 +67,7 @@
                 android:text="ביטחוני"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/filter_button_security"
+                android:background="@drawable/filter_button"
                 android:gravity="center"
                 android:layout_marginStart="1dp" />
 
@@ -78,7 +78,7 @@
                 android:text="רכב"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/filter_button_vehicle"
+                android:background="@drawable/filter_button"
                 android:gravity="center"
                 android:layout_marginStart="1dp" />
 
@@ -89,7 +89,7 @@
                 android:text="בע''ח"
                 android:textSize="12sp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/filter_button_animal"
+                android:background="@drawable/filter_button"
                 android:gravity="center"
                 android:layout_marginStart="1dp" />
         </LinearLayout>
