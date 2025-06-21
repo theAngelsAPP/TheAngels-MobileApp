@@ -102,10 +102,10 @@ public class EventVolActivity extends BaseActivity {
                         }
                         if (event.getEventStatus() != null) {
                             java.util.List<String> statuses = java.util.Arrays.asList(
-                                    getString(R.string.status_looking_for_volunteer),
-                                    getString(R.string.status_volunteer_on_the_way),
-                                    getString(R.string.status_volunteer_arrived),
-                                    getString(R.string.status_event_finished)
+                                    getString(R.string.step_looking),
+                                    getString(R.string.step_on_the_way),
+                                    getString(R.string.step_arrived),
+                                    getString(R.string.step_finished)
                             );
                             int idx = statuses.indexOf(event.getEventStatus());
                             if (idx >= 0 && idx < 3) updateStep(idx);

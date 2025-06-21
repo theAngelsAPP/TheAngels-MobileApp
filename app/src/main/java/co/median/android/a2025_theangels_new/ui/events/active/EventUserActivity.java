@@ -165,17 +165,17 @@ public class EventUserActivity extends BaseActivity {
                         if (status != null) {
                             statusTextView.setText(status);
                             java.util.List<String> sts = java.util.Arrays.asList(
-                                    getString(R.string.status_looking_for_volunteer),
-                                    getString(R.string.status_volunteer_on_the_way),
-                                    getString(R.string.status_volunteer_arrived),
-                                    getString(R.string.status_event_finished));
+                                    getString(R.string.step_looking),
+                                    getString(R.string.step_on_the_way),
+                                    getString(R.string.step_arrived),
+                                    getString(R.string.step_finished));
                             int i = sts.indexOf(status);
                             if (i >= 0) updateStep(i);
 
                             if ((previousStatus != null &&
-                                    previousStatus.equals(getString(R.string.status_looking_for_volunteer)) &&
-                                    status.equals(getString(R.string.status_volunteer_on_the_way))) ||
-                                    (previousStatus == null && status.equals(getString(R.string.status_volunteer_on_the_way)))) {
+                                    previousStatus.equals(getString(R.string.step_looking)) &&
+                                    status.equals(getString(R.string.step_on_the_way))) ||
+                                    (previousStatus == null && status.equals(getString(R.string.step_on_the_way)))) {
                                 triggerVolunteerAssigned(event.getEventHandleBy());
                             }
                             previousStatus = status;
