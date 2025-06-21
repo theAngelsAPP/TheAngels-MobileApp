@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import co.median.android.a2025_theangels_new.data.models.UserSession;
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 // =======================================
 // ProfileActivity - Handles user profile screen and navigation to settings/help/logout

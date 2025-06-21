@@ -15,6 +15,7 @@ import co.median.android.a2025_theangels_new.data.services.EventDataManager;
 import co.median.android.a2025_theangels_new.data.services.EventTypeDataManager;
 import co.median.android.a2025_theangels_new.data.services.EventStatusDataManager;
 import co.median.android.a2025_theangels_new.data.models.EventType;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 public class EventsActivity extends BaseActivity {
 

@@ -21,6 +21,7 @@ import java.util.List;
 import com.shuhart.stepview.StepView;
 import co.median.android.a2025_theangels_new.R;
 import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 // =======================================
 // EventUserActivity - Handles the live event screen, step progression, and user feedback
 // =======================================

@@ -6,6 +6,7 @@ package co.median.android.a2025_theangels_new.ui.profile.settings;
 import android.os.Bundle;
 
 import co.median.android.a2025_theangels_new.R;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 
 // =======================================
 // JoinVolSettingsActivity - Displays settings screen for new volunteer registration

@@ -21,6 +21,7 @@ import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
 import co.median.android.a2025_theangels_new.ui.events.active.VolClaimFragment;
 import co.median.android.a2025_theangels_new.ui.events.active.VolStatusFragment;
 import co.median.android.a2025_theangels_new.ui.events.active.VolCloseFragment;
+import co.median.android.a2025_theangels_new.ui.main.BaseActivity;
 // =======================================
 // EventVolActivity - Handles the volunteer flow during an active event
 // =======================================
