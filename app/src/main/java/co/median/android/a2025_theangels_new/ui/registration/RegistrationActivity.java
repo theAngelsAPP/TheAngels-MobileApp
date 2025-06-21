@@ -9,10 +9,12 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import co.median.android.a2025_theangels_new.maps.AutocompleteHelper;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.auth.AuthResult;
@@ -35,9 +37,11 @@ public class RegistrationActivity extends AppCompatActivity {
     private CheckBox weaponLicenseCheckBox;
     private ImageView profileImageView;
     private ChipGroup medicalOptionsGroup;
-    private Spinner citySpinner;
+    private EditText cityEditText; // שדה בחירת עיר מגורים
+    private String selectedCity = ""; // שם העיר שנבחרה
 
     private static final int PICK_IMAGE_REQUEST = 1;
+    private static final int CITY_AUTOCOMPLETE_REQUEST = 2;
     private Bitmap selectedImageBitmap = null;
     private String selectedBirthDate = "";
     private FirebaseFirestore db;
@@ -66,8 +70,11 @@ public class RegistrationActivity extends AppCompatActivity {
         weaponLicenseCheckBox = findViewById(R.id.weaponLicenseCheckBox);
         profileImageView = findViewById(R.id.profileImageView);
         medicalOptionsGroup = findViewById(R.id.medicalOptions);
-        citySpinner = findViewById(R.id.citySpinner);
-        loadCities();
+        cityEditText = findViewById(R.id.cityEditText);
+        // פותח את ממשק החיפוש של גוגל כאשר המשתמש לוחץ על שדה העיר
+        cityEditText.setOnClickListener(v ->
+                AutocompleteHelper.openCityAutocomplete(this, CITY_AUTOCOMPLETE_REQUEST));
+
         loadMedicalDetails();
 
         selectBirthDateButton.setOnClickListener(v -> showDatePicker());
@@ -182,7 +189,7 @@ public class RegistrationActivity extends AppCompatActivity {
         userData.put("haveGunLicense", weaponLicenseCheckBox.isChecked());
         userData.put("imageURL", imageUrl);
         userData.put("medicalDetails", medicalSelections);
-        userData.put("city", citySpinner.getSelectedItem().toString());
+        userData.put("city", selectedCity);
         userData.put("role", "משתמש");
 
         db.collection("users").document(uid).set(userData)
@@ -209,8 +216,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 && password.getText().toString().equals(confirmPassword.getText().toString())
                 && !selectedBirthDate.isEmpty();
 
-        Log.d("Validation", "Inputs valid: " + valid);
-        return valid;
+        if (valid && selectedCity.isEmpty()) {
+            Toast.makeText(this, R.string.select_city_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        Log.d("Validation", "Inputs valid: " + (valid && !selectedCity.isEmpty()));
+        return valid && !selectedCity.isEmpty();
     }
 
 
@@ -226,20 +238,18 @@ public class RegistrationActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else if (requestCode == CITY_AUTOCOMPLETE_REQUEST) {
+            if (resultCode == RESULT_OK && data != null) {
+                Place place = AutocompleteHelper.getPlaceFromResult(data);
+                selectedCity = place.getName();
+                cityEditText.setText(selectedCity);
+            } else if (resultCode == AutocompleteActivity.RESULT_ERROR && data != null) {
+                Status status = AutocompleteHelper.getErrorStatus(data);
+                Toast.makeText(this, "שגיאה בבחירת עיר: " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
-    private void loadCities() {
-        db.collection("cities").get().addOnSuccessListener(querySnapshot -> {
-            List<String> cities = new ArrayList<>();
-            for (QueryDocumentSnapshot doc : querySnapshot) {
-                cities.add(doc.getString("name"));
-            }
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cities);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            citySpinner.setAdapter(adapter);
-        });
-    }
 
     private void loadMedicalDetails() {
         db.collection("medicalDetails").get().addOnSuccessListener(querySnapshot -> {

@@ -193,4 +193,5 @@
     <string name="registration_title">הצטרפות למלאכים</string>
     <string name="register_button">יצירת משתמש חדש</string>
     <string name="go_to_event">מעבר לאירוע</string>
+    <string name="select_city_error">יש לבחור עיר מהרשימה</string>
 </resources>
