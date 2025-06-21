@@ -1,3 +1,6 @@
+/**
+ * שירות לשליפת נתוני הדרכות ממסד הנתונים.
+ */
 package co.median.android.a2025_theangels_new.data.services;
 
 import android.util.Log;
@@ -13,18 +16,27 @@ import co.median.android.a2025_theangels_new.data.models.Education;
 
 public class EducationDataManager {
 
+    /** תגית לוג לצורך דיבוג */
     private static final String TAG = "EducationDataManager";
 
+    /**
+     * ממשק לתוצאות שליפת הדרכות.
+     */
     public interface EducationCallback {
+        /** נקרא כאשר הרשימה נטענה בהצלחה */
         void onEducationsLoaded(ArrayList<Education> educations);
+        /** נקרא במקרה של שגיאה בשליפה */
         void onError(Exception e);
     }
 
+    /**
+     * מביא את כל ההדרכות ממסד הנתונים של Firebase.
+     * @param callback יקבל את הרשימה או שגיאה
+     */
     public static void getAllEducations(EducationCallback callback) {
         Log.d(TAG, "getAllEducations called - starting Firestore fetch");
 
-        // Fetch education documents from Firestore. Collection name is
-        // "education" as defined in the DB.
+        // שליפת מסמכי ההדרכה מקולקציית "education"
         FirebaseFirestore.getInstance().collection("education")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {

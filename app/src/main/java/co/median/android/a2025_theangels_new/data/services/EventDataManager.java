@@ -17,6 +17,7 @@ import co.median.android.a2025_theangels_new.data.models.Event;
  */
 public class EventDataManager {
 
+    /** תגית לוג */
     private static final String TAG = "EventDataManager";
 
     /**
