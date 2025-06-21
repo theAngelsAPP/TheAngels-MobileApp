@@ -13,7 +13,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".MyApplication"
+        android:name=".data.MyApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/icon"
@@ -31,7 +31,7 @@
             android:name="com.google.android.libraries.places.API_KEY"
             android:value="@string/google_places_key"/>
 
-        <receiver android:name=".widget.EmergencyWidget"
+        <receiver android:name=".data.widget.EmergencyWidget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -79,13 +79,13 @@
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".events.list.EventsActivity"
+            android:name=".ui.events.list.EventsActivity"
             android:exported="false"
             android:label="The Angels | Events"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".educations.EducationActivity"
+            android:name=".ui.educations.EducationActivity"
             android:exported="false"
             android:label="The Angels | Education"
             android:theme="@style/Theme._2025_theangels_new"/>
@@ -97,7 +97,7 @@
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".events.create.NewEventActivity"
+            android:name=".ui.events.create.NewEventActivity"
             android:exported="false"
             android:label="The Angels | Report Event"
             android:theme="@style/Theme._2025_theangels_new"/>
@@ -133,31 +133,31 @@
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".events.active.EventUserActivity"
+            android:name=".ui.events.active.EventUserActivity"
             android:exported="false"
             android:label="The Angels | User Event"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".events.list.EventDetailsActivity"
+            android:name=".ui.events.list.EventDetailsActivity"
             android:exported="false"
             android:label="The Angels | Event Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".educations.EducationDetailsActivity"
+            android:name=".ui.educations.EducationDetailsActivity"
             android:exported="false"
             android:label="The Angels | Lesson Details"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <activity
-            android:name=".events.active.EventVolActivity"
+            android:name=".ui.events.active.EventVolActivity"
             android:exported="false"
             android:label="The Angels | Volunteer Event"
             android:theme="@style/Theme._2025_theangels_new"/>
 
         <service
-            android:name=".notifications.MyFirebaseMessagingService"
+            android:name=".data.notifications.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

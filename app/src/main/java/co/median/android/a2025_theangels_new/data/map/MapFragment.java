@@ -1,7 +1,7 @@
 // =======================================
 // IMPORTS
 // =======================================
-package co.median.android.a2025_theangels_new.map;
+package co.median.android.a2025_theangels_new.data.map;
 
 import android.Manifest;
 import android.content.pm.PackageManager;

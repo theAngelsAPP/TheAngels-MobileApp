@@ -1,4 +1,4 @@
-package co.median.android.a2025_theangels_new.events.list;
+package co.median.android.a2025_theangels_new.ui.events.list;
 
 import android.content.Context;
 import android.content.Intent;

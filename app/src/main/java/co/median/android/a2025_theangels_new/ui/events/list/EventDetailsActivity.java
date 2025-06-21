@@ -1,7 +1,7 @@
 // =======================================
 // IMPORTS
 // =======================================
-package co.median.android.a2025_theangels_new.events.list;
+package co.median.android.a2025_theangels_new.ui.events.list;
 
 import android.os.Bundle;
 import android.location.Address;
@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import co.median.android.a2025_theangels_new.R;
-import co.median.android.a2025_theangels_new.map.StaticMapFragment;
+import co.median.android.a2025_theangels_new.data.map.StaticMapFragment;
 import co.median.android.a2025_theangels_new.data.models.Event;
 import co.median.android.a2025_theangels_new.data.models.UserBasicInfo;
 import co.median.android.a2025_theangels_new.data.services.EventDataManager;

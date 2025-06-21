@@ -1,4 +1,4 @@
-package co.median.android.a2025_theangels_new;
+package co.median.android.a2025_theangels_new.data;
 
 import android.app.Application;
 import com.google.firebase.FirebaseApp;

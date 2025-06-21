@@ -1,7 +1,7 @@
 // =======================================
 // IMPORTS
 // =======================================
-package co.median.android.a2025_theangels_new.events.create;
+package co.median.android.a2025_theangels_new.ui.events.create;
 
 import android.content.Intent;
 import android.os.Build;
@@ -16,11 +16,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import co.median.android.a2025_theangels_new.R;
-import co.median.android.a2025_theangels_new.events.create.EventTypeFragment;
-import co.median.android.a2025_theangels_new.events.create.WhatHappenedFragment;
-import co.median.android.a2025_theangels_new.events.create.QuestionnaireFragment;
-import co.median.android.a2025_theangels_new.map.LocationFragment;
-import co.median.android.a2025_theangels_new.events.create.SummaryFragment;
+import co.median.android.a2025_theangels_new.ui.events.create.EventTypeFragment;
+import co.median.android.a2025_theangels_new.ui.events.create.WhatHappenedFragment;
+import co.median.android.a2025_theangels_new.ui.events.create.QuestionnaireFragment;
+import co.median.android.a2025_theangels_new.data.map.LocationFragment;
+import co.median.android.a2025_theangels_new.ui.events.create.SummaryFragment;
 import com.shuhart.stepview.StepView;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
